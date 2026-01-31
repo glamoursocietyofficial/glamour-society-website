@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-  <title>Glamour Society | Luxury Modeling Agency</title>
-  <meta name="description" content="Glamour Society Modeling Agency — luxury talent representation, applications, payments, and bookings."/>
+  <title>Glamour Society | Modeling Agency</title>
+  <meta name="description" content="Glamour Society Modeling Agency — Apply, interview, and book models through our official email."/>
   <link rel="stylesheet" href="assets/styles.css"/>
 </head>
 <body>
@@ -18,10 +18,8 @@
 
     <nav class="nav" aria-label="Primary">
       <a class="nav__link is-active" href="index.html">Home</a>
-      <a class="nav__link" href="models.html">Models</a>
       <a class="nav__link" href="apply.html">Apply</a>
       <a class="nav__link" href="book.html">Book</a>
-      <a class="nav__link" href="payments.html">Payments</a>
       <a class="nav__link" href="contact.html">Contact</a>
     </nav>
 
@@ -31,22 +29,22 @@
 
 <!-- Mobile menu -->
 <div class="mobileMenu" id="mobileMenu" aria-hidden="true">
+  <button class="mobileMenu__backdrop" id="menuBackdrop" aria-label="Close"></button>
   <div class="mobileMenu__panel">
     <button class="mobileMenu__close" id="closeMenu" aria-label="Close menu">✕</button>
     <a href="index.html" class="mobileMenu__link">Home</a>
-    <a href="models.html" class="mobileMenu__link">Models</a>
     <a href="apply.html" class="mobileMenu__link">Apply</a>
-    <a href="book.html" class="mobileMenu__link">Book</a>
-    <a href="payments.html" class="mobileMenu__link">Payments</a>
+    <a href="book.html" class="mobileMenu__link">Book a Model</a>
     <a href="contact.html" class="mobileMenu__link">Contact</a>
   </div>
-  <button class="mobileMenu__backdrop" id="menuBackdrop" aria-label="Close"></button>
 </div>
 
 <main class="container">
   <section class="hero">
     <div class="hero__left">
-      <div class="pill">Luxury • Professional • Structured</div>
+      <div class="glam3dWrap">
+        <span class="glam3d">GLAM</span>
+      </div>
 
       <h1 class="hero__title">
         Glamour Society
@@ -54,21 +52,41 @@
       </h1>
 
       <p class="hero__copy">
-        A premium agency experience for talent and clients. Apply online, pay securely, and request bookings
-        through our official email for a clean paper trail and professional coordination.
+        A premium agency experience for talent and clients. Apply online, schedule your interview,
+        and request bookings through our official email for professional coordination.
       </p>
 
       <div class="btnRow">
         <a class="btn btn--gold" href="apply.html">Apply as a Model</a>
-        <a class="btn btn--ghost" href="models.html">View Model Demos</a>
         <a class="btn btn--dark" href="book.html">Book a Model</a>
       </div>
 
+      <div class="readyBlock">
+        <h3>Ready to move fast?</h3>
+        <p>
+          If you’re prepared to begin onboarding and schedule your interview, you can fast-track here.
+          (For models ready to activate.)
+        </p>
+        <div class="btnRow">
+          <a class="btn btn--ghost" href="payments.html">Skip Application → Book Your Interview</a>
+        </div>
+      </div>
+
       <div class="infoGrid">
-        <div class="infoCard">📧 glamoursocietymodelingagency@gmail.com</div>
-        <div class="infoCard">📞 470 898 0718</div>
-        <div class="infoCard">IG: @glamoursocietyofficial</div>
-        <div class="infoCard">Facebook: Glamour Society Modeling Agency</div>
+        <a class="infoCard linkCard" href="mailto:glamoursocietymodelingagency@gmail.com">
+          📧 glamoursocietymodelingagency@gmail.com
+        </a>
+        <a class="infoCard linkCard" href="tel:+14708980718">
+          📞 +1 (470) 898-0718
+        </a>
+        <a class="infoCard linkCard" target="_blank" rel="noopener noreferrer"
+           href="https://www.instagram.com/glamoursocietyofficial?igsh=MWtybmIzZzE1cTFseA==">
+          IG: @glamoursocietyofficial
+        </a>
+        <a class="infoCard linkCard" target="_blank" rel="noopener noreferrer"
+           href="https://www.facebook.com/share/1SLWeVF9gv/?mibextid=wwXIfr">
+          Facebook: Glamour Society Modeling Agency
+        </a>
       </div>
     </div>
 
@@ -78,28 +96,22 @@
         <div class="brandCard__text">
           <h3>Book with Confidence</h3>
           <p>
-            Clients submit booking requests through email. Models apply through the official application.
-            Payments are processed securely through Stripe.
+            Clients submit booking requests through email. We confirm availability, expectations,
+            and next steps with a clear paper trail.
           </p>
           <div class="btnRow">
             <a class="btn btn--gold" href="book.html">Book a Model</a>
-            <a class="btn btn--ghost" href="payments.html">Pay Membership</a>
+            <a class="btn btn--ghost" href="contact.html">Contact</a>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <section class="tiles">
-    <a class="tile" href="models.html"><h3>Models</h3><p>View demo categories for booking.</p></a>
-    <a class="tile" href="apply.html"><h3>Apply</h3><p>Submit the official online application.</p></a>
-    <a class="tile" href="payments.html"><h3>Payments</h3><p>Pay activation + monthly membership.</p></a>
-  </section>
 </main>
 
 <footer class="footer">
   <div>© Glamour Society Modeling Agency</div>
-  <div class="footer__muted">Dallas, TX • Luxury representation</div>
+  <div class="footer__muted">Dallas, TX • glamoursocietymodelingagency@gmail.com</div>
 </footer>
 
 <script src="assets/app.js"></script>
