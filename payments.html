@@ -3,40 +3,56 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-  <title>Interview Fast-Track | Glamour Society</title>
-  <meta name="description" content="Model interview activation and monthly membership for Glamour Society."/>
+  <title>Opportunity | Glamour Society</title>
+  <meta name="description" content="Fast-track interview activation and monthly membership."/>
   <link rel="stylesheet" href="assets/styles.css"/>
 </head>
 <body>
 
 <header class="topbar">
   <div class="container topbar__inner">
-    <a class="brand" href="index.html">
-      <img class="brand__wordmark" src="glamour-society-wordmark.jpeg" alt="Glamour Society"/>
-      <span class="brand__sub">Modeling Agency • Dallas, TX</span>
+    <a class="brand" href="index.html" aria-label="Glamour Society Home">
+      <div class="brand__glam3d">GLAM</div>
+      <div class="brand__subwrap">
+        <span class="brand__subMain">Glamour Society Modeling Agency</span>
+        <span class="brand__subSmall">by Core Vision Management</span>
+      </div>
     </a>
 
-    <nav class="nav">
+    <nav class="nav" aria-label="Primary">
       <a class="nav__link" href="index.html">Home</a>
       <a class="nav__link" href="apply.html">Apply</a>
-      <a class="nav__link is-active" href="payments.html">Fast-Track</a>
-      <a class="nav__link" href="book.html">Book</a>
+      <a class="nav__link is-active" href="payments.html">Opportunity</a>
       <a class="nav__link" href="contact.html">Contact</a>
     </nav>
 
-    <button class="menuBtn" id="openMenu" aria-label="Open menu">☰</button>
+    <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu">☰</button>
   </div>
 </header>
 
 <div class="mobileMenu" id="mobileMenu" aria-hidden="true">
-  <button class="mobileMenu__backdrop" id="menuBackdrop" aria-label="Close"></button>
-  <div class="mobileMenu__panel">
-    <button class="mobileMenu__close" id="closeMenu" aria-label="Close menu">✕</button>
-    <a href="index.html" class="mobileMenu__link">Home</a>
-    <a href="apply.html" class="mobileMenu__link">Apply</a>
-    <a href="payments.html" class="mobileMenu__link">Fast-Track</a>
-    <a href="book.html" class="mobileMenu__link">Book a Model</a>
-    <a href="contact.html" class="mobileMenu__link">Contact</a>
+  <button class="mobileMenu__backdrop" id="menuBackdrop" type="button" aria-label="Close menu"></button>
+  <div class="mobileMenu__panel" role="dialog" aria-label="Navigation menu">
+    <div class="mobileMenu__topRow">
+      <div class="mobileMenu__brand">Glamour Society</div>
+      <button class="mobileMenu__close" id="closeMenu" type="button" aria-label="Close menu">✕</button>
+    </div>
+
+    <button class="mobileMenu__dropdownBtn" id="dropOpener" type="button" aria-expanded="false">
+      Menu <span id="dropChev">▾</span>
+    </button>
+
+    <div class="mobileMenu__dropdown" id="dropMenu" aria-hidden="true">
+      <a href="index.html" class="mobileMenu__link">Home</a>
+      <a href="apply.html" class="mobileMenu__link">Apply</a>
+      <a href="payments.html" class="mobileMenu__link">Opportunity</a>
+      <a href="contact.html" class="mobileMenu__link">Contact</a>
+    </div>
+
+    <div class="mobileMenu__divider"></div>
+
+    <a class="mobileMenu__cta" href="book.html">Book a Model</a>
+    <a class="mobileMenu__cta ghost" href="mailto:glamoursocietymodelingagency@gmail.com">Email Us</a>
   </div>
 </div>
 
@@ -44,7 +60,7 @@
   <div class="pageHeader">
     <h1>Skip Application → Book Your Interview</h1>
     <p>
-      This page is for models who are ready to activate and move into interview scheduling + onboarding.
+      This is for models ready to activate and move into interview scheduling + onboarding.
       If you’re not ready yet, apply first.
     </p>
 
@@ -57,9 +73,7 @@
   <div class="grid2">
     <section class="cardGlow">
       <h2 class="goldTitle">Step 1 — Interview Activation</h2>
-      <p class="muted">
-        One-time activation confirms you’re ready for interview scheduling and onboarding steps.
-      </p>
+      <p class="muted">One-time activation confirms you’re ready for interview scheduling and onboarding steps.</p>
       <div class="priceTag">$100</div>
 
       <div class="btnRow">
@@ -83,9 +97,7 @@
 
     <section class="card">
       <h2 class="goldTitle">Step 2 — Stay Active Monthly</h2>
-      <p class="muted">
-        Monthly membership keeps you active for agency services and ongoing coordination.
-      </p>
+      <p class="muted">Monthly membership keeps you active for agency services and ongoing coordination.</p>
       <div class="priceTag">$40/mo</div>
 
       <div class="btnRow">
@@ -94,10 +106,6 @@
           Start Monthly Membership ($40)
         </a>
       </div>
-
-      <p class="tiny muted" style="margin-top:10px;">
-        Billing support? Email us anytime.
-      </p>
 
       <div class="btnRow">
         <a class="btn btn--ghost"
@@ -111,7 +119,7 @@
 
 <footer class="footer">
   <div>Payments processed securely via Stripe</div>
-  <div class="footer__muted">📧 glamoursocietymodelingagency@gmail.com • 📞 +1 (470) 898-0718</div>
+  <div class="footer__muted">by Core Vision Management • +1 (470) 898-0718</div>
 </footer>
 
 <script src="assets/app.js"></script>
