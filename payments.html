@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Payments | Glamour Society</title>
+  <meta name="description" content="Pay Glamour Society activation and monthly membership via Stripe."/>
+  <link rel="stylesheet" href="assets/styles.css"/>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container topbar__inner">
+    <a class="brand" href="index.html">
+      <img class="brand__wordmark" src="glamour-society-wordmark.jpeg" alt="Glamour Society"/>
+      <span class="brand__sub">Modeling Agency • Dallas, TX</span>
+    </a>
+
+    <nav class="nav">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link" href="models.html">Models</a>
+      <a class="nav__link" href="apply.html">Apply</a>
+      <a class="nav__link" href="book.html">Book</a>
+      <a class="nav__link is-active" href="payments.html">Payments</a>
+      <a class="nav__link" href="contact.html">Contact</a>
+    </nav>
+
+    <button class="menuBtn" id="openMenu">☰</button>
+  </div>
+</header>
+
+<div class="mobileMenu" id="mobileMenu" aria-hidden="true">
+  <div class="mobileMenu__panel">
+    <button class="mobileMenu__close" id="closeMenu">✕</button>
+    <a href="index.html" class="mobileMenu__link">Home</a>
+    <a href="models.html" class="mobileMenu__link">Models</a>
+    <a href="apply.html" class="mobileMenu__link">Apply</a>
+    <a href="book.html" class="mobileMenu__link">Book</a>
+    <a href="payments.html" class="mobileMenu__link">Payments</a>
+    <a href="contact.html" class="mobileMenu__link">Contact</a>
+  </div>
+  <button class="mobileMenu__backdrop" id="menuBackdrop"></button>
+</div>
+
+<main class="container">
+  <div class="pageHeader">
+    <h1>Payments</h1>
+    <p>Secure checkout through Stripe. Choose your payment option below.</p>
+  </div>
+
+  <div class="modelGrid">
+    <article class="modelCard">
+      <div class="modelCard__body">
+        <h3>$100 Initial Activation</h3>
+        <p>One-time activation fee to begin onboarding and membership setup.</p>
+        <a class="btn btn--gold" target="_blank" rel="noopener noreferrer"
+           href="https://buy.stripe.com/5kQfZa9Tt9b322g5gu4sE05">
+          Pay $100 (Stripe)
+        </a>
+      </div>
+    </article>
+
+    <article class="modelCard">
+      <div class="modelCard__body">
+        <h3>$40 Monthly Membership</h3>
+        <p>Ongoing agency services, coordination, and support.</p>
+        <a class="btn btn--gold" target="_blank" rel="noopener noreferrer"
+           href="https://buy.stripe.com/cNicMY6Hhcnf6iw4cq4sE06">
+          Pay $40 Monthly (Stripe)
+        </a>
+      </div>
+    </article>
+
+    <article class="modelCard">
+      <div class="modelCard__body">
+        <h3>Need Help?</h3>
+        <p>Questions about payment confirmation or receipts? Email support.</p>
+        <a class="btn btn--ghost"
+           href="mailto:glamoursocietymodelingagency@gmail.com?subject=Payment%20Support%20-%20Glamour%20Society">
+          Email Payment Support
+        </a>
+        <a class="btn btn--dark" href="contact.html">Contact</a>
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer class="footer">
+  <div>Payments processed via Stripe • Keep your receipt for records</div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
