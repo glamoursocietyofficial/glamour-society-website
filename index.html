@@ -4,6 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <title>Glamour Society | Luxury Modeling Agency</title>
+  <meta name="description" content="Glamour Society Modeling Agency — luxury talent representation, applications, payments, and bookings."/>
   <link rel="stylesheet" href="assets/styles.css"/>
 </head>
 <body>
@@ -15,7 +16,7 @@
       <span class="brand__sub">Modeling Agency • Dallas, TX</span>
     </a>
 
-    <nav class="nav">
+    <nav class="nav" aria-label="Primary">
       <a class="nav__link is-active" href="index.html">Home</a>
       <a class="nav__link" href="models.html">Models</a>
       <a class="nav__link" href="apply.html">Apply</a>
@@ -46,13 +47,15 @@
   <section class="hero">
     <div class="hero__left">
       <div class="pill">Luxury • Professional • Structured</div>
+
       <h1 class="hero__title">
         Glamour Society
         <span class="hero__accent">Modeling Agency</span>
       </h1>
+
       <p class="hero__copy">
         A premium agency experience for talent and clients. Apply online, pay securely, and request bookings
-        through our official email.
+        through our official email for a clean paper trail and professional coordination.
       </p>
 
       <div class="btnRow">
@@ -73,24 +76,30 @@
       <div class="brandCard">
         <img class="brandCard__logo" src="glamour-society-logo.jpeg" alt="Glamour Society Logo"/>
         <div class="brandCard__text">
-          <h3>Client Booking</h3>
-          <p>Tap “Book a Model” to open email with a pre-written request form.</p>
-          <a class="btn btn--gold" href="book.html">Book a Model</a>
+          <h3>Book with Confidence</h3>
+          <p>
+            Clients submit booking requests through email. Models apply through the official application.
+            Payments are processed securely through Stripe.
+          </p>
+          <div class="btnRow">
+            <a class="btn btn--gold" href="book.html">Book a Model</a>
+            <a class="btn btn--ghost" href="payments.html">Pay Membership</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <section class="tiles">
-    <a class="tile" href="models.html"><h3>Models</h3><p>Runway, events, editorial demos.</p></a>
-    <a class="tile" href="apply.html"><h3>Apply</h3><p>Submit the official application.</p></a>
+    <a class="tile" href="models.html"><h3>Models</h3><p>View demo categories for booking.</p></a>
+    <a class="tile" href="apply.html"><h3>Apply</h3><p>Submit the official online application.</p></a>
     <a class="tile" href="payments.html"><h3>Payments</h3><p>Pay activation + monthly membership.</p></a>
   </section>
 </main>
 
 <footer class="footer">
   <div>© Glamour Society Modeling Agency</div>
-  <div class="footer__muted">Luxury representation • Dallas, TX</div>
+  <div class="footer__muted">Dallas, TX • Luxury representation</div>
 </footer>
 
 <script src="assets/app.js"></script>
