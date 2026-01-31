@@ -1,462 +1,98 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Glamour Society | Modeling Agency</title>
-
-  <meta name="description" content="Glamour Society Modeling Agency — luxury talent representation and bookings. Apply online, pay securely, and book models through our official email." />
-  <meta property="og:title" content="Glamour Society Modeling Agency" />
-  <meta property="og:description" content="Luxury modeling & talent agency. Apply online. Book models by email. Payments via Stripe." />
-  <meta property="og:type" content="website" />
-
-  <link rel="stylesheet" href="assets/styles.css" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Glamour Society | Luxury Modeling Agency</title>
+  <link rel="stylesheet" href="assets/styles.css"/>
 </head>
-
 <body>
-  <div class="bg-glow" aria-hidden="true"></div>
 
-  <header class="topbar">
-    <div class="container topbar__inner">
-      <a class="brand" href="#home" data-screen="home" aria-label="Glamour Society home">
-        <img class="brand__wordmark" src="glamour-society-wordmark.jpeg" alt="Glamour Society wordmark" />
-        <span class="brand__sub">Modeling Agency • Dallas, TX</span>
-      </a>
+<header class="topbar">
+  <div class="container topbar__inner">
+    <a class="brand" href="index.html" aria-label="Glamour Society Home">
+      <img class="brand__wordmark" src="glamour-society-wordmark.jpeg" alt="Glamour Society"/>
+      <span class="brand__sub">Modeling Agency • Dallas, TX</span>
+    </a>
 
-      <nav class="nav" aria-label="Primary">
-        <a href="#home" data-screen="home" class="nav__link">Home</a>
-        <a href="#models" data-screen="models" class="nav__link">Models</a>
-        <a href="#apply" data-screen="apply" class="nav__link">Apply</a>
-        <a href="#book" data-screen="book" class="nav__link">Book</a>
-        <a href="#payments" data-screen="payments" class="nav__link">Payments</a>
-        <a href="#contact" data-screen="contact" class="nav__link">Contact</a>
-      </nav>
+    <nav class="nav">
+      <a class="nav__link is-active" href="index.html">Home</a>
+      <a class="nav__link" href="models.html">Models</a>
+      <a class="nav__link" href="apply.html">Apply</a>
+      <a class="nav__link" href="book.html">Book</a>
+      <a class="nav__link" href="payments.html">Payments</a>
+      <a class="nav__link" href="contact.html">Contact</a>
+    </nav>
 
-      <div class="topbar__actions">
-        <button class="btn btn--ghost btn--sm" id="openDrawer" aria-label="Open menu">
-          <span class="hamburger" aria-hidden="true"><span></span></span>
-        </button>
-        <a class="btn btn--gold btn--sm" href="#book" data-screen="book">Book a Model</a>
-      </div>
-    </div>
-  </header>
-
-  <aside class="drawer" id="drawer" aria-hidden="true">
-    <div class="drawer__panel">
-      <div class="drawer__top">
-        <div class="drawer__brand">
-          <img class="drawer__logo" src="glamour-society-logo.jpeg" alt="Glamour Society logo" />
-          <div>
-            <div class="drawer__title">Glamour Society</div>
-            <div class="drawer__sub">Luxury modeling & bookings</div>
-          </div>
-        </div>
-        <button class="btn btn--ghost btn--sm" id="closeDrawer" aria-label="Close menu">Close</button>
-      </div>
-
-      <nav class="drawer__nav" aria-label="Mobile">
-        <a href="#home" data-screen="home" class="drawer__link">Home</a>
-        <a href="#models" data-screen="models" class="drawer__link">Models</a>
-        <a href="#apply" data-screen="apply" class="drawer__link">Apply</a>
-        <a href="#book" data-screen="book" class="drawer__link">Book</a>
-        <a href="#payments" data-screen="payments" class="drawer__link">Payments</a>
-        <a href="#contact" data-screen="contact" class="drawer__link">Contact</a>
-      </nav>
-
-      <div class="drawer__cta">
-        <a class="btn btn--gold" href="#apply" data-screen="apply">Apply Now</a>
-        <a class="btn btn--ghost" href="#payments" data-screen="payments">Pay Membership</a>
-      </div>
-
-      <div class="drawer__fine">
-        <div>📧 glamoursocietymodelingagency@gmail.com</div>
-        <div>📞 470 898 0718</div>
-        <div>IG: @glamoursocietyofficial</div>
-      </div>
-    </div>
-    <button class="drawer__backdrop" id="drawerBackdrop" aria-label="Close menu"></button>
-  </aside>
-
-  <main class="container main" id="app">
-
-    <section class="screen is-active" id="home" data-screen-name="home">
-      <div class="hero">
-        <div class="hero__left">
-          <div class="pill">
-            <span class="pill__dot" aria-hidden="true"></span>
-            Luxury • Professional • Structured
-          </div>
-
-          <h1 class="hero__title">
-            Glamour Society
-            <span class="hero__titleAccent">Modeling Agency</span>
-          </h1>
-
-          <p class="hero__copy">
-            A premium agency experience—built for talent and clients. Apply online, pay securely, and
-            request bookings through our official email. Clean communication. Clear expectations. Luxury standards.
-          </p>
-
-          <div class="hero__buttons">
-            <a class="btn btn--gold" href="#apply" data-screen="apply">Apply as a Model</a>
-            <a class="btn btn--ghost" href="#models" data-screen="models">View Model Demos</a>
-            <a class="btn btn--dark" href="#payments" data-screen="payments">Pay Membership</a>
-          </div>
-
-          <div class="hero__badges">
-            <div class="badge">📧 glamoursocietymodelingagency@gmail.com</div>
-            <div class="badge">📞 470 898 0718</div>
-            <div class="badge">IG: @glamoursocietyofficial</div>
-            <div class="badge">Facebook: Glamour Society Modeling Agency</div>
-          </div>
-
-          <div class="note">
-            <strong>Booking requests:</strong> click “Book a Model” and your email app opens with a ready-to-send request.
-            <span class="note__muted">All bookings subject to availability and agency approval.</span>
-          </div>
-        </div>
-
-        <div class="hero__right">
-          <div class="glassCard tilt" data-tilt>
-            <div class="glassCard__top">
-              <img class="glassCard__logo" src="glamour-society-logo.jpeg" alt="Glamour Society emblem logo" />
-              <div class="glassCard__meta">
-                <div class="glassCard__metaTitle">Agency Standards</div>
-                <div class="glassCard__metaSub">Luxury representation & coordination</div>
-              </div>
-            </div>
-
-            <div class="glassCard__divider"></div>
-
-            <ul class="checklist">
-              <li><span class="check"></span> Professional onboarding process</li>
-              <li><span class="check"></span> Clear booking coordination</li>
-              <li><span class="check"></span> Secure Stripe payments</li>
-              <li><span class="check"></span> Email-based booking requests</li>
-            </ul>
-
-            <div class="glassCard__actions">
-              <a class="btn btn--gold btn--sm" href="#book" data-screen="book">Book a Model</a>
-              <a class="btn btn--ghost btn--sm" href="#contact" data-screen="contact">Contact</a>
-            </div>
-          </div>
-
-          <div class="heroImage tilt" data-tilt data-tilt-strength="10">
-            <img src="model-runway-fashion-show.jpeg" alt="Runway model demo photo" />
-            <div class="heroImage__overlay"></div>
-            <div class="heroImage__label">
-              <span class="sparkle" aria-hidden="true">✦</span> Featured Demo • Runway / Editorial
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="featureGrid">
-        <article class="feature tilt" data-tilt>
-          <h3>For Models</h3>
-          <p>Apply, onboard, and grow your portfolio with an agency-first structure.</p>
-          <a href="#apply" data-screen="apply" class="feature__link">Start application →</a>
-        </article>
-        <article class="feature tilt" data-tilt>
-          <h3>For Clients</h3>
-          <p>Request talent for events, shoots, brand campaigns, and appearances.</p>
-          <a href="#book" data-screen="book" class="feature__link">Book a model →</a>
-        </article>
-        <article class="feature tilt" data-tilt>
-          <h3>Payments</h3>
-          <p>Pay initial activation and monthly membership through secure Stripe checkout.</p>
-          <a href="#payments" data-screen="payments" class="feature__link">View payments →</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="screen" id="models" data-screen-name="models">
-      <div class="screenHeader">
-        <h2>Model Demos</h2>
-        <p>
-          These are demo-style profiles so clients can understand the look and booking categories.
-          Tap a card to view the demo and then send your request by email.
-        </p>
-        <div class="screenHeader__actions">
-          <a class="btn btn--gold" href="#book" data-screen="book">Book a Model</a>
-          <a class="btn btn--ghost" href="#apply" data-screen="apply">Apply</a>
-        </div>
-      </div>
-
-      <div class="modelGrid">
-        <button class="modelCard tilt" data-tilt data-open-profile="runway" type="button">
-          <div class="modelCard__img">
-            <img src="model-runway-fashion-show.jpeg" alt="Runway demo model" />
-          </div>
-          <div class="modelCard__body">
-            <div class="modelCard__name">Runway / Editorial Demo</div>
-            <div class="modelCard__tags">
-              <span class="tag">Runway</span><span class="tag">Editorial</span><span class="tag">Fashion Show</span>
-            </div>
-            <div class="modelCard__cta">Tap to preview →</div>
-          </div>
-        </button>
-
-        <button class="modelCard tilt" data-tilt data-open-profile="video" type="button">
-          <div class="modelCard__img">
-            <img src="glamour-society-logo.jpeg" alt="Luxury emblem demo" />
-          </div>
-          <div class="modelCard__body">
-            <div class="modelCard__name">Music Video / Lifestyle Demo</div>
-            <div class="modelCard__tags">
-              <span class="tag">Music Video</span><span class="tag">Lifestyle</span><span class="tag">Promo</span>
-            </div>
-            <div class="modelCard__cta">Tap to preview →</div>
-          </div>
-        </button>
-
-        <button class="modelCard tilt" data-tilt data-open-profile="event" type="button">
-          <div class="modelCard__img">
-            <img src="glamour-society-wordmark.jpeg" alt="Glamour Society wordmark demo" />
-          </div>
-          <div class="modelCard__body">
-            <div class="modelCard__name">Events / Brand Activation Demo</div>
-            <div class="modelCard__tags">
-              <span class="tag">Events</span><span class="tag">Brand</span><span class="tag">Appearances</span>
-            </div>
-            <div class="modelCard__cta">Tap to preview →</div>
-          </div>
-        </button>
-      </div>
-
-      <div class="panel">
-        <h3>After viewing demos</h3>
-        <p>
-          When you’re ready, click the button below. Your phone will switch to your email app with a pre-written message.
-          Add your details (date, location, budget, concept) and send.
-        </p>
-        <div class="panel__actions">
-          <a class="btn btn--gold" href="#book" data-screen="book">Book a Model (Email)</a>
-          <a class="btn btn--ghost" href="#contact" data-screen="contact">Questions?</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="screen" id="apply" data-screen-name="apply">
-      <div class="screenHeader">
-        <h2>Apply to Glamour Society</h2>
-        <p>
-          Ready to join? Complete the official application first. Approved applicants will receive onboarding steps and agreements.
-        </p>
-        <div class="screenHeader__actions">
-          <a class="btn btn--gold" href="https://docs.google.com/forms/d/e/1FAIpQLSfLdP8fi5cfD9TIPL1RNPC9X7g_Rr_F125t717deLraWhirxQ/viewform" target="_blank" rel="noopener noreferrer">Open Application</a>
-          <a class="btn btn--ghost" href="#payments" data-screen="payments">Pay Membership</a>
-        </div>
-      </div>
-
-      <div class="twoCol">
-        <div class="panel tilt" data-tilt>
-          <h3>What happens next?</h3>
-          <ol class="steps">
-            <li>Submit the application</li>
-            <li>Agency review + approval</li>
-            <li>Onboarding + agreements</li>
-            <li>Start receiving opportunities</li>
-          </ol>
-          <div class="note note--thin">
-            Tip: Use clear photos, accurate availability, and professional contact details.
-          </div>
-        </div>
-
-        <div class="panel tilt" data-tilt>
-          <h3>Already applied?</h3>
-          <p>
-            If you completed the application and need to send follow-up details, click below to open your email app.
-          </p>
-          <a class="btn btn--gold" href="mailto:glamoursocietymodelingagency@gmail.com?subject=Model%20Application%20Follow-Up%20-%20Glamour%20Society&body=Hello%20Glamour%20Society%2C%0A%0AI%20submitted%20my%20application%20and%20wanted%20to%20follow%20up.%20Here%20is%20my%20info%3A%0A%0A-%20Full%20Name%3A%0A-%20Phone%3A%0A-%20Instagram%3A%0A-%20City%2FState%3A%0A-%20Availability%3A%0A-%20Portfolio%20Links%3A%0A%0AThank%20you%2C">Email Follow-Up</a>
-          <div class="fine">
-            Email will open in your default mail app. If it doesn’t, copy the address: <strong>glamoursocietymodelingagency@gmail.com</strong>.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="screen" id="book" data-screen-name="book">
-      <div class="screenHeader">
-        <h2>Book a Model</h2>
-        <p>
-          Click “Email Booking Request” and your phone will switch to email with a ready-to-send form.
-          Fill in the details and send to confirm availability.
-        </p>
-      </div>
-
-      <div class="panel panel--big">
-        <div class="panel__split">
-          <div>
-            <h3>Booking Request (Email)</h3>
-            <p class="muted">
-              This protects both client and talent by keeping a clear paper trail.
-            </p>
-
-            <div class="panel__actions">
-              <a class="btn btn--gold" href="mailto:glamoursocietymodelingagency@gmail.com?subject=Book%20a%20Model%20-%20Glamour%20Society&body=Hello%20Glamour%20Society%2C%0A%0AI%20would%20like%20to%20book%20a%20model.%20Here%20are%20the%20details%3A%0A%0A1)%20Project%20type%3A%20(Music%20Video%20%2F%20Event%20%2F%20Shoot%20%2F%20Brand)%0A2)%20Date%20%26%20Time%3A%0A3)%20Location%3A%0A4)%20Hours%20needed%3A%0A5)%20Budget%3A%0A6)%20Usage%2FDeliverables%3A%0A7)%20Wardrobe%2FTheme%3A%0A8)%20Your%20Name%20%26%20Phone%3A%0A%0AThank%20you%2C">Email Booking Request</a>
-              <a class="btn btn--ghost" href="#models" data-screen="models">View Demos</a>
-              <a class="btn btn--dark" href="#contact" data-screen="contact">Contact Options</a>
-            </div>
-
-            <div class="badgeRow">
-              <span class="badge">📧 glamoursocietymodelingagency@gmail.com</span>
-              <span class="badge">📞 470 898 0718</span>
-            </div>
-          </div>
-
-          <div class="panel__side tilt" data-tilt>
-            <div class="sideTitle">What to include</div>
-            <ul class="bullets">
-              <li>Date / time / location</li>
-              <li>Concept + wardrobe</li>
-              <li>Budget + deliverables</li>
-              <li>Usage (social, YouTube, ads)</li>
-            </ul>
-            <div class="sideNote">We confirm availability and reply with next steps.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="screen" id="payments" data-screen-name="payments">
-      <div class="screenHeader">
-        <h2>Payments</h2>
-        <p>Secure checkout through Stripe. Choose your option below.</p>
-      </div>
-
-      <div class="payGrid">
-        <div class="payCard tilt" data-tilt>
-          <div class="payCard__top">
-            <div class="payCard__title">Initial Fee</div>
-            <div class="payCard__price">$100</div>
-          </div>
-          <p class="muted">One-time activation to begin onboarding and membership setup.</p>
-          <a class="btn btn--gold" href="https://buy.stripe.com/5kQfZa9Tt9b322g5gu4sE05" target="_blank" rel="noopener noreferrer">Pay $100 (Stripe)</a>
-          <div class="fine">Opens securely in a new tab.</div>
-        </div>
-
-        <div class="payCard tilt" data-tilt>
-          <div class="payCard__top">
-            <div class="payCard__title">Monthly Membership</div>
-            <div class="payCard__price">$40</div>
-          </div>
-          <p class="muted">Ongoing agency services, coordination, and support.</p>
-          <a class="btn btn--gold" href="https://buy.stripe.com/cNicMY6Hhcnf6iw4cq4sE06" target="_blank" rel="noopener noreferrer">Pay $40 Monthly (Stripe)</a>
-          <div class="fine">Keep your receipt for your records.</div>
-        </div>
-
-        <div class="payCard payCard--dark tilt" data-tilt>
-          <div class="payCard__top">
-            <div class="payCard__title">Need Help?</div>
-            <div class="payCard__price">Support</div>
-          </div>
-          <p class="muted">Questions about payment, confirmations, or documentation.</p>
-          <a class="btn btn--ghost" href="mailto:glamoursocietymodelingagency@gmail.com?subject=Payment%20Support%20-%20Glamour%20Society">Email Support</a>
-          <a class="btn btn--dark" href="#contact" data-screen="contact">Contact</a>
-        </div>
-      </div>
-
-      <div class="panel">
-        <h3>Why we use Stripe</h3>
-        <p class="muted">
-          Stripe provides secure checkout, receipts, and a clean record for both the agency and the model.
-        </p>
-      </div>
-    </section>
-
-    <section class="screen" id="contact" data-screen-name="contact">
-      <div class="screenHeader">
-        <h2>Contact</h2>
-        <p>Bookings and inquiries—reach us using the options below.</p>
-      </div>
-
-      <div class="contactGrid">
-        <div class="contactCard tilt" data-tilt>
-          <div class="contactCard__title">Email</div>
-          <div class="contactCard__value">glamoursocietymodelingagency@gmail.com</div>
-          <a class="btn btn--gold" href="mailto:glamoursocietymodelingagency@gmail.com?subject=Inquiry%20-%20Glamour%20Society">Send Email</a>
-        </div>
-
-        <div class="contactCard tilt" data-tilt>
-          <div class="contactCard__title">Phone</div>
-          <div class="contactCard__value">470 898 0718</div>
-          <div class="contactCard__actions">
-            <a class="btn btn--gold" href="tel:+14708980718">Call</a>
-            <a class="btn btn--ghost" href="sms:+14708980718">Text</a>
-          </div>
-        </div>
-
-        <div class="contactCard tilt" data-tilt>
-          <div class="contactCard__title">Social</div>
-          <div class="contactCard__value">Instagram: @glamoursocietyofficial</div>
-          <div class="contactCard__value">Facebook: Glamour Society Modeling Agency</div>
-          <div class="contactCard__actions">
-            <a class="btn btn--ghost" href="https://instagram.com/glamoursocietyofficial" target="_blank" rel="noopener noreferrer">Open Instagram</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel panel--big">
-        <h3>Quick Booking Email</h3>
-        <p class="muted">Tap to open your email app with a complete request template.</p>
-        <a class="btn btn--gold" href="mailto:glamoursocietymodelingagency@gmail.com?subject=Book%20a%20Model%20-%20Glamour%20Society&body=Hello%20Glamour%20Society%2C%0A%0AI%20would%20like%20to%20book%20a%20model.%20Here%20are%20the%20details%3A%0A%0A1)%20Project%20type%3A%0A2)%20Date%20%26%20Time%3A%0A3)%20Location%3A%0A4)%20Hours%20needed%3A%0A5)%20Budget%3A%0A6)%20Usage%2FDeliverables%3A%0A7)%20Wardrobe%2FTheme%3A%0A8)%20Your%20Name%20%26%20Phone%3A%0A%0AThank%20you%2C">Email Booking Request</a>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div class="footer__left">
-        <img class="footer__logo" src="glamour-society-logo.jpeg" alt="Glamour Society logo" />
-        <div>
-          <div class="footer__title">Glamour Society Modeling Agency</div>
-          <div class="footer__sub">Luxury representation • Core Vision Management</div>
-        </div>
-      </div>
-
-      <div class="footer__right">
-        <div>📧 glamoursocietymodelingagency@gmail.com</div>
-        <div>📞 470 898 0718</div>
-        <div>IG: @glamoursocietyofficial</div>
-      </div>
-    </footer>
-
-  </main>
-
-  <div class="modal" id="profileModal" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="modal__panel">
-      <button class="modal__close" id="closeModal" aria-label="Close">✕</button>
-
-      <div class="modal__grid">
-        <div class="modal__imgWrap">
-          <img id="modalImg" src="model-runway-fashion-show.jpeg" alt="Model demo preview" />
-          <div class="modal__imgGlow" aria-hidden="true"></div>
-        </div>
-
-        <div class="modal__content">
-          <div class="pill pill--small"><span class="pill__dot"></span> Demo Profile</div>
-          <h3 id="modalTitle">Runway / Editorial Demo</h3>
-          <p id="modalDesc" class="muted">
-            A polished runway/editorial look suitable for fashion shows, editorial shoots, and brand visuals.
-          </p>
-
-          <div class="modal__tags" id="modalTags">
-            <span class="tag">Runway</span><span class="tag">Editorial</span><span class="tag">Fashion</span>
-          </div>
-
-          <div class="modal__actions">
-            <a class="btn btn--gold" href="#book" data-screen="book" id="modalBook">Book this look</a>
-            <a class="btn btn--ghost" href="#payments" data-screen="payments">Payments</a>
-          </div>
-
-          <div class="fine">
-            Want this demo customized? Email your details and we’ll match the right talent.
-          </div>
-        </div>
-      </div>
-    </div>
-    <button class="modal__backdrop" id="modalBackdrop" aria-label="Close modal"></button>
+    <button class="menuBtn" id="openMenu" aria-label="Open menu">☰</button>
   </div>
+</header>
 
-  <script src="assets/app.js"></script>
+<!-- Mobile menu -->
+<div class="mobileMenu" id="mobileMenu" aria-hidden="true">
+  <div class="mobileMenu__panel">
+    <button class="mobileMenu__close" id="closeMenu" aria-label="Close menu">✕</button>
+    <a href="index.html" class="mobileMenu__link">Home</a>
+    <a href="models.html" class="mobileMenu__link">Models</a>
+    <a href="apply.html" class="mobileMenu__link">Apply</a>
+    <a href="book.html" class="mobileMenu__link">Book</a>
+    <a href="payments.html" class="mobileMenu__link">Payments</a>
+    <a href="contact.html" class="mobileMenu__link">Contact</a>
+  </div>
+  <button class="mobileMenu__backdrop" id="menuBackdrop" aria-label="Close"></button>
+</div>
+
+<main class="container">
+  <section class="hero">
+    <div class="hero__left">
+      <div class="pill">Luxury • Professional • Structured</div>
+      <h1 class="hero__title">
+        Glamour Society
+        <span class="hero__accent">Modeling Agency</span>
+      </h1>
+      <p class="hero__copy">
+        A premium agency experience for talent and clients. Apply online, pay securely, and request bookings
+        through our official email.
+      </p>
+
+      <div class="btnRow">
+        <a class="btn btn--gold" href="apply.html">Apply as a Model</a>
+        <a class="btn btn--ghost" href="models.html">View Model Demos</a>
+        <a class="btn btn--dark" href="book.html">Book a Model</a>
+      </div>
+
+      <div class="infoGrid">
+        <div class="infoCard">📧 glamoursocietymodelingagency@gmail.com</div>
+        <div class="infoCard">📞 470 898 0718</div>
+        <div class="infoCard">IG: @glamoursocietyofficial</div>
+        <div class="infoCard">Facebook: Glamour Society Modeling Agency</div>
+      </div>
+    </div>
+
+    <div class="hero__right">
+      <div class="brandCard">
+        <img class="brandCard__logo" src="glamour-society-logo.jpeg" alt="Glamour Society Logo"/>
+        <div class="brandCard__text">
+          <h3>Client Booking</h3>
+          <p>Tap “Book a Model” to open email with a pre-written request form.</p>
+          <a class="btn btn--gold" href="book.html">Book a Model</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tiles">
+    <a class="tile" href="models.html"><h3>Models</h3><p>Runway, events, editorial demos.</p></a>
+    <a class="tile" href="apply.html"><h3>Apply</h3><p>Submit the official application.</p></a>
+    <a class="tile" href="payments.html"><h3>Payments</h3><p>Pay activation + monthly membership.</p></a>
+  </section>
+</main>
+
+<footer class="footer">
+  <div>© Glamour Society Modeling Agency</div>
+  <div class="footer__muted">Luxury representation • Dallas, TX</div>
+</footer>
+
+<script src="assets/app.js"></script>
 </body>
 </html>
