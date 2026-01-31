@@ -39,25 +39,49 @@ a{color:inherit}
   justify-content:space-between;
   gap:14px
 }
+
+/* Brand layout */
 .brand{
   display:flex;
-  flex-direction:column;
-  gap:6px;
-  text-decoration:none
-}
-.brand__wordmark{
-  height:42px;
-  width:auto;
-  object-fit:contain; /* prevents stretching */
-  filter: drop-shadow(0 8px 18px rgba(0,0,0,.55)) drop-shadow(0 0 14px rgba(212,175,55,.12));
-}
-.brand__sub{
-  font-size:12px;
-  color:rgba(255,255,255,.65);
-  letter-spacing:.2px
+  align-items:center;
+  gap:14px;
+  text-decoration:none;
 }
 
-/* Nav */
+/* Luxury 3D GLAM */
+.brand__glam3d{
+  display:inline-block;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-weight: 1000;
+  letter-spacing: 6px;
+  font-size: 18px;
+  color:#f3d78c;
+  background: radial-gradient(120% 120% at 30% 25%, rgba(212,175,55,.24), rgba(255,255,255,.06) 45%, rgba(0,0,0,.60) 100%);
+  border: 1px solid rgba(212,175,55,.26);
+  text-shadow:
+    0 1px 0 rgba(0,0,0,.25),
+    0 12px 28px rgba(0,0,0,.55),
+    0 0 22px rgba(212,175,55,.22);
+  box-shadow:
+    0 16px 40px rgba(0,0,0,.55),
+    inset 0 1px 0 rgba(255,255,255,.10);
+  transform: translateZ(0);
+  animation: floaty 3.4s ease-in-out infinite;
+}
+
+.brand__subwrap{display:flex;flex-direction:column;gap:2px}
+.brand__subMain{
+  font-size: 13px;
+  color: rgba(255,255,255,.80);
+  letter-spacing: .2px;
+}
+.brand__subSmall{
+  font-size: 12px;
+  color: rgba(212,175,55,.86);
+}
+
+/* Desktop nav */
 .nav{display:flex;gap:18px;align-items:center}
 .nav__link{
   text-decoration:none;
@@ -74,7 +98,7 @@ a{color:inherit}
   border:1px solid rgba(212,175,55,.18);
 }
 
-/* Mobile menu button (TOP RIGHT) */
+/* Mobile menu button (top right) */
 .menuBtn{
   display:none;
   border:1px solid rgba(255,255,255,.18);
@@ -87,14 +111,12 @@ a{color:inherit}
 }
 
 /* ===== Mobile Menu ===== */
-.mobileMenu{
-  display:none;
-}
+.mobileMenu{display:none}
 .mobileMenu.is-open{
   display:block;
   position:fixed;
   inset:0;
-  z-index:9999; /* IMPORTANT: above everything */
+  z-index:9999;
 }
 .mobileMenu__backdrop{
   position:absolute;
@@ -118,14 +140,46 @@ a{color:inherit}
   gap:12px;
   box-shadow:-18px 0 50px rgba(0,0,0,.65);
 }
+.mobileMenu__topRow{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+.mobileMenu__brand{
+  font-weight: 1000;
+  color: rgba(255,255,255,.92);
+}
 .mobileMenu__close{
-  align-self:flex-end;
   border:1px solid rgba(255,255,255,.18);
   background:rgba(255,255,255,.08);
   color:#fff;
   padding:10px 12px;
   border-radius:14px;
   cursor:pointer;
+}
+
+/* dropdown */
+.mobileMenu__dropdownBtn{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 12px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.04);
+  color:#fff;
+  cursor:pointer;
+}
+.mobileMenu__dropdown{
+  display:none;
+  margin-top: 6px;
+  gap:10px;
+}
+.mobileMenu__dropdown.is-open{
+  display:flex;
+  flex-direction:column;
 }
 .mobileMenu__link{
   text-decoration:none;
@@ -138,6 +192,27 @@ a{color:inherit}
   border-color:rgba(212,175,55,.35);
   background:rgba(212,175,55,.08);
   color:#f1dc9f;
+}
+.mobileMenu__divider{
+  height:1px;
+  background: rgba(255,255,255,.10);
+  margin: 10px 0;
+}
+.mobileMenu__cta{
+  display:block;
+  text-decoration:none;
+  text-align:center;
+  padding:12px 14px;
+  border-radius:14px;
+  font-weight:1000;
+  border:1px solid rgba(212,175,55,.25);
+  background: linear-gradient(180deg,#f2d27a,#d4af37);
+  color:#0b0b0b;
+}
+.mobileMenu__cta.ghost{
+  background: rgba(255,255,255,.04);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.14);
 }
 
 /* ===== Buttons ===== */
@@ -172,7 +247,7 @@ a{color:inherit}
   color:#fff;
 }
 
-/* ===== Home Hero ===== */
+/* ===== Home Layout ===== */
 .hero{
   display:grid;
   grid-template-columns: 1.15fr .85fr;
@@ -185,22 +260,7 @@ a{color:inherit}
 .hero__accent{display:block;color:#d4af37}
 .hero__copy{color:rgba(255,255,255,.72);max-width:62ch}
 
-/* 3D GLAM title (not stretched, looks premium) */
-.glam3dWrap{margin-bottom:14px}
-.glam3d{
-  display:inline-block;
-  font-weight:1000;
-  letter-spacing:6px;
-  font-size:28px;
-  color:#f3d78c;
-  text-shadow:
-    0 1px 0 rgba(0,0,0,.35),
-    0 8px 24px rgba(0,0,0,.55),
-    0 0 22px rgba(212,175,55,.18);
-  animation:floaty 3.4s ease-in-out infinite;
-}
-
-/* cards */
+/* Cards */
 .brandCard{
   border-radius:18px;
   border:1px solid rgba(255,255,255,.10);
