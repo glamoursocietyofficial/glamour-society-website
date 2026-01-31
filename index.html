@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <title>Glamour Society | Modeling Agency</title>
-  <meta name="description" content="Glamour Society Modeling Agency — Apply, interview, and book models through our official email."/>
+  <meta name="description" content="Glamour Society Modeling Agency by Core Vision Management — apply, interview, and book models via email."/>
   <link rel="stylesheet" href="assets/styles.css"/>
 </head>
 <body>
@@ -12,40 +12,54 @@
 <header class="topbar">
   <div class="container topbar__inner">
     <a class="brand" href="index.html" aria-label="Glamour Society Home">
-      <img class="brand__wordmark" src="glamour-society-wordmark.jpeg" alt="Glamour Society"/>
-      <span class="brand__sub">Modeling Agency • Dallas, TX</span>
+      <div class="brand__glam3d">GLAM</div>
+      <div class="brand__subwrap">
+        <span class="brand__subMain">Glamour Society Modeling Agency</span>
+        <span class="brand__subSmall">by Core Vision Management</span>
+      </div>
     </a>
 
     <nav class="nav" aria-label="Primary">
       <a class="nav__link is-active" href="index.html">Home</a>
       <a class="nav__link" href="apply.html">Apply</a>
-      <a class="nav__link" href="book.html">Book</a>
+      <a class="nav__link" href="payments.html">Opportunity</a>
       <a class="nav__link" href="contact.html">Contact</a>
     </nav>
 
-    <button class="menuBtn" id="openMenu" aria-label="Open menu">☰</button>
+    <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu">☰</button>
   </div>
 </header>
 
-<!-- Mobile menu -->
 <div class="mobileMenu" id="mobileMenu" aria-hidden="true">
-  <button class="mobileMenu__backdrop" id="menuBackdrop" aria-label="Close"></button>
-  <div class="mobileMenu__panel">
-    <button class="mobileMenu__close" id="closeMenu" aria-label="Close menu">✕</button>
-    <a href="index.html" class="mobileMenu__link">Home</a>
-    <a href="apply.html" class="mobileMenu__link">Apply</a>
-    <a href="book.html" class="mobileMenu__link">Book a Model</a>
-    <a href="contact.html" class="mobileMenu__link">Contact</a>
+  <button class="mobileMenu__backdrop" id="menuBackdrop" type="button" aria-label="Close menu"></button>
+
+  <div class="mobileMenu__panel" role="dialog" aria-label="Navigation menu">
+    <div class="mobileMenu__topRow">
+      <div class="mobileMenu__brand">Glamour Society</div>
+      <button class="mobileMenu__close" id="closeMenu" type="button" aria-label="Close menu">✕</button>
+    </div>
+
+    <button class="mobileMenu__dropdownBtn" id="dropOpener" type="button" aria-expanded="false">
+      Menu <span id="dropChev">▾</span>
+    </button>
+
+    <div class="mobileMenu__dropdown" id="dropMenu" aria-hidden="true">
+      <a href="index.html" class="mobileMenu__link">Home</a>
+      <a href="apply.html" class="mobileMenu__link">Apply</a>
+      <a href="payments.html" class="mobileMenu__link">Opportunity</a>
+      <a href="contact.html" class="mobileMenu__link">Contact</a>
+    </div>
+
+    <div class="mobileMenu__divider"></div>
+
+    <a class="mobileMenu__cta" href="book.html">Book a Model</a>
+    <a class="mobileMenu__cta ghost" href="mailto:glamoursocietymodelingagency@gmail.com">Email Us</a>
   </div>
 </div>
 
 <main class="container">
   <section class="hero">
     <div class="hero__left">
-      <div class="glam3dWrap">
-        <span class="glam3d">GLAM</span>
-      </div>
-
       <h1 class="hero__title">
         Glamour Society
         <span class="hero__accent">Modeling Agency</span>
@@ -65,7 +79,6 @@
         <h3>Ready to move fast?</h3>
         <p>
           If you’re prepared to begin onboarding and schedule your interview, you can fast-track here.
-          (For models ready to activate.)
         </p>
         <div class="btnRow">
           <a class="btn btn--ghost" href="payments.html">Skip Application → Book Your Interview</a>
@@ -81,7 +94,7 @@
         </a>
         <a class="infoCard linkCard" target="_blank" rel="noopener noreferrer"
            href="https://www.instagram.com/glamoursocietyofficial?igsh=MWtybmIzZzE1cTFseA==">
-          IG: @glamoursocietyofficial
+          Instagram: @glamoursocietyofficial
         </a>
         <a class="infoCard linkCard" target="_blank" rel="noopener noreferrer"
            href="https://www.facebook.com/share/1SLWeVF9gv/?mibextid=wwXIfr">
@@ -111,7 +124,7 @@
 
 <footer class="footer">
   <div>© Glamour Society Modeling Agency</div>
-  <div class="footer__muted">Dallas, TX • glamoursocietymodelingagency@gmail.com</div>
+  <div class="footer__muted">by Core Vision Management • glamoursocietymodelingagency@gmail.com</div>
 </footer>
 
 <script src="assets/app.js"></script>
