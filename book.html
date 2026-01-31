@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Book a Model | Glamour Society</title>
-<link rel="stylesheet" href="assets/styles.css"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Book a Model | Glamour Society</title>
+  <meta name="description" content="Book a model through Glamour Society Modeling Agency by Core Vision Management."/>
+  <link rel="stylesheet" href="assets/styles.css"/>
 </head>
 
 <body>
@@ -12,52 +13,64 @@
 <header class="topbar">
   <div class="container topbar__inner">
 
-    <a class="brand" href="index.html">
+    <a class="brand" href="index.html" aria-label="Glamour Society Home">
       <div class="brand__glam3d">GLAM</div>
-
       <div class="brand__subwrap">
         <span class="brand__subMain">Glamour Society Modeling Agency</span>
         <span class="brand__subSmall">by Core Vision Management</span>
       </div>
     </a>
 
-    <nav class="nav">
+    <nav class="nav" aria-label="Primary">
       <a class="nav__link" href="index.html">Home</a>
       <a class="nav__link" href="apply.html">Apply</a>
       <a class="nav__link" href="payments.html">Opportunity</a>
       <a class="nav__link" href="contact.html">Contact</a>
     </nav>
 
-    <button class="menuBtn" id="openMenu">☰</button>
+    <!-- FIX: type + onclick -->
+    <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
   </div>
 </header>
 
 <!-- Mobile Menu -->
-<div class="mobileMenu" id="mobileMenu">
-  <button class="mobileMenu__backdrop" id="menuBackdrop"></button>
+<div class="mobileMenu" id="mobileMenu" aria-hidden="true">
+  <!-- FIX: type + onclick -->
+  <button class="mobileMenu__backdrop" id="menuBackdrop" type="button" aria-label="Close menu" onclick="GS_closeMenu()"></button>
 
-  <div class="mobileMenu__panel">
+  <div class="mobileMenu__panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
     <div class="mobileMenu__topRow">
       <div class="mobileMenu__brand">Glamour Society</div>
-      <button class="mobileMenu__close" id="closeMenu">✕</button>
+
+      <!-- FIX: type + onclick -->
+      <button class="mobileMenu__close" id="closeMenu" type="button" aria-label="Close menu" onclick="GS_closeMenu()">✕</button>
     </div>
 
-    <button class="mobileMenu__dropdownBtn" id="dropOpener">
+    <!-- FIX: onclick -->
+    <button class="mobileMenu__dropdownBtn" id="dropOpener" type="button" aria-expanded="false" onclick="GS_toggleDrop()">
       Menu <span id="dropChev">▾</span>
     </button>
 
-    <div class="mobileMenu__dropdown" id="dropMenu">
-      <a href="index.html" class="mobileMenu__link">Home</a>
-      <a href="apply.html" class="mobileMenu__link">Apply</a>
-      <a href="payments.html" class="mobileMenu__link">Opportunity</a>
-      <a href="contact.html" class="mobileMenu__link">Contact</a>
+    <div class="mobileMenu__dropdown" id="dropMenu" aria-hidden="true">
+      <!-- FIX: close menu after click -->
+      <a href="index.html" class="mobileMenu__link" onclick="GS_closeMenu()">Home</a>
+      <a href="apply.html" class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
+      <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Opportunity</a>
+      <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
     </div>
 
     <div class="mobileMenu__divider"></div>
 
     <a class="mobileMenu__cta"
-       href="mailto:glamoursocietymodelingagency@gmail.com?subject=Booking%20Request">
+       href="mailto:glamoursocietymodelingagency@gmail.com?subject=Booking%20Request"
+       onclick="GS_closeMenu()">
        Book a Model
+    </a>
+
+    <a class="mobileMenu__cta ghost"
+       href="mailto:glamoursocietymodelingagency@gmail.com"
+       onclick="GS_closeMenu()">
+       Email Us
     </a>
   </div>
 </div>
@@ -72,14 +85,12 @@
     </p>
   </div>
 
-  <!-- MODEL IMAGE CARD -->
   <section class="cardGlow">
 
-    <!-- Smaller runway image -->
     <img
       src="model-runway-fashion-show.jpeg"
       alt="Runway fashion model"
-      style="width:100%; max-width:600px; margin:auto; border-radius:18px;"
+      style="width:100%; max-width:600px; margin:0 auto; border-radius:18px;"
     />
 
     <div style="margin-top:20px;">
@@ -111,7 +122,8 @@
   <div class="footer__muted">by Core Vision Management</div>
 </footer>
 
-<script src="assets/app.js?v=3"></script>
+<!-- FIX: cache-bust -->
+<script src="assets/app.js?v=99"></script>
 
 </body>
 </html>
