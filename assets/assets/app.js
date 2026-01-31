@@ -1,64 +1,66 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const menu = document.getElementById("mobileMenu");
-  const openBtn = document.getElementById("openMenu");
-  const closeBtn = document.getElementById("closeMenu");
-  const backdrop = document.getElementById("menuBackdrop");
+/* Glamour Society - Bulletproof Mobile Menu */
 
-  const dropOpener = document.getElementById("dropOpener");
-  const dropMenu = document.getElementById("dropMenu");
-  const dropChev = document.getElementById("dropChev");
+(function () {
+  function qs(id){ return document.getElementById(id); }
 
-  // Hard fail if any core menu element is missing
-  if (!menu || !openBtn || !closeBtn || !backdrop) {
-    console.warn("Missing menu elements (check IDs):", {
-      mobileMenu: !!menu,
-      openMenu: !!openBtn,
-      closeMenu: !!closeBtn,
-      menuBackdrop: !!backdrop
-    });
-    return;
-  }
+  // Global functions so inline onclick ALWAYS works
+  window.GS_openMenu = function () {
+    const menu = qs("mobileMenu");
+    if (!menu) return;
 
-  function openMenu() {
     menu.classList.add("is-open");
     menu.setAttribute("aria-hidden", "false");
     document.body.classList.add("no-scroll");
-  }
+  };
 
-  function closeMenu() {
+  window.GS_closeMenu = function () {
+    const menu = qs("mobileMenu");
+    if (!menu) return;
+
     menu.classList.remove("is-open");
     menu.setAttribute("aria-hidden", "true");
     document.body.classList.remove("no-scroll");
 
-    // Close dropdown too
-    if (dropMenu && dropOpener) {
+    // close dropdown too
+    const dropMenu = qs("dropMenu");
+    const dropOpener = qs("dropOpener");
+    const dropChev = qs("dropChev");
+
+    if (dropMenu) {
       dropMenu.classList.remove("is-open");
       dropMenu.setAttribute("aria-hidden", "true");
-      dropOpener.setAttribute("aria-expanded", "false");
-      if (dropChev) dropChev.textContent = "▾";
     }
-  }
+    if (dropOpener) dropOpener.setAttribute("aria-expanded", "false");
+    if (dropChev) dropChev.textContent = "▾";
+  };
 
-  openBtn.addEventListener("click", openMenu);
-  closeBtn.addEventListener("click", closeMenu);
-  backdrop.addEventListener("click", closeMenu);
+  window.GS_toggleDrop = function () {
+    const dropMenu = qs("dropMenu");
+    const dropOpener = qs("dropOpener");
+    const dropChev = qs("dropChev");
+    if (!dropMenu || !dropOpener) return;
+
+    const isOpen = dropMenu.classList.toggle("is-open");
+    dropMenu.setAttribute("aria-hidden", String(!isOpen));
+    dropOpener.setAttribute("aria-expanded", String(isOpen));
+    if (dropChev) dropChev.textContent = isOpen ? "▴" : "▾";
+  };
+
+  // Also attach normal listeners (nice to have)
+  document.addEventListener("DOMContentLoaded", () => {
+    const openBtn = qs("openMenu");
+    const closeBtn = qs("closeMenu");
+    const backdrop = qs("menuBackdrop");
+    const dropOpener = qs("dropOpener");
+
+    if (openBtn) openBtn.addEventListener("click", window.GS_openMenu);
+    if (closeBtn) closeBtn.addEventListener("click", window.GS_closeMenu);
+    if (backdrop) backdrop.addEventListener("click", window.GS_closeMenu);
+    if (dropOpener) dropOpener.addEventListener("click", window.GS_toggleDrop);
+  });
 
   // ESC closes menu
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && menu.classList.contains("is-open")) closeMenu();
+    if (e.key === "Escape") window.GS_closeMenu();
   });
-
-  // Dropdown inside menu
-  if (dropOpener && dropMenu) {
-    // start collapsed
-    dropMenu.setAttribute("aria-hidden", "true");
-    dropOpener.setAttribute("aria-expanded", "false");
-
-    dropOpener.addEventListener("click", () => {
-      const isOpen = dropMenu.classList.toggle("is-open");
-      dropMenu.setAttribute("aria-hidden", String(!isOpen));
-      dropOpener.setAttribute("aria-expanded", String(isOpen));
-      if (dropChev) dropChev.textContent = isOpen ? "▴" : "▾";
-    });
-  }
-});
+})();
