@@ -1,51 +1,19 @@
-// Screen switching
-document.querySelectorAll("[data-screen]").forEach(btn=>{
-  btn.addEventListener("click",e=>{
-    const target=btn.getAttribute("data-screen");
-    showScreen(target);
-  });
-});
+const menu = document.getElementById("mobileMenu");
+const openBtn = document.getElementById("openMenu");
+const closeBtn = document.getElementById("closeMenu");
+const backdrop = document.getElementById("menuBackdrop");
 
-function showScreen(name){
-  document.querySelectorAll(".screen").forEach(s=>{
-    s.classList.remove("is-active");
-  });
-
-  const target=document.querySelector(`[data-screen-name="${name}"]`);
-  if(target) target.classList.add("is-active");
+function openMenu(){
+  if(!menu) return;
+  menu.classList.add("is-open");
+  menu.setAttribute("aria-hidden","false");
+}
+function closeMenu(){
+  if(!menu) return;
+  menu.classList.remove("is-open");
+  menu.setAttribute("aria-hidden","true");
 }
 
-// Drawer menu
-const drawer=document.getElementById("drawer");
-if(drawer){
-  document.getElementById("openDrawer").onclick=()=>{
-    drawer.style.display="block";
-  };
-
-  document.getElementById("closeDrawer").onclick=()=>{
-    drawer.style.display="none";
-  };
-
-  document.getElementById("drawerBackdrop").onclick=()=>{
-    drawer.style.display="none";
-  };
-}
-
-// Model modal
-const modal=document.getElementById("profileModal");
-
-document.querySelectorAll("[data-open-profile]").forEach(card=>{
-  card.onclick=()=>{
-    modal.style.display="block";
-  };
-});
-
-if(modal){
-  document.getElementById("closeModal").onclick=()=>{
-    modal.style.display="none";
-  };
-
-  document.getElementById("modalBackdrop").onclick=()=>{
-    modal.style.display="none";
-  };
-}
+openBtn && openBtn.addEventListener("click", openMenu);
+closeBtn && closeBtn.addEventListener("click", closeMenu);
+backdrop && backdrop.addEventListener("click", closeMenu);
