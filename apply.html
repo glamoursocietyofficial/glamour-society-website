@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Apply | Glamour Society</title>
+  <meta name="description" content="Apply to Glamour Society Modeling Agency."/>
+  <link rel="stylesheet" href="assets/styles.css"/>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container topbar__inner">
+    <a class="brand" href="index.html">
+      <img class="brand__wordmark" src="glamour-society-wordmark.jpeg" alt="Glamour Society"/>
+      <span class="brand__sub">Modeling Agency • Dallas, TX</span>
+    </a>
+
+    <nav class="nav">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link" href="models.html">Models</a>
+      <a class="nav__link is-active" href="apply.html">Apply</a>
+      <a class="nav__link" href="book.html">Book</a>
+      <a class="nav__link" href="payments.html">Payments</a>
+      <a class="nav__link" href="contact.html">Contact</a>
+    </nav>
+
+    <button class="menuBtn" id="openMenu" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<div class="mobileMenu" id="mobileMenu" aria-hidden="true">
+  <div class="mobileMenu__panel">
+    <button class="mobileMenu__close" id="closeMenu">✕</button>
+    <a href="index.html" class="mobileMenu__link">Home</a>
+    <a href="models.html" class="mobileMenu__link">Models</a>
+    <a href="apply.html" class="mobileMenu__link">Apply</a>
+    <a href="book.html" class="mobileMenu__link">Book</a>
+    <a href="payments.html" class="mobileMenu__link">Payments</a>
+    <a href="contact.html" class="mobileMenu__link">Contact</a>
+  </div>
+  <button class="mobileMenu__backdrop" id="menuBackdrop"></button>
+</div>
+
+<main class="container">
+  <div class="pageHeader">
+    <h1>Apply to Glamour Society</h1>
+    <p>
+      Complete the official online application to be considered for agency membership.
+      Approved applicants will receive onboarding steps and agreements.
+    </p>
+    <div class="btnRow">
+      <a class="btn btn--gold" target="_blank" rel="noopener noreferrer"
+         href="https://docs.google.com/forms/d/e/1FAIpQLSfLdP8fi5cfD9TIPL1RNPC9X7g_Rr_F125t717deLraWhirxQ/viewform">
+        Open Application
+      </a>
+      <a class="btn btn--ghost" href="payments.html">Pay Membership</a>
+    </div>
+  </div>
+
+  <div class="tiles">
+    <a class="tile" href="payments.html"><h3>Payments</h3><p>Activation + monthly membership through Stripe.</p></a>
+    <a class="tile" href="models.html"><h3>Model Demos</h3><p>See demo categories for booking.</p></a>
+    <a class="tile" href="contact.html"><h3>Questions?</h3><p>Email or call the agency.</p></a>
+  </div>
+
+  <div class="infoGrid" style="margin-top:16px;">
+    <div class="infoCard">Tip: Use clear photos + accurate city/state + availability.</div>
+    <div class="infoCard">After applying, watch your email for next steps.</div>
+    <div class="infoCard">Need to follow up? Email us your name + IG.</div>
+    <div class="infoCard">📧 glamoursocietymodelingagency@gmail.com</div>
+  </div>
+
+  <div class="btnRow" style="margin-top:14px;">
+    <a class="btn btn--dark"
+       href="mailto:glamoursocietymodelingagency@gmail.com?subject=Application%20Follow-Up%20-%20Glamour%20Society&body=Hello%20Glamour%20Society%2C%0A%0AI%20submitted%20my%20application%20and%20wanted%20to%20follow%20up.%0A%0AName%3A%0AInstagram%3A%0ACity%2FState%3A%0APhone%3A%0A%0AThank%20you%2C">
+      Email Application Follow-Up
+    </a>
+  </div>
+</main>
+
+<footer class="footer">
+  <div>© Glamour Society Modeling Agency</div>
+  <div class="footer__muted">Apply • Onboard • Grow</div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
