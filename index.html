@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-  <title>Glamour Society | Modeling Agency</title>
-  <meta name="description" content="Glamour Society Modeling Agency by Core Vision Management — apply, interview, and book models via email."/>
+  <title>Glamour Society | Modeling Agency by Core Vision Management</title>
+  <meta name="description" content="Glamour Society Modeling Agency by Core Vision Management — Apply, interview, and book models via email."/>
   <link rel="stylesheet" href="assets/styles.css"/>
 </head>
 <body>
@@ -26,106 +26,259 @@
       <a class="nav__link" href="contact.html">Contact</a>
     </nav>
 
-    <!-- FIX: onclick added -->
-    <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
+    <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu">☰</button>
   </div>
 </header>
 
+<!-- Mobile Menu -->
 <div class="mobileMenu" id="mobileMenu" aria-hidden="true">
-  <!-- FIX: onclick added -->
-  <button class="mobileMenu__backdrop" id="menuBackdrop" type="button" aria-label="Close menu" onclick="GS_closeMenu()"></button>
+  <button class="mobileMenu__backdrop" id="menuBackdrop" type="button" aria-label="Close menu"></button>
 
   <div class="mobileMenu__panel" role="dialog" aria-label="Navigation menu">
     <div class="mobileMenu__topRow">
       <div class="mobileMenu__brand">Glamour Society</div>
-
-      <!-- FIX: onclick added -->
-      <button class="mobileMenu__close" id="closeMenu" type="button" aria-label="Close menu" onclick="GS_closeMenu()">✕</button>
+      <button class="mobileMenu__close" id="closeMenu" type="button" aria-label="Close menu">✕</button>
     </div>
 
-    <!-- FIX: onclick added -->
-    <button class="mobileMenu__dropdownBtn" id="dropOpener" type="button" aria-expanded="false" onclick="GS_toggleDrop()">
+    <button class="mobileMenu__dropdownBtn" id="dropOpener" type="button" aria-expanded="false">
       Menu <span id="dropChev">▾</span>
     </button>
 
     <div class="mobileMenu__dropdown" id="dropMenu" aria-hidden="true">
-      <!-- FIX: close menu after click -->
-      <a href="index.html" class="mobileMenu__link" onclick="GS_closeMenu()">Home</a>
-      <a href="apply.html" class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
-      <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Opportunity</a>
-      <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
+      <a href="index.html" class="mobileMenu__link">Home</a>
+      <a href="apply.html" class="mobileMenu__link">Apply</a>
+      <a href="payments.html" class="mobileMenu__link">Opportunity</a>
+      <a href="contact.html" class="mobileMenu__link">Contact</a>
     </div>
 
     <div class="mobileMenu__divider"></div>
 
-    <a class="mobileMenu__cta" href="book.html" onclick="GS_closeMenu()">Book a Model</a>
-    <a class="mobileMenu__cta ghost" href="mailto:glamoursocietymodelingagency@gmail.com" onclick="GS_closeMenu()">Email Us</a>
+    <a class="mobileMenu__cta" href="book.html">Book a Model</a>
+    <a class="mobileMenu__cta ghost" href="mailto:glamoursocietymodelingagency@gmail.com">Email Us</a>
   </div>
 </div>
 
 <main class="container">
-  <section class="hero">
+
+  <!-- HERO -->
+  <section class="hero heroPro">
     <div class="hero__left">
-      <h1 class="hero__title">
+      <div class="pillLux">Premium Talent • Professional Booking • Documented Coordination</div>
+
+      <h1 class="hero__title heroTitlePro">
         Glamour Society
         <span class="hero__accent">Modeling Agency</span>
       </h1>
 
-      <p class="hero__copy">
-        A premium agency experience for talent and clients. Apply online, schedule your interview,
-        and request bookings through our official email for professional coordination.
+      <p class="hero__copy heroCopyPro">
+        A luxury-level experience for talent and clients. Apply online, move into interview scheduling,
+        and request bookings through our official email for clear expectations and a clean paper trail.
       </p>
 
       <div class="btnRow">
-        <a class="btn btn--gold" href="apply.html">Apply as a Model</a>
-        <a class="btn btn--dark" href="book.html">Book a Model</a>
+        <a class="btn btn--gold btnPro" href="apply.html">Apply as a Model</a>
+        <a class="btn btn--dark btnPro" href="book.html">Book a Model</a>
+        <a class="btn btn--ghost btnPro" href="payments.html">Fast-Track Interview</a>
       </div>
 
-      <div class="readyBlock">
-        <h3>Ready to move fast?</h3>
-        <p>
-          If you’re prepared to begin onboarding and schedule your interview, you can fast-track here.
-        </p>
-        <div class="btnRow">
-          <a class="btn btn--ghost" href="payments.html">Skip Application → Book Your Interview</a>
-        </div>
+      <!-- Trust Bar -->
+      <div class="trustBar">
+        <div class="trustItem">Secure payments via Stripe</div>
+        <div class="trustDot">•</div>
+        <div class="trustItem">Professional booking coordination</div>
+        <div class="trustDot">•</div>
+        <div class="trustItem">Email-based documentation</div>
       </div>
 
-      <div class="infoGrid">
-        <a class="infoCard linkCard" href="mailto:glamoursocietymodelingagency@gmail.com">
-          📧 glamoursocietymodelingagency@gmail.com
-        </a>
-        <a class="infoCard linkCard" href="tel:+14708980718">
-          📞 +1 (470) 898-0718
-        </a>
-        <a class="infoCard linkCard" target="_blank" rel="noopener noreferrer"
-           href="https://www.instagram.com/glamoursocietyofficial?igsh=MWtybmIzZzE1cTFseA==">
-          Instagram: @glamoursocietyofficial
-        </a>
-        <a class="infoCard linkCard" target="_blank" rel="noopener noreferrer"
-           href="https://www.facebook.com/share/1SLWeVF9gv/?mibextid=wwXIfr">
-          Facebook: Glamour Society Modeling Agency
-        </a>
+      <!-- Quick Contact Chips -->
+      <div class="chipRow">
+        <a class="chip" href="mailto:glamoursocietymodelingagency@gmail.com">📧 Email</a>
+        <a class="chip" href="tel:+14708980718">📞 +1 (470) 898-0718</a>
+        <a class="chip" target="_blank" rel="noopener noreferrer"
+           href="https://www.instagram.com/glamoursocietyofficial?igsh=MWtybmIzZzE1cTFseA==">Instagram</a>
+        <a class="chip" target="_blank" rel="noopener noreferrer"
+           href="https://www.facebook.com/share/1SLWeVF9gv/?mibextid=wwXIfr">Facebook</a>
       </div>
     </div>
 
     <div class="hero__right">
-      <div class="brandCard">
-        <img class="brandCard__logo" src="glamour-society-logo.jpeg" alt="Glamour Society Logo"/>
+      <div class="brandCard brandCardPro">
+        <div class="brandCard__media">
+          <img class="brandCard__logo" src="glamour-society-logo.jpeg" alt="Glamour Society Logo"/>
+          <div class="shine"></div>
+        </div>
+
         <div class="brandCard__text">
           <h3>Book with Confidence</h3>
           <p>
-            Clients submit booking requests through email. We confirm availability, expectations,
-            and next steps with a clear paper trail.
+            Clients submit booking requests through email. We confirm details, expectations, rates,
+            and next steps with professional coordination.
           </p>
+
+          <div class="miniGrid">
+            <div class="miniStat">
+              <div class="miniStat__num">24–48h</div>
+              <div class="miniStat__label">Typical response window</div>
+            </div>
+            <div class="miniStat">
+              <div class="miniStat__num">Pro</div>
+              <div class="miniStat__label">Agency coordination</div>
+            </div>
+          </div>
+
           <div class="btnRow">
-            <a class="btn btn--gold" href="book.html">Book a Model</a>
-            <a class="btn btn--ghost" href="contact.html">Contact</a>
+            <a class="btn btn--gold btnPro" href="book.html">Book a Model</a>
+            <a class="btn btn--ghost btnPro" href="contact.html">Contact</a>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- PREMIUM VALUE SECTION -->
+  <section class="section">
+    <div class="sectionHead">
+      <h2 class="h2Lux">Luxury-level standards. Real-world structure.</h2>
+      <p class="pLux">
+        Glamour Society is designed to feel elevated and operate professionally — clear policies, clean communication,
+        and consistent expectations for clients and talent.
+      </p>
+    </div>
+
+    <div class="featureGrid">
+      <div class="featureCard">
+        <div class="featureIcon">◆</div>
+        <h3>Professional Booking</h3>
+        <p>Bookings run through email so details, confirmations, and expectations stay documented.</p>
+      </div>
+      <div class="featureCard">
+        <div class="featureIcon">✦</div>
+        <h3>Premium Experience</h3>
+        <p>Luxury visuals, premium tone, and structured coordination for a high-end brand feel.</p>
+      </div>
+      <div class="featureCard">
+        <div class="featureIcon">⟡</div>
+        <h3>Secure Payments</h3>
+        <p>Membership payments are processed securely through Stripe for a clean, trusted flow.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <div class="sectionHead">
+      <h2 class="h2Lux">How it works</h2>
+      <p class="pLux">Simple on purpose — premium on delivery.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="stepNum">1</div>
+        <div>
+          <h3>Apply</h3>
+          <p>Complete the official application to be reviewed for interview scheduling.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="stepNum">2</div>
+        <div>
+          <h3>Interview</h3>
+          <p>If approved, you’ll receive next steps and scheduling instructions.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="stepNum">3</div>
+        <div>
+          <h3>Activation + Monthly</h3>
+          <p>For models ready to move fast: activate interview onboarding and stay active monthly.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="stepNum">4</div>
+        <div>
+          <h3>Bookings</h3>
+          <p>Clients request bookings via email and we coordinate details professionally.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="btnRow" style="margin-top:16px">
+      <a class="btn btn--gold btnPro" href="apply.html">Start Application</a>
+      <a class="btn btn--ghost btnPro" href="payments.html">Fast-Track Interview</a>
+      <a class="btn btn--dark btnPro" href="book.html">Book a Model</a>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="section">
+    <div class="sectionHead">
+      <h2 class="h2Lux">Why clients choose structure</h2>
+      <p class="pLux">
+        The easiest way to look premium is to operate premium — clarity, quick response, and a documented process.
+      </p>
+    </div>
+
+    <div class="quoteGrid">
+      <div class="quoteCard">
+        <p class="quote">“Fast response, clear steps, and professional coordination.”</p>
+        <div class="quoteBy">— Client experience standard</div>
+      </div>
+      <div class="quoteCard">
+        <p class="quote">“Clean paper trail and expectations upfront — no confusion.”</p>
+        <div class="quoteBy">— Booking process</div>
+      </div>
+      <div class="quoteCard">
+        <p class="quote">“Premium look, premium communication. That’s what sells.”</p>
+        <div class="quoteBy">— Brand standard</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="sectionHead">
+      <h2 class="h2Lux">FAQ</h2>
+      <p class="pLux">Quick clarity so people feel confident taking action.</p>
+    </div>
+
+    <div class="faq">
+      <details class="faqItem">
+        <summary>How do I book a model?</summary>
+        <div class="faqBody">
+          Tap <strong>Book a Model</strong> to open an email template. Provide event details, date, location, and budget.
+        </div>
+      </details>
+
+      <details class="faqItem">
+        <summary>Do models have to apply first?</summary>
+        <div class="faqBody">
+          Yes — the application is the standard path. If someone is ready to move fast, they can use the
+          <strong>Fast-Track Interview</strong> page.
+        </div>
+      </details>
+
+      <details class="faqItem">
+        <summary>Where do payments happen?</summary>
+        <div class="faqBody">
+          Payments are processed securely through Stripe on the <strong>Opportunity</strong> page.
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section ctaBand">
+    <div>
+      <h2 class="h2Lux">Ready to move?</h2>
+      <p class="pLux">Choose your path below — apply, fast-track, or book talent.</p>
+    </div>
+    <div class="btnRow">
+      <a class="btn btn--gold btnPro" href="apply.html">Apply</a>
+      <a class="btn btn--ghost btnPro" href="payments.html">Fast-Track Interview</a>
+      <a class="btn btn--dark btnPro" href="book.html">Book a Model</a>
+    </div>
+  </section>
+
 </main>
 
 <footer class="footer">
@@ -133,7 +286,6 @@
   <div class="footer__muted">by Core Vision Management • glamoursocietymodelingagency@gmail.com</div>
 </footer>
 
-<!-- FIX: cache-bust so new JS always loads -->
-<script src="assets/app.js?v=99"></script>
+<script src="assets/app.js"></script>
 </body>
 </html>
