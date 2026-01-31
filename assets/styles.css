@@ -28,7 +28,7 @@ a{color:inherit}
 
 /* ===== Header ===== */
 .topbar{
-  position:sticky;top:0;z-index:999;
+  position:sticky; top:0; z-index:99999;
   background:rgba(0,0,0,.85);
   backdrop-filter: blur(10px);
   border-bottom:1px solid rgba(255,255,255,.08);
@@ -37,7 +37,9 @@ a{color:inherit}
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:14px
+  gap:14px;
+  position:relative;
+  z-index:99999;
 }
 
 /* Brand layout */
@@ -107,17 +109,27 @@ a{color:inherit}
   padding:10px 12px;
   border-radius:14px;
   cursor:pointer;
+
+  /* toggle reliability */
   pointer-events:auto;
+  position:relative;
+  z-index:100000;
 }
 
 /* ===== Mobile Menu ===== */
-.mobileMenu{display:none}
+.mobileMenu{
+  display:none;
+}
+
+/* when open */
 .mobileMenu.is-open{
   display:block;
   position:fixed;
   inset:0;
-  z-index:9999;
+  z-index:999999;
 }
+
+/* backdrop */
 .mobileMenu__backdrop{
   position:absolute;
   inset:0;
@@ -127,6 +139,8 @@ a{color:inherit}
   height:100%;
   cursor:pointer;
 }
+
+/* sliding panel */
 .mobileMenu__panel{
   position:absolute;
   right:0; top:0;
@@ -139,7 +153,18 @@ a{color:inherit}
   flex-direction:column;
   gap:12px;
   box-shadow:-18px 0 50px rgba(0,0,0,.65);
+
+  /* luxury motion */
+  transform: translateX(110%);
+  transition: transform .22s ease;
 }
+
+/* when menu opens, slide panel in */
+.mobileMenu.is-open .mobileMenu__panel{
+  transform: translateX(0);
+}
+
+/* top row */
 .mobileMenu__topRow{
   display:flex;
   align-items:center;
@@ -255,6 +280,10 @@ a{color:inherit}
   padding:28px 0 10px;
   align-items:start;
   animation:fadeUp .5s ease both;
+
+  /* IMPORTANT: prevents overlay blocking menu taps */
+  position:relative;
+  z-index:1;
 }
 .hero__title{font-size:44px;line-height:1.06;margin-bottom:14px}
 .hero__accent{display:block;color:#d4af37}
