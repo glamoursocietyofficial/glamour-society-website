@@ -4,12 +4,18 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <title>Models | Glamour Society</title>
+  <meta name="description" content="Model demos for Glamour Society bookings."/>
   <link rel="stylesheet" href="assets/styles.css"/>
 </head>
 <body>
+
 <header class="topbar">
   <div class="container topbar__inner">
-    <a class="brand" href="index.html"><img class="brand__wordmark" src="glamour-society-wordmark.jpeg" alt="Glamour Society"/></a>
+    <a class="brand" href="index.html" aria-label="Home">
+      <img class="brand__wordmark" src="glamour-society-wordmark.jpeg" alt="Glamour Society"/>
+      <span class="brand__sub">Modeling Agency • Dallas, TX</span>
+    </a>
+
     <nav class="nav">
       <a class="nav__link" href="index.html">Home</a>
       <a class="nav__link is-active" href="models.html">Models</a>
@@ -18,13 +24,14 @@
       <a class="nav__link" href="payments.html">Payments</a>
       <a class="nav__link" href="contact.html">Contact</a>
     </nav>
+
     <button class="menuBtn" id="openMenu" aria-label="Open menu">☰</button>
   </div>
 </header>
 
 <div class="mobileMenu" id="mobileMenu" aria-hidden="true">
   <div class="mobileMenu__panel">
-    <button class="mobileMenu__close" id="closeMenu">✕</button>
+    <button class="mobileMenu__close" id="closeMenu" aria-label="Close menu">✕</button>
     <a href="index.html" class="mobileMenu__link">Home</a>
     <a href="models.html" class="mobileMenu__link">Models</a>
     <a href="apply.html" class="mobileMenu__link">Apply</a>
@@ -32,13 +39,20 @@
     <a href="payments.html" class="mobileMenu__link">Payments</a>
     <a href="contact.html" class="mobileMenu__link">Contact</a>
   </div>
-  <button class="mobileMenu__backdrop" id="menuBackdrop"></button>
+  <button class="mobileMenu__backdrop" id="menuBackdrop" aria-label="Close"></button>
 </div>
 
 <main class="container">
   <div class="pageHeader">
     <h1>Model Demos</h1>
-    <p>Demo-style profiles for clients to understand categories. Booking requests are sent by email.</p>
+    <p>
+      Demo-style categories to help clients request the right look.
+      Click “Book This Look” to send a booking request by email.
+    </p>
+    <div class="btnRow">
+      <a class="btn btn--gold" href="book.html">Book a Model</a>
+      <a class="btn btn--ghost" href="apply.html">Apply</a>
+    </div>
   </div>
 
   <div class="modelGrid">
