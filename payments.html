@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-  <title>Payments | Glamour Society</title>
-  <meta name="description" content="Pay Glamour Society activation and monthly membership via Stripe."/>
+  <title>Interview Fast-Track | Glamour Society</title>
+  <meta name="description" content="Model interview activation and monthly membership for Glamour Society."/>
   <link rel="stylesheet" href="assets/styles.css"/>
 </head>
 <body>
@@ -18,75 +18,100 @@
 
     <nav class="nav">
       <a class="nav__link" href="index.html">Home</a>
-      <a class="nav__link" href="models.html">Models</a>
       <a class="nav__link" href="apply.html">Apply</a>
+      <a class="nav__link is-active" href="payments.html">Fast-Track</a>
       <a class="nav__link" href="book.html">Book</a>
-      <a class="nav__link is-active" href="payments.html">Payments</a>
       <a class="nav__link" href="contact.html">Contact</a>
     </nav>
 
-    <button class="menuBtn" id="openMenu">☰</button>
+    <button class="menuBtn" id="openMenu" aria-label="Open menu">☰</button>
   </div>
 </header>
 
 <div class="mobileMenu" id="mobileMenu" aria-hidden="true">
+  <button class="mobileMenu__backdrop" id="menuBackdrop" aria-label="Close"></button>
   <div class="mobileMenu__panel">
-    <button class="mobileMenu__close" id="closeMenu">✕</button>
+    <button class="mobileMenu__close" id="closeMenu" aria-label="Close menu">✕</button>
     <a href="index.html" class="mobileMenu__link">Home</a>
-    <a href="models.html" class="mobileMenu__link">Models</a>
     <a href="apply.html" class="mobileMenu__link">Apply</a>
-    <a href="book.html" class="mobileMenu__link">Book</a>
-    <a href="payments.html" class="mobileMenu__link">Payments</a>
+    <a href="payments.html" class="mobileMenu__link">Fast-Track</a>
+    <a href="book.html" class="mobileMenu__link">Book a Model</a>
     <a href="contact.html" class="mobileMenu__link">Contact</a>
   </div>
-  <button class="mobileMenu__backdrop" id="menuBackdrop"></button>
 </div>
 
 <main class="container">
   <div class="pageHeader">
-    <h1>Payments</h1>
-    <p>Secure checkout through Stripe. Choose your payment option below.</p>
+    <h1>Skip Application → Book Your Interview</h1>
+    <p>
+      This page is for models who are ready to activate and move into interview scheduling + onboarding.
+      If you’re not ready yet, apply first.
+    </p>
+
+    <div class="btnRow">
+      <a class="btn btn--ghost" href="apply.html">Start with Application</a>
+      <a class="btn btn--dark" href="contact.html">Questions? Contact Us</a>
+    </div>
   </div>
 
-  <div class="modelGrid">
-    <article class="modelCard">
-      <div class="modelCard__body">
-        <h3>$100 Initial Activation</h3>
-        <p>One-time activation fee to begin onboarding and membership setup.</p>
+  <div class="grid2">
+    <section class="cardGlow">
+      <h2 class="goldTitle">Step 1 — Interview Activation</h2>
+      <p class="muted">
+        One-time activation confirms you’re ready for interview scheduling and onboarding steps.
+      </p>
+      <div class="priceTag">$100</div>
+
+      <div class="btnRow">
         <a class="btn btn--gold" target="_blank" rel="noopener noreferrer"
            href="https://buy.stripe.com/5kQfZa9Tt9b322g5gu4sE05">
-          Pay $100 (Stripe)
+          Activate Interview (Pay $100)
         </a>
       </div>
-    </article>
 
-    <article class="modelCard">
-      <div class="modelCard__body">
-        <h3>$40 Monthly Membership</h3>
-        <p>Ongoing agency services, coordination, and support.</p>
+      <p class="tiny muted" style="margin-top:10px;">
+        After payment, email your name + Instagram so we can confirm your interview steps.
+      </p>
+
+      <div class="btnRow">
+        <a class="btn btn--dark"
+           href="mailto:glamoursocietymodelingagency@gmail.com?subject=Interview%20Activation%20-%20Glamour%20Society&body=Hello%20Glamour%20Society%2C%0A%0AI%20just%20paid%20the%20Interview%20Activation.%20Please%20send%20me%20the%20next%20steps%20to%20schedule%20my%20interview.%0A%0AName%3A%0AInstagram%3A%0ACity%2FState%3A%0APhone%3A%0A%0AThank%20you%2C">
+          Email Confirmation
+        </a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="goldTitle">Step 2 — Stay Active Monthly</h2>
+      <p class="muted">
+        Monthly membership keeps you active for agency services and ongoing coordination.
+      </p>
+      <div class="priceTag">$40/mo</div>
+
+      <div class="btnRow">
         <a class="btn btn--gold" target="_blank" rel="noopener noreferrer"
            href="https://buy.stripe.com/cNicMY6Hhcnf6iw4cq4sE06">
-          Pay $40 Monthly (Stripe)
+          Start Monthly Membership ($40)
         </a>
       </div>
-    </article>
 
-    <article class="modelCard">
-      <div class="modelCard__body">
-        <h3>Need Help?</h3>
-        <p>Questions about payment confirmation or receipts? Email support.</p>
+      <p class="tiny muted" style="margin-top:10px;">
+        Billing support? Email us anytime.
+      </p>
+
+      <div class="btnRow">
         <a class="btn btn--ghost"
-           href="mailto:glamoursocietymodelingagency@gmail.com?subject=Payment%20Support%20-%20Glamour%20Society">
-          Email Payment Support
+           href="mailto:glamoursocietymodelingagency@gmail.com?subject=Membership%20Support%20-%20Glamour%20Society">
+          Email Support
         </a>
-        <a class="btn btn--dark" href="contact.html">Contact</a>
       </div>
-    </article>
+    </section>
   </div>
 </main>
 
 <footer class="footer">
-  <div>Payments processed via Stripe • Keep your receipt for records</div>
+  <div>Payments processed securely via Stripe</div>
+  <div class="footer__muted">📧 glamoursocietymodelingagency@gmail.com • 📞 +1 (470) 898-0718</div>
 </footer>
 
 <script src="assets/app.js"></script>
