@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Models | Glamour Society</title>
+  <link rel="stylesheet" href="assets/styles.css"/>
+</head>
+<body>
+<header class="topbar">
+  <div class="container topbar__inner">
+    <a class="brand" href="index.html"><img class="brand__wordmark" src="glamour-society-wordmark.jpeg" alt="Glamour Society"/></a>
+    <nav class="nav">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link is-active" href="models.html">Models</a>
+      <a class="nav__link" href="apply.html">Apply</a>
+      <a class="nav__link" href="book.html">Book</a>
+      <a class="nav__link" href="payments.html">Payments</a>
+      <a class="nav__link" href="contact.html">Contact</a>
+    </nav>
+    <button class="menuBtn" id="openMenu" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<div class="mobileMenu" id="mobileMenu" aria-hidden="true">
+  <div class="mobileMenu__panel">
+    <button class="mobileMenu__close" id="closeMenu">✕</button>
+    <a href="index.html" class="mobileMenu__link">Home</a>
+    <a href="models.html" class="mobileMenu__link">Models</a>
+    <a href="apply.html" class="mobileMenu__link">Apply</a>
+    <a href="book.html" class="mobileMenu__link">Book</a>
+    <a href="payments.html" class="mobileMenu__link">Payments</a>
+    <a href="contact.html" class="mobileMenu__link">Contact</a>
+  </div>
+  <button class="mobileMenu__backdrop" id="menuBackdrop"></button>
+</div>
+
+<main class="container">
+  <div class="pageHeader">
+    <h1>Model Demos</h1>
+    <p>Demo-style profiles for clients to understand categories. Booking requests are sent by email.</p>
+  </div>
+
+  <div class="modelGrid">
+    <article class="modelCard">
+      <img class="modelCard__img" src="model-runway-fashion-show.jpeg" alt="Runway / Editorial Demo"/>
+      <div class="modelCard__body">
+        <h3>Runway / Editorial</h3>
+        <p>Fashion shows, editorial shoots, brand visuals.</p>
+        <a class="btn btn--gold" href="book.html">Book This Look</a>
+      </div>
+    </article>
+
+    <article class="modelCard">
+      <div class="modelCard__placeholder">
+        <img src="glamour-society-logo.jpeg" alt="Lifestyle Demo"/>
+      </div>
+      <div class="modelCard__body">
+        <h3>Music Video / Lifestyle</h3>
+        <p>Music videos, promo shoots, nightlife visuals.</p>
+        <a class="btn btn--gold" href="book.html">Book This Look</a>
+      </div>
+    </article>
+
+    <article class="modelCard">
+      <div class="modelCard__placeholder">
+        <img src="glamour-society-wordmark.jpeg" alt="Events Demo"/>
+      </div>
+      <div class="modelCard__body">
+        <h3>Events / Brand Activation</h3>
+        <p>Appearances, hosting, events, brand activations.</p>
+        <a class="btn btn--gold" href="book.html">Book This Look</a>
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer class="footer">
+  <div>📧 glamoursocietymodelingagency@gmail.com • 📞 470 898 0718</div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
