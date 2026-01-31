@@ -1,81 +1,117 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-  <title>Book a Model | Glamour Society</title>
-  <meta name="description" content="Book a model through Glamour Society via email request."/>
-  <link rel="stylesheet" href="assets/styles.css"/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Book a Model | Glamour Society</title>
+<link rel="stylesheet" href="assets/styles.css"/>
 </head>
+
 <body>
 
 <header class="topbar">
   <div class="container topbar__inner">
+
     <a class="brand" href="index.html">
-      <img class="brand__wordmark" src="glamour-society-wordmark.jpeg" alt="Glamour Society"/>
-      <span class="brand__sub">Modeling Agency • Dallas, TX</span>
+      <div class="brand__glam3d">GLAM</div>
+
+      <div class="brand__subwrap">
+        <span class="brand__subMain">Glamour Society Modeling Agency</span>
+        <span class="brand__subSmall">by Core Vision Management</span>
+      </div>
     </a>
 
     <nav class="nav">
       <a class="nav__link" href="index.html">Home</a>
       <a class="nav__link" href="apply.html">Apply</a>
-      <a class="nav__link is-active" href="book.html">Book</a>
+      <a class="nav__link" href="payments.html">Opportunity</a>
       <a class="nav__link" href="contact.html">Contact</a>
     </nav>
 
-    <button class="menuBtn" id="openMenu" aria-label="Open menu">☰</button>
+    <button class="menuBtn" id="openMenu">☰</button>
   </div>
 </header>
 
-<div class="mobileMenu" id="mobileMenu" aria-hidden="true">
-  <button class="mobileMenu__backdrop" id="menuBackdrop" aria-label="Close"></button>
+<!-- Mobile Menu -->
+<div class="mobileMenu" id="mobileMenu">
+  <button class="mobileMenu__backdrop" id="menuBackdrop"></button>
+
   <div class="mobileMenu__panel">
-    <button class="mobileMenu__close" id="closeMenu" aria-label="Close menu">✕</button>
-    <a href="index.html" class="mobileMenu__link">Home</a>
-    <a href="apply.html" class="mobileMenu__link">Apply</a>
-    <a href="book.html" class="mobileMenu__link">Book a Model</a>
-    <a href="contact.html" class="mobileMenu__link">Contact</a>
+    <div class="mobileMenu__topRow">
+      <div class="mobileMenu__brand">Glamour Society</div>
+      <button class="mobileMenu__close" id="closeMenu">✕</button>
+    </div>
+
+    <button class="mobileMenu__dropdownBtn" id="dropOpener">
+      Menu <span id="dropChev">▾</span>
+    </button>
+
+    <div class="mobileMenu__dropdown" id="dropMenu">
+      <a href="index.html" class="mobileMenu__link">Home</a>
+      <a href="apply.html" class="mobileMenu__link">Apply</a>
+      <a href="payments.html" class="mobileMenu__link">Opportunity</a>
+      <a href="contact.html" class="mobileMenu__link">Contact</a>
+    </div>
+
+    <div class="mobileMenu__divider"></div>
+
+    <a class="mobileMenu__cta"
+       href="mailto:glamoursocietymodelingagency@gmail.com?subject=Booking%20Request">
+       Book a Model
+    </a>
   </div>
 </div>
 
 <main class="container">
+
   <div class="pageHeader">
     <h1>Book a Model</h1>
     <p>
-      Tap the button below to open a booking request email template. Fill in details and send.
+      Tap below to open a booking request email. Provide details and we will
+      coordinate availability professionally.
     </p>
   </div>
 
-  <div class="cardGlow">
-    <h2 class="goldTitle">Send Booking Request</h2>
-    <p class="muted">
-      We coordinate bookings through email to keep everything professional and documented.
-    </p>
+  <!-- MODEL IMAGE CARD -->
+  <section class="cardGlow">
 
-    <div class="btnRow">
-      <a class="btn btn--gold"
-         href="mailto:glamoursocietymodelingagency@gmail.com?subject=Booking%20Request%20-%20Glamour%20Society&body=Hello%20Glamour%20Society%2C%0A%0AI%20would%20like%20to%20book%20a%20model.%20Here%20are%20the%20details%3A%0A%0A1)%20Project%20type%20(Music%20Video%2FEvent%2FShoot%2FBrand)%3A%0A2)%20Date%20%26%20Time%3A%0A3)%20Location%3A%0A4)%20Hours%20needed%3A%0A5)%20Budget%3A%0A6)%20Wardrobe%2FTheme%3A%0A7)%20Deliverables%2FUsage%3A%0A8)%20Your%20Name%20%26%20Phone%3A%0A%0AThank%20you%2C">
-        Email Booking Request
-      </a>
-      <a class="btn btn--ghost" href="contact.html">Contact</a>
+    <!-- Smaller runway image -->
+    <img
+      src="model-runway-fashion-show.jpeg"
+      alt="Runway fashion model"
+      style="width:100%; max-width:600px; margin:auto; border-radius:18px;"
+    />
+
+    <div style="margin-top:20px;">
+      <h2 class="goldTitle">Send Booking Request</h2>
+
+      <p class="muted">
+        We coordinate bookings through email to keep everything professional
+        and documented.
+      </p>
+
+      <div class="btnRow">
+        <a class="btn btn--gold"
+           href="mailto:glamoursocietymodelingagency@gmail.com?subject=Model%20Booking%20Request&body=Hello%20Glamour%20Society%2C%0A%0AI%20would%20like%20to%20book%20models.%0A%0AEvent%20Type%3A%0ADate%3A%0ALocation%3A%0ANumber%20of%20Models%3A%0ABudget%3A%0A%0AThank%20you.">
+           Email Booking Request
+        </a>
+
+        <a class="btn btn--ghost" href="contact.html">
+          Contact
+        </a>
+      </div>
     </div>
 
-    <div class="infoGrid" style="margin-top:14px;">
-      <a class="infoCard linkCard" href="mailto:glamoursocietymodelingagency@gmail.com">📧 Email</a>
-      <a class="infoCard linkCard" href="tel:+14708980718">📞 +1 (470) 898-0718</a>
-      <a class="infoCard linkCard" target="_blank" rel="noopener noreferrer"
-         href="https://www.instagram.com/glamoursocietyofficial?igsh=MWtybmIzZzE1cTFseA==">Instagram</a>
-      <a class="infoCard linkCard" target="_blank" rel="noopener noreferrer"
-         href="https://www.facebook.com/share/1SLWeVF9gv/?mibextid=wwXIfr">Facebook</a>
-    </div>
-  </div>
+  </section>
+
 </main>
 
 <footer class="footer">
   <div>© Glamour Society Modeling Agency</div>
-  <div class="footer__muted">Bookings via email • Dallas, TX</div>
+  <div class="footer__muted">by Core Vision Management</div>
 </footer>
 
-<script src="assets/app.js"></script>
+<script src="assets/app.js?v=3"></script>
+
 </body>
 </html>
