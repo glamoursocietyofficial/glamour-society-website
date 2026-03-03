@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-  <title>Book a Model | Glamour Society</title>
-  <meta name="description" content="Book a model through Glamour Society Modeling Agency by Core Vision Management."/>
+  <title>Request a Booking | House of Elévara</title>
+  <meta name="description" content="Request a booking through House of Elévara by Core Vision Management. Professional coordination, clear expectations, and a documented email process."/>
   <link rel="stylesheet" href="assets/styles.css"/>
 </head>
 
@@ -13,10 +13,10 @@
 <header class="topbar">
   <div class="container topbar__inner">
 
-    <a class="brand" href="index.html" aria-label="Glamour Society Home">
-      <div class="brand__glam3d">GLAM</div>
+    <a class="brand" href="index.html" aria-label="House of Elévara Home">
+      <div class="brand__glam3d">ELÉVARA</div>
       <div class="brand__subwrap">
-        <span class="brand__subMain">Glamour Society Modeling Agency</span>
+        <span class="brand__subMain">House of Elévara Management Group</span>
         <span class="brand__subSmall">by Core Vision Management</span>
       </div>
     </a>
@@ -28,31 +28,25 @@
       <a class="nav__link" href="contact.html">Contact</a>
     </nav>
 
-    <!-- FIX: type + onclick -->
     <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
   </div>
 </header>
 
 <!-- Mobile Menu -->
 <div class="mobileMenu" id="mobileMenu" aria-hidden="true">
-  <!-- FIX: type + onclick -->
   <button class="mobileMenu__backdrop" id="menuBackdrop" type="button" aria-label="Close menu" onclick="GS_closeMenu()"></button>
 
   <div class="mobileMenu__panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
     <div class="mobileMenu__topRow">
-      <div class="mobileMenu__brand">Glamour Society</div>
-
-      <!-- FIX: type + onclick -->
+      <div class="mobileMenu__brand">House of Elévara</div>
       <button class="mobileMenu__close" id="closeMenu" type="button" aria-label="Close menu" onclick="GS_closeMenu()">✕</button>
     </div>
 
-    <!-- FIX: onclick -->
     <button class="mobileMenu__dropdownBtn" id="dropOpener" type="button" aria-expanded="false" onclick="GS_toggleDrop()">
       Menu <span id="dropChev">▾</span>
     </button>
 
     <div class="mobileMenu__dropdown" id="dropMenu" aria-hidden="true">
-      <!-- FIX: close menu after click -->
       <a href="index.html" class="mobileMenu__link" onclick="GS_closeMenu()">Home</a>
       <a href="apply.html" class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
       <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Opportunity</a>
@@ -62,13 +56,13 @@
     <div class="mobileMenu__divider"></div>
 
     <a class="mobileMenu__cta"
-       href="mailto:glamoursocietymodelingagency@gmail.com?subject=Booking%20Request"
+       href="mailto:houseofelevara@gmail.com?subject=Booking%20Request%20%7C%20House%20of%20El%C3%A9vara"
        onclick="GS_closeMenu()">
-       Book a Model
+       Request a Booking
     </a>
 
     <a class="mobileMenu__cta ghost"
-       href="mailto:glamoursocietymodelingagency@gmail.com"
+       href="mailto:houseofelevara@gmail.com"
        onclick="GS_closeMenu()">
        Email Us
     </a>
@@ -78,52 +72,82 @@
 <main class="container">
 
   <div class="pageHeader">
-    <h1>Book a Model</h1>
+    <h1>Request a Booking</h1>
     <p>
-      Tap below to open a booking request email. Provide details and we will
-      coordinate availability professionally.
+      We coordinate bookings through email to keep everything professional, documented, and clear.
+      Tap below to open a pre-filled booking request.
     </p>
   </div>
 
-  <section class="cardGlow">
+  <section class="grid2">
+    <div class="cardGlow">
 
-    <img
-      src="model-runway-fashion-show.jpeg"
-      alt="Runway fashion model"
-      style="width:100%; max-width:600px; margin:0 auto; border-radius:18px;"
-    />
+      <img
+        src="model-runway-fashion-show.jpeg"
+        alt="Runway fashion model"
+        style="width:100%; max-width:600px; margin:0 auto; border-radius:18px;"
+      />
 
-    <div style="margin-top:20px;">
-      <h2 class="goldTitle">Send Booking Request</h2>
+      <div style="margin-top:18px;">
+        <h2 class="goldTitle">Send Booking Request</h2>
 
-      <p class="muted">
-        We coordinate bookings through email to keep everything professional
-        and documented.
-      </p>
+        <p class="muted" style="margin-top:8px;">
+          Provide your event details and budget. We’ll confirm availability, expectations, and next steps
+          with a clear paper trail.
+        </p>
 
-      <div class="btnRow">
-        <a class="btn btn--gold"
-           href="mailto:glamoursocietymodelingagency@gmail.com?subject=Model%20Booking%20Request&body=Hello%20Glamour%20Society%2C%0A%0AI%20would%20like%20to%20book%20models.%0A%0AEvent%20Type%3A%0ADate%3A%0ALocation%3A%0ANumber%20of%20Models%3A%0ABudget%3A%0A%0AThank%20you.">
-           Email Booking Request
-        </a>
+        <div class="btnRow">
+          <a class="btn btn--gold"
+             href="mailto:houseofelevara@gmail.com?subject=Model%20Booking%20Request%20%7C%20House%20of%20El%C3%A9vara&body=Hello%20House%20of%20El%C3%A9vara%2C%0A%0AI%20would%20like%20to%20request%20a%20booking.%0A%0AEvent%20Type%3A%0ADate%3A%0ALocation%3A%0ATime%20Window%3A%0ANumber%20of%20Models%3A%0ABudget%20Range%3A%0AWardrobe%20/%20Theme%3A%0ADeliverables%20(e.g.%20appearance%2C%20photo%2Fvideo%2C%20promotion)%3A%0A%0AContact%20Name%3A%0APhone%3A%0A%0AThank%20you%2C">
+             Email Booking Request
+          </a>
 
-        <a class="btn btn--ghost" href="contact.html">
-          Contact
-        </a>
+          <a class="btn btn--ghost" href="contact.html">
+            Contact
+          </a>
+        </div>
+
+        <p class="tiny muted" style="margin-top:10px;">
+          Tip: The faster you provide complete details, the faster we can confirm availability.
+        </p>
       </div>
     </div>
 
+    <div class="card">
+      <h3 class="goldTitle">How it works</h3>
+      <ul class="cleanList">
+        <li><strong>Request:</strong> Submit details via email.</li>
+        <li><strong>Confirm:</strong> We confirm availability + expectations.</li>
+        <li><strong>Coordinate:</strong> Time, location, wardrobe, and deliverables.</li>
+        <li><strong>Deliver:</strong> Talent arrives prepared and on time.</li>
+      </ul>
+
+      <div class="readyBlock" style="margin-top:14px">
+        <h3>Need a faster response?</h3>
+        <p>
+          Include your date, location, number of models, and budget range in the first message.
+        </p>
+        <div class="btnRow">
+          <a class="btn btn--dark"
+             href="mailto:houseofelevara@gmail.com?subject=Urgent%20Booking%20Request%20%7C%20House%20of%20El%C3%A9vara">
+             Email Urgent Request
+          </a>
+          <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer"
+             href="https://www.instagram.com/houseofelevara?igsh=NmtnYzV4bGcybjVy&utm_source=qr">
+             View Instagram
+          </a>
+        </div>
+      </div>
+    </div>
   </section>
 
 </main>
 
 <footer class="footer">
-  <div>© Glamour Society Modeling Agency</div>
-  <div class="footer__muted">by Core Vision Management</div>
+  <div>© House of Elévara</div>
+  <div class="footer__muted">by Core Vision Management • houseofelevara@gmail.com</div>
 </footer>
 
-<!-- FIX: cache-bust -->
 <script src="assets/app.js?v=99"></script>
-
 </body>
 </html>
