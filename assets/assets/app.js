@@ -1,66 +1,102 @@
-/* Glamour Society - Bulletproof Mobile Menu */
+/* House of Elévara — Mobile Menu Controller */
 
 (function () {
-  function qs(id){ return document.getElementById(id); }
 
-  // Global functions so inline onclick ALWAYS works
-  window.GS_openMenu = function () {
-    const menu = qs("mobileMenu");
-    if (!menu) return;
+  const qs = (id) => document.getElementById(id);
 
-    menu.classList.add("is-open");
-    menu.setAttribute("aria-hidden", "false");
-    document.body.classList.add("no-scroll");
+  const body = document.body;
+
+  const menu = () => qs("mobileMenu");
+  const dropMenu = () => qs("dropMenu");
+  const dropOpener = () => qs("dropOpener");
+  const dropChev = () => qs("dropChev");
+
+  /* OPEN MENU */
+  window.EV_openMenu = function () {
+
+    const m = menu();
+    if (!m) return;
+
+    m.classList.add("is-open");
+    m.setAttribute("aria-hidden", "false");
+
+    body.classList.add("no-scroll");
   };
 
-  window.GS_closeMenu = function () {
-    const menu = qs("mobileMenu");
-    if (!menu) return;
 
-    menu.classList.remove("is-open");
-    menu.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("no-scroll");
+  /* CLOSE MENU */
+  window.EV_closeMenu = function () {
 
-    // close dropdown too
-    const dropMenu = qs("dropMenu");
-    const dropOpener = qs("dropOpener");
-    const dropChev = qs("dropChev");
+    const m = menu();
+    if (!m) return;
 
-    if (dropMenu) {
-      dropMenu.classList.remove("is-open");
-      dropMenu.setAttribute("aria-hidden", "true");
-    }
-    if (dropOpener) dropOpener.setAttribute("aria-expanded", "false");
-    if (dropChev) dropChev.textContent = "▾";
+    m.classList.remove("is-open");
+    m.setAttribute("aria-hidden", "true");
+
+    body.classList.remove("no-scroll");
+
+    closeDropdown();
   };
 
-  window.GS_toggleDrop = function () {
-    const dropMenu = qs("dropMenu");
-    const dropOpener = qs("dropOpener");
-    const dropChev = qs("dropChev");
-    if (!dropMenu || !dropOpener) return;
 
-    const isOpen = dropMenu.classList.toggle("is-open");
-    dropMenu.setAttribute("aria-hidden", String(!isOpen));
-    dropOpener.setAttribute("aria-expanded", String(isOpen));
-    if (dropChev) dropChev.textContent = isOpen ? "▴" : "▾";
+  /* TOGGLE DROPDOWN */
+  window.EV_toggleDrop = function () {
+
+    const dm = dropMenu();
+    const opener = dropOpener();
+
+    if (!dm || !opener) return;
+
+    const isOpen = dm.classList.toggle("is-open");
+
+    dm.setAttribute("aria-hidden", String(!isOpen));
+    opener.setAttribute("aria-expanded", String(isOpen));
+
+    if (dropChev()) dropChev().textContent = isOpen ? "▴" : "▾";
   };
 
-  // Also attach normal listeners (nice to have)
+
+  /* CLOSE DROPDOWN */
+  function closeDropdown() {
+
+    const dm = dropMenu();
+    const opener = dropOpener();
+
+    if (!dm || !opener) return;
+
+    dm.classList.remove("is-open");
+    dm.setAttribute("aria-hidden", "true");
+
+    opener.setAttribute("aria-expanded", "false");
+
+    if (dropChev()) dropChev().textContent = "▾";
+  }
+
+
+  /* DOM READY */
   document.addEventListener("DOMContentLoaded", () => {
+
     const openBtn = qs("openMenu");
     const closeBtn = qs("closeMenu");
     const backdrop = qs("menuBackdrop");
-    const dropOpener = qs("dropOpener");
+    const opener = dropOpener();
 
-    if (openBtn) openBtn.addEventListener("click", window.GS_openMenu);
-    if (closeBtn) closeBtn.addEventListener("click", window.GS_closeMenu);
-    if (backdrop) backdrop.addEventListener("click", window.GS_closeMenu);
-    if (dropOpener) dropOpener.addEventListener("click", window.GS_toggleDrop);
+    if (openBtn) openBtn.addEventListener("click", window.EV_openMenu);
+    if (closeBtn) closeBtn.addEventListener("click", window.EV_closeMenu);
+    if (backdrop) backdrop.addEventListener("click", window.EV_closeMenu);
+    if (opener) opener.addEventListener("click", window.EV_toggleDrop);
+
   });
 
-  // ESC closes menu
+
+  /* ESC KEY CLOSE */
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") window.GS_closeMenu();
+
+    if (e.key === "Escape") {
+      window.EV_closeMenu();
+    }
+
   });
+
+
 })();
