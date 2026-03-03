@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-  <title>Opportunity | Glamour Society</title>
-  <meta name="description" content="Fast-track interview activation and monthly membership."/>
+  <title>Interview Reserve | House of Elévara</title>
+  <meta name="description" content="Reserve your interview and activate onboarding with House of Elévara. Secure payments via Stripe."/>
   <link rel="stylesheet" href="assets/styles.css"/>
 </head>
 <body>
 
 <header class="topbar">
   <div class="container topbar__inner">
-    <a class="brand" href="index.html" aria-label="Glamour Society Home">
-      <div class="brand__glam3d">GLAM</div>
+    <a class="brand" href="index.html" aria-label="House of Elévara Home">
+      <div class="brand__glam3d">ELÉVARA</div>
       <div class="brand__subwrap">
-        <span class="brand__subMain">Glamour Society Modeling Agency</span>
+        <span class="brand__subMain">House of Elévara Management Group</span>
         <span class="brand__subSmall">by Core Vision Management</span>
       </div>
     </a>
@@ -26,30 +26,24 @@
       <a class="nav__link" href="contact.html">Contact</a>
     </nav>
 
-    <!-- FIX: onclick -->
     <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
   </div>
 </header>
 
 <div class="mobileMenu" id="mobileMenu" aria-hidden="true">
-  <!-- FIX: onclick -->
   <button class="mobileMenu__backdrop" id="menuBackdrop" type="button" aria-label="Close menu" onclick="GS_closeMenu()"></button>
 
   <div class="mobileMenu__panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
     <div class="mobileMenu__topRow">
-      <div class="mobileMenu__brand">Glamour Society</div>
-
-      <!-- FIX: onclick -->
+      <div class="mobileMenu__brand">House of Elévara</div>
       <button class="mobileMenu__close" id="closeMenu" type="button" aria-label="Close menu" onclick="GS_closeMenu()">✕</button>
     </div>
 
-    <!-- FIX: onclick -->
     <button class="mobileMenu__dropdownBtn" id="dropOpener" type="button" aria-expanded="false" onclick="GS_toggleDrop()">
       Menu <span id="dropChev">▾</span>
     </button>
 
     <div class="mobileMenu__dropdown" id="dropMenu" aria-hidden="true">
-      <!-- FIX: close after click -->
       <a href="index.html" class="mobileMenu__link" onclick="GS_closeMenu()">Home</a>
       <a href="apply.html" class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
       <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Opportunity</a>
@@ -58,78 +52,121 @@
 
     <div class="mobileMenu__divider"></div>
 
-    <a class="mobileMenu__cta" href="book.html" onclick="GS_closeMenu()">Book a Model</a>
-    <a class="mobileMenu__cta ghost" href="mailto:glamoursocietymodelingagency@gmail.com" onclick="GS_closeMenu()">Email Us</a>
+    <a class="mobileMenu__cta" href="book.html" onclick="GS_closeMenu()">Request a Booking</a>
+    <a class="mobileMenu__cta ghost" href="mailto:houseofelevara@gmail.com" onclick="GS_closeMenu()">Email Us</a>
   </div>
 </div>
 
 <main class="container">
   <div class="pageHeader">
-    <h1>Skip Application → Book Your Interview</h1>
+    <h1>Interview Reserve & Onboarding Access</h1>
     <p>
-      This is for models ready to activate and move into interview scheduling + onboarding.
-      If you’re not ready yet, apply first.
+      This page is for talent who is ready to move into interview scheduling and onboarding coordination.
+      If you're still deciding, start with the application first — no pressure.
     </p>
 
     <div class="btnRow">
-      <a class="btn btn--ghost" href="apply.html">Start with Application</a>
-      <a class="btn btn--dark" href="contact.html">Questions? Contact Us</a>
+      <a class="btn btn--dark" href="apply.html">Start With Application</a>
+      <a class="btn btn--ghost" href="contact.html">Questions? Contact Us</a>
     </div>
   </div>
 
   <div class="grid2">
+    <!-- STEP 1 -->
     <section class="cardGlow">
-      <h2 class="goldTitle">Step 1 — Interview Activation</h2>
-      <p class="muted">One-time activation confirms you’re ready for interview scheduling and onboarding steps.</p>
-      <div class="priceTag">$100</div>
-
-      <div class="btnRow">
-        <a class="btn btn--gold" target="_blank" rel="noopener noreferrer"
-           href="https://buy.stripe.com/5kQfZa9Tt9b322g5gu4sE05">
-          Activate Interview (Pay $100)
-        </a>
-      </div>
-
-      <p class="tiny muted" style="margin-top:10px;">
-        After payment, email your name + Instagram so we can confirm your interview steps.
+      <h2 class="goldTitle">Step 1 — Reserve Your Interview Slot</h2>
+      <p class="muted">
+        This confirms you're ready for interview scheduling and allows us to begin your onboarding coordination.
       </p>
+
+      <ul class="cleanList">
+        <li>Priority interview scheduling</li>
+        <li>Onboarding next steps + standards overview</li>
+        <li>Official confirmation email process</li>
+      </ul>
+
+      <div class="readyBlock" style="margin-top:14px">
+        <h3>See pricing</h3>
+        <p>This is a one-time interview reserve to activate scheduling.</p>
+        <div class="btnRow">
+          <a class="btn btn--gold" target="_blank" rel="noopener noreferrer"
+             href="https://buy.stripe.com/5kQfZa9Tt9b322g5gu4sE05">
+            Reserve Interview Slot (Stripe)
+          </a>
+          <a class="btn btn--ghost" href="mailto:houseofelevara@gmail.com?subject=Interview%20Reserve%20Question%20%7C%20House%20of%20El%C3%A9vara">
+            Ask a Question
+          </a>
+        </div>
+        <p class="tiny muted" style="margin-top:10px;">
+          Secure checkout via Stripe. You’ll be redirected to Stripe to complete your reserve.
+        </p>
+      </div>
 
       <div class="btnRow">
         <a class="btn btn--dark"
-           href="mailto:glamoursocietymodelingagency@gmail.com?subject=Interview%20Activation%20-%20Glamour%20Society&body=Hello%20Glamour%20Society%2C%0A%0AI%20just%20paid%20the%20Interview%20Activation.%20Please%20send%20me%20the%20next%20steps%20to%20schedule%20my%20interview.%0A%0AName%3A%0AInstagram%3A%0ACity%2FState%3A%0APhone%3A%0A%0AThank%20you%2C">
-          Email Confirmation
+           href="mailto:houseofelevara@gmail.com?subject=Interview%20Reserve%20Confirmation%20%7C%20House%20of%20El%C3%A9vara&body=Hello%20House%20of%20El%C3%A9vara%2C%0A%0AI%20just%20completed%20the%20Interview%20Reserve%20on%20Stripe.%20Please%20send%20me%20the%20next%20steps%20to%20schedule%20my%20interview.%0A%0AName%3A%0AInstagram%3A%0ACity%2FState%3A%0APhone%3A%0A%0AThank%20you%2C">
+          Send Confirmation Email
         </a>
       </div>
     </section>
 
+    <!-- STEP 2 -->
     <section class="card">
-      <h2 class="goldTitle">Step 2 — Stay Active Monthly</h2>
-      <p class="muted">Monthly membership keeps you active for agency services and ongoing coordination.</p>
-      <div class="priceTag">$40/mo</div>
+      <h2 class="goldTitle">Step 2 — Stay Active (Monthly)</h2>
+      <p class="muted">
+        Staying active supports ongoing coordination and continued access to agency processes as opportunities arise.
+      </p>
 
-      <div class="btnRow">
-        <a class="btn btn--gold" target="_blank" rel="noopener noreferrer"
-           href="https://buy.stripe.com/cNicMY6Hhcnf6iw4cq4sE06">
-          Start Monthly Membership ($40)
-        </a>
-      </div>
+      <ul class="cleanList">
+        <li>Ongoing coordination + updates</li>
+        <li>Continued active status for opportunities</li>
+        <li>Professional communication channel</li>
+      </ul>
 
-      <div class="btnRow">
-        <a class="btn btn--ghost"
-           href="mailto:glamoursocietymodelingagency@gmail.com?subject=Membership%20Support%20-%20Glamour%20Society">
-          Email Support
-        </a>
+      <div class="readyBlock" style="margin-top:14px">
+        <h3>See pricing</h3>
+        <p>Monthly membership keeps your profile active.</p>
+        <div class="btnRow">
+          <a class="btn btn--gold" target="_blank" rel="noopener noreferrer"
+             href="https://buy.stripe.com/cNicMY6Hhcnf6iw4cq4sE06">
+            Start Monthly Membership (Stripe)
+          </a>
+          <a class="btn btn--ghost"
+             href="mailto:houseofelevara@gmail.com?subject=Membership%20Support%20%7C%20House%20of%20El%C3%A9vara">
+            Email Support
+          </a>
+        </div>
+        <p class="tiny muted" style="margin-top:10px;">
+          Secure checkout via Stripe. Cancelation and billing are managed through Stripe’s customer portal.
+        </p>
       </div>
     </section>
   </div>
+
+  <!-- REASSURANCE -->
+  <section style="margin-top:18px">
+    <div class="card">
+      <h3 class="goldTitle">Not sure yet?</h3>
+      <p class="muted">
+        If you’re still deciding, start with the application first. We’ll review your submission and then guide you to next steps.
+        The fastest path is always: apply → approval → interview reserve → onboarding.
+      </p>
+
+      <div class="btnRow">
+        <a class="btn btn--dark" href="apply.html">Apply First</a>
+        <a class="btn btn--ghost" href="mailto:houseofelevara@gmail.com?subject=Question%20Before%20Applying%20%7C%20House%20of%20El%C3%A9vara">
+          Email a Question
+        </a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="footer">
   <div>Payments processed securely via Stripe</div>
-  <div class="footer__muted">by Core Vision Management • +1 (470) 898-0718</div>
+  <div class="footer__muted">by Core Vision Management • +1 (470) 898-0718 • houseofelevara@gmail.com</div>
 </footer>
 
-<!-- FIX: cache-bust -->
 <script src="assets/app.js?v=99"></script>
 </body>
 </html>
