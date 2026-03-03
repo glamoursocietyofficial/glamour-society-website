@@ -5,14 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <title>House of Elévara | Model Management</title>
   <meta name="description" content="House of Elévara by Core Vision Management — model & talent management with a premium booking process. Apply, interview, and request bookings through our official email."/>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="assets/styles.css"/>
+
+  <!-- ✅ Luxury Home Screen / PWA setup -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png">
+
+  <meta name="apple-mobile-web-app-title" content="Elévara">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="theme-color" content="#000000">
 </head>
 <body>
 
 <header class="topbar">
   <div class="container topbar__inner">
     <a class="brand" href="index.html" aria-label="House of Elévara Home">
-      <!-- Rebrand wordmark (keeps your existing styling hook) -->
       <div class="brand__glam3d">ELÉVARA</div>
       <div class="brand__subwrap">
         <span class="brand__subMain">House of Elévara Management Group</span>
@@ -31,7 +41,6 @@
   </div>
 </header>
 
-<!-- Mobile Menu -->
 <div class="mobileMenu" id="mobileMenu" aria-hidden="true">
   <button class="mobileMenu__backdrop" id="menuBackdrop" type="button" aria-label="Close menu" onclick="GS_closeMenu()"></button>
 
@@ -61,7 +70,6 @@
 
 <main class="container">
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero__left">
       <h1 class="hero__title">
@@ -80,7 +88,6 @@
         <a class="btn btn--dark" href="book.html">Request a Booking</a>
       </div>
 
-      <!-- Credibility strip (still uses your existing card system) -->
       <div class="infoGrid" style="margin-top:16px">
         <div class="infoCard">Editorial-first direction</div>
         <div class="infoCard">Professional booking process</div>
@@ -98,14 +105,9 @@
         </div>
       </div>
 
-      <!-- Contact grid -->
       <div class="infoGrid">
-        <a class="infoCard linkCard" href="mailto:houseofelevara@gmail.com">
-          📧 houseofelevara@gmail.com
-        </a>
-        <a class="infoCard linkCard" href="tel:+14708980718">
-          📞 +1 (470) 898-0718
-        </a>
+        <a class="infoCard linkCard" href="mailto:houseofelevara@gmail.com">📧 houseofelevara@gmail.com</a>
+        <a class="infoCard linkCard" href="tel:+14708980718">📞 +1 (470) 898-0718</a>
         <a class="infoCard linkCard" target="_blank" rel="noopener noreferrer"
            href="https://www.instagram.com/houseofelevara?igsh=NmtnYzV4bGcybjVy&utm_source=qr">
           Instagram: @houseofelevara
@@ -146,22 +148,10 @@
     </div>
 
     <div class="infoGrid">
-      <div class="infoCard">
-        <strong>Model Management</strong><br/>
-        Talent onboarding, readiness, and professional representation.
-      </div>
-      <div class="infoCard">
-        <strong>Editorial & Media</strong><br/>
-        A connected editorial direction through Elyra Editorial.
-      </div>
-      <div class="infoCard">
-        <strong>Brand Campaigns</strong><br/>
-        Coordinated partnerships, placements, and promotional activations.
-      </div>
-      <div class="infoCard">
-        <strong>Client Experience</strong><br/>
-        Clear process, confirmations, and expectations — no confusion.
-      </div>
+      <div class="infoCard"><strong>Model Management</strong><br/>Talent onboarding, readiness, and professional representation.</div>
+      <div class="infoCard"><strong>Editorial & Media</strong><br/>A connected editorial direction through Elyra Editorial.</div>
+      <div class="infoCard"><strong>Brand Campaigns</strong><br/>Coordinated partnerships, placements, and promotional activations.</div>
+      <div class="infoCard"><strong>Client Experience</strong><br/>Clear process, confirmations, and expectations — no confusion.</div>
     </div>
   </section>
 
@@ -173,22 +163,10 @@
     </div>
 
     <div class="infoGrid">
-      <div class="infoCard">
-        <strong>1) Request</strong><br/>
-        Submit your booking request via email or the booking page.
-      </div>
-      <div class="infoCard">
-        <strong>2) Confirm</strong><br/>
-        We confirm availability, details, and expectations with a clear paper trail.
-      </div>
-      <div class="infoCard">
-        <strong>3) Coordinate</strong><br/>
-        Time, location, wardrobe, deliverables, and conduct standards are outlined.
-      </div>
-      <div class="infoCard">
-        <strong>4) Deliver</strong><br/>
-        Talent arrives prepared. The experience remains premium and on time.
-      </div>
+      <div class="infoCard"><strong>1) Request</strong><br/>Submit your booking request via email or the booking page.</div>
+      <div class="infoCard"><strong>2) Confirm</strong><br/>We confirm availability, details, and expectations with a clear paper trail.</div>
+      <div class="infoCard"><strong>3) Coordinate</strong><br/>Time, location, wardrobe, deliverables, and conduct standards are outlined.</div>
+      <div class="infoCard"><strong>4) Deliver</strong><br/>Talent arrives prepared. The experience remains premium and on time.</div>
     </div>
 
     <div class="btnRow" style="margin-top:14px">
@@ -215,7 +193,7 @@
     </div>
   </section>
 
-  <!-- FAQ (no CSS needed; details/summary looks clean by default) -->
+  <!-- FAQ -->
   <section style="margin-top:28px">
     <div class="readyBlock">
       <h3>FAQ</h3>
