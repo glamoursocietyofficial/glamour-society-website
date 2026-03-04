@@ -1,6 +1,6 @@
 /* ============================
    HOUSE OF ELÉVARA — LUXURY UI
-   (Drop-in replacement, same classes)
+   (Drop-in replacement, same classes + adds luxury video module)
    ============================ */
 
 /* ===== Fonts (Luxury Headline + Clean Body) ===== */
@@ -44,7 +44,7 @@ a{color:inherit}
   --line: rgba(255,255,255,.10);
   --muted: rgba(255,255,255,.72);
 
-  /* Champagne gold (more luxury than neon gold) */
+  /* Champagne gold */
   --gold:#D8B65A;
   --gold2:#F3DD9B;
   --goldLine: rgba(216,182,90,.30);
@@ -65,6 +65,11 @@ a{color:inherit}
 @keyframes glowPulse{
   0%,100%{box-shadow:0 10px 40px rgba(0,0,0,.48)}
   50%{box-shadow:0 18px 70px rgba(216,182,90,.10)}
+}
+/* subtle luxury shimmer (for overlays) */
+@keyframes shimmer{
+  0%{transform:translateX(-30%)}
+  100%{transform:translateX(130%)}
 }
 
 /* ===== Focus (Luxury + Accessibility) ===== */
@@ -149,7 +154,7 @@ a{color:inherit}
   border:1px solid rgba(216,182,90,.20);
 }
 
-/* Mobile menu button (top right) */
+/* Mobile menu button */
 .menuBtn{
   display:none;
   border:1px solid rgba(255,255,255,.16);
@@ -169,16 +174,12 @@ a{color:inherit}
 
 /* ===== Mobile Menu ===== */
 .mobileMenu{display:none}
-
-/* when open */
 .mobileMenu.is-open{
   display:block;
   position:fixed;
   inset:0;
   z-index:999999;
 }
-
-/* backdrop */
 .mobileMenu__backdrop{
   position:absolute;
   inset:0;
@@ -188,8 +189,6 @@ a{color:inherit}
   height:100%;
   cursor:pointer;
 }
-
-/* sliding panel */
 .mobileMenu__panel{
   position:absolute;
   right:0; top:0;
@@ -206,8 +205,6 @@ a{color:inherit}
   transition: transform .26s ease;
 }
 .mobileMenu.is-open .mobileMenu__panel{transform: translateX(0)}
-
-/* top row */
 .mobileMenu__topRow{
   display:flex;
   align-items:center;
@@ -231,8 +228,6 @@ a{color:inherit}
   border-color: rgba(216,182,90,.30);
   background: rgba(216,182,90,.08);
 }
-
-/* dropdown */
 .mobileMenu__dropdownBtn{
   width:100%;
   display:flex;
@@ -320,9 +315,7 @@ a{color:inherit}
   border-color:rgba(216,182,90,.35);
   color:var(--gold2);
 }
-.btn--ghost:hover{
-  background:rgba(216,182,90,.08);
-}
+.btn--ghost:hover{background:rgba(216,182,90,.08)}
 .btn--dark{
   background:rgba(255,255,255,.06);
   border-color:rgba(255,255,255,.12);
@@ -345,7 +338,7 @@ a{color:inherit}
   z-index:1;
 }
 
-/* Hero typography (luxury) */
+/* Hero typography */
 .hero__title{
   font-family: "Playfair Display", Georgia, "Times New Roman", serif;
   font-size:48px;
@@ -384,11 +377,7 @@ a{color:inherit}
   background: rgba(0,0,0,.30);
 }
 .brandCard__text{margin-top:14px}
-.brandCard__text h3{
-  font-size:18px;
-  margin-bottom:8px;
-  letter-spacing:.3px;
-}
+.brandCard__text h3{font-size:18px;margin-bottom:8px;letter-spacing:.3px}
 .brandCard__text p{color:rgba(255,255,255,.72);margin-bottom:12px;line-height:1.6}
 
 /* info cards */
@@ -490,6 +479,132 @@ a{color:inherit}
 }
 .footer__muted{font-size:12px;color:rgba(255,255,255,.55)}
 
+/* ============================
+   LEGENDARY LUXURY VIDEO MODULE
+   (Used by index.html)
+   ============================ */
+
+.luxVideo{
+  position:relative;
+  border-radius:22px;
+  overflow:hidden;
+  border:1px solid rgba(216,182,90,.18);
+  background:#060606;
+  box-shadow:
+    0 30px 90px rgba(0,0,0,.72),
+    inset 0 1px 0 rgba(255,255,255,.06);
+  animation: fadeUp .6s ease both;
+}
+
+.luxVideo video{
+  width:100%;
+  height:min(520px, 62vh);
+  display:block;
+  object-fit:cover;
+  transform: scale(1.02);
+  filter: contrast(1.06) saturate(1.05);
+}
+
+/* overlays */
+.luxVideo__grain{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  opacity:.10;
+}
+
+.luxVideo__vignette{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(120% 100% at 50% 18%, rgba(0,0,0,.08), rgba(0,0,0,.68)),
+    linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.62));
+}
+
+/* luxury shimmer sweep */
+.luxVideo::after{
+  content:"";
+  position:absolute;
+  top:-40%;
+  left:-60%;
+  width:60%;
+  height:180%;
+  background: linear-gradient(90deg, transparent, rgba(243,221,155,.08), transparent);
+  transform: skewX(-18deg);
+  animation: shimmer 7.5s ease-in-out infinite;
+  pointer-events:none;
+  opacity:.6;
+}
+
+/* content glass */
+.luxVideo__content{
+  position:absolute;
+  left:16px;
+  right:16px;
+  bottom:16px;
+  padding:16px 16px 14px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.34);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 18px 54px rgba(0,0,0,.56);
+}
+
+.luxKicker{
+  display:inline-block;
+  font-size:12px;
+  letter-spacing:2.6px;
+  text-transform:uppercase;
+  color: rgba(243,221,155,.95);
+  margin-bottom:8px;
+}
+
+.luxTitle{
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size:24px;
+  line-height:1.08;
+  margin-bottom:6px;
+  color: rgba(255,255,255,.96);
+  letter-spacing:.2px;
+}
+
+.luxSub{
+  font-size:13px;
+  color: rgba(255,255,255,.72);
+  max-width:60ch;
+  line-height:1.55;
+}
+
+/* Sound toggle */
+.luxSound{
+  position:absolute;
+  top:14px;
+  right:14px;
+  border-radius:14px;
+  padding:10px 12px;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.35);
+  color: rgba(255,255,255,.92);
+  backdrop-filter: blur(10px);
+  cursor:pointer;
+  font-weight:900;
+  letter-spacing:.2px;
+  transition: .18s transform, .18s border, .18s background;
+}
+.luxSound:hover{
+  transform: translateY(-1px);
+  border-color: rgba(216,182,90,.30);
+  background: rgba(216,182,90,.10);
+}
+
+/* iOS tap hint */
+.luxVideo .tiny.muted{
+  color: rgba(255,255,255,.65);
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 980px){
   .hero{grid-template-columns:1fr}
@@ -498,4 +613,7 @@ a{color:inherit}
   .infoGrid{grid-template-columns:1fr}
   .hero__title{font-size:40px}
   .grid2{grid-template-columns:1fr}
+
+  .luxVideo video{height: min(480px, 58vh);}
+  .luxTitle{font-size:22px}
 }
