@@ -119,20 +119,55 @@
       </div>
     </div>
 
+    <!-- ✅ LEGENDARY LUXURY VIDEO HERO (replaces old brandCard) -->
     <div class="hero__right">
-      <div class="brandCard">
-        <img class="brandCard__logo" src="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png" alt="House of Elévara Logo"/>
-        <div class="brandCard__text">
-          <h3>Book with Confidence</h3>
-          <p>
-            Clients submit booking requests through email. We confirm availability, expectations,
-            and next steps with clear communication and professional coordination.
-          </p>
-          <div class="btnRow">
+      <div class="luxVideo" id="luxVideoWrap">
+        <video
+          id="elevaraVideo"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"
+        >
+          <source src="video-output-53742BFF-AFF7-4099-9355-6EF9F5F2813C-1.mov" type="video/quicktime">
+          <!-- Recommended (if you later add MP4 for maximum compatibility):
+          <source src="elevara-hero.mp4" type="video/mp4">
+          -->
+          Your browser does not support the video tag.
+        </video>
+
+        <!-- cinematic overlays -->
+        <div class="luxVideo__grain" aria-hidden="true"></div>
+        <div class="luxVideo__vignette" aria-hidden="true"></div>
+
+        <!-- luxury copy -->
+        <div class="luxVideo__content">
+          <div class="luxKicker">Editorial Motion</div>
+          <h2 class="luxTitle">House of Elévara</h2>
+          <p class="luxSub">Model Management • Luxury Direction • Dallas</p>
+
+          <div class="btnRow" style="margin-top:12px">
             <a class="btn btn--gold" href="book.html">Request a Booking</a>
-            <a class="btn btn--ghost" href="contact.html">Contact</a>
+            <a class="btn btn--ghost" href="apply.html">Apply as Talent</a>
           </div>
+
+          <p class="tiny muted" style="margin-top:10px;">
+            Tip: Tap “Sound Off” to enable audio (phones require a tap to play with sound).
+          </p>
         </div>
+
+        <!-- sound toggle -->
+        <button
+          class="luxSound"
+          id="luxSoundBtn"
+          type="button"
+          aria-pressed="false"
+          aria-label="Turn sound on"
+        >
+          🔇 Sound Off
+        </button>
       </div>
     </div>
   </section>
