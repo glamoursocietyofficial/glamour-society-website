@@ -13,6 +13,176 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="theme-color" content="#060605">
+
+  <style>
+    /* ── APPLY PAGE SPECIFIC ── */
+    .apply-hero {
+      padding: clamp(56px, 8vw, 96px) 0 clamp(32px, 4vw, 48px);
+      animation: fadeUp 0.7s ease both;
+      position: relative;
+    }
+    .apply-hero::after {
+      content: '';
+      display: block;
+      width: 56px; height: 1px;
+      background: var(--gold);
+      margin-top: 28px;
+      animation: revealLine 0.8s ease 0.3s both;
+    }
+    .apply-hero__eyebrow {
+      font-size: 9px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .apply-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(42px, 6.5vw, 76px);
+      font-weight: 300;
+      line-height: 1.06;
+      margin-bottom: 16px;
+      letter-spacing: 0.01em;
+    }
+    .apply-hero p {
+      color: var(--muted2);
+      max-width: 64ch;
+      line-height: 1.85;
+      font-size: 14px;
+    }
+    .apply-hero .btnRow {
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+
+    /* ── TIER COMPARE ── */
+    .tier-compare {
+      border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg);
+      background:
+        radial-gradient(ellipse 90% 70% at 8% 0%, rgba(200,169,90,0.09), transparent 52%),
+        var(--surface);
+      padding: clamp(28px, 4vw, 44px);
+      position: relative;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+    .tier-compare::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold2), transparent);
+      opacity: 0.55;
+    }
+    .tier-compare__title {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--gold2);
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+    .tier-compare__sub {
+      font-size: 13px;
+      color: var(--muted2);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    .tier-compare__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .tier-compare__item {
+      border: 1px solid var(--line);
+      border-radius: var(--radiusLg);
+      background: var(--surface);
+      padding: 18px 16px;
+      transition: all 0.22s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .tier-compare__item:hover {
+      border-color: var(--gold-line);
+      background: var(--surface2);
+      transform: translateY(-2px);
+    }
+    .tier-compare__item--featured {
+      border-color: var(--gold-line);
+      background:
+        radial-gradient(ellipse 100% 80% at 20% 0%, rgba(200,169,90,0.10), transparent 55%),
+        var(--surface2);
+    }
+    .tier-compare__item--featured::before {
+      content: 'POPULAR';
+      position: absolute;
+      top: 10px; right: -20px;
+      background: linear-gradient(135deg, var(--gold2), var(--gold));
+      color: var(--black);
+      font-size: 6.5px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      padding: 4px 32px;
+      transform: rotate(45deg);
+    }
+    .tier-compare__label {
+      font-size: 8px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .tier-compare__price {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 300;
+      color: var(--gold2);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .tier-compare__period {
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+    .tier-compare__features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .tier-compare__features li {
+      font-size: 11px;
+      color: var(--muted2);
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .tier-compare__features li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 9px;
+    }
+    .tier-compare__cta {
+      display: block;
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .tier-compare__grid { grid-template-columns: 1fr; }
+      .apply-hero .btnRow { flex-direction: row; flex-wrap: wrap; }
+      .apply-hero .btn { flex: 0 1 auto; width: auto; padding: 12px 20px; font-size: 8.5px; }
+    }
+  </style>
+
 </head>
 <body>
 
@@ -26,7 +196,6 @@
         <span class="brand__subMain">House of Elévara Management Group</span>
         <span class="brand__subSmall">by Core Vision Management</span>
       </div>
-    
     </a>
     <nav class="nav" aria-label="Primary">
       <a class="nav__link" href="index.html">Home</a>
@@ -67,10 +236,8 @@
   <!-- PAGE HEADER -->
 
   <div class="container">
-    <div class="pageHeader">
-      <p style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">
-        Talent Application
-      </p>
+    <div class="apply-hero">
+      <span class="apply-hero__eyebrow">Talent Application</span>
       <h1>Apply to<br>House of Elévara</h1>
       <p>
         We are selective by design. House of Elévara accepts talent who is serious, professional, and ready to be developed into a marketable, revenue-generating brand. If that is you — begin here.
@@ -123,12 +290,12 @@
       <li>Be professional in every field — your application is your first impression.</li>
       <li>Be consistent and responsive from the moment you apply.</li>
     </ul>
-    <div class="btnRow" style="margin-top:20px;">
-      <a class="btn btn--dark"
+    <div class="btnRow" style="margin-top:20px;flex-direction:row;flex-wrap:wrap;">
+      <a class="btn btn--dark" style="flex:0 1 auto;width:auto;"
          href="mailto:houseofelevara@gmail.com?subject=Application%20Question%20%7C%20House%20of%20El%C3%A9vara">
         Ask a Question
       </a>
-      <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer"
+      <a class="btn btn--ghost" style="flex:0 1 auto;width:auto;" target="_blank" rel="noopener noreferrer"
          href="https://www.instagram.com/houseofelevara?igsh=NmtnYzV4bGcybjVy&utm_source=qr">
         Visit Instagram
       </a>
@@ -137,7 +304,7 @@
 
 </div>
 
-<!-- STANDARDS BLOCK -->
+<!-- WHO WE ARE LOOKING FOR -->
 <div class="readyBlock" style="margin-top:20px;">
   <h3>Who We Are Looking For</h3>
   <p>
@@ -152,19 +319,75 @@
   <div class="infoCard"><strong>Ambition</strong>You are building something long-term, not just looking for a one-time opportunity.</div>
 </div>
 
-<!-- MEMBERSHIP PROMPT -->
-<div class="readyBlock" style="margin-top:20px;">
-  <h3>Want to Move Faster?</h3>
-  <p>
-    Talent who enroll in an active membership tier receive priority consideration, dedicated coordination, and stronger positioning from day one. Optional paid tiers start at $40/month.
+<!-- MEMBERSHIP COMPARE -->
+<div class="tier-compare">
+  <h3 class="tier-compare__title">Want to Move Faster?</h3>
+  <p class="tier-compare__sub">
+    Talent who enroll in an active membership tier receive dedicated talent management, priority consideration, and stronger positioning from day one. Choose the path that fits where you are right now.
   </p>
-  <div class="btnRow">
-    <a class="btn btn--gold" href="payments.html">View Membership Options</a>
-    <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer"
-       href="https://docs.google.com/forms/d/e/1FAIpQLSfLdP8fi5cfD9TIPL1RNPC9X7g_Rr_F125t717deLraWhirxQ/viewform">
-      Apply for Free First
-    </a>
+
+  <div class="tier-compare__grid">
+
+    <!-- FREE -->
+    <div class="tier-compare__item">
+      <span class="tier-compare__label">Foundation</span>
+      <div class="tier-compare__price">Free</div>
+      <div class="tier-compare__period">No commitment</div>
+      <ul class="tier-compare__features">
+        <li>Roster submission</li>
+        <li>Standard review</li>
+        <li>General opportunity access</li>
+      </ul>
+      <a class="btn btn--ghost btn--sm tier-compare__cta"
+         href="https://docs.google.com/forms/d/e/1FAIpQLSfLdP8fi5cfD9TIPL1RNPC9X7g_Rr_F125t717deLraWhirxQ/viewform"
+         target="_blank" rel="noopener noreferrer">
+        Apply Free
+      </a>
+    </div>
+
+    <!-- MONTHLY -->
+    <div class="tier-compare__item tier-compare__item--featured">
+      <span class="tier-compare__label">Active Membership</span>
+      <div class="tier-compare__price">$75</div>
+      <div class="tier-compare__period">/ month — cancel anytime</div>
+      <ul class="tier-compare__features">
+        <li>Dedicated talent manager</li>
+        <li>Priority booking review</li>
+        <li>Active profile coordination</li>
+        <li>Direct communication support</li>
+        <li>Travel coordination where applicable</li>
+      </ul>
+      <a class="btn btn--gold btn--sm tier-compare__cta" target="_blank" rel="noopener noreferrer"
+         href="https://buy.stripe.com/cNicMY6Hhcnf6iw4cq4sE06">
+        Start at $75/mo
+      </a>
+    </div>
+
+    <!-- ANNUAL -->
+    <div class="tier-compare__item">
+      <span class="tier-compare__label">Best Value</span>
+      <div class="tier-compare__price">$675</div>
+      <div class="tier-compare__period">/ year — save $225</div>
+      <ul class="tier-compare__features">
+        <li>Everything in Monthly</li>
+        <li>Full year active status locked in</li>
+        <li>Equivalent to $56.25/month</li>
+        <li>First priority as opportunities scale</li>
+      </ul>
+      <a class="btn btn--dark btn--sm tier-compare__cta" target="_blank" rel="noopener noreferrer"
+         href="https://buy.stripe.com/dRmfZa9TtgDveP24cq4sE0e">
+        Start Annual
+      </a>
+    </div>
+
   </div>
+
+  <p style="font-size:10px;color:var(--muted);margin-top:18px;letter-spacing:0.06em;">
+    All payments processed securely via Stripe. &nbsp;·&nbsp;
+    <a href="payments.html" style="color:var(--gold2);text-decoration:underline;text-underline-offset:3px;">
+      View full membership details →
+    </a>
+  </p>
 </div>
 ```
 
