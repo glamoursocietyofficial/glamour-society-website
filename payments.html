@@ -6,386 +6,140 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <title>Membership & Opportunities | House of Elévara</title>
   <meta name="description" content="Join House of Elévara — a private talent ecosystem for models ready to elevate their brand, visibility, and income. Explore free and premium membership options."/>
+  <link rel="stylesheet" href="assets/styles.css"/>
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png">
   <meta name="apple-mobile-web-app-title" content="Elévara">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="theme-color" content="#0a0a0a">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#060605">
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --gold: #c9a84c;
-      --gold-light: #e8c97a;
-      --gold-dim: rgba(201,168,76,0.15);
-      --black: #0a0a0a;
-      --surface: #111111;
-      --surface2: #171717;
-      --border: rgba(201,168,76,0.2);
-      --text: #f0ece4;
-      --muted: #8a8680;
-      --font-display: 'Cormorant Garamond', serif;
-      --font-body: 'Montserrat', sans-serif;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--black);
-      color: var(--text);
-      font-family: var(--font-body);
-      font-weight: 300;
-      line-height: 1.7;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    /* Ambient background */
-    body::before {
-      content: '';
-      position: fixed;
-      top: -200px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 800px;
-      height: 800px;
-      background: radial-gradient(ellipse, rgba(201,168,76,0.06) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* ── HEADER ── */
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(10,10,10,0.92);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .topbar__inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 32px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .brand {
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .brand__glam3d {
-      font-family: var(--font-body);
-      font-weight: 700;
-      font-size: 17px;
-      letter-spacing: 0.22em;
-      color: var(--gold);
-      text-shadow: 0 0 30px rgba(201,168,76,0.4);
-    }
-
-    .brand__subwrap { display: flex; flex-direction: column; gap: 1px; }
-    .brand__subMain { font-size: 10px; letter-spacing: 0.1em; color: var(--text); opacity: 0.7; }
-    .brand__subSmall { font-size: 9px; letter-spacing: 0.08em; color: var(--gold); opacity: 0.6; }
-
-    .nav { display: flex; gap: 32px; align-items: center; }
-    .nav__link {
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .nav__link:hover, .nav__link.is-active { color: var(--gold); }
-
-    .menuBtn {
-      display: none;
-      background: none;
-      border: 1px solid var(--border);
-      color: var(--gold);
-      padding: 8px 12px;
-      cursor: pointer;
-      font-size: 16px;
-      border-radius: 4px;
-    }
-
-    /* ── MOBILE MENU ── */
-    .mobileMenu {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 200;
-    }
-    .mobileMenu.open { display: block; }
-    .mobileMenu__backdrop {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.7);
-      border: none;
-      cursor: pointer;
-      width: 100%;
-      height: 100%;
-    }
-    .mobileMenu__panel {
-      position: absolute;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      width: 280px;
-      background: var(--surface);
-      border-left: 1px solid var(--border);
-      padding: 28px 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .mobileMenu__topRow { display: flex; justify-content: space-between; align-items: center; }
-    .mobileMenu__brand { font-family: var(--font-body); font-weight: 700; font-size: 13px; letter-spacing: 0.18em; color: var(--gold); }
-    .mobileMenu__close { background: none; border: none; color: var(--muted); font-size: 18px; cursor: pointer; }
-    .mobileMenu__link {
-      display: block;
-      padding: 12px 0;
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text);
-      text-decoration: none;
-      border-bottom: 1px solid var(--border);
-      transition: color 0.2s;
-    }
-    .mobileMenu__link:hover { color: var(--gold); }
-    .mobileMenu__cta {
-      display: block;
-      text-align: center;
-      padding: 13px;
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 3px;
-      transition: all 0.2s;
-      background: var(--gold);
-      color: var(--black);
-      font-weight: 600;
-    }
-    .mobileMenu__cta.ghost { background: transparent; border: 1px solid var(--border); color: var(--text); }
-    .mobileMenu__divider { height: 1px; background: var(--border); }
-
-    /* ── HERO ── */
-    .hero {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding: 100px 32px 80px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .hero__eyebrow {
-      font-size: 10px;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 24px;
-      opacity: 0;
-      animation: fadeUp 0.8s ease 0.1s forwards;
-    }
-
-    .hero__title {
-      font-family: var(--font-display);
-      font-size: clamp(42px, 7vw, 72px);
-      font-weight: 300;
-      line-height: 1.1;
-      letter-spacing: 0.02em;
-      margin-bottom: 24px;
-      opacity: 0;
-      animation: fadeUp 0.8s ease 0.2s forwards;
-    }
-
-    .hero__title em {
-      font-style: italic;
-      color: var(--gold);
-    }
-
-    .hero__sub {
-      font-size: 13px;
-      letter-spacing: 0.06em;
-      color: var(--muted);
-      max-width: 520px;
-      margin: 0 auto 40px;
-      opacity: 0;
-      animation: fadeUp 0.8s ease 0.3s forwards;
-    }
-
-    .hero__actions {
-      display: flex;
-      gap: 14px;
-      justify-content: center;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp 0.8s ease 0.4s forwards;
-    }
-
-    /* ── DIVIDER ── */
-    .divider {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      max-width: 1100px;
-      margin: 0 auto 60px;
-      padding: 0 32px;
-      opacity: 0;
-      animation: fadeUp 0.8s ease 0.5s forwards;
-    }
-    .divider__line { flex: 1; height: 1px; background: var(--border); }
-    .divider__text { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
-
-    /* ── GRID ── */
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
-
+    /* ── MEMBERSHIP TIERS ── */
     .tiers {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-bottom: 24px;
-      position: relative;
-      z-index: 1;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
     }
 
-    /* ── CARDS ── */
-    .card {
+    .tier {
+      border: 1px solid var(--line);
       background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      padding: 40px 36px;
+      border-radius: var(--radiusLg);
+      padding: 36px 30px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 18px;
       position: relative;
       overflow: hidden;
-      transition: border-color 0.3s, transform 0.3s;
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      animation: fadeUp 0.7s ease both;
     }
+    .tier:nth-child(1) { animation-delay: 0.3s; }
+    .tier:nth-child(2) { animation-delay: 0.45s; }
+    .tier:nth-child(3) { animation-delay: 0.6s; }
+    .tier:nth-child(4) { animation-delay: 0.75s; }
 
-    .card:nth-child(1) { animation-delay: 0.5s; }
-    .card:nth-child(2) { animation-delay: 0.65s; }
-    .card:nth-child(3) { animation-delay: 0.8s; }
-    .card:nth-child(4) { animation-delay: 0.95s; }
-
-    .card:hover {
-      border-color: rgba(201,168,76,0.5);
+    .tier:hover {
+      border-color: var(--gold-line);
       transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
     }
 
-    .card--featured {
-      background: var(--surface2);
-      border-color: var(--gold);
+    .tier--featured {
+      border-color: var(--gold-line);
+      background:
+        radial-gradient(ellipse 100% 80% at 20% 0%, rgba(200,169,90,0.10), transparent 55%),
+        var(--surface2);
     }
 
-    .card--featured::before {
+    .tier--featured::before {
       content: 'MOST POPULAR';
       position: absolute;
-      top: 20px;
-      right: -28px;
-      background: var(--gold);
+      top: 18px; right: -30px;
+      background: linear-gradient(135deg, var(--gold2), var(--gold));
       color: var(--black);
-      font-size: 8px;
+      font-size: 7.5px;
       font-weight: 700;
-      letter-spacing: 0.2em;
-      padding: 5px 40px;
+      letter-spacing: 0.22em;
+      padding: 5px 44px;
       transform: rotate(45deg);
     }
 
-    .card__accent {
+    .tier__shimmer {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold2), transparent);
       opacity: 0;
       transition: opacity 0.3s;
     }
+    .tier:hover .tier__shimmer,
+    .tier--featured .tier__shimmer { opacity: 0.7; }
 
-    .card:hover .card__accent,
-    .card--featured .card__accent { opacity: 1; }
-
-    .card__tag {
-      font-size: 9px;
-      letter-spacing: 0.25em;
+    .tier__tag {
+      font-size: 8.5px;
+      letter-spacing: 0.26em;
       text-transform: uppercase;
       color: var(--gold);
-      border: 1px solid var(--border);
+      border: 1px solid var(--gold-line);
       display: inline-block;
       padding: 5px 12px;
       border-radius: 1px;
       width: fit-content;
     }
 
-    .card__title {
+    .tier__title {
       font-family: var(--font-display);
       font-size: 26px;
       font-weight: 400;
-      line-height: 1.2;
+      line-height: 1.15;
       letter-spacing: 0.01em;
     }
 
-    .card__price {
+    .tier__price {
       display: flex;
       align-items: baseline;
-      gap: 6px;
+      gap: 8px;
     }
-
-    .card__price-amount {
+    .tier__price-amount {
       font-family: var(--font-display);
-      font-size: 42px;
+      font-size: 46px;
       font-weight: 300;
-      color: var(--gold);
+      color: var(--gold2);
       line-height: 1;
+      letter-spacing: 0.01em;
     }
-
-    .card__price-period {
+    .tier__price-period {
       font-size: 11px;
       letter-spacing: 0.1em;
       color: var(--muted);
     }
 
-    .card__desc {
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.8;
-      letter-spacing: 0.03em;
+    .tier__desc {
+      font-size: 12.5px;
+      color: var(--muted2);
+      line-height: 1.82;
+      letter-spacing: 0.02em;
     }
 
-    .card__list {
+    .tier__list {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 10px;
       flex: 1;
     }
-
-    .card__list li {
+    .tier__list li {
       font-size: 12px;
-      letter-spacing: 0.04em;
-      color: var(--text);
-      opacity: 0.85;
-      padding-left: 20px;
+      letter-spacing: 0.03em;
+      color: var(--muted2);
+      padding-left: 18px;
       position: relative;
-      line-height: 1.6;
+      line-height: 1.65;
     }
-
-    .card__list li::before {
+    .tier__list li::before {
       content: '—';
       position: absolute;
       left: 0;
@@ -393,265 +147,175 @@
       font-size: 10px;
     }
 
-    .card__footer {
+    .tier__footer {
       margin-top: auto;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 9px;
     }
 
-    .card__disclaimer {
-      font-size: 10px;
+    .tier__disclaimer {
+      font-size: 9.5px;
       color: var(--muted);
       letter-spacing: 0.04em;
-      line-height: 1.6;
-      opacity: 0.7;
-    }
-
-    /* ── BUTTONS ── */
-    .btn {
-      display: inline-block;
-      text-decoration: none;
-      font-family: var(--font-body);
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      padding: 14px 28px;
-      border-radius: 2px;
-      transition: all 0.25s;
-      text-align: center;
-      cursor: pointer;
-    }
-
-    .btn--gold {
-      background: var(--gold);
-      color: var(--black);
-      border: 1px solid var(--gold);
-    }
-    .btn--gold:hover {
-      background: var(--gold-light);
-      border-color: var(--gold-light);
-      box-shadow: 0 0 30px rgba(201,168,76,0.3);
-    }
-
-    .btn--ghost {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-    .btn--ghost:hover {
-      border-color: var(--gold);
-      color: var(--gold);
-    }
-
-    .btn--dark {
-      background: var(--surface2);
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-    .btn--dark:hover {
-      border-color: var(--gold);
-      color: var(--gold);
+      line-height: 1.65;
+      opacity: 0.75;
     }
 
     /* ── STORE TEASER ── */
-    .store-teaser {
+    .store-block {
+      border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg);
+      background:
+        radial-gradient(ellipse 80% 80% at 10% 0%, rgba(200,169,90,0.09), transparent 55%),
+        var(--surface);
+      padding: clamp(36px, 5vw, 56px) clamp(28px, 4vw, 48px);
       display: grid;
       grid-template-columns: 1fr auto;
-      gap: 48px;
+      gap: 40px;
       align-items: center;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      padding: 48px;
-      margin-bottom: 24px;
       position: relative;
       overflow: hidden;
-      opacity: 0;
-      animation: fadeUp 0.8s ease 1.05s forwards;
+      animation: fadeUp 0.7s ease 0.9s both;
     }
-
-    .store-teaser::before {
+    .store-block::before {
       content: '';
       position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(201,168,76,0.04) 0%, transparent 60%);
-      pointer-events: none;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold2), transparent);
+      opacity: 0.5;
     }
 
-    .store-teaser__title {
+    .store-block__title {
       font-family: var(--font-display);
-      font-size: 32px;
-      font-weight: 400;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 300;
       letter-spacing: 0.02em;
       margin-bottom: 12px;
-      color: var(--text);
+    }
+    .store-block__text {
+      font-size: 13px;
+      color: var(--muted2);
+      line-height: 1.85;
+      max-width: 500px;
+      margin-bottom: 16px;
     }
 
-    .store-teaser__text {
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.9;
-      letter-spacing: 0.04em;
-      max-width: 480px;
-    }
-
-    .store-teaser__badge {
+    .store-block__badge {
+      width: 130px;
+      height: 130px;
+      border: 1px solid var(--gold-line);
+      border-radius: 50%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 6px;
-      width: 140px;
-      height: 140px;
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-      text-align: center;
+      gap: 5px;
       background: var(--gold-dim);
       flex-shrink: 0;
+      animation: floaty 5s ease-in-out infinite;
     }
-
-    .store-teaser__badge-icon {
-      font-size: 24px;
-      color: var(--gold);
-      line-height: 1;
-    }
-
-    .store-teaser__badge-text {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    .store-teaser__badge-sub {
+    .store-block__badge-icon { font-size: 22px; color: var(--gold2); }
+    .store-block__badge-label {
       font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold2);
+      text-align: center;
+      line-height: 1.4;
+    }
+    .store-block__badge-sub {
+      font-size: 8px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--muted);
     }
 
-    @media (max-width: 768px) {
-      .store-teaser {
-        grid-template-columns: 1fr;
-        padding: 30px 24px;
-        gap: 28px;
-      }
-      .store-teaser__badge {
-        width: 110px;
-        height: 110px;
-        margin: 0 auto;
-      }
-    }
-
-    /* ── DISCLAIMER BLOCK ── */
+    /* ── POLICY BLOCK ── */
     .policy-block {
-      margin: 60px auto 80px;
-      max-width: 800px;
-      border: 1px solid var(--border);
-      padding: 40px 48px;
+      border: 1px solid var(--line);
+      border-radius: var(--radiusLg);
+      background: var(--surface);
+      padding: clamp(28px, 4vw, 44px) clamp(24px, 4vw, 44px);
+      animation: fadeUp 0.7s ease 1s both;
       position: relative;
-      z-index: 1;
-      opacity: 0;
-      animation: fadeUp 0.8s ease 1.1s forwards;
+      overflow: hidden;
     }
-
+    .policy-block::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-line), transparent);
+    }
     .policy-block__title {
       font-family: var(--font-display);
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 400;
-      letter-spacing: 0.05em;
-      margin-bottom: 16px;
-      color: var(--gold);
+      color: var(--gold2);
+      margin-bottom: 14px;
+      letter-spacing: 0.02em;
     }
-
     .policy-block__text {
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.9;
-      letter-spacing: 0.04em;
+      font-size: 12.5px;
+      color: var(--muted2);
+      line-height: 1.95;
+      letter-spacing: 0.02em;
     }
+    .policy-block__text p + p { margin-top: 14px; }
 
-    .policy-block__actions {
-      display: flex;
-      gap: 12px;
-      margin-top: 28px;
-      flex-wrap: wrap;
-    }
-
-    /* ── FOOTER ── */
-    .footer {
-      border-top: 1px solid var(--border);
-      padding: 32px;
-      text-align: center;
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      .nav { display: none; }
-      .menuBtn { display: block; }
-      .topbar__inner { padding: 16px 20px; }
-      .hero { padding: 70px 20px 60px; }
-      .container { padding: 0 20px; }
-      .card { padding: 30px 24px; }
-      .policy-block { padding: 30px 24px; margin: 40px auto 60px; }
       .tiers { grid-template-columns: 1fr; }
+      .store-block { grid-template-columns: 1fr; gap: 24px; }
+      .store-block__badge { margin: 0 auto; }
     }
   </style>
 
 </head>
 <body>
 
+<!-- HEADER -->
+
 <header class="topbar">
-  <div class="topbar__inner">
+  <div class="container topbar__inner">
     <a class="brand" href="index.html" aria-label="House of Elévara Home">
       <div class="brand__glam3d">ELÉVARA</div>
       <div class="brand__subwrap">
         <span class="brand__subMain">House of Elévara Management Group</span>
         <span class="brand__subSmall">by Core Vision Management</span>
       </div>
+      <img class="brand__logo" src="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png" alt="House of Elévara Logo"/>
     </a>
-
-```
-<nav class="nav" aria-label="Primary">
-  <a class="nav__link" href="index.html">Home</a>
-  <a class="nav__link" href="apply.html">Apply</a>
-  <a class="nav__link is-active" href="payments.html">Membership</a>
-  <a class="nav__link" href="contact.html">Contact</a>
-</nav>
-
-<button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
-```
-
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link" href="apply.html">Apply</a>
+      <a class="nav__link is-active" href="payments.html">Membership</a>
+      <a class="nav__link" href="contact.html">Contact</a>
+    </nav>
+    <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
   </div>
 </header>
 
+<!-- MOBILE MENU -->
+
 <div class="mobileMenu" id="mobileMenu" aria-hidden="true">
-  <button class="mobileMenu__backdrop" type="button" aria-label="Close menu" onclick="GS_closeMenu()"></button>
+  <button class="mobileMenu__backdrop" id="menuBackdrop" type="button" aria-label="Close menu" onclick="GS_closeMenu()"></button>
   <div class="mobileMenu__panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
     <div class="mobileMenu__topRow">
       <div class="mobileMenu__brand">House of Elévara</div>
-      <button class="mobileMenu__close" type="button" aria-label="Close menu" onclick="GS_closeMenu()">✕</button>
+      <button class="mobileMenu__close" id="closeMenu" type="button" aria-label="Close menu" onclick="GS_closeMenu()">✕</button>
     </div>
-    <a href="index.html" class="mobileMenu__link" onclick="GS_closeMenu()">Home</a>
-    <a href="apply.html" class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
-    <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Membership</a>
-    <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
+    <button class="mobileMenu__dropdownBtn" id="dropOpener" type="button" aria-expanded="false" onclick="GS_toggleDrop()">
+      Menu <span id="dropChev">▾</span>
+    </button>
+    <div class="mobileMenu__dropdown" id="dropMenu" aria-hidden="true">
+      <a href="index.html" class="mobileMenu__link" onclick="GS_closeMenu()">Home</a>
+      <a href="apply.html" class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
+      <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Membership</a>
+      <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
+    </div>
     <div class="mobileMenu__divider"></div>
     <a class="mobileMenu__cta" href="book.html" onclick="GS_closeMenu()">Request a Booking</a>
     <a class="mobileMenu__cta ghost" href="mailto:houseofelevara@gmail.com" onclick="GS_closeMenu()">Email Us</a>
@@ -660,76 +324,82 @@
 
 <main>
 
-  <!-- HERO -->
+  <!-- PAGE HEADER -->
 
-  <section class="hero">
-    <p class="hero__eyebrow">Membership & Opportunities</p>
-    <h1 class="hero__title">
-      Invest in Your<br><em>Elevation</em>
-    </h1>
-    <p class="hero__sub">
-      House of Elévara is free to join. Our optional membership tiers are designed for talent who is serious about accelerating their visibility, bookings, and brand development.
-    </p>
-    <div class="hero__actions">
-      <a class="btn btn--dark" href="apply.html">Apply for Free</a>
-      <a class="btn btn--ghost" href="contact.html">Have a Question?</a>
+  <div class="container">
+    <div class="pageHeader">
+      <p style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">
+        Membership & Opportunities
+      </p>
+      <h1>Invest in Your<br>Elevation</h1>
+      <p>
+        House of Elévara is free to join. Our optional membership tiers exist for talent who is serious about accelerating their visibility, bookings, and brand development. Every tier is designed to create real results.
+      </p>
+      <div class="btnRow">
+        <a class="btn btn--dark" href="apply.html">Apply for Free</a>
+        <a class="btn btn--ghost" href="contact.html">Have a Question?</a>
+      </div>
     </div>
-  </section>
+  </div>
+
+  <!-- DIVIDER -->
+
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">Choose Your Path</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
 
   <!-- TIERS -->
 
-  <div class="divider container">
-    <div class="divider__line"></div>
-    <span class="divider__text">Choose Your Path</span>
-    <div class="divider__line"></div>
-  </div>
-
-  <div class="container">
+  <div class="container" style="margin-bottom:clamp(32px,4vw,48px);">
     <div class="tiers">
 
 ```
   <!-- FREE -->
-  <div class="card">
-    <div class="card__accent"></div>
-    <span class="card__tag">Foundation</span>
-    <h2 class="card__title">Roster Access</h2>
-    <div class="card__price">
-      <span class="card__price-amount">Free</span>
+  <div class="tier">
+    <div class="tier__shimmer"></div>
+    <span class="tier__tag">Foundation</span>
+    <h2 class="tier__title">Roster Access</h2>
+    <div class="tier__price">
+      <span class="tier__price-amount">Free</span>
     </div>
-    <p class="card__desc">
-      Every journey with Elévara begins here. Submit your application at no cost and enter our talent review process.
+    <p class="tier__desc">
+      Every journey with Elévara begins here. Apply at no cost and enter our talent review process.
     </p>
-    <ul class="card__list">
+    <ul class="tier__list">
       <li>Free application and roster submission</li>
       <li>Standard review for general fit and potential</li>
       <li>Access to future updates and developing opportunities</li>
       <li>Foundation placement within the Elévara ecosystem</li>
     </ul>
-    <div class="card__footer">
+    <div class="tier__footer">
       <a class="btn btn--ghost" href="apply.html">Apply for Free</a>
     </div>
   </div>
 
   <!-- $100 AMBASSADOR -->
-  <div class="card">
-    <div class="card__accent"></div>
-    <span class="card__tag">Brand Activation</span>
-    <h2 class="card__title">Brand Ambassadorship Access</h2>
-    <div class="card__price">
-      <span class="card__price-amount">$100</span>
-      <span class="card__price-period">one-time</span>
+  <div class="tier">
+    <div class="tier__shimmer"></div>
+    <span class="tier__tag">Brand Activation</span>
+    <h2 class="tier__title">Brand Ambassadorship</h2>
+    <div class="tier__price">
+      <span class="tier__price-amount">$100</span>
+      <span class="tier__price-period">one-time</span>
     </div>
-    <p class="card__desc">
-      For talent ready to represent the Elévara brand and earn doing it. This one-time access fee activates your ambassadorship status and unlocks a direct referral income stream.
+    <p class="tier__desc">
+      For talent ready to represent the Elévara brand and earn doing it. Activate your ambassador status and unlock a direct referral income stream.
     </p>
-    <ul class="card__list">
+    <ul class="tier__list">
       <li>Official Elévara Brand Ambassador status</li>
       <li>Access to ambassador campaigns and promotional activations</li>
-      <li>Earn <strong style="color:var(--gold)">$50 for every ambassador you refer</strong> — a 50/50 commission split on each referral</li>
+      <li>Earn <strong style="color:var(--gold2);">$50 for every ambassador you refer</strong> — a 50/50 commission split per referral</li>
       <li>Internal opportunity coordination and priority review</li>
-      <li>Early access to the Elévara store once launched — earn commission or salary on digital and physical product sales</li>
+      <li>Early access to the Elévara store — earn commission or salary on product sales</li>
     </ul>
-    <div class="card__footer">
+    <div class="tier__footer">
       <a class="btn btn--gold" target="_blank" rel="noopener noreferrer"
          href="https://buy.stripe.com/5kQfZa9Tt9b322g5gu4sE05">
         Become an Ambassador — $100
@@ -738,71 +408,71 @@
          href="mailto:houseofelevara@gmail.com?subject=Brand%20Ambassadorship%20Question%20%7C%20House%20of%20El%C3%A9vara">
         Ask a Question
       </a>
-      <p class="card__disclaimer">Secure checkout via Stripe. One-time payment. Referral commissions paid out per confirmed ambassador enrollment.</p>
+      <p class="tier__disclaimer">Secure checkout via Stripe. Referral commissions paid per confirmed ambassador enrollment.</p>
     </div>
   </div>
 
   <!-- $40/month -->
-  <div class="card card--featured">
-    <div class="card__accent"></div>
-    <span class="card__tag">Active Membership</span>
-    <h2 class="card__title">Monthly Elite Access</h2>
-    <div class="card__price">
-      <span class="card__price-amount">$40</span>
-      <span class="card__price-period">/ month</span>
+  <div class="tier tier--featured">
+    <div class="tier__shimmer"></div>
+    <span class="tier__tag">Active Membership</span>
+    <h2 class="tier__title">Monthly Elite Access</h2>
+    <div class="tier__price">
+      <span class="tier__price-amount">$40</span>
+      <span class="tier__price-period">/ month</span>
     </div>
-    <p class="card__desc">
-      Stay in active standing. Monthly members receive consistent priority consideration, ongoing profile support, and direct access to coordinated opportunities as they arise.
+    <p class="tier__desc">
+      Stay in active standing. Monthly members receive consistent priority consideration, ongoing profile support, and direct access to coordinated opportunities.
     </p>
-    <ul class="card__list">
+    <ul class="tier__list">
       <li>Priority review for all active and incoming opportunities</li>
       <li>Maintained active profile status within Elévara</li>
       <li>Ongoing talent coordination and direct communication support</li>
       <li>Travel expense guidance and coordination where applicable</li>
       <li>Stronger positioning for bookings as opportunities develop</li>
     </ul>
-    <div class="card__footer">
+    <div class="tier__footer">
       <a class="btn btn--gold" target="_blank" rel="noopener noreferrer"
          href="https://buy.stripe.com/cNicMY6Hhcnf6iw4cq4sE06">
         Start Monthly Membership
       </a>
       <a class="btn btn--ghost"
-         href="mailto:houseofelevara@gmail.com?subject=Monthly%20Membership%20Support%20%7C%20House%20of%20El%C3%A9vara">
+         href="mailto:houseofelevara@gmail.com?subject=Monthly%20Membership%20%7C%20House%20of%20El%C3%A9vara">
         Ask a Question
       </a>
-      <p class="card__disclaimer">Secure checkout via Stripe. Cancel anytime through your billing portal.</p>
+      <p class="tier__disclaimer">Secure checkout via Stripe. Cancel anytime through your billing portal.</p>
     </div>
   </div>
 
   <!-- $360/year -->
-  <div class="card">
-    <div class="card__accent"></div>
-    <span class="card__tag">Best Value</span>
-    <h2 class="card__title">Annual Elite Membership</h2>
-    <div class="card__price">
-      <span class="card__price-amount">$360</span>
-      <span class="card__price-period">/ year</span>
+  <div class="tier">
+    <div class="tier__shimmer"></div>
+    <span class="tier__tag">Best Value</span>
+    <h2 class="tier__title">Annual Elite Membership</h2>
+    <div class="tier__price">
+      <span class="tier__price-amount">$360</span>
+      <span class="tier__price-period">/ year</span>
     </div>
-    <p class="card__desc">
-      Everything in Monthly Elite Access — billed annually at a reduced rate. Commit to your development and save $120 compared to paying month to month.
+    <p class="tier__desc">
+      Everything in Monthly Elite Access — billed annually at a reduced rate. Commit to your development and save $120 compared to month to month.
     </p>
-    <ul class="card__list">
+    <ul class="tier__list">
       <li>All benefits of Monthly Elite Access included</li>
       <li>Annual commitment locks in your active status for the full year</li>
       <li>Equivalent to just $30/month — save $120 annually</li>
       <li>Strongest long-term positioning within the Elévara talent system</li>
       <li>First priority consideration as new opportunities scale</li>
     </ul>
-    <div class="card__footer">
+    <div class="tier__footer">
       <a class="btn btn--gold" target="_blank" rel="noopener noreferrer"
          href="https://buy.stripe.com/dRmfZa9TtgDveP24cq4sE0e">
         Start Annual Membership — $360
       </a>
       <a class="btn btn--ghost"
-         href="mailto:houseofelevara@gmail.com?subject=Yearly%20Membership%20Support%20%7C%20House%20of%20El%C3%A9vara">
+         href="mailto:houseofelevara@gmail.com?subject=Annual%20Membership%20%7C%20House%20of%20El%C3%A9vara">
         Ask a Question
       </a>
-      <p class="card__disclaimer">Secure checkout via Stripe. Billed once annually. Equivalent to $30/month.</p>
+      <p class="tier__disclaimer">Secure checkout via Stripe. Billed once annually. Equivalent to $30/month.</p>
     </div>
   </div>
 
@@ -813,44 +483,60 @@
 
   <!-- STORE TEASER -->
 
-  <div class="container">
-    <div class="store-teaser">
-      <div class="store-teaser__left">
-        <span class="card__tag" style="margin-bottom:16px;display:inline-block;">Coming Soon</span>
-        <h2 class="store-teaser__title">The Elévara Store</h2>
-        <p class="store-teaser__text">
-          We are building something bigger. The House of Elévara online store will feature digital products, physical releases, and exclusive brand collections — with real earning opportunities built in for our talent.
-        </p>
-        <ul class="card__list" style="margin-top:16px;">
-          <li>Ambassadors earn commission on every product sale they drive</li>
-          <li>Top-performing talent eligible for salaried store roles</li>
-          <li>Digital and physical product lines launching soon</li>
-          <li>Early access guaranteed for all active members and ambassadors</li>
-        </ul>
-      </div>
-      <div class="store-teaser__right">
-        <div class="store-teaser__badge">
-          <span class="store-teaser__badge-icon">◈</span>
-          <span class="store-teaser__badge-text">Elévara Store</span>
-          <span class="store-teaser__badge-sub">Launching Soon</span>
-        </div>
-      </div>
+  <div class="container" style="margin-bottom:clamp(32px,4vw,48px);">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">Coming Soon</span>
+      <div class="sectionDivider__line"></div>
     </div>
+
+```
+<div class="store-block">
+  <div>
+    <span style="font-size:8.5px;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px;">The Next Chapter</span>
+    <h2 class="store-block__title">The Elévara Store</h2>
+    <p class="store-block__text">
+      We are building something bigger. The House of Elévara online store will feature digital products, physical releases, and exclusive brand collections — with real earning opportunities built directly into the platform for our talent.
+    </p>
+    <ul class="cleanList">
+      <li>Ambassadors earn commission on every product sale they drive</li>
+      <li>Top-performing talent eligible for salaried store roles</li>
+      <li>Digital and physical product lines launching soon</li>
+      <li>Early access guaranteed for all active members and ambassadors</li>
+    </ul>
+  </div>
+  <div class="store-block__badge">
+    <span class="store-block__badge-icon">◈</span>
+    <span class="store-block__badge-label">Elévara<br>Store</span>
+    <span class="store-block__badge-sub">Launching Soon</span>
+  </div>
+</div>
+```
+
   </div>
 
-  <!-- POLICY / TRANSPARENCY BLOCK -->
+  <!-- TRANSPARENCY -->
 
-  <div class="container">
+  <div class="container" style="margin-bottom:clamp(48px,8vw,88px);">
     <div class="policy-block">
       <h3 class="policy-block__title">Transparency & Expectations</h3>
-      <p class="policy-block__text">
-        House of Elévara operates as a talent development and management ecosystem. Membership fees support active coordination, opportunity development, and the infrastructure required to position talent for real, sustainable results.<br><br>
-        Participation in any paid tier does not guarantee bookings, income, travel reimbursement, specific merchandise delivery dates, or campaign selection. What it does guarantee is that your profile receives active attention, dedicated coordination, and stronger positioning within the Elévara system as opportunities are developed.<br><br>
-        We are committed to building this the right way — with integrity, transparency, and a genuine investment in the talent we represent.
-      </p>
-      <div class="policy-block__actions">
+      <div class="policy-block__text">
+        <p>
+          House of Elévara operates as a talent development and management ecosystem. Membership fees support active coordination, opportunity development, and the infrastructure required to position talent for real, sustainable results.
+        </p>
+        <p>
+          Participation in any paid tier does not guarantee bookings, income, travel reimbursement, or campaign selection. What it does guarantee is that your profile receives active attention, dedicated coordination, and stronger positioning within the Elévara system as opportunities are developed.
+        </p>
+        <p>
+          We are committed to building this the right way — with integrity, transparency, and a genuine investment in the talent we represent.
+        </p>
+      </div>
+      <div class="btnRow">
         <a class="btn btn--dark" href="apply.html">Begin with a Free Application</a>
-        <a class="btn btn--ghost" href="mailto:houseofelevara@gmail.com?subject=General%20Opportunity%20Question%20%7C%20House%20of%20El%C3%A9vara">Email Us Directly</a>
+        <a class="btn btn--ghost"
+           href="mailto:houseofelevara@gmail.com?subject=Membership%20Question%20%7C%20House%20of%20El%C3%A9vara">
+          Email Us Directly
+        </a>
       </div>
     </div>
   </div>
@@ -858,22 +544,9 @@
 </main>
 
 <footer class="footer">
-  <div>All payments processed securely via Stripe</div>
-  <div>by Core Vision Management &nbsp;·&nbsp; +1 (470) 898-0718 &nbsp;·&nbsp; houseofelevara@gmail.com</div>
+  <div>All payments processed securely via Stripe &nbsp;·&nbsp; © House of Elévara Management Group</div>
+  <div class="footer__muted">by Core Vision Management &nbsp;·&nbsp; +1 (470) 898-0718 &nbsp;·&nbsp; houseofelevara@gmail.com</div>
 </footer>
-
-<script>
-  function GS_openMenu() {
-    const m = document.getElementById('mobileMenu');
-    m.classList.add('open');
-    m.setAttribute('aria-hidden', 'false');
-  }
-  function GS_closeMenu() {
-    const m = document.getElementById('mobileMenu');
-    m.classList.remove('open');
-    m.setAttribute('aria-hidden', 'true');
-  }
-</script>
 
 <script src="assets/app.js?v=99"></script>
 
