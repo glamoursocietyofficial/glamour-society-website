@@ -1537,3 +1537,24 @@ details.infoCard a:hover { color: var(--gold3); }
   body { background: white; color: black; }
   .footer { border-top: 1px solid #ccc; }
 }
+/* ===== EMERGENCY LOGO FIX ===== */
+.header-logo {
+  width: 40px !important;
+  height: 40px !important;
+  max-width: 40px !important;
+  object-fit: contain;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.brandCard__logo {
+  width: 100% !important;
+  max-width: 200px !important;
+  height: auto !important;
+  margin: 0 auto;
+}
+
+img[src="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"] {
+  max-width: 200px !important;
+  height: auto !important;
+}
