@@ -55,6 +55,63 @@
       flex-wrap: wrap;
       flex-direction: row;
     }
+    .apply-hero .btn {
+      flex: 0 1 auto;
+      width: auto;
+    }
+
+    /* ── PROCESS STEPS ── */
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 12px;
+    }
+    .process-step {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+    }
+    .process-step:last-child { border-bottom: none; }
+    .process-step__num {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 300;
+      color: var(--gold-line);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 32px;
+      letter-spacing: 0.02em;
+    }
+    .process-step__content { flex: 1; }
+    .process-step__title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold2);
+      margin-bottom: 5px;
+    }
+    .process-step__desc {
+      font-size: 12.5px;
+      color: var(--muted2);
+      line-height: 1.75;
+    }
+    .process-step__tag {
+      display: inline-block;
+      font-size: 8px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: linear-gradient(135deg, var(--gold2), var(--gold));
+      padding: 3px 8px;
+      border-radius: 1px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
 
     /* ── TIER COMPARE ── */
     .tier-compare {
@@ -268,26 +325,58 @@
     <div class="grid2">
 
 ```
+  <!-- AFTER YOU APPLY -->
   <div class="cardGlow">
     <h3 class="goldTitle">After You Apply</h3>
-    <ul class="cleanList">
-      <li>We review your submission for professionalism, readiness, and fit within the Elévara ecosystem.</li>
-      <li>If approved, you will receive interview scheduling and detailed onboarding next steps via email.</li>
-      <li>Once confirmed, onboarding covers expectations, conduct standards, and booking protocol.</li>
-      <li>You are then placed on our active roster and considered for opportunities as they develop.</li>
-    </ul>
+    <div class="process-steps">
+
+      <div class="process-step">
+        <div class="process-step__num">01</div>
+        <div class="process-step__content">
+          <div class="process-step__title">Admissions Review</div>
+          <p class="process-step__desc">Your application is received and reviewed by our admissions coordinator for professionalism, readiness, and fit within the Elévara ecosystem.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__num">02</div>
+        <div class="process-step__content">
+          <div class="process-step__title">Interview Scheduling</div>
+          <p class="process-step__desc">If approved, our admissions coordinator will reach out directly to schedule your interview and share detailed onboarding next steps via email.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__num">03</div>
+        <div class="process-step__content">
+          <div class="process-step__title">Onboarding</div>
+          <p class="process-step__desc">Once confirmed, onboarding covers expectations, conduct standards, booking protocol, and how to get the most out of your time with Elévara.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__num">04</div>
+        <div class="process-step__content">
+          <span class="process-step__tag">Active Roster</span>
+          <div class="process-step__title">Placed & Considered</div>
+          <p class="process-step__desc">You are placed on our active roster and considered for bookings, campaigns, and opportunities as they develop through our talent manager.</p>
+        </div>
+      </div>
+
+    </div>
     <p class="tiny muted" style="margin-top:16px;padding-top:16px;border-top:1px solid var(--line);">
-      Watch your email after submitting. Respond quickly — responsiveness is part of our standard.
+      Watch your email after submitting. Our admissions coordinator reviews every application — responsiveness is part of our standard and a signal of your readiness.
     </p>
   </div>
 
+  <!-- TIPS -->
   <div class="card">
     <h3 class="goldTitle">Tips for Approval</h3>
     <ul class="cleanList">
       <li>Submit clear, well-lit photos — a clean headshot and at least one full-body image.</li>
       <li>Provide accurate measurements and realistic availability.</li>
       <li>Include your Instagram handle and any relevant experience or training.</li>
-      <li>Be professional in every field — your application is your first impression.</li>
+      <li>Be professional in every field — your application is your first impression with our admissions coordinator.</li>
       <li>Be consistent and responsive from the moment you apply.</li>
     </ul>
     <div class="btnRow" style="margin-top:20px;flex-direction:row;flex-wrap:wrap;">
@@ -300,30 +389,38 @@
         Visit Instagram
       </a>
     </div>
+
+    <!-- WHO WE ARE LOOKING FOR -->
+    <div style="margin-top:24px;padding-top:24px;border-top:1px solid var(--line);">
+      <h3 class="goldTitle" style="font-size:17px;">Who We Are Looking For</h3>
+      <p class="muted" style="font-size:12.5px;line-height:1.8;margin-bottom:14px;">
+        Elévara is not a traditional agency. We develop talent from the ground up and position them for real income, real visibility, and real brand equity.
+      </p>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div class="infoCard" style="padding:12px 14px;">
+          <strong>Professionalism</strong>You communicate clearly, show up on time, and take the process seriously.
+        </div>
+        <div class="infoCard" style="padding:12px 14px;">
+          <strong>Coachability</strong>You are open to direction, feedback, and development from our team.
+        </div>
+        <div class="infoCard" style="padding:12px 14px;">
+          <strong>Consistency</strong>You show up — in communication, in presentation, in follow-through.
+        </div>
+        <div class="infoCard" style="padding:12px 14px;">
+          <strong>Ambition</strong>You are building something long-term, not just looking for a one-time opportunity.
+        </div>
+      </div>
+    </div>
+
   </div>
 
-</div>
-
-<!-- WHO WE ARE LOOKING FOR -->
-<div class="readyBlock" style="margin-top:20px;">
-  <h3>Who We Are Looking For</h3>
-  <p>
-    Elévara is not a traditional agency. We develop talent from the ground up and position them for real income, real visibility, and real brand equity. We are looking for individuals who are coachable, driven, and understand that building a brand takes discipline.
-  </p>
-</div>
-
-<div class="infoGrid" style="margin-top:16px;">
-  <div class="infoCard"><strong>Professionalism</strong>You communicate clearly, show up on time, and take the process seriously.</div>
-  <div class="infoCard"><strong>Coachability</strong>You are open to direction, feedback, and development.</div>
-  <div class="infoCard"><strong>Consistency</strong>You show up — in communication, in presentation, in follow-through.</div>
-  <div class="infoCard"><strong>Ambition</strong>You are building something long-term, not just looking for a one-time opportunity.</div>
 </div>
 
 <!-- MEMBERSHIP COMPARE -->
 <div class="tier-compare">
   <h3 class="tier-compare__title">Want to Move Faster?</h3>
   <p class="tier-compare__sub">
-    Talent who enroll in an active membership tier receive dedicated talent management, priority consideration, and stronger positioning from day one. Choose the path that fits where you are right now.
+    Talent who enroll in an active membership tier receive a dedicated talent manager, priority consideration from our admissions coordinator, and stronger positioning from day one. Choose the path that fits where you are right now.
   </p>
 
   <div class="tier-compare__grid">
@@ -335,8 +432,8 @@
       <div class="tier-compare__period">No commitment</div>
       <ul class="tier-compare__features">
         <li>Roster submission</li>
-        <li>Standard review</li>
-        <li>General opportunity access</li>
+        <li>Admissions coordinator review</li>
+        <li>Standard opportunity access</li>
       </ul>
       <a class="btn btn--ghost btn--sm tier-compare__cta"
          href="https://docs.google.com/forms/d/e/1FAIpQLSfLdP8fi5cfD9TIPL1RNPC9X7g_Rr_F125t717deLraWhirxQ/viewform"
@@ -352,7 +449,7 @@
       <div class="tier-compare__period">/ month — cancel anytime</div>
       <ul class="tier-compare__features">
         <li>Dedicated talent manager</li>
-        <li>Priority booking review</li>
+        <li>Priority admissions review</li>
         <li>Active profile coordination</li>
         <li>Direct communication support</li>
         <li>Travel coordination where applicable</li>
