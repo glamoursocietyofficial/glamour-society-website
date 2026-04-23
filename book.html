@@ -1,162 +1,452 @@
 <!doctype html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <title>Request a Booking | House of Elévara</title>
-  <meta name="description" content="Request a booking through House of Elévara by Core Vision Management. Professional coordination, clear expectations, and a documented email process."/>
-
+  <meta name="description" content="Request a booking through House of Elévara by Core Vision Management. Professional coordination, clear expectations, and a documented process."/>
   <link rel="stylesheet" href="assets/styles.css"/>
-
-  <!-- ✅ Luxury Home Screen / PWA setup -->
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png">
-
   <meta name="apple-mobile-web-app-title" content="Elévara">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="theme-color" content="#000000">
-</head>
+  <meta name="theme-color" content="#060605">
 
+  <style>
+    /* ── EDITORIAL PORTAL ── */
+    .editorial-portal {
+      position: relative;
+      border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg);
+      overflow: hidden;
+      margin-top: 20px;
+      background: var(--black2);
+    }
+
+    .editorial-portal__bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 100% 80% at 50% 0%,   rgba(200,169,90,0.13) 0%, transparent 55%),
+        radial-gradient(ellipse 60%  60% at 100% 100%, rgba(200,169,90,0.07) 0%, transparent 55%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .editorial-portal__top {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold2), transparent);
+      opacity: 0.7;
+    }
+
+    .editorial-portal__inner {
+      position: relative;
+      z-index: 1;
+      padding: clamp(48px, 8vw, 88px) clamp(28px, 5vw, 64px);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .editorial-portal__eyebrow {
+      font-size: 9px;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .editorial-portal__eyebrow::before,
+    .editorial-portal__eyebrow::after {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+    }
+
+    .editorial-portal__title {
+      font-family: var(--font-display);
+      font-size: clamp(38px, 6vw, 72px);
+      font-weight: 300;
+      line-height: 1.06;
+      letter-spacing: 0.02em;
+      max-width: 700px;
+    }
+
+    .editorial-portal__title em {
+      font-style: italic;
+      color: var(--gold2);
+    }
+
+    .editorial-portal__sub {
+      font-size: 13.5px;
+      color: var(--muted2);
+      line-height: 1.85;
+      max-width: 540px;
+      letter-spacing: 0.03em;
+    }
+
+    .editorial-portal__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-family: var(--font-body);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      padding: 18px 40px;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, var(--gold3) 0%, var(--gold2) 30%, var(--gold) 70%, #9e7830 100%);
+      color: var(--black);
+      border: 1px solid var(--gold);
+      box-shadow: 0 4px 28px rgba(200,169,90,0.25), inset 0 1px 0 rgba(255,255,255,0.2);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+    .editorial-portal__cta::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+    .editorial-portal__cta:hover::after { transform: translateX(100%); }
+    .editorial-portal__cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 48px rgba(200,169,90,0.45), inset 0 1px 0 rgba(255,255,255,0.2);
+    }
+    .editorial-portal__arrow {
+      font-size: 14px;
+      transition: transform 0.3s ease;
+    }
+    .editorial-portal__cta:hover .editorial-portal__arrow { transform: translateX(4px); }
+
+    .editorial-portal__note {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-top: -8px;
+    }
+
+    /* Orbiting ring decoration */
+    .editorial-portal__ring {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border: 1px solid rgba(200,169,90,0.08);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      animation: orbitSpin 24s linear infinite;
+    }
+    .editorial-portal__ring::before {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      top: -3px;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 8px rgba(200,169,90,0.6);
+    }
+    .editorial-portal__ring2 {
+      width: 480px;
+      height: 480px;
+      border-color: rgba(200,169,90,0.04);
+      animation: orbitSpin 36s linear infinite reverse;
+    }
+
+    @keyframes orbitSpin {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to   { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    /* ── BOOKING STEPS ── */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--gold-line);
+      border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg);
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .step {
+      background: var(--black2);
+      padding: 28px 24px;
+      transition: background 0.22s;
+    }
+    .step:hover { background: var(--black3); }
+
+    .step__num {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 300;
+      color: var(--gold-line);
+      line-height: 1;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+    .step__title {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold2);
+      margin-bottom: 8px;
+    }
+    .step__desc {
+      font-size: 12px;
+      color: var(--muted2);
+      line-height: 1.75;
+    }
+
+    @media (max-width: 768px) {
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .editorial-portal__ring,
+      .editorial-portal__ring2 { display: none; }
+    }
+    @media (max-width: 480px) {
+      .steps { grid-template-columns: 1fr; }
+    }
+  </style>
+
+</head>
 <body>
+
+<!-- HEADER -->
 
 <header class="topbar">
   <div class="container topbar__inner">
-
     <a class="brand" href="index.html" aria-label="House of Elévara Home">
       <div class="brand__glam3d">ELÉVARA</div>
       <div class="brand__subwrap">
         <span class="brand__subMain">House of Elévara Management Group</span>
         <span class="brand__subSmall">by Core Vision Management</span>
       </div>
+      <img class="brand__logo" src="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png" alt="House of Elévara Logo"/>
     </a>
-
     <nav class="nav" aria-label="Primary">
       <a class="nav__link" href="index.html">Home</a>
       <a class="nav__link" href="apply.html">Apply</a>
-      <a class="nav__link" href="payments.html">Opportunity</a>
+      <a class="nav__link" href="payments.html">Membership</a>
       <a class="nav__link" href="contact.html">Contact</a>
     </nav>
-
     <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
   </div>
 </header>
 
+<!-- MOBILE MENU -->
+
 <div class="mobileMenu" id="mobileMenu" aria-hidden="true">
   <button class="mobileMenu__backdrop" id="menuBackdrop" type="button" aria-label="Close menu" onclick="GS_closeMenu()"></button>
-
   <div class="mobileMenu__panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
     <div class="mobileMenu__topRow">
       <div class="mobileMenu__brand">House of Elévara</div>
       <button class="mobileMenu__close" id="closeMenu" type="button" aria-label="Close menu" onclick="GS_closeMenu()">✕</button>
     </div>
-
     <button class="mobileMenu__dropdownBtn" id="dropOpener" type="button" aria-expanded="false" onclick="GS_toggleDrop()">
       Menu <span id="dropChev">▾</span>
     </button>
-
     <div class="mobileMenu__dropdown" id="dropMenu" aria-hidden="true">
       <a href="index.html" class="mobileMenu__link" onclick="GS_closeMenu()">Home</a>
       <a href="apply.html" class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
-      <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Opportunity</a>
+      <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Membership</a>
       <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
     </div>
-
     <div class="mobileMenu__divider"></div>
-
     <a class="mobileMenu__cta"
        href="mailto:houseofelevara@gmail.com?subject=Booking%20Request%20%7C%20House%20of%20El%C3%A9vara"
-       onclick="GS_closeMenu()">
-       Request a Booking
-    </a>
-
-    <a class="mobileMenu__cta ghost"
-       href="mailto:houseofelevara@gmail.com"
-       onclick="GS_closeMenu()">
-       Email Us
-    </a>
+       onclick="GS_closeMenu()">Request a Booking</a>
+    <a class="mobileMenu__cta ghost" href="mailto:houseofelevara@gmail.com" onclick="GS_closeMenu()">Email Us</a>
   </div>
 </div>
 
-<main class="container">
+<main>
 
-  <div class="pageHeader">
-    <h1>Request a Booking</h1>
-    <p>
-      We coordinate bookings through email to keep everything professional, documented, and clear.
-      Tap below to open a pre-filled booking request.
-    </p>
+  <!-- PAGE HEADER -->
+
+  <div class="container">
+    <div class="pageHeader">
+      <p style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">
+        Client Services
+      </p>
+      <h1>Request<br>a Booking</h1>
+      <p>
+        We coordinate every booking through direct communication to ensure professional standards, clear expectations, and a documented process from inquiry to delivery.
+      </p>
+      <div class="btnRow">
+        <a class="btn btn--gold"
+           href="mailto:houseofelevara@gmail.com?subject=Model%20Booking%20Request%20%7C%20House%20of%20El%C3%A9vara&body=Hello%20House%20of%20El%C3%A9vara%2C%0A%0AI%20would%20like%20to%20request%20a%20booking.%0A%0AEvent%20Type%3A%0ADate%3A%0ALocation%3A%0ATime%20Window%3A%0ANumber%20of%20Models%3A%0ABudget%20Range%3A%0AWardrobe%20/%20Theme%3A%0ADeliverables%3A%0A%0AContact%20Name%3A%0APhone%3A%0A%0AThank%20you%2C">
+          Email Booking Request
+        </a>
+        <a class="btn btn--ghost" href="contact.html">Other Inquiries</a>
+      </div>
+    </div>
   </div>
 
-  <section class="grid2">
-    <div class="cardGlow">
+  <!-- HOW IT WORKS -->
 
-      <img
-        src="model-runway-fashion-show.jpeg"
-        alt="Runway fashion model"
-        style="width:100%; max-width:600px; margin:0 auto; border-radius:18px;"
-      />
-
-      <div style="margin-top:18px;">
-        <h2 class="goldTitle">Send Booking Request</h2>
-
-        <p class="muted" style="margin-top:8px;">
-          Provide your event details and budget. We’ll confirm availability, expectations, and next steps
-          with a clear paper trail.
-        </p>
-
-        <div class="btnRow">
-          <a class="btn btn--gold"
-             href="mailto:houseofelevara@gmail.com?subject=Model%20Booking%20Request%20%7C%20House%20of%20El%C3%A9vara&body=Hello%20House%20of%20El%C3%A9vara%2C%0A%0AI%20would%20like%20to%20request%20a%20booking.%0A%0AEvent%20Type%3A%0ADate%3A%0ALocation%3A%0ATime%20Window%3A%0ANumber%20of%20Models%3A%0ABudget%20Range%3A%0AWardrobe%20/%20Theme%3A%0ADeliverables%20(e.g.%20appearance%2C%20photo%2Fvideo%2C%20promotion)%3A%0A%0AContact%20Name%3A%0APhone%3A%0A%0AThank%20you%2C">
-             Email Booking Request
-          </a>
-
-          <a class="btn btn--ghost" href="contact.html">
-            Contact
-          </a>
-        </div>
-
-        <p class="tiny muted" style="margin-top:10px;">
-          Tip: The faster you provide complete details, the faster we can confirm availability.
-        </p>
-      </div>
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">How It Works</span>
+      <div class="sectionDivider__line"></div>
     </div>
 
-    <div class="card">
-      <h3 class="goldTitle">How it works</h3>
-      <ul class="cleanList">
-        <li><strong>Request:</strong> Submit details via email.</li>
-        <li><strong>Confirm:</strong> We confirm availability + expectations.</li>
-        <li><strong>Coordinate:</strong> Time, location, wardrobe, and deliverables.</li>
-        <li><strong>Deliver:</strong> Talent arrives prepared and on time.</li>
-      </ul>
+```
+<div class="steps">
+  <div class="step">
+    <div class="step__num">01</div>
+    <div class="step__title">Request</div>
+    <p class="step__desc">Submit your booking request via email with your event details, date, location, and budget.</p>
+  </div>
+  <div class="step">
+    <div class="step__num">02</div>
+    <div class="step__title">Confirm</div>
+    <p class="step__desc">We confirm talent availability, review expectations, and establish a clear paper trail.</p>
+  </div>
+  <div class="step">
+    <div class="step__num">03</div>
+    <div class="step__title">Coordinate</div>
+    <p class="step__desc">Time, location, wardrobe, deliverables, and conduct standards are outlined and agreed upon.</p>
+  </div>
+  <div class="step">
+    <div class="step__num">04</div>
+    <div class="step__title">Deliver</div>
+    <p class="step__desc">Talent arrives prepared and on time. The experience remains premium from start to finish.</p>
+  </div>
+</div>
+```
 
-      <div class="readyBlock" style="margin-top:14px">
-        <h3>Need a faster response?</h3>
-        <p>
-          Include your date, location, number of models, and budget range in the first message.
-        </p>
-        <div class="btnRow">
-          <a class="btn btn--dark"
-             href="mailto:houseofelevara@gmail.com?subject=Urgent%20Booking%20Request%20%7C%20House%20of%20El%C3%A9vara">
-             Email Urgent Request
-          </a>
-          <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer"
-             href="https://www.instagram.com/houseofelevara?igsh=NmtnYzV4bGcybjVy&utm_source=qr">
-             View Instagram
-          </a>
-        </div>
-      </div>
+  </div>
+
+  <!-- EDITORIAL PORTAL -->
+
+  <div class="container" style="margin-top:clamp(40px,6vw,64px);">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">Explore Our Talent</span>
+      <div class="sectionDivider__line"></div>
     </div>
-  </section>
+
+```
+<div class="editorial-portal">
+  <div class="editorial-portal__bg"></div>
+  <div class="editorial-portal__top"></div>
+  <div class="editorial-portal__ring"></div>
+  <div class="editorial-portal__ring editorial-portal__ring2"></div>
+
+  <div class="editorial-portal__inner">
+    <p class="editorial-portal__eyebrow">Our Editorial World</p>
+
+    <h2 class="editorial-portal__title">
+      Experience the Vision<br>at <em>Elyra Editorial</em>
+    </h2>
+
+    <p class="editorial-portal__sub">
+      Before you book, see the world we are building. Elyra Editorial is our connected media and editorial presence — a window into the talent, aesthetic direction, and creative output of the House of Elévara ecosystem.
+    </p>
+
+    <a class="editorial-portal__cta" href="https://www.elyraeditorial.com" target="_blank" rel="noopener noreferrer">
+      Enter Elyra Editorial
+      <span class="editorial-portal__arrow">→</span>
+    </a>
+
+    <p class="editorial-portal__note">elyraeditorial.com &nbsp;·&nbsp; Opens in a new window</p>
+  </div>
+</div>
+```
+
+  </div>
+
+  <!-- BOOKING DETAIL + FAST RESPONSE -->
+
+  <div class="container" style="margin-top:clamp(32px,4vw,48px);margin-bottom:clamp(48px,8vw,88px);">
+    <div class="grid2">
+
+```
+  <div class="cardGlow">
+    <h3 class="goldTitle">What to Include</h3>
+    <p class="muted" style="font-size:13px;margin-bottom:16px;">
+      The more detail you provide upfront, the faster we can confirm and coordinate.
+    </p>
+    <ul class="cleanList">
+      <li>Event type and description</li>
+      <li>Date, time window, and location</li>
+      <li>Number of models needed</li>
+      <li>Budget range</li>
+      <li>Wardrobe or theme requirements</li>
+      <li>Deliverables — appearance, photo/video, promotion, etc.</li>
+      <li>Your contact name and phone number</li>
+    </ul>
+    <div class="btnRow">
+      <a class="btn btn--gold"
+         href="mailto:houseofelevara@gmail.com?subject=Model%20Booking%20Request%20%7C%20House%20of%20El%C3%A9vara&body=Hello%20House%20of%20El%C3%A9vara%2C%0A%0AI%20would%20like%20to%20request%20a%20booking.%0A%0AEvent%20Type%3A%0ADate%3A%0ALocation%3A%0ATime%20Window%3A%0ANumber%20of%20Models%3A%0ABudget%20Range%3A%0AWardrobe%20/%20Theme%3A%0ADeliverables%3A%0A%0AContact%20Name%3A%0APhone%3A%0A%0AThank%20you%2C">
+        Send Booking Request
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="goldTitle">Need a Fast Response?</h3>
+    <p class="muted" style="font-size:13px;line-height:1.8;">
+      For urgent bookings or time-sensitive requests, include your date and budget in the subject line. We prioritize complete inquiries.
+    </p>
+    <div class="btnRow">
+      <a class="btn btn--dark"
+         href="mailto:houseofelevara@gmail.com?subject=Urgent%20Booking%20Request%20%7C%20House%20of%20El%C3%A9vara">
+        Email Urgent Request
+      </a>
+      <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer"
+         href="https://www.instagram.com/houseofelevara?igsh=NmtnYzV4bGcybjVy&utm_source=qr">
+        View Instagram
+      </a>
+    </div>
+
+    <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--line);">
+      <p style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Direct Contact</p>
+      <a href="mailto:houseofelevara@gmail.com" style="display:block;font-size:13px;color:var(--muted2);text-decoration:none;margin-bottom:6px;transition:color 0.2s;" onmouseover="this.style.color='var(--gold2)'" onmouseout="this.style.color='var(--muted2)'">
+        houseofelevara@gmail.com
+      </a>
+      <a href="tel:+14708980718" style="display:block;font-size:13px;color:var(--muted2);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--gold2)'" onmouseout="this.style.color='var(--muted2)'">
+        +1 (470) 898-0718
+      </a>
+    </div>
+  </div>
+
+</div>
+```
+
+  </div>
 
 </main>
 
 <footer class="footer">
-  <div>© House of Elévara</div>
-  <div class="footer__muted">by Core Vision Management • houseofelevara@gmail.com</div>
+  <div>© House of Elévara Management Group</div>
+  <div class="footer__muted">by Core Vision Management &nbsp;·&nbsp; houseofelevara@gmail.com &nbsp;·&nbsp; +1 (470) 898-0718</div>
 </footer>
 
 <script src="assets/app.js?v=99"></script>
+
 </body>
 </html>
