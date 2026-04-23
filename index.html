@@ -1,24 +1,22 @@
 <!doctype html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <title>House of Elévara | Model Management</title>
-  <meta name="description" content="House of Elévara by Core Vision Management — model & talent management with a premium booking process. Apply, interview, and request bookings through our official email."/>
-
-  <!-- Styles -->
+  <meta name="description" content="House of Elévara by Core Vision Management — a private, high-level model development and talent ecosystem. Apply, get developed, and get booked."/>
   <link rel="stylesheet" href="assets/styles.css"/>
-
-  <!-- ✅ Luxury Home Screen / PWA setup -->
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png">
-
   <meta name="apple-mobile-web-app-title" content="Elévara">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#060605">
 </head>
 <body>
+
+<!-- HEADER -->
 
 <header class="topbar">
   <div class="container topbar__inner">
@@ -28,217 +26,229 @@
         <span class="brand__subMain">House of Elévara Management Group</span>
         <span class="brand__subSmall">by Core Vision Management</span>
       </div>
+      <img class="brand__logo" src="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png" alt="House of Elévara Logo"/>
     </a>
-
     <nav class="nav" aria-label="Primary">
       <a class="nav__link is-active" href="index.html">Home</a>
       <a class="nav__link" href="apply.html">Apply</a>
-      <a class="nav__link" href="payments.html">Opportunity</a>
+      <a class="nav__link" href="payments.html">Membership</a>
       <a class="nav__link" href="contact.html">Contact</a>
     </nav>
-
     <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
   </div>
 </header>
 
+<!-- MOBILE MENU -->
+
 <div class="mobileMenu" id="mobileMenu" aria-hidden="true">
   <button class="mobileMenu__backdrop" id="menuBackdrop" type="button" aria-label="Close menu" onclick="GS_closeMenu()"></button>
-
-  <div class="mobileMenu__panel" role="dialog" aria-label="Navigation menu">
+  <div class="mobileMenu__panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
     <div class="mobileMenu__topRow">
       <div class="mobileMenu__brand">House of Elévara</div>
       <button class="mobileMenu__close" id="closeMenu" type="button" aria-label="Close menu" onclick="GS_closeMenu()">✕</button>
     </div>
-
     <button class="mobileMenu__dropdownBtn" id="dropOpener" type="button" aria-expanded="false" onclick="GS_toggleDrop()">
       Menu <span id="dropChev">▾</span>
     </button>
-
     <div class="mobileMenu__dropdown" id="dropMenu" aria-hidden="true">
       <a href="index.html" class="mobileMenu__link" onclick="GS_closeMenu()">Home</a>
       <a href="apply.html" class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
-      <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Opportunity</a>
+      <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Membership</a>
       <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
     </div>
-
     <div class="mobileMenu__divider"></div>
-
     <a class="mobileMenu__cta" href="book.html" onclick="GS_closeMenu()">Request a Booking</a>
     <a class="mobileMenu__cta ghost" href="mailto:houseofelevara@gmail.com" onclick="GS_closeMenu()">Email Us</a>
   </div>
 </div>
 
-<main class="container">
+<main>
 
-  <section class="hero">
-    <div class="hero__left">
-      <h1 class="hero__title">
-        House of Elévara
-        <span class="hero__accent">Model Management</span>
-      </h1>
+  <!-- HERO -->
 
-      <p class="hero__copy">
-        A premium, structured experience for talent and clients. Apply online, schedule your interview,
-        and request bookings through our official email for professional coordination, clear expectations,
-        and a strong paper trail.
-      </p>
+  <section class="container">
+    <div class="hero">
+      <div class="hero__left">
 
-      <div class="btnRow">
-        <a class="btn btn--gold" href="apply.html">Apply as Talent</a>
-        <a class="btn btn--dark" href="book.html">Request a Booking</a>
-      </div>
+```
+    <p style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;animation:fadeUp 0.6s ease 0.1s both;opacity:0;">
+      Dallas · Expanding Nationally
+    </p>
 
-      <div class="infoGrid" style="margin-top:16px">
-        <div class="infoCard">Editorial-first direction</div>
-        <div class="infoCard">Professional booking process</div>
-        <div class="infoCard">Luxury brand positioning</div>
-        <div class="infoCard">Dallas • Expanding</div>
-      </div>
+    <h1 class="hero__title" style="animation:fadeUp 0.7s ease 0.2s both;opacity:0;">
+      House of<br>Elévara
+      <span class="hero__accent">Model Management</span>
+    </h1>
 
-      <div class="readyBlock">
-        <h3>Ready to move fast?</h3>
+    <p class="hero__copy" style="animation:fadeUp 0.7s ease 0.35s both;opacity:0;">
+      A private, high-level talent ecosystem designed to elevate individuals into marketable, revenue-generating brands. We operate at the intersection of fashion, media, and digital influence — positioning talent for visibility, opportunity, and long-term success.
+    </p>
+
+    <div class="btnRow" style="animation:fadeUp 0.7s ease 0.45s both;opacity:0;">
+      <a class="btn btn--gold" href="apply.html">Apply as Talent</a>
+      <a class="btn btn--dark" href="book.html">Request a Booking</a>
+    </div>
+
+    <div class="infoGrid" style="animation:fadeUp 0.7s ease 0.55s both;opacity:0;">
+      <div class="infoCard"><strong>Development First</strong>Real talent development before monetization.</div>
+      <div class="infoCard"><strong>Editorial Direction</strong>Connected to Elyra Editorial media presence.</div>
+      <div class="infoCard"><strong>Brand Campaigns</strong>Placements, partnerships & promotional activations.</div>
+      <div class="infoCard"><strong>Premium Standard</strong>Clear process, professional coordination, no confusion.</div>
+    </div>
+
+  </div>
+
+  <div class="hero__right" style="animation:fadeUp 0.7s ease 0.3s both;opacity:0;">
+    <div class="brandCard">
+      <img class="brandCard__logo" src="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png" alt="House of Elévara Logo"/>
+      <div class="brandCard__text">
+        <h3>Unlike Traditional Agencies</h3>
         <p>
-          If you’re prepared to begin onboarding and schedule your interview, you can fast-track here.
+          Elévara prioritizes both development and monetization — ensuring that every individual within our system is not only seen, but strategically placed into opportunities that generate income, exposure, and brand equity.
         </p>
         <div class="btnRow">
-          <a class="btn btn--ghost" href="payments.html">Skip Application → Book Your Interview</a>
-        </div>
-      </div>
-
-      <div class="infoGrid">
-        <a class="infoCard linkCard" href="mailto:houseofelevara@gmail.com">📧 houseofelevara@gmail.com</a>
-        <a class="infoCard linkCard" href="tel:+14708980718">📞 +1 (470) 898-0718</a>
-        <a class="infoCard linkCard" target="_blank" rel="noopener noreferrer"
-           href="https://www.instagram.com/houseofelevara?igsh=NmtnYzV4bGcybjVy&utm_source=qr">
-          Instagram: @houseofelevara
-        </a>
-        <a class="infoCard linkCard" target="_blank" rel="noopener noreferrer"
-           href="https://www.facebook.com/share/1C1VAtNo3q/?mibextid=wwXIfr">
-          Facebook: Elyra Editorial
-        </a>
-      </div>
-    </div>
-
-    <div class="hero__right">
-      <div class="brandCard">
-        <img class="brandCard__logo" src="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png" alt="House of Elévara Logo"/>
-        <div class="brandCard__text">
-          <h3>Book with Confidence</h3>
-          <p>
-            Clients submit booking requests through email. We confirm availability, expectations,
-            and next steps with clear communication and professional coordination.
-          </p>
-          <div class="btnRow">
-            <a class="btn btn--gold" href="book.html">Request a Booking</a>
-            <a class="btn btn--ghost" href="contact.html">Contact</a>
-          </div>
+          <a class="btn btn--gold" href="book.html">Request a Booking</a>
+          <a class="btn btn--ghost" href="contact.html">Contact</a>
         </div>
       </div>
     </div>
+  </div>
+</div>
+```
+
   </section>
 
+  <!-- DIVIDER -->
+
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">The Elévara Standard</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
+
   <!-- PILLARS -->
-  <section style="margin-top:28px">
+
+  <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
     <div class="readyBlock">
-      <h3>The Elévara Standard</h3>
+      <h3>Built Different. Built Better.</h3>
       <p>
-        House of Elévara is built for premium presentation, disciplined coordination, and a consistent client experience —
-        from first contact to confirmed booking.
+        House of Elévara is built for premium presentation, disciplined coordination, and a consistent client experience — from first contact to confirmed booking. We don't just manage talent. We build brands.
       </p>
     </div>
 
-    <div class="infoGrid">
-      <div class="infoCard"><strong>Model Management</strong><br/>Talent onboarding, readiness, and professional representation.</div>
-      <div class="infoCard"><strong>Editorial & Media</strong><br/>A connected editorial direction through Elyra Editorial.</div>
-      <div class="infoCard"><strong>Brand Campaigns</strong><br/>Coordinated partnerships, placements, and promotional activations.</div>
-      <div class="infoCard"><strong>Client Experience</strong><br/>Clear process, confirmations, and expectations — no confusion.</div>
-    </div>
+```
+<div class="infoGrid" style="margin-top:20px;">
+  <div class="infoCard"><strong>Model Management</strong>Talent onboarding, development, readiness, and professional representation.</div>
+  <div class="infoCard"><strong>Editorial & Media</strong>A connected editorial direction through Elyra Editorial.</div>
+  <div class="infoCard"><strong>Brand Campaigns</strong>Coordinated partnerships, placements, and promotional activations.</div>
+  <div class="infoCard"><strong>Client Experience</strong>Clear process, documented confirmations, and zero confusion.</div>
+</div>
+```
+
   </section>
 
   <!-- HOW IT WORKS -->
-  <section style="margin-top:28px">
+
+  <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
     <div class="readyBlock">
       <h3>How Booking Works</h3>
-      <p>We keep it simple and professional so clients and talent move smoothly.</p>
+      <p>Simple. Professional. Premium. Every time.</p>
     </div>
-
-    <div class="infoGrid">
-      <div class="infoCard"><strong>1) Request</strong><br/>Submit your booking request via email or the booking page.</div>
-      <div class="infoCard"><strong>2) Confirm</strong><br/>We confirm availability, details, and expectations with a clear paper trail.</div>
-      <div class="infoCard"><strong>3) Coordinate</strong><br/>Time, location, wardrobe, deliverables, and conduct standards are outlined.</div>
-      <div class="infoCard"><strong>4) Deliver</strong><br/>Talent arrives prepared. The experience remains premium and on time.</div>
+    <div class="infoGrid" style="margin-top:20px;">
+      <div class="infoCard"><strong>01 — Request</strong>Submit your booking request via email or the booking page.</div>
+      <div class="infoCard"><strong>02 — Confirm</strong>We confirm availability, details, and expectations with a clear paper trail.</div>
+      <div class="infoCard"><strong>03 — Coordinate</strong>Time, location, wardrobe, deliverables, and conduct standards are outlined.</div>
+      <div class="infoCard"><strong>04 — Deliver</strong>Talent arrives prepared. The experience remains premium and on time.</div>
     </div>
-
-    <div class="btnRow" style="margin-top:14px">
+    <div class="btnRow">
       <a class="btn btn--dark" href="book.html">Request a Booking</a>
-      <a class="btn btn--ghost" href="mailto:houseofelevara@gmail.com">Email Booking Inquiry</a>
+      <a class="btn btn--ghost" href="mailto:houseofelevara@gmail.com">Email a Booking Inquiry</a>
     </div>
   </section>
 
   <!-- STANDARDS -->
-  <section style="margin-top:28px">
+
+  <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
     <div class="readyBlock">
       <h3>Standards & Readiness</h3>
       <p>
-        Our aim is consistency: how talent presents, communicates, and performs during bookings.
-        This protects the brand and the client experience.
+        Consistency is everything. How talent presents, communicates, and performs during bookings protects the brand, the client, and the experience.
       </p>
     </div>
-
-    <div class="infoGrid">
-      <div class="infoCard">Professional communication</div>
+    <div class="infoGrid" style="margin-top:20px;">
+      <div class="infoCard">Professional communication at all times</div>
       <div class="infoCard">On-time arrival & coordination</div>
-      <div class="infoCard">Wardrobe + grooming readiness</div>
-      <div class="infoCard">Clear deliverables & boundaries</div>
+      <div class="infoCard">Wardrobe and grooming readiness</div>
+      <div class="infoCard">Clear deliverables and defined boundaries</div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section style="margin-top:28px">
-    <div class="readyBlock">
-      <h3>FAQ</h3>
+
+  <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
+    <div class="readyBlock" style="margin-top:0;">
+      <h3>Frequently Asked</h3>
       <p>Quick answers for talent and clients.</p>
     </div>
+    <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px;">
+      <details class="infoCard">
+        <summary><strong>How do I apply?</strong></summary>
+        <p>Apply through the <a href="apply.html">Apply</a> page. If selected, we schedule an interview and share onboarding next steps.</p>
+      </details>
+      <details class="infoCard">
+        <summary><strong>How do bookings work?</strong></summary>
+        <p>Use <a href="book.html">Request a Booking</a> or email us directly. We confirm availability, details, and expectations with full documentation.</p>
+      </details>
+      <details class="infoCard">
+        <summary><strong>Do you offer brand partnerships and campaigns?</strong></summary>
+        <p>Yes. We coordinate brand campaigns and placements with a structured process and clearly defined deliverables for both parties.</p>
+      </details>
+      <details class="infoCard">
+        <summary><strong>What is Elyra Editorial?</strong></summary>
+        <p>Elyra Editorial is our connected media and editorial presence. Visit <a href="https://www.elyraeditorial.com" target="_blank" rel="noopener noreferrer">elyraeditorial.com</a> to explore our editorial direction.</p>
+      </details>
+      <details class="infoCard">
+        <summary><strong>Is joining free?</strong></summary>
+        <p>Yes. The roster is free to join. Optional paid membership tiers are available for talent who wants priority consideration, active development support, and ambassador earning opportunities. <a href="payments.html">View membership options.</a></p>
+      </details>
+    </div>
+  </section>
 
-    <details class="infoCard" style="margin-bottom:10px">
-      <summary><strong>How do I apply?</strong></summary>
-      <p style="margin-top:8px">
-        Apply through the <a href="apply.html">Apply</a> page. If selected, we’ll schedule an interview and share next steps.
-      </p>
-    </details>
+  <!-- CONNECT -->
 
-    <details class="infoCard" style="margin-bottom:10px">
-      <summary><strong>How do bookings work?</strong></summary>
-      <p style="margin-top:8px">
-        Use <a href="book.html">Request a Booking</a> or email us directly. We confirm availability, details, and expectations.
-      </p>
-    </details>
-
-    <details class="infoCard" style="margin-bottom:10px">
-      <summary><strong>Do you offer promotions and brand partnerships?</strong></summary>
-      <p style="margin-top:8px">
-        Yes. We coordinate brand campaigns and placements with a structured process and clear deliverables.
-      </p>
-    </details>
-
-    <details class="infoCard">
-      <summary><strong>What is Elyra Editorial?</strong></summary>
-      <p style="margin-top:8px">
-        Elyra Editorial is our connected editorial direction and media presence. For now, we’re using the Elyra Editorial Facebook page.
-      </p>
-    </details>
+  <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
+    <div class="grid2">
+      <a class="infoCard linkCard" href="mailto:houseofelevara@gmail.com">
+        <strong>Email</strong>houseofelevara@gmail.com
+      </a>
+      <a class="infoCard linkCard" href="tel:+14708980718">
+        <strong>Phone</strong>+1 (470) 898-0718
+      </a>
+      <a class="infoCard linkCard" target="_blank" rel="noopener noreferrer"
+         href="https://www.instagram.com/houseofelevara?igsh=NmtnYzV4bGcybjVy&utm_source=qr">
+        <strong>Instagram</strong>@houseofelevara
+      </a>
+      <a class="infoCard linkCard" target="_blank" rel="noopener noreferrer"
+         href="https://www.facebook.com/share/1C1VAtNo3q/?mibextid=wwXIfr">
+        <strong>Facebook</strong>Elyra Editorial
+      </a>
+    </div>
   </section>
 
   <!-- FINAL CTA -->
-  <section style="margin-top:28px; margin-bottom:10px">
+
+  <section class="container" style="margin-bottom:clamp(48px,8vw,88px);">
     <div class="readyBlock">
-      <h3>Join or Book House of Elévara</h3>
+      <h3>Ready to Elevate?</h3>
       <p>
-        If you’re talent ready for a premium standard — apply. If you’re a client ready for professional coordination — request a booking.
+        If you're talent built for a premium standard — apply. If you're a client who demands professional coordination — request a booking. Either way, this is where it begins.
       </p>
       <div class="btnRow">
         <a class="btn btn--gold" href="apply.html">Apply as Talent</a>
         <a class="btn btn--dark" href="book.html">Request a Booking</a>
+        <a class="btn btn--ghost" href="payments.html">View Membership</a>
       </div>
     </div>
   </section>
@@ -246,10 +256,11 @@
 </main>
 
 <footer class="footer">
-  <div>© House of Elévara</div>
-  <div class="footer__muted">by Core Vision Management • houseofelevara@gmail.com</div>
+  <div>© House of Elévara Management Group</div>
+  <div class="footer__muted">by Core Vision Management &nbsp;·&nbsp; houseofelevara@gmail.com &nbsp;·&nbsp; +1 (470) 898-0718</div>
 </footer>
 
 <script src="assets/app.js?v=99"></script>
+
 </body>
 </html>
