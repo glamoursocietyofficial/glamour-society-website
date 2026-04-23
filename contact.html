@@ -1,23 +1,22 @@
 <!doctype html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <title>Contact | House of Elévara</title>
-  <meta name="description" content="Contact House of Elévara by Core Vision Management for bookings, partnerships, and inquiries."/>
-
+  <meta name="description" content="Contact House of Elévara by Core Vision Management for bookings, partnerships, talent inquiries, and collaborations."/>
   <link rel="stylesheet" href="assets/styles.css"/>
-
-  <!-- ✅ Luxury Home Screen / PWA setup -->
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png">
-
   <meta name="apple-mobile-web-app-title" content="Elévara">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#060605">
 </head>
 <body>
+
+<!-- HEADER -->
 
 <header class="topbar">
   <div class="container topbar__inner">
@@ -27,117 +26,175 @@
         <span class="brand__subMain">House of Elévara Management Group</span>
         <span class="brand__subSmall">by Core Vision Management</span>
       </div>
+      <img class="brand__logo" src="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png" alt="House of Elévara Logo"/>
     </a>
-
     <nav class="nav" aria-label="Primary">
       <a class="nav__link" href="index.html">Home</a>
       <a class="nav__link" href="apply.html">Apply</a>
-      <a class="nav__link" href="payments.html">Opportunity</a>
+      <a class="nav__link" href="payments.html">Membership</a>
       <a class="nav__link is-active" href="contact.html">Contact</a>
     </nav>
-
     <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
   </div>
 </header>
 
+<!-- MOBILE MENU -->
+
 <div class="mobileMenu" id="mobileMenu" aria-hidden="true">
   <button class="mobileMenu__backdrop" id="menuBackdrop" type="button" aria-label="Close menu" onclick="GS_closeMenu()"></button>
-
   <div class="mobileMenu__panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
     <div class="mobileMenu__topRow">
       <div class="mobileMenu__brand">House of Elévara</div>
       <button class="mobileMenu__close" id="closeMenu" type="button" aria-label="Close menu" onclick="GS_closeMenu()">✕</button>
     </div>
-
     <button class="mobileMenu__dropdownBtn" id="dropOpener" type="button" aria-expanded="false" onclick="GS_toggleDrop()">
       Menu <span id="dropChev">▾</span>
     </button>
-
     <div class="mobileMenu__dropdown" id="dropMenu" aria-hidden="true">
       <a href="index.html" class="mobileMenu__link" onclick="GS_closeMenu()">Home</a>
       <a href="apply.html" class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
-      <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Opportunity</a>
+      <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Membership</a>
       <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
     </div>
-
     <div class="mobileMenu__divider"></div>
-
     <a class="mobileMenu__cta" href="book.html" onclick="GS_closeMenu()">Request a Booking</a>
     <a class="mobileMenu__cta ghost" href="mailto:houseofelevara@gmail.com" onclick="GS_closeMenu()">Email Us</a>
   </div>
 </div>
 
-<main class="container">
-  <div class="pageHeader">
-    <h1>Contact</h1>
-    <p>
-      For bookings, partnerships, editorial collaborations, and talent inquiries — reach House of Elévara using the options below.
+<main>
+
+  <!-- PAGE HEADER -->
+
+  <div class="container">
+    <div class="pageHeader">
+      <p style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">
+        Get in Touch
+      </p>
+      <h1>Contact<br>House of Elévara</h1>
+      <p>
+        For bookings, brand partnerships, editorial collaborations, talent inquiries, and general questions — we handle everything through direct communication. Reach us using any of the options below.
+      </p>
+    </div>
+  </div>
+
+  <!-- DIVIDER -->
+
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">Direct Contact</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
+
+  <!-- CONTACT GRID -->
+
+  <div class="container" style="margin-bottom:clamp(40px,6vw,72px);">
+    <div class="grid2">
+
+```
+  <!-- EMAIL -->
+  <div class="cardGlow">
+    <p style="font-size:9px;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">Primary Contact</p>
+    <h2 class="goldTitle">Email</h2>
+    <p class="muted" style="font-size:15px;letter-spacing:0.04em;">houseofelevara@gmail.com</p>
+    <p class="muted tiny" style="margin-top:10px;line-height:1.8;">
+      All bookings, partnerships, and professional inquiries are handled through email to ensure clear documentation and professional coordination.
     </p>
-  </div>
-
-  <div class="grid2">
-    <div class="cardGlow">
-      <h2 class="goldTitle">Email</h2>
-      <p class="muted">houseofelevara@gmail.com</p>
-
-      <div class="btnRow">
-        <a class="btn btn--gold"
-           href="mailto:houseofelevara@gmail.com?subject=Inquiry%20%7C%20House%20of%20El%C3%A9vara">
-          Send Email
-        </a>
-      </div>
-
-      <p class="tiny muted" style="margin-top:10px">
-        All bookings and professional inquiries are handled through email to maintain a clear communication trail.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2 class="goldTitle">Phone</h2>
-      <p class="muted">+1 (470) 898-0718</p>
-
-      <div class="btnRow">
-        <a class="btn btn--gold" href="tel:+14708980718">Call</a>
-        <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer"
-           href="https://www.instagram.com/houseofelevara?igsh=NmtnYzV4bGcybjVy&utm_source=qr">
-          Instagram
-        </a>
-      </div>
+    <div class="btnRow">
+      <a class="btn btn--gold"
+         href="mailto:houseofelevara@gmail.com?subject=Inquiry%20%7C%20House%20of%20El%C3%A9vara">
+        Send an Email
+      </a>
     </div>
   </div>
 
-  <div class="grid2" style="margin-top:14px;">
-    <div class="card">
-      <h2 class="goldTitle">Facebook</h2>
-      <p class="muted">Elyra Editorial</p>
-
-      <div class="btnRow">
-        <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer"
-           href="https://www.facebook.com/share/1C1VAtNo3q/?mibextid=wwXIfr">
-          Open Facebook
-        </a>
-      </div>
-    </div>
-
-    <div class="cardGlow">
-      <h2 class="goldTitle">Bookings</h2>
-      <p class="muted">
-        Clients can request models for campaigns, events, appearances, promotional work,
-        or editorial productions.
-      </p>
-
-      <div class="btnRow">
-        <a class="btn btn--gold" href="book.html">Request a Booking</a>
-      </div>
+  <!-- PHONE -->
+  <div class="card">
+    <p style="font-size:9px;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">By Phone</p>
+    <h2 class="goldTitle">Phone</h2>
+    <p class="muted" style="font-size:15px;letter-spacing:0.04em;">+1 (470) 898-0718</p>
+    <p class="muted tiny" style="margin-top:10px;line-height:1.8;">
+      Available for direct inquiries. For documented coordination, email is preferred and recommended.
+    </p>
+    <div class="btnRow">
+      <a class="btn btn--gold" href="tel:+14708980718">Call Now</a>
+      <a class="btn btn--ghost"
+         href="mailto:houseofelevara@gmail.com?subject=Inquiry%20%7C%20House%20of%20El%C3%A9vara">
+        Email Instead
+      </a>
     </div>
   </div>
+
+</div>
+
+<div class="grid2" style="margin-top:16px;">
+
+  <!-- INSTAGRAM -->
+  <div class="card">
+    <p style="font-size:9px;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">Social</p>
+    <h2 class="goldTitle">Instagram</h2>
+    <p class="muted" style="font-size:13px;">@houseofelevara</p>
+    <p class="muted tiny" style="margin-top:10px;line-height:1.8;">
+      Follow for updates, talent features, and brand announcements from House of Elévara.
+    </p>
+    <div class="btnRow">
+      <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer"
+         href="https://www.instagram.com/houseofelevara?igsh=NmtnYzV4bGcybjVy&utm_source=qr">
+        Open Instagram
+      </a>
+    </div>
+  </div>
+
+  <!-- FACEBOOK -->
+  <div class="card">
+    <p style="font-size:9px;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">Editorial Presence</p>
+    <h2 class="goldTitle">Elyra Editorial</h2>
+    <p class="muted" style="font-size:13px;">Facebook · elyraeditorial.com</p>
+    <p class="muted tiny" style="margin-top:10px;line-height:1.8;">
+      Our connected editorial media presence. Follow for editorial content, campaign features, and media direction.
+    </p>
+    <div class="btnRow">
+      <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer"
+         href="https://www.facebook.com/share/1C1VAtNo3q/?mibextid=wwXIfr">
+        Open Facebook
+      </a>
+      <a class="btn btn--dark" target="_blank" rel="noopener noreferrer"
+         href="https://www.elyraeditorial.com">
+        Visit Website
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- BOOKINGS CTA -->
+<div class="readyBlock" style="margin-top:20px;">
+  <h3>Ready to Book?</h3>
+  <p>
+    Clients can request talent for campaigns, events, appearances, promotional work, and editorial productions. Submit a booking request and we will confirm availability, details, and expectations with full professional coordination.
+  </p>
+  <div class="btnRow">
+    <a class="btn btn--gold" href="book.html">Request a Booking</a>
+    <a class="btn btn--ghost"
+       href="mailto:houseofelevara@gmail.com?subject=Booking%20Inquiry%20%7C%20House%20of%20El%C3%A9vara">
+      Email a Booking Inquiry
+    </a>
+  </div>
+</div>
+```
+
+  </div>
+
 </main>
 
 <footer class="footer">
-  <div>© House of Elévara</div>
-  <div class="footer__muted">by Core Vision Management • houseofelevara@gmail.com</div>
+  <div>© House of Elévara Management Group</div>
+  <div class="footer__muted">by Core Vision Management &nbsp;·&nbsp; houseofelevara@gmail.com &nbsp;·&nbsp; +1 (470) 898-0718</div>
 </footer>
 
 <script src="assets/app.js?v=99"></script>
+
 </body>
 </html>
