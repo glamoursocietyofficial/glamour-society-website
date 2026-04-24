@@ -8,11 +8,217 @@
   <meta name="description" content="House of Elévara by Core Vision Management — a private, high-level model development and talent ecosystem. Apply, get developed, and get booked."/>
   <link rel="stylesheet" href="assets/styles.css"/>
   <link rel="manifest" href="manifest.json">
-
+  <link rel="apple-touch-icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png">
   <meta name="apple-mobile-web-app-title" content="Elévara">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="theme-color" content="#060605">
+
+  <style>
+    /* ── ROSTER PREVIEW on homepage ── */
+    .roster-preview {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 20px;
+      position: relative;
+    }
+
+    .roster-preview__card {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      display: block;
+      text-decoration: none;
+      background: var(--black2);
+      cursor: pointer;
+    }
+
+    .roster-preview__card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        transparent 40%,
+        rgba(6,6,5,0.5) 65%,
+        rgba(6,6,5,0.96) 100%
+      );
+      z-index: 1;
+    }
+
+    .roster-preview__card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      transition: transform 0.7s cubic-bezier(0.16,1,0.3,1);
+    }
+
+    .roster-preview__card:hover img {
+      transform: scale(1.05);
+    }
+
+    .roster-preview__shimmer {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold2), transparent);
+      z-index: 3;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .roster-preview__card:hover .roster-preview__shimmer { opacity: 0.8; }
+
+    .roster-preview__info {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      z-index: 2;
+      padding: 18px;
+    }
+
+    .roster-preview__name {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--white);
+      display: block;
+      letter-spacing: 0.02em;
+      margin-bottom: 3px;
+    }
+
+    .roster-preview__meta {
+      font-size: 8.5px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold2);
+    }
+
+    /* Hover overlay */
+    .roster-preview__overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      background: rgba(6,6,5,0.88);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+    .roster-preview__card:hover .roster-preview__overlay { opacity: 1; }
+
+    .roster-preview__overlay-name {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.1;
+    }
+
+    .roster-preview__overlay-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      width: 100%;
+    }
+    .roster-preview__stat {
+      background: rgba(255,255,255,0.04);
+      padding: 8px 4px;
+      text-align: center;
+    }
+    .roster-preview__stat-label {
+      font-size: 6.5px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 3px;
+    }
+    .roster-preview__stat-value {
+      font-size: 11px;
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .roster-preview__overlay-cta {
+      font-family: var(--font-body);
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: linear-gradient(135deg, var(--gold3), var(--gold2), var(--gold));
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    /* Coming soon slot */
+    .roster-preview__empty {
+      aspect-ratio: 3/4;
+      border: 1px dashed rgba(200,169,90,0.12);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: transparent;
+    }
+    .roster-preview__empty-icon { font-size: 22px; color: rgba(200,169,90,0.15); }
+    .roster-preview__empty-label {
+      font-size: 7.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(200,169,90,0.2);
+    }
+
+    /* View all banner */
+    .roster-preview__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      background: var(--surface);
+      border: 1px solid var(--gold-line);
+      border-top: none;
+      text-decoration: none;
+      transition: all 0.22s ease;
+    }
+    .roster-preview__footer:hover {
+      background: var(--gold-dim);
+    }
+    .roster-preview__footer-text {
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold2);
+      font-weight: 600;
+    }
+    .roster-preview__footer-arrow {
+      font-size: 14px;
+      color: var(--gold);
+      transition: transform 0.22s ease;
+    }
+    .roster-preview__footer:hover .roster-preview__footer-arrow {
+      transform: translateX(4px);
+    }
+
+    @media (max-width: 768px) {
+      .roster-preview { grid-template-columns: repeat(2, 1fr); }
+      .roster-preview__empty:last-child { display: none; }
+    }
+    @media (max-width: 480px) {
+      .roster-preview { grid-template-columns: 1fr; }
+    }
+  </style>
+
 </head>
 <body>
 
@@ -23,14 +229,14 @@
     <a class="brand" href="index.html" aria-label="House of Elévara Home">
       <div class="brand__glam3d">ELÉVARA</div>
       <div class="brand__subwrap">
-        <span class="brand__subMain">House of Elévara</span>
+        <span class="brand__subMain">House of Elévara Management Group</span>
         <span class="brand__subSmall">by Core Vision Management</span>
       </div>
-      
     </a>
     <nav class="nav" aria-label="Primary">
       <a class="nav__link is-active" href="index.html">Home</a>
       <a class="nav__link" href="apply.html">Apply</a>
+      <a class="nav__link" href="roster.html">Talent</a>
       <a class="nav__link" href="payments.html">Membership</a>
       <a class="nav__link" href="contact.html">Contact</a>
     </nav>
@@ -53,12 +259,13 @@
     <div class="mobileMenu__dropdown" id="dropMenu" aria-hidden="true">
       <a href="index.html" class="mobileMenu__link" onclick="GS_closeMenu()">Home</a>
       <a href="apply.html" class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
+      <a href="roster.html" class="mobileMenu__link" onclick="GS_closeMenu()">Talent</a>
       <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Membership</a>
       <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
     </div>
     <div class="mobileMenu__divider"></div>
     <a class="mobileMenu__cta" href="book.html" onclick="GS_closeMenu()">Request a Booking</a>
-    <a class="mobileMenu__cta ghost" href="mailto:houseofelevara@gmail.com" onclick="GS_closeMenu()">Email Us</a>
+    <a class="mobileMenu__cta ghost" href="mailto:admin@houseofelevara.com" onclick="GS_closeMenu()">Email Us</a>
   </div>
 </div>
 
@@ -71,8 +278,8 @@
       <div class="hero__left">
 
 ```
-    <p style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;animation:fadeUp 0.6s ease 0.1s both;opacity:0;">
-      Georgia • Dallas • Expanding Nationally
+    <p style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;">
+      Georgia · Dallas · Expanding Nationally
     </p>
 
     <h1 class="hero__title" style="animation:fadeUp 0.7s ease 0.2s both;opacity:0;">
@@ -84,9 +291,10 @@
       A private, high-level talent ecosystem designed to elevate individuals into marketable, revenue-generating brands. We operate at the intersection of fashion, media, and digital influence — positioning talent for visibility, opportunity, and long-term success.
     </p>
 
-    <div class="btnRow" style="animation:fadeUp 0.7s ease 0.45s both;opacity:0;">
-      <a class="btn btn--gold" href="apply.html">Apply as Talent</a>
-      <a class="btn btn--dark" href="book.html">Request a Booking</a>
+    <div class="btnRow" style="animation:fadeUp 0.7s ease 0.45s both;opacity:0;flex-direction:row;flex-wrap:wrap;">
+      <a class="btn btn--gold" href="roster.html" style="flex:0 1 auto;width:auto;">View Our Talent</a>
+      <a class="btn btn--dark" href="book.html" style="flex:0 1 auto;width:auto;">Request a Booking</a>
+      <a class="btn btn--ghost" href="apply.html" style="flex:0 1 auto;width:auto;">Apply as Talent</a>
     </div>
 
     <div class="infoGrid" style="animation:fadeUp 0.7s ease 0.55s both;opacity:0;">
@@ -106,14 +314,90 @@
         <p>
           Elévara prioritizes both development and monetization — ensuring that every individual within our system is not only seen, but strategically placed into opportunities that generate income, exposure, and brand equity.
         </p>
-        <div class="btnRow">
-          <a class="btn btn--gold" href="book.html">Request a Booking</a>
-          <a class="btn btn--ghost" href="contact.html">Contact</a>
+        <div class="btnRow" style="flex-direction:row;flex-wrap:wrap;">
+          <a class="btn btn--gold" href="roster.html" style="flex:0 1 auto;width:auto;">Meet the Talent</a>
+          <a class="btn btn--ghost" href="contact.html" style="flex:0 1 auto;width:auto;">Contact</a>
         </div>
       </div>
     </div>
   </div>
 </div>
+```
+
+  </section>
+
+  <!-- ROSTER PREVIEW — first thing clients see after hero -->
+
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">Our Talent</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
+
+  <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
+    <div class="readyBlock" style="margin-top:0;margin-bottom:20px;">
+      <h3>Meet the Roster</h3>
+      <p>
+        Every individual represented by House of Elévara has been selected, developed, and positioned with intention. Hover any profile to view stats and submit a booking inquiry directly.
+      </p>
+    </div>
+
+```
+<!-- ROSTER PREVIEW GRID -->
+<div class="roster-preview">
+
+  <!-- PAULA SOFIA ARIAS -->
+  <a class="roster-preview__card"
+     href="mailto:admin@houseofelevara.com?subject=Booking%20Inquiry%20%E2%80%94%20Paula%20Sofia%20Arias%20%7C%20House%20of%20El%C3%A9vara&body=Hello%20House%20of%20El%C3%A9vara%2C%0A%0AI%20am%20interested%20in%20booking%20Paula%20Sofia%20Arias.%0A%0AProject%20Type%3A%0ADate%3A%0ALocation%3A%0ABudget%3A%0ADetails%3A%0A%0AContact%20Name%3A%0APhone%3A%0A%0AThank%20you%2C">
+    <div class="roster-preview__shimmer"></div>
+    <img src="IMG_9110.jpeg" alt="Paula Sofia Arias"/>
+    <div class="roster-preview__overlay">
+      <div class="roster-preview__overlay-name">Paula Sofia<br>Arias</div>
+      <div class="roster-preview__overlay-stats">
+        <div class="roster-preview__stat">
+          <span class="roster-preview__stat-label">Height</span>
+          <span class="roster-preview__stat-value">5' 5"</span>
+        </div>
+        <div class="roster-preview__stat">
+          <span class="roster-preview__stat-label">Waist</span>
+          <span class="roster-preview__stat-value">24"</span>
+        </div>
+        <div class="roster-preview__stat">
+          <span class="roster-preview__stat-label">Dress</span>
+          <span class="roster-preview__stat-value">0</span>
+        </div>
+      </div>
+      <a class="roster-preview__overlay-cta"
+         href="mailto:admin@houseofelevara.com?subject=Booking%20Inquiry%20%E2%80%94%20Paula%20Sofia%20Arias%20%7C%20House%20of%20El%C3%A9vara"
+         onclick="event.stopPropagation()">
+        Inquire to Book
+      </a>
+    </div>
+    <div class="roster-preview__info">
+      <span class="roster-preview__name">Paula Sofia Arias</span>
+      <span class="roster-preview__meta">Women · New Jersey · NBC · Runway</span>
+    </div>
+  </a>
+
+  <!-- COMING SOON slots -->
+  <div class="roster-preview__empty">
+    <span class="roster-preview__empty-icon">◈</span>
+    <span class="roster-preview__empty-label">Coming Soon</span>
+  </div>
+  <div class="roster-preview__empty">
+    <span class="roster-preview__empty-icon">◈</span>
+    <span class="roster-preview__empty-label">Coming Soon</span>
+  </div>
+
+</div>
+
+<!-- VIEW ALL FOOTER -->
+<a class="roster-preview__footer" href="roster.html">
+  <span class="roster-preview__footer-text">View Full Roster — All Talent, Stats & Booking</span>
+  <span class="roster-preview__footer-arrow">→</span>
+</a>
 ```
 
   </section>
@@ -137,16 +421,12 @@
         House of Elévara is built for premium presentation, disciplined coordination, and a consistent client experience — from first contact to confirmed booking. We don't just manage talent. We build brands.
       </p>
     </div>
-
-```
-<div class="infoGrid" style="margin-top:20px;">
-  <div class="infoCard"><strong>Model Management</strong>Talent onboarding, development, readiness, and professional representation.</div>
-  <div class="infoCard"><strong>Editorial & Media</strong>A connected editorial direction through Elyra Editorial.</div>
-  <div class="infoCard"><strong>Brand Campaigns</strong>Coordinated partnerships, placements, and promotional activations.</div>
-  <div class="infoCard"><strong>Client Experience</strong>Clear process, documented confirmations, and zero confusion.</div>
-</div>
-```
-
+    <div class="infoGrid" style="margin-top:20px;">
+      <div class="infoCard"><strong>Model Management</strong>Talent onboarding, development, readiness, and professional representation.</div>
+      <div class="infoCard"><strong>Editorial & Media</strong>A connected editorial direction through Elyra Editorial.</div>
+      <div class="infoCard"><strong>Brand Campaigns</strong>Coordinated partnerships, placements, and promotional activations.</div>
+      <div class="infoCard"><strong>Client Experience</strong>Clear process, documented confirmations, and zero confusion.</div>
+    </div>
   </section>
 
   <!-- HOW IT WORKS -->
@@ -162,9 +442,9 @@
       <div class="infoCard"><strong>03 — Coordinate</strong>Time, location, wardrobe, deliverables, and conduct standards are outlined.</div>
       <div class="infoCard"><strong>04 — Deliver</strong>Talent arrives prepared. The experience remains premium and on time.</div>
     </div>
-    <div class="btnRow">
-      <a class="btn btn--dark" href="book.html">Request a Booking</a>
-      <a class="btn btn--ghost" href="mailto:houseofelevara@gmail.com">Email a Booking Inquiry</a>
+    <div class="btnRow" style="flex-direction:row;flex-wrap:wrap;">
+      <a class="btn btn--dark" href="book.html" style="flex:0 1 auto;width:auto;">Request a Booking</a>
+      <a class="btn btn--ghost" href="mailto:admin@houseofelevara.com" style="flex:0 1 auto;width:auto;">Email a Booking Inquiry</a>
     </div>
   </section>
 
@@ -213,6 +493,10 @@
         <summary><strong>Is joining free?</strong></summary>
         <p>Yes. The roster is free to join. Optional paid membership tiers are available for talent who wants priority consideration, active development support, and ambassador earning opportunities. <a href="payments.html">View membership options.</a></p>
       </details>
+      <details class="infoCard">
+        <summary><strong>Can I view and book specific models?</strong></summary>
+        <p>Yes. Visit our <a href="roster.html">Talent Roster</a> to browse active models, view stats, and submit a booking inquiry directly from each profile.</p>
+      </details>
     </div>
   </section>
 
@@ -220,8 +504,8 @@
 
   <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
     <div class="grid2">
-      <a class="infoCard linkCard" href="mailto:houseofelevara@gmail.com">
-        <strong>Email</strong>houseofelevara@gmail.com
+      <a class="infoCard linkCard" href="mailto:admin@houseofelevara.com">
+        <strong>Email</strong>admin@houseofelevara.com
       </a>
       <a class="infoCard linkCard" href="tel:+14708980718">
         <strong>Phone</strong>+1 (470) 898-0718
@@ -245,10 +529,10 @@
       <p>
         If you're talent built for a premium standard — apply. If you're a client who demands professional coordination — request a booking. Either way, this is where it begins.
       </p>
-      <div class="btnRow">
-        <a class="btn btn--gold" href="apply.html">Apply as Talent</a>
-        <a class="btn btn--dark" href="book.html">Request a Booking</a>
-        <a class="btn btn--ghost" href="payments.html">View Membership</a>
+      <div class="btnRow" style="flex-direction:row;flex-wrap:wrap;">
+        <a class="btn btn--gold" href="roster.html" style="flex:0 1 auto;width:auto;">View Our Talent</a>
+        <a class="btn btn--dark" href="book.html" style="flex:0 1 auto;width:auto;">Request a Booking</a>
+        <a class="btn btn--ghost" href="apply.html" style="flex:0 1 auto;width:auto;">Apply as Talent</a>
       </div>
     </div>
   </section>
@@ -256,8 +540,8 @@
 </main>
 
 <footer class="footer">
-  <div>© House of Elévara LLC</div>
-  <div class="footer__muted">by Core Vision Management &nbsp;·&nbsp; houseofelevara@gmail.com &nbsp;·&nbsp; +1 (470) 898-0718</div>
+  <div>© House of Elévara Management Group · A Georgia LLC</div>
+  <div class="footer__muted">by Core Vision Management &nbsp;·&nbsp; admin@houseofelevara.com &nbsp;·&nbsp; +1 (470) 898-0718</div>
 </footer>
 
 <script src="assets/app.js?v=99"></script>
