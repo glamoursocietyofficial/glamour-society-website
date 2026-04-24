@@ -15,13 +15,10 @@
   <meta name="theme-color" content="#060605">
 
   <style>
-    /* ── ROSTER PREVIEW on homepage ── */
+    /* ── ROSTER PREVIEW — minimal, one card ── */
     .roster-preview {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
       margin-top: 20px;
-      position: relative;
+      max-width: 380px;
     }
 
     .roster-preview__card {
@@ -32,6 +29,7 @@
       text-decoration: none;
       background: var(--black2);
       cursor: pointer;
+      border-radius: var(--radiusLg);
     }
 
     .roster-preview__card::before {
@@ -55,10 +53,7 @@
       display: block;
       transition: transform 0.7s cubic-bezier(0.16,1,0.3,1);
     }
-
-    .roster-preview__card:hover img {
-      transform: scale(1.05);
-    }
+    .roster-preview__card:hover img { transform: scale(1.04); }
 
     .roster-preview__shimmer {
       position: absolute;
@@ -75,19 +70,17 @@
       position: absolute;
       bottom: 0; left: 0; right: 0;
       z-index: 2;
-      padding: 18px;
+      padding: 20px;
     }
-
     .roster-preview__name {
       font-family: var(--font-display);
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 300;
       color: var(--white);
       display: block;
       letter-spacing: 0.02em;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
     }
-
     .roster-preview__meta {
       font-size: 8.5px;
       letter-spacing: 0.16em;
@@ -95,105 +88,20 @@
       color: var(--gold2);
     }
 
-    /* Hover overlay */
-    .roster-preview__overlay {
-      position: absolute;
-      inset: 0;
-      z-index: 3;
-      background: rgba(6,6,5,0.88);
-      opacity: 0;
-      transition: opacity 0.35s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      padding: 24px;
-      text-align: center;
-    }
-    .roster-preview__card:hover .roster-preview__overlay { opacity: 1; }
-
-    .roster-preview__overlay-name {
-      font-family: var(--font-display);
-      font-size: 26px;
-      font-weight: 300;
-      color: var(--white);
-      line-height: 1.1;
-    }
-
-    .roster-preview__overlay-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      width: 100%;
-    }
-    .roster-preview__stat {
-      background: rgba(255,255,255,0.04);
-      padding: 8px 4px;
-      text-align: center;
-    }
-    .roster-preview__stat-label {
-      font-size: 6.5px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      display: block;
-      margin-bottom: 3px;
-    }
-    .roster-preview__stat-value {
-      font-size: 11px;
-      color: var(--white);
-      font-weight: 500;
-    }
-
-    .roster-preview__overlay-cta {
-      font-family: var(--font-body);
-      font-size: 8px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--black);
-      background: linear-gradient(135deg, var(--gold3), var(--gold2), var(--gold));
-      padding: 10px 20px;
-      border-radius: var(--radius);
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    /* Coming soon slot */
-    .roster-preview__empty {
-      aspect-ratio: 3/4;
-      border: 1px dashed rgba(200,169,90,0.12);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background: transparent;
-    }
-    .roster-preview__empty-icon { font-size: 22px; color: rgba(200,169,90,0.15); }
-    .roster-preview__empty-label {
-      font-size: 7.5px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: rgba(200,169,90,0.2);
-    }
-
-    /* View all banner */
+    /* View all footer */
     .roster-preview__footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 20px;
+      padding: 14px 20px;
       background: var(--surface);
       border: 1px solid var(--gold-line);
       border-top: none;
+      border-radius: 0 0 var(--radiusLg) var(--radiusLg);
       text-decoration: none;
       transition: all 0.22s ease;
     }
-    .roster-preview__footer:hover {
-      background: var(--gold-dim);
-    }
+    .roster-preview__footer:hover { background: var(--gold-dim); }
     .roster-preview__footer-text {
       font-size: 9px;
       letter-spacing: 0.2em;
@@ -211,11 +119,7 @@
     }
 
     @media (max-width: 768px) {
-      .roster-preview { grid-template-columns: repeat(2, 1fr); }
-      .roster-preview__empty:last-child { display: none; }
-    }
-    @media (max-width: 480px) {
-      .roster-preview { grid-template-columns: 1fr; }
+      .roster-preview { max-width: 100%; }
     }
   </style>
 
@@ -326,7 +230,7 @@
 
   </section>
 
-  <!-- ROSTER PREVIEW — first thing clients see after hero -->
+  <!-- TALENT PREVIEW -->
 
   <div class="container">
     <div class="sectionDivider">
@@ -337,67 +241,29 @@
   </div>
 
   <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
-    <div class="readyBlock" style="margin-top:0;margin-bottom:20px;">
+    <div class="readyBlock" style="margin-top:0;margin-bottom:24px;">
       <h3>Meet the Roster</h3>
       <p>
-        Every individual represented by House of Elévara has been selected, developed, and positioned with intention. Hover any profile to view stats and submit a booking inquiry directly.
+        Professionally developed, strategically positioned, and ready to book. Click any profile to view full stats and submit a booking inquiry.
       </p>
     </div>
 
 ```
-<!-- ROSTER PREVIEW GRID -->
+<!-- ONE CARD — PAULA ONLY -->
 <div class="roster-preview">
-
-  <!-- PAULA SOFIA ARIAS -->
-  <a class="roster-preview__card"
-     href="mailto:admin@houseofelevara.com?subject=Booking%20Inquiry%20%E2%80%94%20Paula%20Sofia%20Arias%20%7C%20House%20of%20El%C3%A9vara&body=Hello%20House%20of%20El%C3%A9vara%2C%0A%0AI%20am%20interested%20in%20booking%20Paula%20Sofia%20Arias.%0A%0AProject%20Type%3A%0ADate%3A%0ALocation%3A%0ABudget%3A%0ADetails%3A%0A%0AContact%20Name%3A%0APhone%3A%0A%0AThank%20you%2C">
+  <a class="roster-preview__card" href="roster.html">
     <div class="roster-preview__shimmer"></div>
-    <img src="IMG_9110.jpeg" alt="Paula Sofia Arias"/>
-    <div class="roster-preview__overlay">
-      <div class="roster-preview__overlay-name">Paula Sofia<br>Arias</div>
-      <div class="roster-preview__overlay-stats">
-        <div class="roster-preview__stat">
-          <span class="roster-preview__stat-label">Height</span>
-          <span class="roster-preview__stat-value">5' 5"</span>
-        </div>
-        <div class="roster-preview__stat">
-          <span class="roster-preview__stat-label">Waist</span>
-          <span class="roster-preview__stat-value">24"</span>
-        </div>
-        <div class="roster-preview__stat">
-          <span class="roster-preview__stat-label">Dress</span>
-          <span class="roster-preview__stat-value">0</span>
-        </div>
-      </div>
-      <a class="roster-preview__overlay-cta"
-         href="mailto:admin@houseofelevara.com?subject=Booking%20Inquiry%20%E2%80%94%20Paula%20Sofia%20Arias%20%7C%20House%20of%20El%C3%A9vara"
-         onclick="event.stopPropagation()">
-        Inquire to Book
-      </a>
-    </div>
+    <img src="IMG_9110.jpeg" alt="Paula Sofia Arias — House of Elévara"/>
     <div class="roster-preview__info">
       <span class="roster-preview__name">Paula Sofia Arias</span>
-      <span class="roster-preview__meta">Women · New Jersey · NBC · Runway</span>
+      <span class="roster-preview__meta">Women · New Jersey · Runway · TV · Editorial</span>
     </div>
   </a>
-
-  <!-- COMING SOON slots -->
-  <div class="roster-preview__empty">
-    <span class="roster-preview__empty-icon">◈</span>
-    <span class="roster-preview__empty-label">Coming Soon</span>
-  </div>
-  <div class="roster-preview__empty">
-    <span class="roster-preview__empty-icon">◈</span>
-    <span class="roster-preview__empty-label">Coming Soon</span>
-  </div>
-
+  <a class="roster-preview__footer" href="roster.html">
+    <span class="roster-preview__footer-text">View Full Profile & Booking</span>
+    <span class="roster-preview__footer-arrow">→</span>
+  </a>
 </div>
-
-<!-- VIEW ALL FOOTER -->
-<a class="roster-preview__footer" href="roster.html">
-  <span class="roster-preview__footer-text">View Full Roster — All Talent, Stats & Booking</span>
-  <span class="roster-preview__footer-arrow">→</span>
-</a>
 ```
 
   </section>
@@ -495,7 +361,7 @@
       </details>
       <details class="infoCard">
         <summary><strong>Can I view and book specific models?</strong></summary>
-        <p>Yes. Visit our <a href="roster.html">Talent Roster</a> to browse active models, view stats, and submit a booking inquiry directly from each profile.</p>
+        <p>Yes. Visit our <a href="roster.html">Talent Roster</a> to browse active models, view full stats, and submit a booking inquiry directly from each profile.</p>
       </details>
     </div>
   </section>
