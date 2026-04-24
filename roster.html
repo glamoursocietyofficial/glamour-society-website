@@ -1,0 +1,766 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Our Talent | House of Elévara</title>
+  <meta name="description" content="Discover the talent roster of House of Elévara Management Group. Book professional models for campaigns, editorial, runway, events, and brand partnerships."/>
+  <link rel="stylesheet" href="assets/styles.css"/>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png">
+  <meta name="apple-mobile-web-app-title" content="Elévara">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="theme-color" content="#060605">
+
+  <style>
+
+    /* ── ROSTER PAGE SPECIFIC ── */
+
+    /* Filter bar */
+    .roster-filters {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--gold-line);
+    }
+
+    .filter-btn {
+      font-family: var(--font-body);
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.22s ease;
+    }
+    .filter-btn:hover {
+      border-color: var(--gold-line);
+      color: var(--gold2);
+      background: var(--gold-dim);
+    }
+    .filter-btn.active {
+      background: var(--gold-dim);
+      border-color: var(--gold-line);
+      color: var(--gold2);
+    }
+
+    /* Location section */
+    .roster-location {
+      margin-bottom: 72px;
+    }
+
+    .roster-location__header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 36px;
+    }
+
+    .roster-location__line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold-line), transparent);
+    }
+
+    .roster-location__title {
+      font-size: 8.5px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .roster-location__title::before {
+      content: '◆';
+      font-size: 5px;
+      color: var(--gold);
+    }
+
+    /* Category label */
+    .roster-category {
+      font-size: 8px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    /* Model grid */
+    .model-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2px;
+      margin-bottom: 48px;
+    }
+
+    /* Model card */
+    .model-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--black2);
+      aspect-ratio: 3/4;
+      display: block;
+      text-decoration: none;
+    }
+
+    .model-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        transparent 40%,
+        rgba(6,6,5,0.5) 65%,
+        rgba(6,6,5,0.95) 100%
+      );
+      z-index: 1;
+      transition: opacity 0.4s ease;
+    }
+
+    .model-card:hover::before {
+      opacity: 0.85;
+    }
+
+    /* Hover overlay */
+    .model-card__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(6,6,5,0.88);
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 0.4s cubic-bezier(0.16,1,0.3,1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      padding: 32px;
+      text-align: center;
+    }
+
+    .model-card:hover .model-card__overlay {
+      opacity: 1;
+    }
+
+    .model-card__overlay-eyebrow {
+      font-size: 8px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      animation: fadeUp 0.4s ease both;
+    }
+
+    .model-card__overlay-name {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      margin-bottom: 20px;
+      animation: fadeUp 0.4s ease 0.05s both;
+    }
+
+    /* Stats grid on hover */
+    .model-card__stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      width: 100%;
+      margin-bottom: 20px;
+      animation: fadeUp 0.4s ease 0.1s both;
+    }
+
+    .model-card__stat {
+      background: rgba(255,255,255,0.04);
+      padding: 10px 8px;
+      text-align: center;
+    }
+
+    .model-card__stat-label {
+      font-size: 7px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .model-card__stat-value {
+      font-size: 12px;
+      color: var(--white);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+    }
+
+    /* Experience tags */
+    .model-card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      justify-content: center;
+      margin-bottom: 20px;
+      animation: fadeUp 0.4s ease 0.15s both;
+    }
+
+    .model-card__tag {
+      font-size: 7.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted2);
+      border: 1px solid var(--line);
+      padding: 3px 8px;
+      border-radius: 1px;
+    }
+
+    .model-card__cta {
+      font-family: var(--font-body);
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: linear-gradient(135deg, var(--gold3), var(--gold2), var(--gold));
+      padding: 11px 24px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: box-shadow 0.2s ease;
+      animation: fadeUp 0.4s ease 0.2s both;
+    }
+
+    .model-card__cta:hover {
+      box-shadow: 0 0 28px rgba(200,169,90,0.35);
+    }
+
+    /* Model photo */
+    .model-card__photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.7s cubic-bezier(0.16,1,0.3,1);
+      display: block;
+    }
+
+    .model-card:hover .model-card__photo {
+      transform: scale(1.04);
+    }
+
+    /* Bottom info — always visible */
+    .model-card__info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      padding: 20px 20px 20px;
+      transition: opacity 0.3s ease;
+    }
+
+    .model-card:hover .model-card__info {
+      opacity: 0;
+    }
+
+    .model-card__name {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--white);
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .model-card__meta {
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold2);
+    }
+
+    /* Shimmer line on card */
+    .model-card__shimmer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold2), transparent);
+      z-index: 4;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .model-card:hover .model-card__shimmer {
+      opacity: 0.8;
+    }
+
+    /* Featured badge */
+    .model-card__badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 4;
+      font-size: 7px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: linear-gradient(135deg, var(--gold2), var(--gold));
+      padding: 5px 10px;
+      border-radius: 1px;
+    }
+
+    /* Empty slot card */
+    .model-card--empty {
+      border: 1px dashed rgba(200,169,90,0.15);
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      cursor: default;
+      aspect-ratio: 3/4;
+      text-decoration: none;
+    }
+
+    .model-card--empty::before { display: none; }
+
+    .model-card--empty .empty-icon {
+      font-size: 28px;
+      color: var(--gold-line);
+    }
+
+    .model-card--empty .empty-label {
+      font-size: 8px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(200,169,90,0.25);
+    }
+
+    /* Booking CTA section */
+    .booking-cta {
+      border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg);
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200,169,90,0.08), transparent 55%),
+        var(--surface);
+      padding: clamp(48px, 7vw, 72px) clamp(28px, 5vw, 56px);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-top: 24px;
+    }
+
+    .booking-cta::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold2), transparent);
+      opacity: 0.6;
+    }
+
+    .booking-cta__eyebrow {
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .booking-cta__title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+
+    .booking-cta__title em {
+      font-style: italic;
+      color: var(--gold2);
+    }
+
+    .booking-cta__sub {
+      font-size: 13.5px;
+      color: var(--muted2);
+      max-width: 52ch;
+      margin: 0 auto 32px;
+      line-height: 1.8;
+    }
+
+    .booking-cta__actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Roster count */
+    .roster-count {
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-left: auto;
+    }
+
+    @media (max-width: 768px) {
+      .model-grid { grid-template-columns: repeat(2, 1fr); gap: 2px; }
+      .model-card__overlay { padding: 20px; }
+      .model-card__overlay-name { font-size: 22px; }
+      .booking-cta__actions { flex-direction: column; align-items: center; }
+      .roster-filters { gap: 6px; }
+    }
+
+    @media (max-width: 480px) {
+      .model-grid { grid-template-columns: 1fr; }
+    }
+
+  </style>
+
+</head>
+<body>
+
+<!-- HEADER -->
+
+<header class="topbar">
+  <div class="container topbar__inner">
+    <a class="brand" href="index.html" aria-label="House of Elévara Home">
+      <div class="brand__glam3d">ELÉVARA</div>
+      <div class="brand__subwrap">
+        <span class="brand__subMain">House of Elévara Management Group</span>
+        <span class="brand__subSmall">by Core Vision Management</span>
+      </div>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link" href="apply.html">Apply</a>
+      <a class="nav__link is-active" href="roster.html">Talent</a>
+      <a class="nav__link" href="payments.html">Membership</a>
+      <a class="nav__link" href="contact.html">Contact</a>
+    </nav>
+    <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+
+<div class="mobileMenu" id="mobileMenu" aria-hidden="true">
+  <button class="mobileMenu__backdrop" id="menuBackdrop" type="button" aria-label="Close menu" onclick="GS_closeMenu()"></button>
+  <div class="mobileMenu__panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <div class="mobileMenu__topRow">
+      <div class="mobileMenu__brand">House of Elévara</div>
+      <button class="mobileMenu__close" id="closeMenu" type="button" aria-label="Close menu" onclick="GS_closeMenu()">✕</button>
+    </div>
+    <button class="mobileMenu__dropdownBtn" id="dropOpener" type="button" aria-expanded="false" onclick="GS_toggleDrop()">
+      Menu <span id="dropChev">▾</span>
+    </button>
+    <div class="mobileMenu__dropdown" id="dropMenu" aria-hidden="true">
+      <a href="index.html" class="mobileMenu__link" onclick="GS_closeMenu()">Home</a>
+      <a href="apply.html" class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
+      <a href="roster.html" class="mobileMenu__link" onclick="GS_closeMenu()">Talent</a>
+      <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Membership</a>
+      <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
+    </div>
+    <div class="mobileMenu__divider"></div>
+    <a class="mobileMenu__cta" href="book.html" onclick="GS_closeMenu()">Request a Booking</a>
+    <a class="mobileMenu__cta ghost" href="mailto:admin@houseofelevara.com" onclick="GS_closeMenu()">Email Us</a>
+  </div>
+</div>
+
+<main>
+
+  <!-- PAGE HEADER -->
+
+  <div class="container">
+    <div class="pageHeader">
+      <p style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">
+        Our Talent
+      </p>
+      <h1>The Elévara<br>Roster</h1>
+      <p>
+        Every individual on our roster has been selected, developed, and positioned with intention. These are not just models — they are brands in motion, built for visibility, bookings, and long-term market presence.
+      </p>
+      <div class="btnRow" style="flex-direction:row;flex-wrap:wrap;">
+        <a class="btn btn--gold" href="book.html" style="flex:0 1 auto;width:auto;">Request a Booking</a>
+        <a class="btn btn--ghost" href="apply.html" style="flex:0 1 auto;width:auto;">Apply to Join</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FILTERS -->
+
+  <div class="container">
+    <div class="roster-filters">
+      <button class="filter-btn active" onclick="filterRoster('all', this)">All Talent</button>
+      <button class="filter-btn" onclick="filterRoster('women', this)">Women</button>
+      <button class="filter-btn" onclick="filterRoster('men', this)">Men</button>
+      <button class="filter-btn" onclick="filterRoster('new-faces', this)">New Faces</button>
+      <button class="filter-btn" onclick="filterRoster('new-jersey', this)">New Jersey</button>
+      <button class="filter-btn" onclick="filterRoster('dallas', this)">Dallas</button>
+      <button class="filter-btn" onclick="filterRoster('georgia', this)">Georgia</button>
+      <span class="roster-count" id="rosterCount">1 Talent</span>
+    </div>
+  </div>
+
+  <!-- NEW JERSEY WOMEN -->
+
+  <div class="container">
+    <div class="roster-location" data-location="new-jersey">
+
+```
+  <div class="roster-location__header">
+    <span class="roster-location__title">New Jersey</span>
+    <div class="roster-location__line"></div>
+  </div>
+
+  <div class="roster-category">Women</div>
+
+  <div class="model-grid">
+
+    <!-- PAULA SOFIA ARIAS -->
+    <a class="model-card"
+       data-category="women"
+       data-location="new-jersey"
+       href="mailto:admin@houseofelevara.com?subject=Booking%20Inquiry%20%E2%80%94%20Paula%20Sofia%20Arias%20%7C%20House%20of%20El%C3%A9vara&body=Hello%20House%20of%20El%C3%A9vara%2C%0A%0AI%20am%20interested%20in%20booking%20Paula%20Sofia%20Arias.%0A%0AProject%20Type%3A%0ADate%3A%0ALocation%3A%0ABudget%3A%0ADetails%3A%0A%0AContact%20Name%3A%0APhone%3A%0A%0AThank%20you%2C">
+
+      <div class="model-card__shimmer"></div>
+      <div class="model-card__badge">Featured</div>
+
+      <img
+        class="model-card__photo"
+        src="IMG_9110.jpeg"
+        alt="Paula Sofia Arias — House of Elévara"
+      />
+
+      <div class="model-card__overlay">
+        <span class="model-card__overlay-eyebrow">Women · New Jersey</span>
+        <div class="model-card__overlay-name">Paula Sofia<br>Arias</div>
+
+        <div class="model-card__stats">
+          <div class="model-card__stat">
+            <span class="model-card__stat-label">Height</span>
+            <span class="model-card__stat-value">5' 5"</span>
+          </div>
+          <div class="model-card__stat">
+            <span class="model-card__stat-label">Dress</span>
+            <span class="model-card__stat-value">0</span>
+          </div>
+          <div class="model-card__stat">
+            <span class="model-card__stat-label">Shoe</span>
+            <span class="model-card__stat-value">6</span>
+          </div>
+          <div class="model-card__stat">
+            <span class="model-card__stat-label">Bust</span>
+            <span class="model-card__stat-value">31"</span>
+          </div>
+          <div class="model-card__stat">
+            <span class="model-card__stat-label">Waist</span>
+            <span class="model-card__stat-value">24"</span>
+          </div>
+          <div class="model-card__stat">
+            <span class="model-card__stat-label">Hips</span>
+            <span class="model-card__stat-value">33"</span>
+          </div>
+        </div>
+
+        <div class="model-card__tags">
+          <span class="model-card__tag">Runway</span>
+          <span class="model-card__tag">Editorial</span>
+          <span class="model-card__tag">Commercial</span>
+          <span class="model-card__tag">TV</span>
+          <span class="model-card__tag">Promotional</span>
+        </div>
+
+        <a class="model-card__cta"
+           href="mailto:admin@houseofelevara.com?subject=Booking%20Inquiry%20%E2%80%94%20Paula%20Sofia%20Arias%20%7C%20House%20of%20El%C3%A9vara&body=Hello%20House%20of%20El%C3%A9vara%2C%0A%0AI%20am%20interested%20in%20booking%20Paula%20Sofia%20Arias.%0A%0AProject%20Type%3A%0ADate%3A%0ALocation%3A%0ABudget%3A%0ADetails%3A%0A%0AContact%20Name%3A%0APhone%3A%0A%0AThank%20you%2C"
+           onclick="event.stopPropagation()">
+          Inquire to Book
+        </a>
+      </div>
+
+      <div class="model-card__info">
+        <span class="model-card__name">Paula Sofia Arias</span>
+        <span class="model-card__meta">Women · New Jersey · NBC · Runway · Editorial</span>
+      </div>
+
+    </a>
+
+    <!-- MORE COMING SOON slots -->
+    <div class="model-card model-card--empty">
+      <span class="empty-icon">◈</span>
+      <span class="empty-label">Coming Soon</span>
+    </div>
+
+    <div class="model-card model-card--empty">
+      <span class="empty-icon">◈</span>
+      <span class="empty-label">Coming Soon</span>
+    </div>
+
+  </div>
+</div>
+```
+
+  </div>
+
+  <!-- MORE LOCATIONS PLACEHOLDER -->
+
+  <div class="container">
+
+```
+<!-- DALLAS PLACEHOLDER -->
+<div class="roster-location" data-location="dallas">
+  <div class="roster-location__header">
+    <span class="roster-location__title">Dallas</span>
+    <div class="roster-location__line"></div>
+  </div>
+  <div class="roster-category">Expanding — Talent Coming Soon</div>
+  <div class="model-grid">
+    <div class="model-card model-card--empty">
+      <span class="empty-icon">◈</span>
+      <span class="empty-label">Coming Soon</span>
+    </div>
+    <div class="model-card model-card--empty">
+      <span class="empty-icon">◈</span>
+      <span class="empty-label">Coming Soon</span>
+    </div>
+    <div class="model-card model-card--empty">
+      <span class="empty-icon">◈</span>
+      <span class="empty-label">Coming Soon</span>
+    </div>
+  </div>
+</div>
+
+<!-- GEORGIA PLACEHOLDER -->
+<div class="roster-location" data-location="georgia">
+  <div class="roster-location__header">
+    <span class="roster-location__title">Georgia</span>
+    <div class="roster-location__line"></div>
+  </div>
+  <div class="roster-category">Expanding — Talent Coming Soon</div>
+  <div class="model-grid">
+    <div class="model-card model-card--empty">
+      <span class="empty-icon">◈</span>
+      <span class="empty-label">Coming Soon</span>
+    </div>
+    <div class="model-card model-card--empty">
+      <span class="empty-icon">◈</span>
+      <span class="empty-label">Coming Soon</span>
+    </div>
+    <div class="model-card model-card--empty">
+      <span class="empty-icon">◈</span>
+      <span class="empty-label">Coming Soon</span>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+
+  <!-- BOOKING CTA -->
+
+  <div class="container" style="margin-bottom:clamp(48px,8vw,88px);">
+    <div class="booking-cta">
+      <span class="booking-cta__eyebrow">Ready to Book</span>
+      <h2 class="booking-cta__title">
+        Work With<br><em>Elévara Talent</em>
+      </h2>
+      <p class="booking-cta__sub">
+        Every model on our roster is professionally managed, thoroughly vetted, and ready for paid assignments. Submit a booking inquiry and our team will confirm availability, details, and expectations within 24 hours.
+      </p>
+      <div class="booking-cta__actions">
+        <a class="btn btn--gold"
+           href="mailto:admin@houseofelevara.com?subject=Talent%20Booking%20Inquiry%20%7C%20House%20of%20El%C3%A9vara&body=Hello%20House%20of%20El%C3%A9vara%2C%0A%0AI%20would%20like%20to%20inquire%20about%20booking%20talent.%0A%0AProject%20Type%3A%0ADate%3A%0ALocation%3A%0ANumber%20of%20Models%3A%0ABudget%3A%0ADetails%3A%0A%0AContact%20Name%3A%0APhone%3A%0A%0AThank%20you%2C"
+           style="flex:0 1 auto;width:auto;">
+          Submit a Booking Inquiry
+        </a>
+        <a class="btn btn--ghost" href="book.html" style="flex:0 1 auto;width:auto;">
+          Visit Booking Page
+        </a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div>© House of Elévara Management Group</div>
+  <div class="footer__muted">by Core Vision Management &nbsp;·&nbsp; admin@houseofelevara.com &nbsp;·&nbsp; +1 (470) 898-0718</div>
+</footer>
+
+<script src="assets/app.js?v=99"></script>
+
+<script>
+  function filterRoster(filter, btn) {
+    // Update active button
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const cards = document.querySelectorAll('.model-card:not(.model-card--empty)');
+    const locations = document.querySelectorAll('.roster-location');
+    let visibleCount = 0;
+
+    if (filter === 'all') {
+      locations.forEach(l => l.style.display = '');
+      cards.forEach(c => { c.style.display = ''; visibleCount++; });
+    } else {
+      locations.forEach(loc => {
+        const locData = loc.dataset.location;
+        if (filter === locData) {
+          loc.style.display = '';
+        } else if (['women','men','new-faces'].includes(filter)) {
+          loc.style.display = '';
+        } else {
+          loc.style.display = 'none';
+        }
+      });
+
+      cards.forEach(card => {
+        const cat = card.dataset.category;
+        const loc = card.dataset.location;
+        if (filter === cat || filter === loc) {
+          card.style.display = '';
+          visibleCount++;
+        } else if (!['women','men','new-faces','new-jersey','dallas','georgia'].includes(filter)) {
+          card.style.display = '';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    if (filter === 'all') visibleCount = cards.length;
+    document.getElementById('rosterCount').textContent =
+      visibleCount + (visibleCount === 1 ? ' Talent' : ' Talent');
+  }
+</script>
+
+</body>
+</html>
