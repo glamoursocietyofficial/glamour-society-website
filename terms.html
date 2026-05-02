@@ -1,48 +1,280 @@
-ELÉVARA
-House of Elévara LLC
-← BACK TO HOUSE
-LEGAL · HOUSE OF ELÉVARA LLC
-Terms of Service
-Effective Date: May 1, 2026  ·  Last Updated: May 1, 2026  ·  Governing Law: State of Georgia, United States
-These Terms of Service ("Terms") govern your access to and use of The Atelier mobile application and houseofelevara.com (collectively, the "Platform"), operated by House of Elévara LLC, a Georgia Limited Liability Company ("House of Elévara," "we," "us," or "our").
-By creating an account or using the Platform, you agree to these Terms. If you do not agree, do not use the Platform.
-1. Eligibility
-You must be at least 18 years old to use the Platform. By creating an account, you represent that you are 18 or older and have the legal capacity to enter into these Terms.
-2. Accounts
-You are responsible for maintaining the security of your account. You agree to provide accurate, current, and complete information during registration and to update it as necessary. You may not share your account with others or use another user's account.
-3. The Platform — Two Roles
-House Members (Talent) are creative professionals who create profiles, set rates, and receive bookings through the Platform. Members keep 70% of every booking. House of Elévara retains 30% as a platform fee covering payment processing, infrastructure, and dispute coverage.
-Patrons (Clients) are brands, businesses, and individuals who browse talent and submit booking requests through the Platform. Patrons pay the service rate plus a 30% House fee at checkout.
-4. Bookings and Payments
-	•	All payments are processed by Stripe, Inc. You agree to Stripe's terms of service
-	•	House of Elévara does not store full card numbers or bank account details
-	•	Booking payments are held by Stripe until work is confirmed complete
-	•	Members must connect a Stripe Express account to receive payouts
-	•	Members who earn over $600 in a calendar year will receive IRS Form 1099-NEC
-	•	Refunds and disputes are handled according to Stripe's dispute resolution process
-5. User Conduct
-You agree not to:
-	•	Use the Platform for any unlawful purpose
-	•	Post false, misleading, or fraudulent information
-	•	Harass, threaten, or harm other users
-	•	Attempt to circumvent Platform payments by conducting bookings off-platform
-	•	Upload content that infringes intellectual property rights
-	•	Attempt to reverse engineer or compromise Platform security
-6. Content
-You retain ownership of content you upload to the Platform (photos, videos, portfolio items). By uploading content, you grant House of Elévara a non-exclusive, royalty-free license to display your content within the Platform for the purpose of facilitating bookings and operating the service.
-7. Account Deletion
-You may delete your account at any time within the app via Settings → Delete My Account. Deletion is permanent. Financial records may be retained for up to 7 years as required by law.
-8. Termination
-We reserve the right to suspend or terminate accounts that violate these Terms, engage in fraudulent activity, or harm the Platform or its users. We will provide notice where reasonably possible.
-9. Disclaimers
-The Platform is provided "as is" without warranties of any kind. House of Elévara does not guarantee the quality, reliability, or fitness of any talent or booking. We are a marketplace and are not a party to the agreements between Members and Patrons.
-10. Limitation of Liability
-To the fullest extent permitted by law, House of Elévara LLC shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the Platform. Our total liability to you shall not exceed the fees paid by you to the Platform in the 12 months preceding the claim.
-11. Governing Law
-These Terms are governed by the laws of the State of Georgia, United States. Any disputes shall be resolved in the courts of Georgia.
-12. Changes to Terms
-We may update these Terms from time to time. We will notify you of material changes by email or in-app notice. Continued use of the Platform after changes constitutes acceptance.
-13. Contact
-Questions about these Terms: admin@houseofelevara.com
-© 2026 House of Elévara LLC · All rights reserved
-Privacy Policy Terms of Service Contact
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Terms of Service — House of Elévara LLC</title>
+  <meta name="description" content="Terms of Service for House of Elévara LLC and The Atelier platform."/>
+  <link rel="stylesheet" href="assets/styles.css"/>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png">
+  <meta name="apple-mobile-web-app-title" content="Elévara">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="theme-color" content="#060605">
+  <style>
+    .legal-hero {
+      padding: clamp(48px,8vw,88px) 0 clamp(32px,5vw,56px);
+      border-bottom: 1px solid var(--gold-line);
+      margin-bottom: clamp(40px,6vw,64px);
+    }
+    .legal-eyebrow {
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .legal-title {
+      font-family: var(--font-display);
+      font-size: clamp(36px,6vw,60px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    .legal-title em {
+      font-style: italic;
+      color: var(--gold2);
+    }
+    .legal-meta {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .legal-meta span { display: flex; flex-direction: column; gap: 3px; }
+    .legal-meta strong { color: var(--gold); font-size: 8px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600; }
+    .legal-section {
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--line);
+    }
+    .legal-section:last-child { border-bottom: none; }
+    .legal-section-num {
+      font-size: 8.5px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .legal-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(22px,3vw,28px);
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 18px;
+      line-height: 1.2;
+    }
+    .legal-section p {
+      font-size: 14px;
+      color: rgba(245,240,232,0.65);
+      line-height: 1.9;
+      margin-bottom: 14px;
+    }
+    .legal-section p:last-child { margin-bottom: 0; }
+    .legal-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 14px 0;
+      border: 1px solid var(--gold-line);
+    }
+    .legal-section ul li {
+      font-size: 13px;
+      color: rgba(245,240,232,0.6);
+      line-height: 1.8;
+      padding: 10px 16px 10px 36px;
+      position: relative;
+      border-bottom: 1px solid var(--line);
+    }
+    .legal-section ul li:last-child { border-bottom: none; }
+    .legal-section ul li::before {
+      content: '✦';
+      position: absolute;
+      left: 14px;
+      color: var(--gold);
+      font-size: 7px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .legal-section a { color: var(--gold2); text-decoration: none; border-bottom: 1px solid var(--gold-line); }
+    .legal-section strong { color: var(--white); font-weight: 500; }
+    .legal-highlight {
+      background: var(--surface2);
+      border-left: 2px solid var(--gold);
+      padding: 18px 22px;
+      margin: 20px 0;
+      font-size: 13px;
+      color: rgba(245,240,232,0.6);
+      font-style: italic;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container topbar__inner">
+    <a class="brand" href="index.html" aria-label="House of Elévara Home">
+      <div class="brand__glam3d">ELÉVARA</div>
+      <div class="brand__subwrap">
+        <span class="brand__subMain">House of Elévara LLC</span>
+      </div>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link" href="apply.html">Apply</a>
+      <a class="nav__link" href="roster.html">Talent</a>
+      <a class="nav__link" href="payments.html">Membership</a>
+      <a class="nav__link" href="contact.html">Contact</a>
+    </nav>
+    <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
+  </div>
+</header>
+
+<div class="mobileMenu" id="mobileMenu" aria-hidden="true">
+  <button class="mobileMenu__backdrop" id="menuBackdrop" type="button" aria-label="Close menu" onclick="GS_closeMenu()"></button>
+  <div class="mobileMenu__panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <div class="mobileMenu__topRow">
+      <div class="mobileMenu__brand">House of Elévara</div>
+      <button class="mobileMenu__close" id="closeMenu" type="button" aria-label="Close menu" onclick="GS_closeMenu()">✕</button>
+    </div>
+    <button class="mobileMenu__dropdownBtn" id="dropOpener" type="button" aria-expanded="false" onclick="GS_toggleDrop()">
+      Menu <span id="dropChev">▾</span>
+    </button>
+    <div class="mobileMenu__dropdown" id="dropMenu" aria-hidden="true">
+      <a href="index.html" class="mobileMenu__link" onclick="GS_closeMenu()">Home</a>
+      <a href="apply.html" class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
+      <a href="roster.html" class="mobileMenu__link" onclick="GS_closeMenu()">Talent</a>
+      <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Membership</a>
+      <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
+    </div>
+    <div class="mobileMenu__divider"></div>
+    <a class="mobileMenu__cta" href="book.html" onclick="GS_closeMenu()">Request a Booking</a>
+    <a class="mobileMenu__cta ghost" href="mailto:admin@houseofelevara.com" onclick="GS_closeMenu()">Email Us</a>
+  </div>
+</div>
+
+<main>
+  <section class="container">
+
+```
+<div class="legal-hero">
+  <div class="legal-eyebrow">Legal · House of Elévara LLC</div>
+  <h1 class="legal-title">Terms of <em>Service</em></h1>
+  <div class="legal-meta">
+    <span><strong>Effective</strong>May 1, 2026</span>
+    <span><strong>Updated</strong>May 1, 2026</span>
+    <span><strong>Governing Law</strong>Georgia, United States</span>
+  </div>
+</div>
+
+<div class="legal-section">
+  <p>These Terms of Service govern your access to and use of The Atelier mobile application and houseofelevara.com (collectively, the "Platform"), operated by House of Elévara LLC, a Georgia Limited Liability Company. By creating an account or using the Platform, you agree to these Terms.</p>
+</div>
+
+<div class="legal-section">
+  <div class="legal-section-num">01 · Eligibility</div>
+  <h2>Eligibility</h2>
+  <p>You must be at least 18 years old to use the Platform. By creating an account, you represent that you are 18 or older and have the legal capacity to enter into these Terms.</p>
+</div>
+
+<div class="legal-section">
+  <div class="legal-section-num">02 · The Platform</div>
+  <h2>The Two Roles</h2>
+  <p><strong>House Members (Talent)</strong> are creative professionals who create profiles, set rates, and receive bookings through the Platform. Members keep 70% of every booking. House of Elévara retains 30% as a platform fee covering payment processing, infrastructure, and dispute coverage.</p>
+  <p><strong>Patrons (Clients)</strong> are brands, businesses, and individuals who browse talent and submit booking requests. Patrons pay the service rate plus a 30% House fee at checkout.</p>
+</div>
+
+<div class="legal-section">
+  <div class="legal-section-num">03 · Bookings & Payments</div>
+  <h2>Bookings and Payments</h2>
+  <ul>
+    <li>All payments are processed by Stripe, Inc. You agree to Stripe's terms of service</li>
+    <li>House of Elévara does not store full card numbers or bank account details</li>
+    <li>Booking payments are held by Stripe until work is confirmed complete</li>
+    <li>Members must connect a Stripe Express account to receive payouts</li>
+    <li>Members who earn over $600 in a calendar year will receive IRS Form 1099-NEC</li>
+    <li>Refunds and disputes are handled according to Stripe's dispute resolution process</li>
+  </ul>
+</div>
+
+<div class="legal-section">
+  <div class="legal-section-num">04 · User Conduct</div>
+  <h2>User Conduct</h2>
+  <p>You agree not to:</p>
+  <ul>
+    <li>Use the Platform for any unlawful purpose</li>
+    <li>Post false, misleading, or fraudulent information</li>
+    <li>Harass, threaten, or harm other users</li>
+    <li>Circumvent Platform payments by conducting bookings off-platform</li>
+    <li>Upload content that infringes intellectual property rights</li>
+    <li>Attempt to reverse engineer or compromise Platform security</li>
+  </ul>
+</div>
+
+<div class="legal-section">
+  <div class="legal-section-num">05 · Content</div>
+  <h2>Your Content</h2>
+  <p>You retain ownership of content you upload to the Platform. By uploading content, you grant House of Elévara a non-exclusive, royalty-free license to display your content within the Platform for the purpose of facilitating bookings and operating the service.</p>
+</div>
+
+<div class="legal-section">
+  <div class="legal-section-num">06 · Account Deletion</div>
+  <h2>Account Deletion</h2>
+  <p>You may delete your account at any time within the app via Settings → Delete My Account. Deletion is permanent. Financial records may be retained for up to 7 years as required by law.</p>
+</div>
+
+<div class="legal-section">
+  <div class="legal-section-num">07 · Termination</div>
+  <h2>Termination</h2>
+  <p>We reserve the right to suspend or terminate accounts that violate these Terms, engage in fraudulent activity, or harm the Platform or its users. We will provide notice where reasonably possible.</p>
+</div>
+
+<div class="legal-section">
+  <div class="legal-section-num">08 · Disclaimers</div>
+  <h2>Disclaimers</h2>
+  <p>The Platform is provided "as is" without warranties of any kind. House of Elévara does not guarantee the quality, reliability, or fitness of any talent or booking. We are a marketplace and are not a party to agreements between Members and Patrons.</p>
+</div>
+
+<div class="legal-section">
+  <div class="legal-section-num">09 · Limitation of Liability</div>
+  <h2>Limitation of Liability</h2>
+  <p>To the fullest extent permitted by law, House of Elévara LLC shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the Platform. Our total liability shall not exceed the fees paid by you in the 12 months preceding the claim.</p>
+</div>
+
+<div class="legal-section">
+  <div class="legal-section-num">10 · Governing Law</div>
+  <h2>Governing Law</h2>
+  <p>These Terms are governed by the laws of the State of Georgia, United States. Any disputes shall be resolved in the courts of Georgia.</p>
+</div>
+
+<div class="legal-section">
+  <div class="legal-section-num">11 · Changes & Contact</div>
+  <h2>Changes & Contact</h2>
+  <p>We may update these Terms from time to time. Continued use of the Platform after changes constitutes acceptance.</p>
+  <p>Questions: <a href="mailto:admin@houseofelevara.com">admin@houseofelevara.com</a></p>
+</div>
+```
+
+  </section>
+</main>
+
+<footer class="footer">
+  <div>© 2026 House of Elévara LLC</div>
+  <div class="footer__muted">admin@houseofelevara.com &nbsp;·&nbsp; +1 (470) 898-0718</div>
+  <div class="footer__muted" style="margin-top:6px;">
+    <a href="privacy.html" style="color:var(--gold2);text-decoration:none;">Privacy Policy</a>
+    &nbsp;·&nbsp;
+    <a href="terms.html" style="color:var(--gold2);text-decoration:none;">Terms of Service</a>
+  </div>
+</footer>
+
+<script src="assets/app.js?v=99"></script>
+
+</body>
+</html>
