@@ -1,0 +1,1294 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>The Atelier App | House of Elévara</title>
+  <meta name="description" content="The Atelier by House of Elévara — the professional booking platform for models, creators, athletes, and artists. Set your rate. Get booked. Keep 70%."/>
+  <link rel="stylesheet" href="assets/styles.css"/>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png">
+  <meta name="apple-mobile-web-app-title" content="Elévara">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="theme-color" content="#060605">
+
+  <style>
+
+    /* ── PAGE HERO ── */
+    .atelier-hero {
+      padding: clamp(56px,8vw,96px) 0 clamp(40px,6vw,72px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .atelier-hero__eyebrow {
+      font-size: 9px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .atelier-hero__eyebrow::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+
+    .atelier-hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 7vw, 86px);
+      font-weight: 300;
+      line-height: 1.02;
+      letter-spacing: 0.01em;
+      margin-bottom: 20px;
+    }
+
+    .atelier-hero__title em {
+      font-style: italic;
+      color: var(--gold2);
+    }
+
+    .atelier-hero__sub {
+      font-size: 15px;
+      color: var(--muted2);
+      line-height: 1.85;
+      max-width: 60ch;
+      margin-bottom: 36px;
+      letter-spacing: 0.02em;
+    }
+
+    .atelier-hero__stats {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--gold-line);
+    }
+
+    .atelier-hero__stat {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .atelier-hero__stat-num {
+      font-family: var(--font-display);
+      font-size: 40px;
+      font-weight: 300;
+      color: var(--gold2);
+      line-height: 1;
+      letter-spacing: 0.01em;
+    }
+
+    .atelier-hero__stat-label {
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── PHONE MOCKUP ── */
+    .phone-scene {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 24px;
+      padding: clamp(40px,6vw,72px) 0;
+      position: relative;
+    }
+
+    .phone-scene::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,169,90,0.06), transparent 70%);
+      pointer-events: none;
+    }
+
+    .phone {
+      width: 220px;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .phone--center {
+      width: 240px;
+      z-index: 2;
+      transform: translateY(-20px);
+    }
+
+    .phone--side {
+      opacity: 0.65;
+      transform: scale(0.92) translateY(10px);
+    }
+
+    .phone__shell {
+      background: #0f0f0f;
+      border-radius: 36px;
+      border: 1.5px solid rgba(255,255,255,0.12);
+      overflow: hidden;
+      box-shadow:
+        0 40px 80px rgba(0,0,0,0.7),
+        0 0 0 1px rgba(255,255,255,0.04),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+      position: relative;
+    }
+
+    /* notch */
+    .phone__shell::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 24px;
+      background: #0f0f0f;
+      border-radius: 0 0 16px 16px;
+      z-index: 10;
+    }
+
+    .phone__screen {
+      background: #0A0A0A;
+      min-height: 440px;
+      padding: 32px 0 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* status bar */
+    .phone__status {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px 12px;
+      font-size: 9px;
+      color: rgba(245,240,232,0.6);
+      letter-spacing: 0.5px;
+    }
+
+    /* screen content styles */
+    .screen-label {
+      font-size: 7px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: #C9A961;
+      padding: 0 16px 6px;
+      opacity: 0.8;
+    }
+
+    .screen-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 22px;
+      font-weight: 300;
+      color: #F5F0E8;
+      padding: 0 16px 16px;
+      letter-spacing: 0.3px;
+      line-height: 1.1;
+    }
+
+    .screen-divider {
+      height: 0.5px;
+      background: linear-gradient(90deg, transparent, rgba(201,169,97,0.3), transparent);
+      margin: 0 16px 14px;
+    }
+
+    /* Floor screen */
+    .floor-card {
+      margin: 0 12px 10px;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      background: #121212;
+      border: 0.5px solid rgba(201,169,97,0.15);
+    }
+
+    .floor-card__img {
+      height: 100px;
+      background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .floor-card__img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.85) 100%);
+    }
+
+    .floor-card__silhouette {
+      width: 40px;
+      height: 80px;
+      background: linear-gradient(180deg, rgba(201,169,97,0.15), rgba(201,169,97,0.05));
+      border-radius: 20px 20px 0 0;
+      position: relative;
+    }
+
+    .floor-card__silhouette::before {
+      content: '';
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 22px;
+      height: 22px;
+      background: rgba(201,169,97,0.2);
+      border-radius: 50%;
+    }
+
+    .floor-card__info {
+      padding: 8px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .floor-card__name {
+      font-family: Georgia, serif;
+      font-size: 12px;
+      color: #F5F0E8;
+      font-weight: 300;
+    }
+
+    .floor-card__meta {
+      font-size: 7px;
+      letter-spacing: 1.5px;
+      color: #C9A961;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .floor-card__rate {
+      font-family: Georgia, serif;
+      font-size: 14px;
+      color: #C9A961;
+    }
+
+    .floor-card--featured .floor-card__img {
+      height: 120px;
+    }
+
+    /* Ledger screen */
+    .ledger-hero {
+      text-align: center;
+      padding: 12px 16px 16px;
+    }
+
+    .ledger-label {
+      font-size: 7px;
+      letter-spacing: 2.5px;
+      color: #C9A961;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .ledger-amount {
+      font-family: Georgia, serif;
+      font-size: 36px;
+      font-weight: 300;
+      color: #F5F0E8;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .ledger-sub {
+      font-size: 9px;
+      color: rgba(245,240,232,0.4);
+      letter-spacing: 1px;
+      font-style: italic;
+    }
+
+    .ledger-divider {
+      height: 0.5px;
+      background: rgba(201,169,97,0.25);
+      margin: 12px 16px;
+    }
+
+    .ledger-balance {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 16px 10px;
+      padding: 12px 14px;
+      background: rgba(201,169,97,0.05);
+      border: 0.5px solid rgba(201,169,97,0.2);
+      border-radius: 2px;
+    }
+
+    .ledger-balance__label {
+      font-size: 7.5px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #C9A961;
+    }
+
+    .ledger-balance__amount {
+      font-family: Georgia, serif;
+      font-size: 18px;
+      color: #F5F0E8;
+    }
+
+    .cashout-btn {
+      margin: 4px 16px 0;
+      background: linear-gradient(135deg, #e2c87a, #c8a95a);
+      color: #0A0A0A;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 10px;
+      border-radius: 1px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    /* Booking screen */
+    .booking-step {
+      margin: 0 12px 8px;
+      padding: 12px 14px;
+      background: rgba(255,255,255,0.03);
+      border: 0.5px solid rgba(255,255,255,0.07);
+      border-radius: 2px;
+    }
+
+    .booking-step--active {
+      background: rgba(201,169,97,0.06);
+      border-color: rgba(201,169,97,0.3);
+    }
+
+    .booking-step__label {
+      font-size: 7px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.35);
+      margin-bottom: 4px;
+    }
+
+    .booking-step--active .booking-step__label {
+      color: #C9A961;
+    }
+
+    .booking-step__value {
+      font-size: 12px;
+      color: rgba(245,240,232,0.5);
+    }
+
+    .booking-step--active .booking-step__value {
+      color: #F5F0E8;
+    }
+
+    .booking-total {
+      margin: 8px 12px 0;
+      padding: 12px 14px;
+      background: rgba(201,169,97,0.08);
+      border: 0.5px solid rgba(201,169,97,0.4);
+      border-radius: 2px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .booking-total__label {
+      font-size: 8px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #C9A961;
+    }
+
+    .booking-total__amount {
+      font-family: Georgia, serif;
+      font-size: 22px;
+      color: #F5F0E8;
+    }
+
+    /* tab bar */
+    .phone__tabs {
+      margin-top: auto;
+      display: flex;
+      border-top: 0.5px solid rgba(201,169,97,0.15);
+      padding: 10px 0 14px;
+      background: #0A0A0A;
+    }
+
+    .phone__tab {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .phone__tab-icon {
+      font-size: 14px;
+      color: rgba(245,240,232,0.3);
+      line-height: 1;
+    }
+
+    .phone__tab--active .phone__tab-icon {
+      color: #C9A961;
+    }
+
+    .phone__tab-label {
+      font-size: 6px;
+      letter-spacing: 0.5px;
+      color: rgba(245,240,232,0.3);
+      text-transform: uppercase;
+    }
+
+    .phone__tab--active .phone__tab-label {
+      color: #C9A961;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--gold-line);
+      border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg);
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .how-step {
+      background: var(--black2);
+      padding: 32px 26px;
+      transition: background 0.22s;
+      position: relative;
+    }
+
+    .how-step:hover { background: var(--black3); }
+
+    .how-step__num {
+      font-family: var(--font-display);
+      font-size: 52px;
+      font-weight: 300;
+      color: rgba(200,169,90,0.15);
+      line-height: 1;
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+
+    .how-step__icon {
+      font-size: 22px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .how-step__title {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold2);
+      margin-bottom: 8px;
+    }
+
+    .how-step__desc {
+      font-size: 12.5px;
+      color: var(--muted2);
+      line-height: 1.78;
+    }
+
+    /* ── FEATURES GRID ── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .feature-card {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: var(--radiusLg);
+      padding: 28px 24px;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-line), transparent);
+    }
+
+    .feature-card:hover {
+      border-color: var(--gold-line);
+      background: var(--surface2);
+      transform: translateY(-2px);
+    }
+
+    .feature-card__name {
+      font-size: 8.5px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .feature-card__name::before {
+      content: '✦';
+      font-size: 7px;
+    }
+
+    .feature-card__title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    .feature-card__desc {
+      font-size: 12.5px;
+      color: var(--muted2);
+      line-height: 1.78;
+    }
+
+    /* ── SPLIT SECTION ── */
+    .split-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 20px;
+      border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg);
+      overflow: hidden;
+    }
+
+    .split-panel {
+      padding: clamp(32px, 4vw, 52px) clamp(24px, 3vw, 40px);
+      background: var(--surface);
+      position: relative;
+    }
+
+    .split-panel:first-child {
+      background:
+        radial-gradient(ellipse 80% 60% at 10% 0%, rgba(200,169,90,0.08), transparent 55%),
+        var(--surface2);
+      border-right: 1px solid var(--gold-line);
+    }
+
+    .split-panel__tag {
+      font-size: 8px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: linear-gradient(135deg, var(--gold2), var(--gold));
+      padding: 5px 12px;
+      border-radius: 1px;
+      display: inline-block;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .split-panel__title {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 3vw, 34px);
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 12px;
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+    }
+
+    .split-panel__desc {
+      font-size: 13px;
+      color: var(--muted2);
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+
+    .split-panel__list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .split-panel__list li {
+      font-size: 12px;
+      color: var(--muted2);
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .split-panel__list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 9px;
+    }
+
+    /* ── PAYOUT VISUAL ── */
+    .payout-visual {
+      border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg);
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200,169,90,0.07), transparent 55%),
+        var(--surface);
+      padding: clamp(36px, 5vw, 56px) clamp(28px, 4vw, 48px);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .payout-visual::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold2), transparent);
+      opacity: 0.6;
+    }
+
+    .payout-visual__title {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 3vw, 28px);
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .payout-visual__sub {
+      font-size: 13px;
+      color: var(--muted2);
+      margin-bottom: 36px;
+      max-width: 48ch;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.8;
+    }
+
+    .payout-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .payout-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 0 20px;
+    }
+
+    .payout-node__circle {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 1px solid var(--gold-line);
+      background: var(--surface2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      transition: all 0.25s;
+    }
+
+    .payout-node:hover .payout-node__circle {
+      background: var(--gold-dim);
+      border-color: var(--gold);
+    }
+
+    .payout-node__label {
+      font-size: 8.5px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: center;
+    }
+
+    .payout-node__amount {
+      font-family: var(--font-display);
+      font-size: 18px;
+      color: var(--gold2);
+      text-align: center;
+    }
+
+    .payout-arrow {
+      font-size: 20px;
+      color: var(--gold-line);
+      padding: 0 4px;
+      flex-shrink: 0;
+    }
+
+    .payout-disclaimer {
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      line-height: 1.7;
+    }
+
+    /* responsive */
+    @media (max-width: 900px) {
+      .phone-scene { gap: 12px; }
+      .phone--side { display: none; }
+      .phone--center { width: 200px; }
+      .how-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .split-section { grid-template-columns: 1fr; }
+      .split-panel:first-child { border-right: none; border-bottom: 1px solid var(--gold-line); }
+      .payout-flow { gap: 8px; }
+      .payout-node { padding: 0 10px; }
+      .payout-arrow { display: none; }
+    }
+
+  </style>
+
+</head>
+<body>
+
+<!-- HEADER -->
+
+<header class="topbar">
+  <div class="container topbar__inner">
+    <a class="brand" href="index.html" aria-label="House of Elévara Home">
+      <div class="brand__glam3d">ELÉVARA</div>
+      <div class="brand__subwrap">
+        <span class="brand__subMain">House of Elévara LLC</span>
+      </div>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link" href="apply.html">Apply</a>
+      <a class="nav__link is-active" href="atelier.html">The Atelier</a>
+      <a class="nav__link" href="roster.html">Talent</a>
+      <a class="nav__link" href="payments.html">Membership</a>
+      <a class="nav__link" href="contact.html">Contact</a>
+    </nav>
+    <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+
+<div class="mobileMenu" id="mobileMenu" aria-hidden="true">
+  <button class="mobileMenu__backdrop" id="menuBackdrop" type="button" aria-label="Close menu" onclick="GS_closeMenu()"></button>
+  <div class="mobileMenu__panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <div class="mobileMenu__topRow">
+      <div class="mobileMenu__brand">House of Elévara</div>
+      <button class="mobileMenu__close" id="closeMenu" type="button" aria-label="Close menu" onclick="GS_closeMenu()">✕</button>
+    </div>
+    <button class="mobileMenu__dropdownBtn" id="dropOpener" type="button" aria-expanded="false" onclick="GS_toggleDrop()">
+      Menu <span id="dropChev">▾</span>
+    </button>
+    <div class="mobileMenu__dropdown" id="dropMenu" aria-hidden="true">
+      <a href="index.html" class="mobileMenu__link" onclick="GS_closeMenu()">Home</a>
+      <a href="apply.html" class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
+      <a href="atelier.html" class="mobileMenu__link" onclick="GS_closeMenu()">The Atelier</a>
+      <a href="roster.html" class="mobileMenu__link" onclick="GS_closeMenu()">Talent</a>
+      <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Membership</a>
+      <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
+    </div>
+    <div class="mobileMenu__divider"></div>
+    <a class="mobileMenu__cta" href="book.html" onclick="GS_closeMenu()">Request a Booking</a>
+    <a class="mobileMenu__cta ghost" href="mailto:admin@houseofelevara.com" onclick="GS_closeMenu()">Email Us</a>
+  </div>
+</div>
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="container">
+    <div class="atelier-hero">
+      <div class="atelier-hero__eyebrow">Now Available · iOS</div>
+      <h1 class="atelier-hero__title">
+        The <em>Atelier</em><br>
+        by House of Elévara
+      </h1>
+      <p class="atelier-hero__sub">
+        The professional booking platform built for models, creators, athletes, artists, and every creative who deserves to get paid like one. Set your rate. Get booked by brands. Keep 70% of every booking — paid directly to your bank.
+      </p>
+      <div class="atelier-hero__stats">
+        <div class="atelier-hero__stat">
+          <span class="atelier-hero__stat-num">70%</span>
+          <span class="atelier-hero__stat-label">Member earns per booking</span>
+        </div>
+        <div class="atelier-hero__stat">
+          <span class="atelier-hero__stat-num">0</span>
+          <span class="atelier-hero__stat-label">Manual invoices ever</span>
+        </div>
+        <div class="atelier-hero__stat">
+          <span class="atelier-hero__stat-num">∞</span>
+          <span class="atelier-hero__stat-label">Booking categories</span>
+        </div>
+      </div>
+      <div class="btnRow">
+        <a class="btn btn--gold" href="apply.html">Apply as Talent</a>
+        <a class="btn btn--ghost" href="book.html">Book Talent</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">Inside the App</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
+
+  <!-- PHONE MOCKUPS -->
+
+  <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
+
+```
+<div class="readyBlock" style="margin-bottom:28px;margin-top:0;">
+  <h3>Three screens. One House.</h3>
+  <p>From discovering talent to getting paid — everything happens inside The Atelier. No third-party apps. No email chains. No guesswork.</p>
+</div>
+
+<div class="phone-scene">
+
+  <!-- LEFT — THE FLOOR -->
+  <div class="phone phone--side">
+    <div class="phone__shell">
+      <div class="phone__screen">
+        <div class="phone__status">
+          <span>9:41</span>
+          <span>●●●</span>
+        </div>
+        <div class="screen-label">Discover</div>
+        <div class="screen-title">The Floor</div>
+        <div class="screen-divider"></div>
+        <div class="floor-card floor-card--featured">
+          <div class="floor-card__img">
+            <div class="floor-card__silhouette"></div>
+          </div>
+          <div class="floor-card__info">
+            <div>
+              <div class="floor-card__name">Marcus Chen</div>
+              <div class="floor-card__meta">Photography · Brooklyn</div>
+            </div>
+            <div class="floor-card__rate">$1,800</div>
+          </div>
+        </div>
+        <div class="floor-card">
+          <div class="floor-card__img" style="height:80px;"></div>
+          <div class="floor-card__info">
+            <div>
+              <div class="floor-card__name">Aaliyah Reid</div>
+              <div class="floor-card__meta">UGC Creator · Atlanta</div>
+            </div>
+            <div class="floor-card__rate">$750</div>
+          </div>
+        </div>
+        <div class="phone__tabs">
+          <div class="phone__tab phone__tab--active">
+            <div class="phone__tab-icon">⬛</div>
+            <div class="phone__tab-label">Floor</div>
+          </div>
+          <div class="phone__tab">
+            <div class="phone__tab-icon">💬</div>
+            <div class="phone__tab-label">Salon</div>
+          </div>
+          <div class="phone__tab">
+            <div class="phone__tab-icon">📋</div>
+            <div class="phone__tab-label">Opps</div>
+          </div>
+          <div class="phone__tab">
+            <div class="phone__tab-icon">•••</div>
+            <div class="phone__tab-label">More</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CENTER — THE LEDGER -->
+  <div class="phone phone--center">
+    <div class="phone__shell">
+      <div class="phone__screen">
+        <div class="phone__status">
+          <span>9:41</span>
+          <span>●●●</span>
+        </div>
+        <div class="screen-label">Earnings</div>
+        <div class="screen-title">The Ledger</div>
+        <div class="screen-divider"></div>
+        <div class="ledger-hero">
+          <div class="ledger-label">Lifetime House Earnings</div>
+          <div class="ledger-amount">$8,400</div>
+          <div class="ledger-sub">12 completed bookings</div>
+        </div>
+        <div class="ledger-divider"></div>
+        <div class="ledger-balance">
+          <div>
+            <div class="ledger-balance__label">Available Balance</div>
+            <div style="font-size:9px;color:rgba(245,240,232,0.3);margin-top:2px;font-style:italic;">Ready to cash out</div>
+          </div>
+          <div class="ledger-balance__amount">$700</div>
+        </div>
+        <div class="ledger-balance" style="margin-top:8px;">
+          <div>
+            <div class="ledger-balance__label">Pending Earnings</div>
+            <div style="font-size:9px;color:rgba(245,240,232,0.3);margin-top:2px;font-style:italic;">Booking in progress</div>
+          </div>
+          <div class="ledger-balance__amount" style="color:rgba(245,240,232,0.5);">$525</div>
+        </div>
+        <div class="cashout-btn">
+          ⚡ Cash Out — Instant
+        </div>
+        <div class="phone__tabs">
+          <div class="phone__tab">
+            <div class="phone__tab-icon">⬛</div>
+            <div class="phone__tab-label">Floor</div>
+          </div>
+          <div class="phone__tab">
+            <div class="phone__tab-icon">💬</div>
+            <div class="phone__tab-label">Salon</div>
+          </div>
+          <div class="phone__tab">
+            <div class="phone__tab-icon">📋</div>
+            <div class="phone__tab-label">Opps</div>
+          </div>
+          <div class="phone__tab phone__tab--active">
+            <div class="phone__tab-icon">•••</div>
+            <div class="phone__tab-label">More</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT — BOOKING FLOW -->
+  <div class="phone phone--side">
+    <div class="phone__shell">
+      <div class="phone__screen">
+        <div class="phone__status">
+          <span>9:41</span>
+          <span>●●●</span>
+        </div>
+        <div class="screen-label">Step 4 of 4</div>
+        <div class="screen-title">Confirm & Pay</div>
+        <div class="screen-divider"></div>
+        <div class="booking-step booking-step--active">
+          <div class="booking-step__label">Service</div>
+          <div class="booking-step__value">UGC Video Package</div>
+        </div>
+        <div class="booking-step booking-step--active">
+          <div class="booking-step__label">Date</div>
+          <div class="booking-step__value">Jun 15, 2026 · 10:00 AM</div>
+        </div>
+        <div class="booking-step">
+          <div class="booking-step__label">Service</div>
+          <div class="booking-step__value">$750.00</div>
+        </div>
+        <div class="booking-step">
+          <div class="booking-step__label">House Fee · 30%</div>
+          <div class="booking-step__value">$225.00</div>
+        </div>
+        <div class="booking-total">
+          <div class="booking-total__label">Total Charged</div>
+          <div class="booking-total__amount">$975</div>
+        </div>
+        <div class="cashout-btn" style="margin-top:10px;">
+          Pay & Send to the House
+        </div>
+        <div class="phone__tabs">
+          <div class="phone__tab phone__tab--active">
+            <div class="phone__tab-icon">⬛</div>
+            <div class="phone__tab-label">Floor</div>
+          </div>
+          <div class="phone__tab">
+            <div class="phone__tab-icon">💬</div>
+            <div class="phone__tab-label">Salon</div>
+          </div>
+          <div class="phone__tab">
+            <div class="phone__tab-icon">📋</div>
+            <div class="phone__tab-label">Opps</div>
+          </div>
+          <div class="phone__tab">
+            <div class="phone__tab-icon">•••</div>
+            <div class="phone__tab-label">More</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- HOW IT WORKS -->
+
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">How It Works</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
+
+  <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-step__num">01</div>
+        <div class="how-step__title">Build Your Profile</div>
+        <p class="how-step__desc">Create your House Member profile in minutes. Upload your portfolio to The Archive, set your services and rates on your Rate Card, and mark your availability on My Calendar.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step__num">02</div>
+        <div class="how-step__title">Get Discovered on The Floor</div>
+        <p class="how-step__desc">Your profile lives on The Floor — a curated discovery feed browsed by brands and clients. They filter by city, niche, tier, and rate to find exactly the talent they need.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step__num">03</div>
+        <div class="how-step__title">Accept Bookings in The Salon</div>
+        <p class="how-step__desc">When a Patron books you they submit a professional brief. You review it in The Salon, accept or decline, and all communication stays in one documented thread.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step__num">04</div>
+        <div class="how-step__title">Deliver & Get Paid</div>
+        <p class="how-step__desc">Complete the work. 70% of your booking value is released directly to your connected bank account via Stripe. Cash out instantly from The Ledger anytime.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step__num">05</div>
+        <div class="how-step__title">Browse Opportunities</div>
+        <p class="how-step__desc">Beyond direct bookings, The Opportunities feed shows open casting calls, brand ambassador roles, UGC campaigns, and retainer agreements posted by Patrons.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step__num">06</div>
+        <div class="how-step__title">Grow Your Tier & Earnings</div>
+        <p class="how-step__desc">Every booking builds your tier — Rising, Pro, Elite, Inner Circle. Higher tiers mean more visibility on The Floor, better positioning, and access to The Vault wealth tools.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TWO SIDES -->
+
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">Two Sides. One Platform.</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
+
+  <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
+    <div class="split-section">
+
+```
+  <div class="split-panel">
+    <span class="split-panel__tag">For Talent</span>
+    <h3 class="split-panel__title">House Members</h3>
+    <p class="split-panel__desc">Models, creators, athletes, artists, DJs, photographers, stylists, and every creative professional. The Atelier is your professional infrastructure.</p>
+    <ul class="split-panel__list">
+      <li>Build a bookable profile in The Archive</li>
+      <li>Set your own rates on your Rate Card</li>
+      <li>Get discovered on The Floor by brands</li>
+      <li>Accept bookings through professional briefs</li>
+      <li>Keep 70% of every booking — paid to your bank</li>
+      <li>Track every dollar in The Ledger</li>
+      <li>Build wealth through The Vault at $5K earned</li>
+      <li>Earn passive income through referrals</li>
+    </ul>
+    <div class="btnRow" style="margin-top:24px;">
+      <a class="btn btn--gold" href="apply.html">Apply as a Member</a>
+    </div>
+  </div>
+
+  <div class="split-panel">
+    <span class="split-panel__tag" style="background:var(--surface3);color:var(--gold2);border:1px solid var(--gold-line);">For Brands</span>
+    <h3 class="split-panel__title">Patrons</h3>
+    <p class="split-panel__desc">Brands, agencies, businesses, photographers, and anyone who needs professional creative talent. Book with confidence and full documentation.</p>
+    <ul class="split-panel__list">
+      <li>Browse The Floor filtered by city, niche, and tier</li>
+      <li>Submit structured booking briefs with references</li>
+      <li>Pay securely via Stripe — money held until delivery</li>
+      <li>Manage all bookings in My Bookings calendar</li>
+      <li>Message talent directly in The Salon</li>
+      <li>Post open Opportunities to reach the full roster</li>
+      <li>Save favorite talent to your personal roster</li>
+      <li>Full booking history and 1099 documentation</li>
+    </ul>
+    <div class="btnRow" style="margin-top:24px;">
+      <a class="btn btn--ghost" href="book.html">Book Talent Now</a>
+    </div>
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- PAYOUT VISUAL -->
+
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">How the Money Moves</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
+
+  <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
+    <div class="payout-visual">
+      <h3 class="payout-visual__title">Automatic. Transparent. Instant.</h3>
+      <p class="payout-visual__sub">Every dollar is tracked, split, and paid automatically through Stripe. No manual invoices. No chasing payment. No waiting.</p>
+
+```
+  <div class="payout-flow">
+    <div class="payout-node">
+      <div class="payout-node__circle">🏢</div>
+      <div class="payout-node__label">Patron Pays</div>
+      <div class="payout-node__amount">$1,000</div>
+    </div>
+    <div class="payout-arrow">→</div>
+    <div class="payout-node">
+      <div class="payout-node__circle" style="background:var(--gold-dim);border-color:var(--gold);">⚡</div>
+      <div class="payout-node__label">Stripe Splits</div>
+      <div class="payout-node__amount" style="font-size:13px;color:var(--muted);">Instant</div>
+    </div>
+    <div class="payout-arrow">→</div>
+    <div class="payout-node">
+      <div class="payout-node__circle">🎨</div>
+      <div class="payout-node__label">Member Keeps</div>
+      <div class="payout-node__amount" style="color:#6fcf97;">$700</div>
+    </div>
+    <div class="payout-arrow">+</div>
+    <div class="payout-node">
+      <div class="payout-node__circle">🏛️</div>
+      <div class="payout-node__label">House Fee</div>
+      <div class="payout-node__amount" style="color:var(--muted);">$300</div>
+    </div>
+  </div>
+
+  <p class="payout-disclaimer">
+    All payments processed by Stripe Connect. Members connect their bank account once and receive instant payouts forever. &nbsp;·&nbsp; House of Elévara retains 30% to cover payment processing, platform infrastructure, and dispute coverage.
+  </p>
+</div>
+```
+
+  </section>
+
+  <!-- APP FEATURES -->
+
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">Every Feature. One App.</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
+
+  <section class="container" style="margin-bottom:clamp(48px,8vw,88px);">
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-card__name">Discovery</div>
+        <div class="feature-card__title">The Floor</div>
+        <p class="feature-card__desc">A curated vertical feed of bookable talent. Brands filter by city, niche, tier, and rate. Every profile is live and bookable in seconds.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__name">Messaging</div>
+        <div class="feature-card__title">The Salon</div>
+        <p class="feature-card__desc">Professional messaging tied to every booking. No cold DMs. Every conversation has context — the brief, the rate, the date — pinned at the top.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__name">Finance</div>
+        <div class="feature-card__title">The Ledger</div>
+        <p class="feature-card__desc">Lifetime earnings, monthly comparison, available balance, and one-tap instant payout. Every dollar tracked and accessible.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__name">Portfolio</div>
+        <div class="feature-card__title">The Archive</div>
+        <p class="feature-card__desc">Upload up to 9 photos and videos. Your visual portfolio is what Patrons see before booking — make it count.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__name">Scheduling</div>
+        <div class="feature-card__title">My Calendar</div>
+        <p class="feature-card__desc">Set your availability. Patrons see open dates before booking. Confirmed bookings auto-block. No double bookings ever.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__name">Casting</div>
+        <div class="feature-card__title">Opportunities</div>
+        <p class="feature-card__desc">Open casting calls, brand ambassador roles, UGC campaigns, and retainer agreements. Members apply. Patrons choose. House takes 30%.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__name">Growth</div>
+        <div class="feature-card__title">Tier System</div>
+        <p class="feature-card__desc">Rising · Pro · Elite · Inner Circle. Every booking builds your tier, your visibility on The Floor, and your access to premium features.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__name">Wealth · Coming Soon</div>
+        <div class="feature-card__title">The Vault</div>
+        <p class="feature-card__desc">Unlocks at $5,000 in earnings. Tax Vault, Soft Life Fund, Bag Mode, and FU Money Tracker. Built for creators who are building something real.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+
+  <section class="container" style="margin-bottom:clamp(48px,8vw,88px);">
+    <div class="readyBlock">
+      <h3>The House Is Open.</h3>
+      <p>
+        Whether you are talent ready to get booked professionally or a brand ready to find the right creator — The Atelier is where it happens. No DMs. No chasing. Just professional bookings with automated payments.
+      </p>
+      <div class="btnRow" style="flex-direction:row;flex-wrap:wrap;">
+        <a class="btn btn--gold" href="apply.html" style="flex:0 1 auto;width:auto;">Apply as Talent</a>
+        <a class="btn btn--dark" href="book.html" style="flex:0 1 auto;width:auto;">Book Talent</a>
+        <a class="btn btn--ghost" href="contact.html" style="flex:0 1 auto;width:auto;">Contact the House</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div>© 2026 House of Elévara LLC</div>
+  <div class="footer__muted">admin@houseofelevara.com &nbsp;·&nbsp; +1 (470) 898-0718</div>
+  <div class="footer__muted" style="margin-top:6px;">
+    <a href="privacy.html" style="color:var(--gold2);text-decoration:none;">Privacy Policy</a>
+    &nbsp;·&nbsp;
+    <a href="terms.html" style="color:var(--gold2);text-decoration:none;">Terms of Service</a>
+  </div>
+</footer>
+
+<script src="assets/app.js?v=99"></script>
+
+</body>
+</html>
