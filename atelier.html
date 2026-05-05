@@ -792,6 +792,7 @@
       <a class="nav__link is-active" href="atelier.html">The Atelier</a>
       <a class="nav__link" href="roster.html">Talent</a>
       <a class="nav__link" href="payments.html">Membership</a>
+      <a class="nav__link" href="team.html">Our Team</a>
       <a class="nav__link" href="contact.html">Contact</a>
     </nav>
     <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
@@ -816,6 +817,7 @@
       <a href="atelier.html" class="mobileMenu__link" onclick="GS_closeMenu()">The Atelier</a>
       <a href="roster.html" class="mobileMenu__link" onclick="GS_closeMenu()">Talent</a>
       <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Membership</a>
+      <a href="team.html" class="mobileMenu__link" onclick="GS_closeMenu()">Our Team</a>
       <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
     </div>
     <div class="mobileMenu__divider"></div>
@@ -830,33 +832,38 @@
 
   <section class="container">
     <div class="atelier-hero">
-      <div class="atelier-hero__eyebrow">Now Available · iOS</div>
-      <h1 class="atelier-hero__title">
-        The <em>Atelier</em><br>
-        by House of Elévara
-      </h1>
-      <p class="atelier-hero__sub">
-        The professional booking platform built for models, creators, athletes, artists, and every creative who deserves to get paid like one. Set your rate. Get booked by brands. Keep 70% of every booking — paid directly to your bank.
-      </p>
-      <div class="atelier-hero__stats">
-        <div class="atelier-hero__stat">
-          <span class="atelier-hero__stat-num">70%</span>
-          <span class="atelier-hero__stat-label">Member earns per booking</span>
-        </div>
-        <div class="atelier-hero__stat">
-          <span class="atelier-hero__stat-num">0</span>
-          <span class="atelier-hero__stat-label">Manual invoices ever</span>
-        </div>
-        <div class="atelier-hero__stat">
-          <span class="atelier-hero__stat-num">∞</span>
-          <span class="atelier-hero__stat-label">Booking categories</span>
-        </div>
-      </div>
-      <div class="btnRow">
-        <a class="btn btn--gold" href="apply.html">Apply as Talent</a>
-        <a class="btn btn--ghost" href="book.html">Book Talent</a>
-      </div>
+      <a href="index.html" style="display:inline-flex;align-items:center;gap:8px;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-bottom:20px;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">← Back to Home</a>
+
+```
+  <div class="atelier-hero__eyebrow">Now Available · iOS</div>
+  <h1 class="atelier-hero__title">
+    The <em>Atelier</em><br>
+    by House of Elévara
+  </h1>
+  <p class="atelier-hero__sub">
+    The professional booking platform built for models, creators, athletes, artists, and every creative who deserves to get paid like one. Set your rate. Get booked by brands. Keep 70% of every booking — paid directly to your bank.
+  </p>
+  <div class="atelier-hero__stats">
+    <div class="atelier-hero__stat">
+      <span class="atelier-hero__stat-num">70%</span>
+      <span class="atelier-hero__stat-label">Member earns per booking</span>
     </div>
+    <div class="atelier-hero__stat">
+      <span class="atelier-hero__stat-num">0</span>
+      <span class="atelier-hero__stat-label">Manual invoices ever</span>
+    </div>
+    <div class="atelier-hero__stat">
+      <span class="atelier-hero__stat-num">∞</span>
+      <span class="atelier-hero__stat-label">Booking categories</span>
+    </div>
+  </div>
+  <div class="btnRow">
+    <a class="btn btn--gold" href="apply.html">Apply as Talent</a>
+    <a class="btn btn--ghost" href="book.html">Book Talent</a>
+  </div>
+</div>
+```
+
   </section>
 
   <!-- DIVIDER -->
