@@ -251,7 +251,8 @@
   <a class="nav__link" href="apply.html">Apply</a>
   <a class="nav__link" href="atelier.html">The Atelier</a>
   <a class="nav__link" href="payments.html">Membership</a>
-  <a class="nav__link" href="contact.html">Contact</a>
+  <a class="nav__link" href="team.html">Our Team</a>
+      <a class="nav__link" href="contact.html">Contact</a>
 </nav>
 <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
 ```
@@ -276,6 +277,7 @@
       <a href="apply.html" class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
       <a href="atelier.html" class="mobileMenu__link" onclick="GS_closeMenu()">The Atelier</a>
       <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Membership</a>
+      <a href="team.html" class="mobileMenu__link" onclick="GS_closeMenu()">Our Team</a>
       <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
     </div>
     <div class="mobileMenu__divider"></div>
@@ -292,21 +294,26 @@
 
   <div class="container">
     <div class="pageHeader">
-      <p style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">
-        Client Services
-      </p>
-      <h1>Request<br>a Booking</h1>
-      <p>
-        We coordinate every booking through direct communication to ensure professional standards, clear expectations, and a documented process from inquiry to delivery.
-      </p>
-      <div class="btnRow">
-        <a class="btn btn--gold"
-           href="mailto:admin@houseofelevara.com?subject=Model%20Booking%20Request%20%7C%20House%20of%20El%C3%A9vara&body=Hello%20House%20of%20El%C3%A9vara%2C%0A%0AI%20would%20like%20to%20request%20a%20booking.%0A%0AEvent%20Type%3A%0ADate%3A%0ALocation%3A%0ATime%20Window%3A%0ANumber%20of%20Models%3A%0ABudget%20Range%3A%0AWardrobe%20/%20Theme%3A%0ADeliverables%3A%0A%0AContact%20Name%3A%0APhone%3A%0A%0AThank%20you%2C">
-          Email Booking Request
-        </a>
-        <a class="btn btn--ghost" href="contact.html">Other Inquiries</a>
-      </div>
-    </div>
+      <a href="index.html" style="display:inline-flex;align-items:center;gap:8px;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-bottom:20px;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">← Back to Home</a>
+
+```
+  <p style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">
+    Client Services
+  </p>
+  <h1>Request<br>a Booking</h1>
+  <p>
+    We coordinate every booking through direct communication to ensure professional standards, clear expectations, and a documented process from inquiry to delivery.
+  </p>
+  <div class="btnRow">
+    <a class="btn btn--gold"
+       href="mailto:admin@houseofelevara.com?subject=Model%20Booking%20Request%20%7C%20House%20of%20El%C3%A9vara&body=Hello%20House%20of%20El%C3%A9vara%2C%0A%0AI%20would%20like%20to%20request%20a%20booking.%0A%0AEvent%20Type%3A%0ADate%3A%0ALocation%3A%0ATime%20Window%3A%0ANumber%20of%20Models%3A%0ABudget%20Range%3A%0AWardrobe%20/%20Theme%3A%0ADeliverables%3A%0A%0AContact%20Name%3A%0APhone%3A%0A%0AThank%20you%2C">
+      Email Booking Request
+    </a>
+    <a class="btn btn--ghost" href="contact.html">Other Inquiries</a>
+  </div>
+</div>
+```
+
   </div>
 
   <!-- HOW IT WORKS -->
