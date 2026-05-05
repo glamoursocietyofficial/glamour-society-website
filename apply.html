@@ -258,6 +258,7 @@
       <a class="nav__link" href="index.html">Home</a>
       <a class="nav__link is-active" href="apply.html">Apply</a>
       <a class="nav__link" href="payments.html">Membership</a>
+      <a class="nav__link" href="team.html">Our Team</a>
       <a class="nav__link" href="contact.html">Contact</a>
     </nav>
     <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
@@ -281,6 +282,7 @@
       <a href="apply.html" class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
       <a href="atelier.html" class="mobileMenu__link" onclick="GS_closeMenu()">The Atelier</a>
       <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Membership</a>
+      <a href="team.html" class="mobileMenu__link" onclick="GS_closeMenu()">Our Team</a>
       <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
     </div>
     <div class="mobileMenu__divider"></div>
@@ -295,19 +297,24 @@
 
   <div class="container">
     <div class="apply-hero">
-      <span class="apply-hero__eyebrow">Talent Application</span>
-      <h1>Apply to<br>House of Elévara</h1>
-      <p>
-        We are selective by design. House of Elévara accepts talent who is serious, professional, and ready to be developed into a marketable, revenue-generating brand. If that is you — begin here.
-      </p>
-      <div class="btnRow">
-        <a class="btn btn--gold" target="_blank" rel="noopener noreferrer"
-           href="https://docs.google.com/forms/d/e/1FAIpQLSfLdP8fi5cfD9TIPL1RNPC9X7g_Rr_F125t717deLraWhirxQ/viewform">
-          Open Application
-        </a>
-        <a class="btn btn--ghost" href="payments.html">View Membership Options</a>
-      </div>
-    </div>
+      <a href="index.html" style="display:inline-flex;align-items:center;gap:8px;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-bottom:20px;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">← Back to Home</a>
+
+```
+  <span class="apply-hero__eyebrow">Talent Application</span>
+  <h1>Apply to<br>House of Elévara</h1>
+  <p>
+    We are selective by design. House of Elévara accepts talent who is serious, professional, and ready to be developed into a marketable, revenue-generating brand. If that is you — begin here.
+  </p>
+  <div class="btnRow">
+    <a class="btn btn--gold" target="_blank" rel="noopener noreferrer"
+       href="https://docs.google.com/forms/d/e/1FAIpQLSfLdP8fi5cfD9TIPL1RNPC9X7g_Rr_F125t717deLraWhirxQ/viewform">
+      Open Application
+    </a>
+    <a class="btn btn--ghost" href="payments.html">View Membership Options</a>
+  </div>
+</div>
+```
+
   </div>
 
   <!-- DIVIDER -->
