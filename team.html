@@ -1,0 +1,306 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Meet the Team | House of Elévara</title>
+  <meta name="description" content="Meet the leadership team behind House of Elévara LLC — experienced professionals from Live Nation, Delta Air Lines, and FIFA."/>
+  <link rel="stylesheet" href="assets/styles.css"/>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png">
+  <meta name="apple-mobile-web-app-title" content="Elévara">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="theme-color" content="#060605">
+  <style>
+    .team-hero { padding: clamp(56px,8vw,96px) 0 clamp(32px,4vw,56px); border-bottom: 1px solid var(--gold-line); margin-bottom: clamp(48px,6vw,72px); animation: fadeUp 0.7s ease both; }
+    .team-hero__eyebrow { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; display: flex; align-items: center; gap: 12px; }
+    .team-hero__eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--gold); opacity: 0.6; }
+    .team-hero__title { font-family: var(--font-display); font-size: clamp(48px,7vw,80px); font-weight: 300; line-height: 1.02; letter-spacing: 0.01em; margin-bottom: 18px; }
+    .team-hero__title em { font-style: italic; color: var(--gold2); }
+    .team-hero__sub { font-size: 14px; color: var(--muted2); line-height: 1.88; max-width: 60ch; letter-spacing: 0.02em; }
+    .member-profile { display: grid; grid-template-columns: 340px 1fr; gap: clamp(40px,5vw,72px); margin-bottom: clamp(48px,8vw,88px); align-items: start; animation: fadeUp 0.7s ease 0.2s both; }
+    .member-photo-wrap { position: sticky; top: 100px; }
+    .member-photo { position: relative; overflow: hidden; aspect-ratio: 3/4; background: var(--black2); border-radius: var(--radiusLg); border: 1px solid var(--gold-line); }
+    .member-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; transition: transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+    .member-photo:hover img { transform: scale(1.03); }
+    .member-photo__shimmer { position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold2), transparent); z-index: 2; opacity: 0; transition: opacity 0.3s; }
+    .member-photo:hover .member-photo__shimmer { opacity: 0.8; }
+    .member-photo__overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(0deg, rgba(6,6,5,0.95) 0%, transparent 100%); z-index: 2; }
+    .member-photo__name { font-family: var(--font-display); font-size: 22px; font-weight: 300; color: var(--white); letter-spacing: 0.02em; margin-bottom: 4px; }
+    .member-photo__role { font-size: 8px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+    .member-brands { margin-top: 14px; }
+    .member-brands__label { font-size: 8px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; display: block; }
+    .member-brands__grid { display: flex; flex-direction: column; gap: 8px; }
+    .brand-card { border: 1px solid var(--gold-line); border-radius: var(--radiusLg); background: var(--surface); padding: 14px 18px; display: flex; align-items: center; gap: 14px; transition: all 0.22s ease; }
+    .brand-card:hover { background: var(--surface2); border-color: var(--gold); transform: translateX(3px); }
+    .brand-card__icon { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--gold-line); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; background: var(--surface2); }
+    .brand-card__info { flex: 1; }
+    .brand-card__name { font-size: 12px; font-weight: 600; color: var(--white); letter-spacing: 0.04em; margin-bottom: 2px; }
+    .brand-card__role { font-size: 10px; color: var(--gold); letter-spacing: 0.1em; }
+    .brand-card__loc { font-size: 9px; color: var(--muted); letter-spacing: 0.08em; flex-shrink: 0; }
+    .member-info__eyebrow { font-size: 8.5px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .member-info__name { font-family: var(--font-display); font-size: clamp(38px,5vw,58px); font-weight: 300; line-height: 1.02; letter-spacing: 0.01em; margin-bottom: 6px; }
+    .member-info__name em { font-style: italic; color: var(--gold2); }
+    .member-info__title { font-size: 9.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold2); margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--gold-line); }
+    .member-info__bio { font-size: 14px; color: var(--muted2); line-height: 1.92; letter-spacing: 0.02em; margin-bottom: 20px; }
+    .member-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; border: 1px solid var(--gold-line); border-radius: var(--radiusLg); overflow: hidden; margin-bottom: 28px; }
+    .member-stat { background: var(--surface); padding: 18px 14px; text-align: center; transition: background 0.2s; }
+    .member-stat:hover { background: var(--gold-dim); }
+    .member-stat__label { font-size: 7.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 6px; }
+    .member-stat__value { font-family: var(--font-display); font-size: 18px; font-weight: 300; color: var(--white); line-height: 1.2; }
+    .resp-label { font-size: 8.5px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; display: block; }
+    .resp-list { border: 1px solid var(--gold-line); border-radius: var(--radiusLg); overflow: hidden; list-style: none; padding: 0; margin-bottom: 32px; }
+    .resp-list li { font-size: 13px; color: var(--muted2); line-height: 1.8; padding: 14px 20px 14px 46px; position: relative; border-bottom: 1px solid var(--line); transition: background 0.2s; }
+    .resp-list li:last-child { border-bottom: none; }
+    .resp-list li:hover { background: var(--gold-dim); }
+    .resp-list li::before { content: '✦'; position: absolute; left: 18px; top: 17px; color: var(--gold); font-size: 8px; }
+    .member-contact { border: 1px solid var(--gold-line); border-radius: var(--radiusLg); background: radial-gradient(ellipse 80% 60% at 10% 0%, rgba(200,169,90,0.08), transparent 55%), var(--surface); padding: 24px 28px; position: relative; overflow: hidden; }
+    .member-contact::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold2), transparent); opacity: 0.5; }
+    .member-contact__label { font-size: 8.5px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+    .member-contact__text { font-size: 13px; color: var(--muted2); line-height: 1.7; margin-bottom: 16px; }
+    .coming-section { border: 1px solid var(--line); border-radius: var(--radiusLg); background: var(--surface); padding: clamp(32px,4vw,52px); text-align: center; margin-bottom: clamp(48px,8vw,88px); position: relative; overflow: hidden; animation: fadeUp 0.7s ease 0.4s both; }
+    .coming-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-line), transparent); }
+    .coming-eyebrow { font-size: 8.5px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .coming-title { font-family: var(--font-display); font-size: clamp(26px,3.5vw,38px); font-weight: 300; color: var(--white); margin-bottom: 12px; }
+    .coming-text { font-size: 13px; color: var(--muted2); line-height: 1.8; max-width: 52ch; margin: 0 auto 28px; }
+    .slot-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 20px; }
+    .slot-card { border: 1px dashed var(--line); border-radius: var(--radiusLg); padding: 28px 20px; display: flex; flex-direction: column; align-items: center; gap: 10px; opacity: 0.5; transition: opacity 0.2s; }
+    .slot-card:hover { opacity: 0.7; }
+    .slot-card__circle { width: 56px; height: 56px; border-radius: 50%; border: 1px dashed var(--gold-line); display: flex; align-items: center; justify-content: center; font-size: 20px; }
+    .slot-card__label { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+    .slot-card__role { font-size: 11px; color: var(--muted); letter-spacing: 0.06em; }
+    @media (max-width: 900px) { .member-profile { grid-template-columns: 1fr; } .member-photo-wrap { position: static; } .member-photo { max-width: 380px; } .slot-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 580px) { .member-stats { grid-template-columns: 1fr 1fr; } .slot-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container topbar__inner">
+    <a class="brand" href="index.html" aria-label="House of Elévara Home">
+      <div class="brand__glam3d">ELÉVARA</div>
+      <div class="brand__subwrap">
+        <span class="brand__subMain">House of Elévara LLC</span>
+      </div>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link" href="apply.html">Apply</a>
+      <a class="nav__link" href="atelier.html">The Atelier</a>
+      <a class="nav__link" href="roster.html">Talent</a>
+      <a class="nav__link" href="payments.html">Membership</a>
+      <a class="nav__link is-active" href="team.html">Our Team</a>
+      <a class="nav__link" href="contact.html">Contact</a>
+    </nav>
+    <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
+  </div>
+</header>
+
+<div class="mobileMenu" id="mobileMenu" aria-hidden="true">
+  <button class="mobileMenu__backdrop" id="menuBackdrop" type="button" aria-label="Close menu" onclick="GS_closeMenu()"></button>
+  <div class="mobileMenu__panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <div class="mobileMenu__topRow">
+      <div class="mobileMenu__brand">House of Elévara</div>
+      <button class="mobileMenu__close" id="closeMenu" type="button" aria-label="Close menu" onclick="GS_closeMenu()">✕</button>
+    </div>
+    <button class="mobileMenu__dropdownBtn" id="dropOpener" type="button" aria-expanded="false" onclick="GS_toggleDrop()">
+      Menu <span id="dropChev">▾</span>
+    </button>
+    <div class="mobileMenu__dropdown" id="dropMenu" aria-hidden="true">
+      <a href="index.html" class="mobileMenu__link" onclick="GS_closeMenu()">Home</a>
+      <a href="apply.html" class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
+      <a href="atelier.html" class="mobileMenu__link" onclick="GS_closeMenu()">The Atelier</a>
+      <a href="roster.html" class="mobileMenu__link" onclick="GS_closeMenu()">Talent</a>
+      <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Membership</a>
+      <a href="team.html" class="mobileMenu__link" onclick="GS_closeMenu()">Our Team</a>
+      <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
+    </div>
+    <div class="mobileMenu__divider"></div>
+    <a class="mobileMenu__cta" href="book.html" onclick="GS_closeMenu()">Request a Booking</a>
+    <a class="mobileMenu__cta ghost" href="mailto:admin@houseofelevara.com" onclick="GS_closeMenu()">Email Us</a>
+  </div>
+</div>
+
+<main>
+
+  <section class="container">
+    <div class="team-hero">
+      <div class="team-hero__eyebrow">Leadership · House of Elévara LLC</div>
+      <h1 class="team-hero__title">Meet <em>the Team</em></h1>
+      <p class="team-hero__sub">House of Elévara is built by professionals who have operated at the highest levels of entertainment, sports, and corporate talent management. Every person on this team brings real-world experience from globally recognized organizations — and a genuine commitment to building something that lasts.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="sectionDivider" style="margin-top:0;">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">Maya Price</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
+
+  <section class="container">
+    <div class="member-profile">
+
+```
+  <div class="member-photo-wrap">
+    <div class="member-photo">
+      <div class="member-photo__shimmer"></div>
+      <img src="IMG_9489.png" alt="Maya Price — Head of Entertainment and Talent Operations"/>
+      <div class="member-photo__overlay">
+        <div class="member-photo__name">Maya Price</div>
+        <div class="member-photo__role">Head of Entertainment & Talent Operations</div>
+      </div>
+    </div>
+
+    <div class="member-brands">
+      <span class="member-brands__label">Career Background</span>
+      <div class="member-brands__grid">
+
+        <div class="brand-card">
+          <div class="brand-card__icon">🎵</div>
+          <div class="brand-card__info">
+            <div class="brand-card__name">Live Nation Entertainment</div>
+            <div class="brand-card__role">Talent Relations</div>
+          </div>
+          <div class="brand-card__loc">Global</div>
+        </div>
+
+        <div class="brand-card">
+          <div class="brand-card__icon">✈️</div>
+          <div class="brand-card__info">
+            <div class="brand-card__name">Delta Air Lines</div>
+            <div class="brand-card__role">HR & People Operations</div>
+          </div>
+          <div class="brand-card__loc">Atlanta</div>
+        </div>
+
+        <div class="brand-card">
+          <div class="brand-card__icon">⚽</div>
+          <div class="brand-card__info">
+            <div class="brand-card__name">FIFA</div>
+            <div class="brand-card__role">Talent & Engagement</div>
+          </div>
+          <div class="brand-card__loc">Global</div>
+        </div>
+
+        <div class="brand-card">
+          <div class="brand-card__icon">🎓</div>
+          <div class="brand-card__info">
+            <div class="brand-card__name">Georgia State University</div>
+            <div class="brand-card__role">Graduate — Atlanta</div>
+          </div>
+          <div class="brand-card__loc">GA</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="member-info">
+    <div class="member-info__eyebrow">House of Elévara LLC · Leadership</div>
+    <h2 class="member-info__name">Maya <em>Price</em></h2>
+    <div class="member-info__title">Head of Entertainment & Talent Operations</div>
+
+    <div class="member-stats">
+      <div class="member-stat">
+        <span class="member-stat__label">Experience</span>
+        <span class="member-stat__value">8+ Years</span>
+      </div>
+      <div class="member-stat">
+        <span class="member-stat__label">Based In</span>
+        <span class="member-stat__value">Atlanta, GA</span>
+      </div>
+      <div class="member-stat">
+        <span class="member-stat__label">Origin</span>
+        <span class="member-stat__value">Louisville, KY</span>
+      </div>
+    </div>
+
+    <p class="member-info__bio">Maya Price is a seasoned Talent Relations and Operations executive with over eight years of expertise building high-performance cultures and strategic talent ecosystems. A graduate of Georgia State University and Atlanta-raised professional, she has held senior roles with some of the world's most recognized organizations — including Live Nation Entertainment, Delta Air Lines, and FIFA — where she led talent relations, elevated employee experience, and drove engagement across diverse global teams.</p>
+
+    <p class="member-info__bio">At Live Nation, Maya operated at the intersection of entertainment and people strategy, managing complex talent dynamics at one of the largest live entertainment companies in the world. At Delta Air Lines, she refined her HR infrastructure expertise, building systems that supported thousands of employees across a global operation. At FIFA, she brought her skills to the international stage — coordinating talent and engagement across one of the most high-profile sporting organizations on the planet.</p>
+
+    <p class="member-info__bio">As Head of Entertainment & Talent Operations at House of Elévara LLC, Maya oversees the full spectrum of talent strategy and operational infrastructure — from acquisition and onboarding to event coordination, performance analytics, and cross-functional leadership. Known for her people-first philosophy and her ability to navigate complex organizational dynamics, she brings both the strategic vision and the operational precision required to build something that lasts.</p>
+
+    <span class="resp-label">Key Responsibilities</span>
+    <ul class="resp-list">
+      <li>Lead the strategy, execution, and oversight of all entertainment and talent operations across House of Elévara LLC</li>
+      <li>Build and manage end-to-end talent acquisition and onboarding processes for performers, creatives, and operational staff</li>
+      <li>Oversee event coordination, scheduling, and on-site operations for all company-produced experiences and activations</li>
+      <li>Establish KPIs, performance dashboards, and reporting structures to measure operational and talent effectiveness</li>
+      <li>Partner cross-functionally with marketing, production, and executive leadership to align talent strategy with brand vision</li>
+      <li>Cultivate strategic relationships with agencies, vendors, venues, and industry partners to expand the company's network and capabilities</li>
+      <li>Champion a culture of excellence, inclusivity, and high performance across all talent and operational touchpoints</li>
+    </ul>
+
+    <div class="member-contact">
+      <div class="member-contact__label">Talent & Operations Inquiries</div>
+      <p class="member-contact__text">For talent partnerships, operational collaborations, and entertainment coordination — all inquiries are routed through the House of Elévara team.</p>
+      <div class="btnRow" style="margin-top:0;flex-direction:row;flex-wrap:wrap;">
+        <a class="btn btn--gold" href="mailto:admin@houseofelevara.com?subject=Talent%20Operations%20Inquiry%20%7C%20House%20of%20El%C3%A9vara" style="flex:0 1 auto;width:auto;">Contact the Team</a>
+        <a class="btn btn--ghost" href="contact.html" style="flex:0 1 auto;width:auto;">All Contact Options</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+```
+
+  </section>
+
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">Growing the House</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
+
+  <section class="container">
+    <div class="coming-section">
+      <div class="coming-eyebrow">The Team Is Expanding</div>
+      <h3 class="coming-title">More Leadership Coming Soon</h3>
+      <p class="coming-text">House of Elévara is actively building a team of seasoned professionals across creative direction, brand partnerships, and platform operations. As the company grows, so does the people behind it.</p>
+      <div class="slot-grid">
+        <div class="slot-card">
+          <div class="slot-card__circle">🎨</div>
+          <div class="slot-card__label">Coming Soon</div>
+          <div class="slot-card__role">Creative Director</div>
+        </div>
+        <div class="slot-card">
+          <div class="slot-card__circle">🤝</div>
+          <div class="slot-card__label">Coming Soon</div>
+          <div class="slot-card__role">Brand Partnerships</div>
+        </div>
+        <div class="slot-card">
+          <div class="slot-card__circle">📱</div>
+          <div class="slot-card__label">Coming Soon</div>
+          <div class="slot-card__role">Platform Operations</div>
+        </div>
+      </div>
+      <div class="btnRow" style="justify-content:center;margin-top:28px;flex-direction:row;flex-wrap:wrap;">
+        <a class="btn btn--dark" href="apply.html" style="flex:0 1 auto;width:auto;">Apply as Talent</a>
+        <a class="btn btn--ghost" href="contact.html" style="flex:0 1 auto;width:auto;">Contact the House</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div>© 2026 House of Elévara LLC</div>
+  <div class="footer__muted">admin@houseofelevara.com &nbsp;·&nbsp; +1 (470) 898-0718</div>
+  <div class="footer__muted" style="margin-top:6px;">
+    <a href="privacy.html" style="color:var(--gold2);text-decoration:none;">Privacy Policy</a>
+    &nbsp;·&nbsp;
+    <a href="terms.html" style="color:var(--gold2);text-decoration:none;">Terms of Service</a>
+  </div>
+</footer>
+
+<script src="assets/app.js?v=99"></script>
+
+</body>
+</html>
