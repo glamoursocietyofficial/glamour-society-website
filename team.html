@@ -33,7 +33,7 @@
     .member-brands { margin-top: 14px; }
     .member-brands__label { font-size: 8px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; display: block; }
     .member-brands__grid { display: flex; flex-direction: column; gap: 8px; }
-    .brand-card { border: 1px solid var(--gold-line); border-radius: var(--radiusLg); background: var(--surface); padding: 14px 18px; display: flex; align-items: center; gap: 14px; transition: all 0.22s ease; }
+    .brand-card { border: 1px solid var(--gold-line); border-radius: var(--radiusLg); background: var(--surface); padding: 14px 18px; display: flex; align-items: center; gap: 14px; transition: all 0.22s ease; text-decoration: none; }
     .brand-card:hover { background: var(--surface2); border-color: var(--gold); transform: translateX(3px); }
     .brand-card__icon { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--gold-line); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; background: var(--surface2); }
     .brand-card__info { flex: 1; }
@@ -164,41 +164,41 @@
       <span class="member-brands__label">Career Background</span>
       <div class="member-brands__grid">
 
-        <div class="brand-card">
+        <a class="brand-card" href="https://www.livenationentertainment.com" target="_blank" rel="noopener noreferrer">
           <div class="brand-card__icon">🎵</div>
           <div class="brand-card__info">
             <div class="brand-card__name">Live Nation Entertainment</div>
             <div class="brand-card__role">Talent Relations</div>
           </div>
-          <div class="brand-card__loc">Global</div>
-        </div>
+          <div class="brand-card__loc">↗ Global</div>
+        </a>
 
-        <div class="brand-card">
+        <a class="brand-card" href="https://www.delta.com" target="_blank" rel="noopener noreferrer">
           <div class="brand-card__icon">✈️</div>
           <div class="brand-card__info">
             <div class="brand-card__name">Delta Air Lines</div>
             <div class="brand-card__role">HR & People Operations</div>
           </div>
-          <div class="brand-card__loc">Atlanta</div>
-        </div>
+          <div class="brand-card__loc">↗ Atlanta</div>
+        </a>
 
-        <div class="brand-card">
+        <a class="brand-card" href="https://www.fifa.com" target="_blank" rel="noopener noreferrer">
           <div class="brand-card__icon">⚽</div>
           <div class="brand-card__info">
             <div class="brand-card__name">FIFA</div>
             <div class="brand-card__role">Talent & Engagement</div>
           </div>
-          <div class="brand-card__loc">Global</div>
-        </div>
+          <div class="brand-card__loc">↗ Global</div>
+        </a>
 
-        <div class="brand-card">
+        <a class="brand-card" href="https://www.gsu.edu" target="_blank" rel="noopener noreferrer">
           <div class="brand-card__icon">🎓</div>
           <div class="brand-card__info">
             <div class="brand-card__name">Georgia State University</div>
             <div class="brand-card__role">Graduate — Atlanta</div>
           </div>
-          <div class="brand-card__loc">GA</div>
-        </div>
+          <div class="brand-card__loc">↗ Atlanta</div>
+        </a>
 
       </div>
     </div>
@@ -243,7 +243,11 @@
 
     <div class="member-contact">
       <div class="member-contact__label">Talent & Operations Inquiries</div>
-      <p class="member-contact__text">For talent partnerships, operational collaborations, and entertainment coordination — all inquiries are routed through the House of Elévara team.</p>
+      <p class="member-contact__text">For talent partnerships, operational collaborations, and entertainment coordination — reach Maya directly or route through the House of Elévara team.</p>
+      <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;">
+        <a href="tel:+16784852113" style="font-size:13px;color:var(--muted2);text-decoration:none;letter-spacing:0.04em;transition:color 0.2s;" onmouseover="this.style.color='var(--gold2)'" onmouseout="this.style.color='var(--muted2)'">📞 +1 (678) 485-2113</a>
+        <a href="mailto:admin@houseofelevara.com" style="font-size:13px;color:var(--muted2);text-decoration:none;letter-spacing:0.04em;transition:color 0.2s;" onmouseover="this.style.color='var(--gold2)'" onmouseout="this.style.color='var(--muted2)'">✉ admin@houseofelevara.com</a>
+      </div>
       <div class="btnRow" style="margin-top:0;flex-direction:row;flex-wrap:wrap;">
         <a class="btn btn--gold" href="mailto:admin@houseofelevara.com?subject=Talent%20Operations%20Inquiry%20%7C%20House%20of%20El%C3%A9vara" style="flex:0 1 auto;width:auto;">Contact the Team</a>
         <a class="btn btn--ghost" href="contact.html" style="flex:0 1 auto;width:auto;">All Contact Options</a>
