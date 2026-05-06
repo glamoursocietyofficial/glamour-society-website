@@ -416,6 +416,35 @@
   </div>
 </header>
 
+<!-- MOBILE MENU -->
+
+<div class="mobileMenu" id="mobileMenu" aria-hidden="true">
+  <button class="mobileMenu__backdrop" id="menuBackdrop" type="button" aria-label="Close menu" onclick="GS_closeMenu()"></button>
+  <div class="mobileMenu__panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <div class="mobileMenu__topRow">
+      <div class="mobileMenu__brand">House of Elévara</div>
+      <button class="mobileMenu__close" id="closeMenu" type="button" aria-label="Close menu" onclick="GS_closeMenu()">✕</button>
+    </div>
+    <button class="mobileMenu__dropdownBtn" id="dropOpener" type="button" aria-expanded="false" onclick="GS_toggleDrop()">
+      Menu <span id="dropChev">▾</span>
+    </button>
+    <div class="mobileMenu__dropdown" id="dropMenu" aria-hidden="true">
+      <a href="index.html" class="mobileMenu__link" onclick="GS_closeMenu()">Home</a>
+      <a href="apply.html" class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
+      <a href="atelier.html" class="mobileMenu__link" onclick="GS_closeMenu()">The Atelier</a>
+      <a href="roster.html" class="mobileMenu__link" onclick="GS_closeMenu()">Talent</a>
+      <a href="collection.html" class="mobileMenu__link" onclick="GS_closeMenu()">Collection</a>
+      <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Membership</a>
+      <a href="ambassador.html" class="mobileMenu__link" onclick="GS_closeMenu()">Ambassador</a>
+      <a href="team.html" class="mobileMenu__link" onclick="GS_closeMenu()">Our Team</a>
+      <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
+    </div>
+    <div class="mobileMenu__divider"></div>
+    <a class="mobileMenu__cta" href="book.html" onclick="GS_closeMenu()">Request a Booking</a>
+    <a class="mobileMenu__cta ghost" href="mailto:admin@houseofelevara.com" onclick="GS_closeMenu()">Email Us</a>
+  </div>
+</div>
+
 <main>
 
   <!-- HERO -->
@@ -443,7 +472,7 @@
       </div>
       <img
         class="hero-group__img"
-        src="glamour-society-website/D9FDEA0C-6A09-4E57-9EFD-C393C94F65DB.png"
+        src="D9FDEA0C-6A09-4E57-9EFD-C393C94F65DB.png"
         alt="House of Elévara inaugural collection — full set"
       />
       <div class="hero-group__caption">
@@ -469,7 +498,7 @@
     <div class="pc">
       <img
         class="pc__img"
-        src="glamour-society-website/C3111FC3-8A6B-4C4E-89B2-7098FE189F72.png"
+        src="C3111FC3-8A6B-4C4E-89B2-7098FE189F72.png"
         alt="House of Elévara N°01 Noir Fragrance"
       />
       <div class="pc__info">
@@ -484,7 +513,7 @@
     <div class="pc">
       <img
         class="pc__img"
-        src="glamour-society-website/7A9751D7-72E6-4559-8810-039AF20781AA.png"
+        src="7A9751D7-72E6-4559-8810-039AF20781AA.png"
         alt="House of Elévara chain shoulder bag"
       />
       <div class="pc__info">
@@ -499,7 +528,7 @@
     <div class="pc">
       <img
         class="pc__img"
-        src="glamour-society-website/3AABDEE1-C217-4E0D-A176-F947647BECAA.png"
+        src="3AABDEE1-C217-4E0D-A176-F947647BECAA.png"
         alt="House of Elévara leather tote"
       />
       <div class="pc__info">
@@ -514,7 +543,7 @@
     <div class="pc">
       <img
         class="pc__img"
-        src="glamour-society-website/56BB386A-8644-422D-97E4-1F59BD0253D1.png"
+        src="56BB386A-8644-422D-97E4-1F59BD0253D1.png"
         alt="House of Elévara card holder"
       />
       <div class="pc__info">
