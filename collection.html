@@ -1,0 +1,628 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>The Collection | House of Elévara</title>
+  <meta name="description" content="The inaugural collection from House of Elévara — leather goods and fragrance, arriving soon."/>
+  <meta property="og:title" content="The Collection | House of Elévara"/>
+  <meta property="og:description" content="Four pieces. One language. The inaugural collection arrives soon."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://houseofelevara.com/collection.html"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="stylesheet" href="assets/styles.css"/>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
+  <link rel="shortcut icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
+  <link rel="apple-touch-icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png">
+  <meta name="apple-mobile-web-app-title" content="Elévara">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="theme-color" content="#060605">
+
+  <style>
+
+    /* ── HERO ── */
+    .col-hero {
+      padding: clamp(64px, 10vw, 120px) 0 clamp(32px, 5vw, 56px);
+    }
+
+    .col-hero__eyebrow {
+      font-size: 8.5px;
+      letter-spacing: 0.36em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      animation: fadeUp 0.6s var(--ease) both;
+    }
+    .col-hero__eyebrow::before {
+      content: '';
+      width: 32px; height: 1px;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+
+    .col-hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(52px, 8vw, 108px);
+      font-weight: 300;
+      line-height: 1.0;
+      letter-spacing: 0.01em;
+      margin-bottom: 24px;
+      animation: fadeUp 0.6s var(--ease) 0.1s both;
+    }
+    .col-hero__title em { font-style: italic; color: var(--gold2); }
+
+    .col-hero__sub {
+      font-size: 14px;
+      color: var(--muted2);
+      line-height: 1.9;
+      max-width: 52ch;
+      letter-spacing: 0.025em;
+      animation: fadeUp 0.6s var(--ease) 0.2s both;
+    }
+
+    /* ── ORNAMENT DIVIDER ── */
+    .ornament-line {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin: clamp(36px, 5vw, 60px) 0;
+      animation: fadeIn 0.8s var(--ease) 0.35s both;
+    }
+    .ornament-line__bar {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-line) 40%, var(--gold-line) 60%, transparent);
+    }
+    .ornament-line__gem {
+      font-size: 7px;
+      color: var(--gold);
+      padding: 0 16px;
+      letter-spacing: 0.2em;
+    }
+
+    /* ── HERO GROUP SHOT ── */
+    .hero-group {
+      animation: fadeUp 0.8s var(--ease) 0.3s both;
+    }
+    .hero-group__img {
+      width: 100%;
+      max-height: 560px;
+      object-fit: cover;
+      object-position: center 35%;
+      display: block;
+      border: 1px solid var(--gold-line);
+    }
+    .hero-group__caption {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 2px 0;
+      border-top: none;
+    }
+    .hero-group__caption span {
+      font-size: 8px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+    }
+    .hero-group__caption .label { color: var(--gold); }
+    .hero-group__caption .tag   { color: var(--muted); }
+
+    /* ── PRODUCTS SECTION ── */
+    .products {
+      padding: clamp(48px, 8vw, 100px) 0;
+    }
+
+    .products__header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: clamp(28px, 4vw, 48px);
+    }
+
+    .products__heading {
+      font-family: var(--font-display);
+      font-size: clamp(30px, 4.5vw, 50px);
+      font-weight: 300;
+      letter-spacing: 0.02em;
+    }
+    .products__heading em { font-style: italic; color: var(--gold2); }
+
+    .products__pill {
+      font-size: 7.5px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold2);
+      padding: 6px 14px;
+      border: 1px solid var(--gold-line);
+      background: rgba(200,169,90,0.05);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .products__pill::before {
+      content: '';
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--gold2);
+      animation: goldPulse 2s ease-in-out infinite;
+    }
+
+    /* ── PRODUCT GRID ── */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--gold-line);
+      border: 1px solid var(--gold-line);
+    }
+
+    @media (max-width: 640px) {
+      .product-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── PRODUCT CARD ── */
+    .pc {
+      position: relative;
+      overflow: hidden;
+      background: var(--black2);
+      aspect-ratio: 3/4;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+    }
+    .pc.is-vis { opacity: 1; transform: none; }
+    .pc:nth-child(2) { transition-delay: 0.1s; }
+    .pc:nth-child(3) { transition-delay: 0.2s; }
+    .pc:nth-child(4) { transition-delay: 0.3s; }
+
+    .pc__img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.9s var(--ease);
+    }
+    .pc:hover .pc__img { transform: scale(1.05); }
+
+    /* gradient overlay */
+    .pc::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        180deg,
+        transparent 35%,
+        rgba(6,6,5,0.5) 65%,
+        rgba(6,6,5,0.94) 100%
+      );
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* shimmer top on hover */
+    .pc::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold2), transparent);
+      z-index: 3;
+      opacity: 0;
+      transition: opacity 0.35s;
+    }
+    .pc:hover::after { opacity: 1; }
+
+    .pc__info {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      z-index: 2;
+      padding: clamp(18px, 3vw, 26px);
+    }
+
+    .pc__cat {
+      font-size: 7.5px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 9px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pc__cat::before {
+      content: '';
+      width: 16px; height: 1px;
+      background: var(--gold);
+      opacity: 0.7;
+    }
+
+    .pc__name {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 3.2vw, 36px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: 0.01em;
+      margin-bottom: 8px;
+    }
+    .pc__name em { font-style: italic; color: var(--gold2); }
+
+    .pc__desc {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      line-height: 1.7;
+      max-width: 32ch;
+    }
+
+    .pc__soon {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      padding: 5px 13px;
+      border: 1px solid var(--gold-line);
+      background: rgba(200,169,90,0.06);
+      font-size: 7px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold2);
+    }
+
+    /* ── NOTIFY SECTION ── */
+    .notify {
+      padding: clamp(56px, 9vw, 108px) 0;
+      border-top: 1px solid var(--gold-line);
+    }
+
+    .notify__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(32px, 7vw, 88px);
+      align-items: center;
+    }
+    @media (max-width: 760px) {
+      .notify__inner { grid-template-columns: 1fr; }
+    }
+
+    .notify__eyebrow {
+      font-size: 8.5px;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .notify__eyebrow::before {
+      content: ''; width: 24px; height: 1px;
+      background: var(--gold); opacity: 0.6;
+    }
+
+    .notify__title {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 300;
+      line-height: 1.06;
+      margin-bottom: 16px;
+      letter-spacing: 0.01em;
+    }
+    .notify__title em { font-style: italic; color: var(--gold2); }
+
+    .notify__body {
+      font-size: 13.5px;
+      color: var(--muted2);
+      line-height: 1.85;
+    }
+
+    .notify__form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .notify__label {
+      font-size: 7.5px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .notify__input {
+      width: 100%;
+      padding: 14px 18px;
+      background: var(--surface);
+      border: 1px solid var(--gold-line);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      outline: none;
+      border-radius: 0;
+      -webkit-appearance: none;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .notify__input::placeholder { color: var(--faint); }
+    .notify__input:focus {
+      border-color: var(--gold);
+      background: var(--surface2);
+    }
+
+    .notify__btn {
+      padding: 15px 28px;
+      background: var(--gold);
+      color: var(--black);
+      border: none;
+      font-family: var(--font-body);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .notify__btn:hover {
+      background: var(--gold2);
+      transform: translateY(-1px);
+    }
+
+    .notify__thanks {
+      display: none;
+      padding: 16px 20px;
+      border: 1px solid var(--gold-line);
+      background: rgba(200,169,90,0.06);
+      font-size: 10.5px;
+      letter-spacing: 0.16em;
+      color: var(--gold2);
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .notify__thanks.show { display: block; }
+
+  </style>
+
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="container topbar__inner">
+    <a class="brand" href="index.html" aria-label="House of Elévara Home">
+      <div class="brand__glam3d">ELÉVARA</div>
+      <div class="brand__subwrap">
+        <span class="brand__subMain">House of Elévara LLC</span>
+      </div>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link" href="apply.html">Apply</a>
+      <a class="nav__link" href="atelier.html">The Atelier</a>
+      <a class="nav__link" href="roster.html">Talent</a>
+      <a class="nav__link is-active" href="collection.html">Collection</a>
+      <a class="nav__link" href="payments.html">Membership</a>
+      <a class="nav__link" href="team.html">Our Team</a>
+      <a class="nav__link" href="contact.html">Contact</a>
+    </nav>
+    <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="col-hero">
+    <div class="container">
+      <div class="col-hero__eyebrow">The Inaugural Collection</div>
+      <h1 class="col-hero__title">
+        Objects of<br><em>Intention.</em>
+      </h1>
+      <p class="col-hero__sub">
+        Four pieces. One language. The first collection from House of Elévara arrives with the quiet certainty of something long-considered — leather goods and fragrance for those who need not announce themselves.
+      </p>
+    </div>
+  </section>
+
+  <!-- GROUP SHOT -->
+
+  <section class="hero-group">
+    <div class="container">
+      <div class="ornament-line">
+        <div class="ornament-line__bar"></div>
+        <div class="ornament-line__gem">◆</div>
+        <div class="ornament-line__bar"></div>
+      </div>
+      <img
+        class="hero-group__img"
+        src="glamour-society-website/D9FDEA0C-6A09-4E57-9EFD-C393C94F65DB.png"
+        alt="House of Elévara inaugural collection — full set"
+      />
+      <div class="hero-group__caption">
+        <span class="label">House of Elévara — Collection I</span>
+        <span class="tag">Arriving Soon</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDIVIDUAL PRODUCTS -->
+
+  <section class="products">
+    <div class="container">
+      <div class="products__header">
+        <h2 class="products__heading">The <em>Pieces</em></h2>
+        <div class="products__pill">Coming Soon</div>
+      </div>
+
+```
+  <div class="product-grid">
+
+    <!-- N°01 Noir Fragrance -->
+    <div class="pc">
+      <img
+        class="pc__img"
+        src="glamour-society-website/C3111FC3-8A6B-4C4E-89B2-7098FE189F72.png"
+        alt="House of Elévara N°01 Noir Fragrance"
+      />
+      <div class="pc__info">
+        <div class="pc__cat">Fragrance</div>
+        <div class="pc__name"><em>N° 01</em> Noir</div>
+        <div class="pc__desc">The signature scent. Dark, precise, and entirely self-possessed.</div>
+        <div class="pc__soon">Arriving Soon</div>
+      </div>
+    </div>
+
+    <!-- Chain Bag -->
+    <div class="pc">
+      <img
+        class="pc__img"
+        src="glamour-society-website/7A9751D7-72E6-4559-8810-039AF20781AA.png"
+        alt="House of Elévara chain shoulder bag"
+      />
+      <div class="pc__info">
+        <div class="pc__cat">Leather Goods</div>
+        <div class="pc__name">The <em>Chain</em> Bag</div>
+        <div class="pc__desc">Smooth calfskin. Brushed gold hardware. Structured without stiffness.</div>
+        <div class="pc__soon">Arriving Soon</div>
+      </div>
+    </div>
+
+    <!-- Tote -->
+    <div class="pc">
+      <img
+        class="pc__img"
+        src="glamour-society-website/3AABDEE1-C217-4E0D-A176-F947647BECAA.png"
+        alt="House of Elévara leather tote"
+      />
+      <div class="pc__info">
+        <div class="pc__cat">Leather Goods</div>
+        <div class="pc__name">The <em>Élevé</em> Tote</div>
+        <div class="pc__desc">Pebbled leather with brass corner guards. Built to last, designed to lead.</div>
+        <div class="pc__soon">Arriving Soon</div>
+      </div>
+    </div>
+
+    <!-- Card Holder -->
+    <div class="pc">
+      <img
+        class="pc__img"
+        src="glamour-society-website/56BB386A-8644-422D-97E4-1F59BD0253D1.png"
+        alt="House of Elévara card holder"
+      />
+      <div class="pc__info">
+        <div class="pc__cat">Leather Goods</div>
+        <div class="pc__name">The <em>Noir</em> Cardholder</div>
+        <div class="pc__desc">Six slots. Gold embossing. The last detail they'll notice first.</div>
+        <div class="pc__soon">Arriving Soon</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- NOTIFY -->
+
+  <section class="notify">
+    <div class="container">
+      <div class="notify__inner">
+
+```
+    <div>
+      <div class="notify__eyebrow">Be First</div>
+      <h2 class="notify__title">
+        Notified at<br><em>Launch.</em>
+      </h2>
+      <p class="notify__body">
+        The collection releases without fanfare. Enter your email and you will be among the first to know — and to own.
+      </p>
+    </div>
+
+    <div>
+      <div class="notify__form" id="notifyForm">
+        <div>
+          <label class="notify__label" for="notifyName">Your Name</label>
+          <input
+            class="notify__input"
+            type="text"
+            id="notifyName"
+            placeholder="First &amp; Last Name"
+            autocomplete="name"
+          />
+        </div>
+        <div>
+          <label class="notify__label" for="notifyEmail">Email Address</label>
+          <input
+            class="notify__input"
+            type="email"
+            id="notifyEmail"
+            placeholder="your@email.com"
+            autocomplete="email"
+          />
+        </div>
+        <button class="notify__btn" onclick="handleNotify()">
+          Notify Me at Launch
+        </button>
+      </div>
+      <div class="notify__thanks" id="notifyThanks">
+        You're on the list — we'll be in touch.
+      </div>
+    </div>
+
+  </div>
+</div>
+```
+
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div>© 2026 House of Elévara LLC</div>
+  <div class="footer__muted">admin@houseofelevara.com &nbsp;·&nbsp; +1 (470) 898-0718</div>
+  <div class="footer__muted" style="margin-top:6px;">
+    <a href="privacy.html" style="color:var(--gold2);text-decoration:none;">Privacy Policy</a>
+    &nbsp;·&nbsp;
+    <a href="terms.html" style="color:var(--gold2);text-decoration:none;">Terms of Service</a>
+  </div>
+</footer>
+
+<script src="assets/app.js?v=99"></script>
+
+<script>
+  // Scroll-reveal for product cards
+  const cards = document.querySelectorAll('.pc');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-vis');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  cards.forEach(c => io.observe(c));
+
+  // Notify form
+  function handleNotify() {
+    const email = document.getElementById('notifyEmail').value.trim();
+    if (!email || !email.includes('@')) {
+      document.getElementById('notifyEmail').focus();
+      return;
+    }
+    document.getElementById('notifyForm').style.display = 'none';
+    document.getElementById('notifyThanks').classList.add('show');
+  }
+</script>
+
+</body>
+</html>
