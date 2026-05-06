@@ -1,5 +1,5 @@
 /* ============================================================
-   HOUSE OF ELÉVARA — CINEMATIC LUXURY DESIGN SYSTEM v3.0
+   HOUSE OF ELÉVARA — CINEMATIC LUXURY DESIGN SYSTEM v3.1
    Beyond Everything. Beyond Bottega. Beyond Imagination.
    ============================================================ */
 
@@ -18,26 +18,30 @@ body.no-scroll { overflow: hidden; }
   --black2:     #0c0c0a;
   --black3:     #121210;
   --white:      #f5f0e8;
-
   --gold:       #c8a95a;
   --gold2:      #e2c87a;
   --gold3:      #f0dda0;
+  --goldB:      rgba(200,169,90,0.5);
   --gold-dim:   rgba(200,169,90,0.10);
   --gold-line:  rgba(200,169,90,0.24);
-
   --surface:    rgba(255,255,255,0.026);
   --surface2:   rgba(255,255,255,0.048);
   --surface3:   rgba(255,255,255,0.072);
   --line:       rgba(255,255,255,0.08);
   --muted:      rgba(255,255,255,0.52);
   --muted2:     rgba(255,255,255,0.72);
-
+  --faint:      rgba(255,255,255,0.22);
   --font-display: 'Cormorant Garamond', 'Georgia', serif;
   --font-title:   'Tenor Sans', serif;
   --font-body:    'Montserrat', sans-serif;
-
   --radius:   2px;
   --radiusLg: 5px;
+  --ease:     cubic-bezier(0.16, 1, 0.3, 1);
+  --spring:   cubic-bezier(0.34, 1.56, 0.64, 1);
+  --glow:     0 0 40px rgba(200,169,90,0.12);
+  --sh-sm:    0 4px 16px rgba(0,0,0,0.4);
+  --sh-md:    0 12px 40px rgba(0,0,0,0.55);
+  --sh-lg:    0 28px 80px rgba(0,0,0,0.7);
 }
 
 /* ===== BASE ===== */
@@ -114,6 +118,10 @@ body::after {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
 }
+@keyframes titleSheen {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
 
 /* ===== TOPBAR ===== */
 .topbar {
@@ -125,24 +133,20 @@ body::after {
   -webkit-backdrop-filter: blur(28px) saturate(1.6);
   border-bottom: 1px solid var(--gold-line);
 }
-
 .topbar::after {
   content: '';
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 1px;
   background: linear-gradient(90deg,
-    transparent 0%,
-    transparent 5%,
+    transparent 0%, transparent 5%,
     rgba(200,169,90,0.8) 30%,
     rgba(240,221,160,1.0) 50%,
     rgba(200,169,90,0.8) 70%,
-    transparent 95%,
-    transparent 100%);
+    transparent 95%, transparent 100%);
   background-size: 800px 1px;
   animation: shimmerBar 5s linear infinite;
 }
-
 .topbar__inner {
   display: flex;
   align-items: center;
@@ -159,10 +163,8 @@ body::after {
   text-decoration: none;
   flex-shrink: 0;
 }
-
 .brand__logo {
-  width: 42px;
-  height: 42px;
+  width: 42px; height: 42px;
   object-fit: contain;
   border-radius: 50%;
   border: 1px solid var(--gold-line);
@@ -170,7 +172,6 @@ body::after {
   background: rgba(200,169,90,0.06);
   animation: floaty 5.5s ease-in-out infinite, goldPulse 4.5s ease-in-out infinite;
 }
-
 .brand__glam3d {
   font-family: var(--font-title);
   font-size: 14px;
@@ -179,7 +180,6 @@ body::after {
   text-shadow: 0 0 28px rgba(200,169,90,0.3);
   line-height: 1;
 }
-
 .brand__subwrap { display: flex; flex-direction: column; gap: 1px; }
 .brand__subMain {
   font-size: 9px;
@@ -198,7 +198,6 @@ body::after {
 
 /* ===== NAV ===== */
 .nav { display: flex; align-items: center; gap: 2px; }
-
 .nav__link {
   text-decoration: none;
   font-size: 9px;
@@ -212,7 +211,6 @@ body::after {
   transition: all 0.22s ease;
   position: relative;
 }
-
 .nav__link::after {
   content: '';
   position: absolute;
@@ -224,7 +222,6 @@ body::after {
   transform-origin: left;
   transition: transform 0.24s ease;
 }
-
 .nav__link:hover { color: var(--gold2); }
 .nav__link:hover::after { transform: scaleX(1); }
 .nav__link.is-active {
@@ -261,7 +258,6 @@ body::after {
   inset: 0;
   z-index: 99999;
 }
-
 .mobileMenu__backdrop {
   position: absolute;
   inset: 0;
@@ -271,7 +267,6 @@ body::after {
   width: 100%; height: 100%;
   cursor: pointer;
 }
-
 .mobileMenu__panel {
   position: absolute;
   right: 0; top: 0;
@@ -288,7 +283,6 @@ body::after {
   box-shadow: -28px 0 80px rgba(0,0,0,0.8);
 }
 .mobileMenu.is-open .mobileMenu__panel { transform: translateX(0); }
-
 .mobileMenu__topRow {
   display: flex;
   align-items: center;
@@ -316,7 +310,6 @@ body::after {
   transition: all 0.2s;
 }
 .mobileMenu__close:hover { background: rgba(200,169,90,0.18); }
-
 .mobileMenu__dropdownBtn {
   width: 100%;
   display: flex;
@@ -335,10 +328,8 @@ body::after {
   font-family: var(--font-body);
 }
 .mobileMenu__dropdownBtn:hover { border-color: var(--gold-line); color: var(--gold2); }
-
 .mobileMenu__dropdown { display: none; gap: 7px; }
 .mobileMenu__dropdown.is-open { display: flex; flex-direction: column; }
-
 .mobileMenu__link {
   text-decoration: none;
   padding: 11px 13px;
@@ -356,9 +347,7 @@ body::after {
   background: var(--gold-dim);
   color: var(--gold2);
 }
-
 .mobileMenu__divider { height: 1px; background: var(--gold-line); opacity: 0.4; }
-
 .mobileMenu__cta {
   display: block;
   text-decoration: none;
@@ -389,7 +378,6 @@ body::after {
 
 /* ===== BUTTONS ===== */
 .btnRow { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -419,7 +407,6 @@ body::after {
 .btn:hover::after { transform: translateX(100%); }
 .btn:hover { transform: translateY(-2px); }
 .btn:active { transform: translateY(0); }
-
 .btn--gold {
   background: linear-gradient(135deg, var(--gold3) 0%, var(--gold2) 30%, var(--gold) 70%, #9e7830 100%);
   color: var(--black);
@@ -427,7 +414,6 @@ body::after {
   box-shadow: 0 4px 20px rgba(200,169,90,0.18), inset 0 1px 0 rgba(255,255,255,0.15);
 }
 .btn--gold:hover { box-shadow: 0 8px 40px rgba(200,169,90,0.38); }
-
 .btn--ghost {
   background: transparent;
   color: var(--gold2);
@@ -438,7 +424,6 @@ body::after {
   border-color: rgba(200,169,90,0.5);
   box-shadow: 0 0 24px rgba(200,169,90,0.08);
 }
-
 .btn--dark {
   background: var(--surface2);
   color: var(--white);
@@ -449,8 +434,13 @@ body::after {
   color: var(--gold2);
   background: var(--surface3);
 }
+.btn--sm {
+  padding: 10px 20px;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+}
 
-/* ===== HERO (HOME) ===== */
+/* ===== HERO ===== */
 .hero {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -459,7 +449,6 @@ body::after {
   align-items: start;
   animation: fadeUp 0.7s ease both;
 }
-
 .hero__title {
   font-family: var(--font-display);
   font-size: clamp(44px, 6vw, 82px);
@@ -468,7 +457,6 @@ body::after {
   letter-spacing: 0.01em;
   margin-bottom: 20px;
 }
-
 .hero__accent {
   display: block;
   font-family: var(--font-body);
@@ -489,7 +477,6 @@ body::after {
   background: var(--gold);
   animation: revealLine 0.8s ease 0.5s both;
 }
-
 .hero__copy {
   color: var(--muted2);
   max-width: 58ch;
@@ -518,7 +505,6 @@ body::after {
   background: linear-gradient(90deg, transparent, var(--gold2), transparent);
   opacity: 0.5;
 }
-
 .brandCard__logo {
   width: 100%;
   max-width: 260px;
@@ -528,7 +514,6 @@ body::after {
   background: rgba(0,0,0,0.3);
   animation: goldPulse 5s ease-in-out infinite;
 }
-
 .brandCard__text { margin-top: 22px; }
 .brandCard__text h3 {
   font-family: var(--font-display);
@@ -546,7 +531,6 @@ body::after {
   gap: 10px;
   margin-top: 18px;
 }
-
 .infoCard {
   border: 1px solid var(--line);
   background: var(--surface);
@@ -639,7 +623,6 @@ body::after {
   transform: translateY(-3px);
   box-shadow: 0 16px 48px rgba(0,0,0,0.5);
 }
-
 .cardGlow {
   border-radius: var(--radiusLg);
   border: 1px solid var(--gold-line);
@@ -658,7 +641,6 @@ body::after {
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(200,169,90,0.55), transparent);
 }
-
 .goldTitle {
   font-family: var(--font-display);
   font-size: 20px;
@@ -669,7 +651,6 @@ body::after {
 }
 .muted  { color: var(--muted2); }
 .tiny   { font-size: 11.5px; }
-
 .cleanList {
   margin-top: 10px;
   padding-left: 0;
@@ -805,4 +786,8 @@ details.infoCard a { color: var(--gold2); text-decoration: underline; text-under
 @media (max-width: 480px) {
   .btnRow { flex-direction: column; }
   .btn    { width: 100%; justify-content: center; }
+}
+@media (min-width: 481px) {
+  .btnRow { flex-direction: row; flex-wrap: wrap; }
+  .btn    { width: auto; }
 }
