@@ -6,16 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <title>Apply | House of Elévara</title>
   <meta name="description" content="Apply to House of Elévara — a professional model development and talent ecosystem by House of Elévara LLC."/>
+  <link rel="icon" type="image/png" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
+  <link rel="shortcut icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
+  <link rel="apple-touch-icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png">
   <link rel="stylesheet" href="assets/styles.css"/>
   <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png">
   <meta name="apple-mobile-web-app-title" content="Elévara">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="theme-color" content="#060605">
+  <meta property="og:title" content="Apply | House of Elévara"/>
+  <meta property="og:description" content="Apply to House of Elévara — a professional model development and talent ecosystem."/>
+  <meta property="og:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
+  <meta property="og:url" content="https://houseofelevara.com/apply.html"/>
+  <meta property="og:type" content="website"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
 
   <style>
-    /* ── APPLY PAGE SPECIFIC ── */
     .apply-hero {
       padding: clamp(56px, 8vw, 96px) 0 clamp(32px, 4vw, 48px);
       animation: fadeUp 0.7s ease both;
@@ -51,22 +59,10 @@
       line-height: 1.85;
       font-size: 14px;
     }
-    .apply-hero .btnRow {
-      flex-wrap: wrap;
-      flex-direction: row;
-    }
-    .apply-hero .btn {
-      flex: 0 1 auto;
-      width: auto;
-    }
+    .apply-hero .btnRow { flex-wrap: wrap; flex-direction: row; }
+    .apply-hero .btn { flex: 0 1 auto; width: auto; }
 
-    /* ── PROCESS STEPS ── */
-    .process-steps {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      margin-top: 12px;
-    }
+    .process-steps { display: flex; flex-direction: column; gap: 0; margin-top: 12px; }
     .process-step {
       display: flex;
       gap: 18px;
@@ -95,11 +91,7 @@
       color: var(--gold2);
       margin-bottom: 5px;
     }
-    .process-step__desc {
-      font-size: 12.5px;
-      color: var(--muted2);
-      line-height: 1.75;
-    }
+    .process-step__desc { font-size: 12.5px; color: var(--muted2); line-height: 1.75; }
     .process-step__tag {
       display: inline-block;
       font-size: 8px;
@@ -113,7 +105,6 @@
       margin-bottom: 6px;
     }
 
-    /* ── TIER COMPARE ── */
     .tier-compare {
       border: 1px solid var(--gold-line);
       border-radius: var(--radiusLg);
@@ -141,12 +132,7 @@
       margin-bottom: 8px;
       letter-spacing: 0.02em;
     }
-    .tier-compare__sub {
-      font-size: 13px;
-      color: var(--muted2);
-      margin-bottom: 20px;
-      line-height: 1.7;
-    }
+    .tier-compare__sub { font-size: 13px; color: var(--muted2); margin-bottom: 20px; line-height: 1.7; }
     .tier-compare__grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -185,53 +171,13 @@
       padding: 4px 32px;
       transform: rotate(45deg);
     }
-    .tier-compare__label {
-      font-size: 8px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 8px;
-      display: block;
-    }
-    .tier-compare__price {
-      font-family: var(--font-display);
-      font-size: 32px;
-      font-weight: 300;
-      color: var(--gold2);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-    .tier-compare__period {
-      font-size: 10px;
-      color: var(--muted);
-      letter-spacing: 0.08em;
-      margin-bottom: 12px;
-    }
-    .tier-compare__features {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-    .tier-compare__features li {
-      font-size: 11px;
-      color: var(--muted2);
-      padding-left: 14px;
-      position: relative;
-      line-height: 1.5;
-    }
-    .tier-compare__features li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--gold);
-      font-size: 9px;
-    }
-    .tier-compare__cta {
-      display: block;
-      text-align: center;
-      margin-top: 16px;
-    }
+    .tier-compare__label { font-size: 8px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; display: block; }
+    .tier-compare__price { font-family: var(--font-display); font-size: 32px; font-weight: 300; color: var(--gold2); line-height: 1; margin-bottom: 4px; }
+    .tier-compare__period { font-size: 10px; color: var(--muted); letter-spacing: 0.08em; margin-bottom: 12px; }
+    .tier-compare__features { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .tier-compare__features li { font-size: 11px; color: var(--muted2); padding-left: 14px; position: relative; line-height: 1.5; }
+    .tier-compare__features li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-size: 9px; }
+    .tier-compare__cta { display: block; text-align: center; margin-top: 16px; }
 
     @media (max-width: 768px) {
       .tier-compare__grid { grid-template-columns: 1fr; }
@@ -243,20 +189,19 @@
 </head>
 <body>
 
-<!-- HEADER -->
-
 <header class="topbar">
   <div class="container topbar__inner">
     <a class="brand" href="index.html" aria-label="House of Elévara Home">
       <div class="brand__glam3d">ELÉVARA</div>
       <div class="brand__subwrap">
         <span class="brand__subMain">House of Elévara LLC</span>
-        <span class="brand__subSmall">by House of Elévara LLC</span>
       </div>
     </a>
     <nav class="nav" aria-label="Primary">
       <a class="nav__link" href="index.html">Home</a>
       <a class="nav__link is-active" href="apply.html">Apply</a>
+      <a class="nav__link" href="atelier.html">The Atelier</a>
+      <a class="nav__link" href="roster.html">Talent</a>
       <a class="nav__link" href="payments.html">Membership</a>
       <a class="nav__link" href="team.html">Our Team</a>
       <a class="nav__link" href="contact.html">Contact</a>
@@ -264,8 +209,6 @@
     <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
   </div>
 </header>
-
-<!-- MOBILE MENU -->
 
 <div class="mobileMenu" id="mobileMenu" aria-hidden="true">
   <button class="mobileMenu__backdrop" id="menuBackdrop" type="button" aria-label="Close menu" onclick="GS_closeMenu()"></button>
@@ -281,6 +224,7 @@
       <a href="index.html" class="mobileMenu__link" onclick="GS_closeMenu()">Home</a>
       <a href="apply.html" class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
       <a href="atelier.html" class="mobileMenu__link" onclick="GS_closeMenu()">The Atelier</a>
+      <a href="roster.html" class="mobileMenu__link" onclick="GS_closeMenu()">Talent</a>
       <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Membership</a>
       <a href="team.html" class="mobileMenu__link" onclick="GS_closeMenu()">Our Team</a>
       <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
@@ -292,8 +236,6 @@
 </div>
 
 <main>
-
-  <!-- PAGE HEADER -->
 
   <div class="container">
     <div class="apply-hero">
@@ -317,8 +259,6 @@
 
   </div>
 
-  <!-- DIVIDER -->
-
   <div class="container">
     <div class="sectionDivider">
       <div class="sectionDivider__line"></div>
@@ -327,13 +267,10 @@
     </div>
   </div>
 
-  <!-- CONTENT GRID -->
-
   <div class="container" style="margin-bottom:clamp(40px,6vw,72px);">
     <div class="grid2">
 
 ```
-  <!-- AFTER YOU APPLY -->
   <div class="cardGlow">
     <h3 class="goldTitle">After You Apply</h3>
     <div class="process-steps">
@@ -377,7 +314,6 @@
     </p>
   </div>
 
-  <!-- TIPS -->
   <div class="card">
     <h3 class="goldTitle">Tips for Approval</h3>
     <ul class="cleanList">
@@ -398,7 +334,6 @@
       </a>
     </div>
 
-    <!-- WHO WE ARE LOOKING FOR -->
     <div style="margin-top:24px;padding-top:24px;border-top:1px solid var(--line);">
       <h3 class="goldTitle" style="font-size:17px;">Who We Are Looking For</h3>
       <p class="muted" style="font-size:12.5px;line-height:1.8;margin-bottom:14px;">
@@ -424,7 +359,6 @@
 
 </div>
 
-<!-- MEMBERSHIP COMPARE -->
 <div class="tier-compare">
   <h3 class="tier-compare__title">Want to Move Faster?</h3>
   <p class="tier-compare__sub">
@@ -433,7 +367,6 @@
 
   <div class="tier-compare__grid">
 
-    <!-- FREE -->
     <div class="tier-compare__item">
       <span class="tier-compare__label">Foundation</span>
       <div class="tier-compare__price">Free</div>
@@ -450,7 +383,6 @@
       </a>
     </div>
 
-    <!-- MONTHLY -->
     <div class="tier-compare__item tier-compare__item--featured">
       <span class="tier-compare__label">Active Membership</span>
       <div class="tier-compare__price">$75</div>
@@ -468,7 +400,6 @@
       </a>
     </div>
 
-    <!-- ANNUAL -->
     <div class="tier-compare__item">
       <span class="tier-compare__label">Best Value</span>
       <div class="tier-compare__price">$675</div>
