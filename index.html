@@ -6,9 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <title>House of Elévara | Model Management</title>
   <meta name="description" content="House of Elévara LLC — a professional talent ecosystem for models, creators, and artists. Apply, get developed, and get booked."/>
+
+  <!-- OG / Social Meta -->
+
+  <meta property="og:title" content="House of Elévara | Model Management"/>
+  <meta property="og:description" content="A professional talent ecosystem for models, creators, and artists. Apply, get developed, and get booked."/>
+  <meta property="og:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
+  <meta property="og:url" content="https://houseofelevara.com/index.html"/>
+  <meta property="og:type" content="website"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="House of Elévara | Model Management"/>
+  <meta name="twitter:description" content="A professional talent ecosystem for models, creators, and artists."/>
+  <meta name="twitter:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
+
   <link rel="stylesheet" href="assets/styles.css"/>
   <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/png" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
+  <link rel="icon" type="image/png" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
   <link rel="shortcut icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
   <link rel="apple-touch-icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png">
   <meta name="apple-mobile-web-app-title" content="Elévara">
@@ -17,116 +30,136 @@
   <meta name="theme-color" content="#060605">
 
   <style>
-    /* ── ROSTER PREVIEW — minimal, one card ── */
-    .roster-preview {
-      margin-top: 20px;
-      max-width: 380px;
-    }
+    /* GLOBAL MOBILE SAFETY */
+    *, *::before, *::after { box-sizing: border-box; }
+    body { overflow-x: hidden; }
 
+    /* ROSTER PREVIEW */
+    .roster-preview { margin-top: 20px; max-width: 380px; width: 100%; }
     .roster-preview__card {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 3/4;
-      display: block;
-      text-decoration: none;
-      background: var(--black2);
-      cursor: pointer;
-      border-radius: var(--radiusLg);
+      position: relative; overflow: hidden; aspect-ratio: 3/4;
+      display: block; text-decoration: none; background: var(--black2);
+      cursor: pointer; border-radius: var(--radiusLg);
     }
-
     .roster-preview__card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        180deg,
-        transparent 40%,
-        rgba(6,6,5,0.5) 65%,
-        rgba(6,6,5,0.96) 100%
-      );
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(6,6,5,0.5) 65%, rgba(6,6,5,0.96) 100%);
       z-index: 1;
     }
-
     .roster-preview__card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-      transition: transform 0.7s cubic-bezier(0.16,1,0.3,1);
+      width: 100%; height: 100%; object-fit: cover; object-position: top center;
+      display: block; transition: transform 0.7s cubic-bezier(0.16,1,0.3,1);
     }
     .roster-preview__card:hover img { transform: scale(1.04); }
-
     .roster-preview__shimmer {
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
       background: linear-gradient(90deg, transparent, var(--gold2), transparent);
-      z-index: 3;
-      opacity: 0;
-      transition: opacity 0.3s;
+      z-index: 3; opacity: 0; transition: opacity 0.3s;
     }
     .roster-preview__card:hover .roster-preview__shimmer { opacity: 0.8; }
-
-    .roster-preview__info {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      z-index: 2;
-      padding: 20px;
-    }
+    .roster-preview__info { position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; padding: 20px; }
     .roster-preview__name {
-      font-family: var(--font-display);
-      font-size: 22px;
-      font-weight: 300;
-      color: var(--white);
-      display: block;
-      letter-spacing: 0.02em;
-      margin-bottom: 4px;
+      font-family: var(--font-display); font-size: 22px; font-weight: 300;
+      color: var(--white); display: block; letter-spacing: 0.02em; margin-bottom: 4px;
     }
-    .roster-preview__meta {
-      font-size: 8.5px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--gold2);
-    }
-
-    /* View all footer */
+    .roster-preview__meta { font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold2); }
     .roster-preview__footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 20px;
-      background: var(--surface);
-      border: 1px solid var(--gold-line);
-      border-top: none;
-      border-radius: 0 0 var(--radiusLg) var(--radiusLg);
-      text-decoration: none;
-      transition: all 0.22s ease;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 20px; background: var(--surface); border: 1px solid var(--gold-line);
+      border-top: none; border-radius: 0 0 var(--radiusLg) var(--radiusLg);
+      text-decoration: none; transition: all 0.22s ease;
     }
     .roster-preview__footer:hover { background: var(--gold-dim); }
-    .roster-preview__footer-text {
-      font-size: 9px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold2);
-      font-weight: 600;
+    .roster-preview__footer-text { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold2); font-weight: 600; }
+    .roster-preview__footer-arrow { font-size: 14px; color: var(--gold); transition: transform 0.22s ease; }
+    .roster-preview__footer:hover .roster-preview__footer-arrow { transform: translateX(4px); }
+
+    /* APP ICON */
+    .atelier-icon {
+      width: 80px; height: 80px; border-radius: 18px;
+      border: 1px solid var(--gold-line); overflow: hidden;
+      box-shadow: 0 8px 32px rgba(200,169,90,0.15); flex-shrink: 0;
     }
-    .roster-preview__footer-arrow {
-      font-size: 14px;
-      color: var(--gold);
-      transition: transform 0.22s ease;
+    .atelier-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* TWO COLUMN — collapses on mobile */
+    .two-col { display: grid; grid-template-columns: 1fr auto; gap: clamp(20px,4vw,48px); align-items: start; }
+
+    /* AMBASSADOR FLOW */
+    .ambassador-flow {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 4px; margin-bottom: 32px;
+      padding: clamp(16px,4vw,28px); border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg); background: var(--surface);
     }
-    .roster-preview__footer:hover .roster-preview__footer-arrow {
-      transform: translateX(4px);
+    .flow-node { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 8px 10px; min-width: 60px; }
+    .flow-node__circle {
+      width: 56px; height: 56px; border-radius: 50%; border: 1px solid var(--gold-line);
+      background: var(--surface2); display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0;
+    }
+    .flow-node__label { font-size: 7px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); text-align: center; line-height: 1.4; }
+    .flow-arrow { font-size: 16px; color: var(--gold-line); padding: 0 2px; margin-bottom: 28px; flex-shrink: 0; }
+
+    /* EARN SCENARIOS */
+    .three-col-earn {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
+      border: 1px solid var(--gold-line); border-radius: var(--radiusLg);
+      overflow: hidden; margin-bottom: 28px;
+    }
+    .earn-cell { background: var(--surface); padding: 20px 14px; text-align: center; }
+    .earn-cell--mid {
+      background: radial-gradient(ellipse 100% 80% at 50% 0%, rgba(200,169,90,0.10), transparent 60%), var(--surface2);
+      border-left: 1px solid var(--gold-line); border-right: 1px solid var(--gold-line);
     }
 
+    /* COLLECTION PREVIEW */
+    .collection-preview {
+      border: 1px solid var(--gold-line); border-radius: var(--radiusLg);
+      overflow: hidden; position: relative;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200,169,90,0.07), transparent 55%), var(--surface);
+    }
+    .collection-preview__top {
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold2), transparent); opacity: 0.6;
+    }
+    .collection-preview__inner { padding: clamp(20px,4vw,40px); }
+    .collection-pieces {
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 1px;
+      background: var(--gold-line); border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg); overflow: hidden; margin: 20px 0;
+    }
+    .collection-piece { position: relative; aspect-ratio: 2/3; overflow: hidden; background: var(--black2); }
+    .collection-piece img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.7s cubic-bezier(0.16,1,0.3,1);
+    }
+    .collection-piece:hover img { transform: scale(1.06); }
+    .collection-piece::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(6,6,5,0.9) 100%); z-index: 1;
+    }
+    .collection-piece__info { position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; padding: 10px 8px; }
+    .collection-piece__num { font-size: 6.5px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(201,169,97,0.6); display: block; margin-bottom: 2px; }
+    .collection-piece__name { font-family: var(--font-display); font-size: clamp(9px,1.8vw,14px); font-weight: 300; color: var(--white); line-height: 1.2; }
+    .collection-piece__name em { font-style: italic; color: var(--gold2); }
+
+    /* RESPONSIVE */
     @media (max-width: 768px) {
       .roster-preview { max-width: 100%; }
+      .two-col { grid-template-columns: 1fr; }
+      .ambassador-header { display: flex !important; flex-direction: column !important; gap: 16px !important; }
+      .three-col-earn { grid-template-columns: 1fr; }
+      .earn-cell--mid { border-left: none; border-right: none; border-top: 1px solid var(--gold-line); border-bottom: 1px solid var(--gold-line); }
+      .flow-arrow { display: none; }
+      .collection-pieces { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 480px) {
+      .flow-node__circle { width: 48px; height: 48px; font-size: 17px; }
+      .flow-node { min-width: 52px; padding: 6px 6px; }
     }
   </style>
 
-  <meta property="og:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
-    <meta name="twitter:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
 </head>
 <body>
 
@@ -136,26 +169,20 @@
   <div class="container topbar__inner">
     <a class="brand" href="index.html" aria-label="House of Elévara Home">
       <div class="brand__glam3d">ELÉVARA</div>
-      <div class="brand__subwrap">
-        <span class="brand__subMain">House of Elévara LLC</span>
-
-```
-  </div>
-</a>
-<nav class="nav" aria-label="Primary">
-  <a class="nav__link is-active" href="index.html">Home</a>
-  <a class="nav__link" href="apply.html">Apply</a>
-  <a class="nav__link" href="atelier.html">The Atelier</a>
-  <a class="nav__link" href="roster.html">Talent</a>
-  <a class="nav__link" href="collection.html">Collection</a>
+      <div class="brand__subwrap"><span class="brand__subMain">House of Elévara LLC</span></div>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link is-active" href="index.html">Home</a>
+      <a class="nav__link" href="apply.html">Apply</a>
+      <a class="nav__link" href="atelier.html">The Atelier</a>
+      <a class="nav__link" href="roster.html">Talent</a>
+      <a class="nav__link" href="collection.html">Collection</a>
       <a class="nav__link" href="payments.html">Membership</a>
       <a class="nav__link" href="ambassador.html">Ambassador</a>
       <a class="nav__link" href="team.html">Our Team</a>
       <a class="nav__link" href="contact.html">Contact</a>
-</nav>
-<button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
-```
-
+    </nav>
+    <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
   </div>
 </header>
 
@@ -195,94 +222,70 @@
   <section class="container">
     <div class="hero">
       <div class="hero__left">
-
-```
-    <p style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;">
-      Georgia · Texas · New York · Expanding Nationally
-    </p>
-
-    <h1 class="hero__title" style="animation:fadeUp 0.7s ease 0.2s both;opacity:0;">
-      House of<br>Elévara
-      <span class="hero__accent">Model Management</span>
-    </h1>
-
-    <p class="hero__copy" style="animation:fadeUp 0.7s ease 0.35s both;opacity:0;">
-      A professional talent ecosystem designed to elevate individuals into marketable, revenue-generating brands. We operate at the intersection of fashion, media, and digital influence — positioning talent for visibility, opportunity, and long-term success.
-    </p>
-
-    <div class="btnRow" style="animation:fadeUp 0.7s ease 0.45s both;opacity:0;flex-direction:row;flex-wrap:wrap;">
-      <a class="btn btn--gold" href="roster.html" style="flex:0 1 auto;width:auto;">View Our Talent</a>
-      <a class="btn btn--dark" href="book.html" style="flex:0 1 auto;width:auto;">Request a Booking</a>
-      <a class="btn btn--ghost" href="apply.html" style="flex:0 1 auto;width:auto;">Apply as Talent</a>
-      <a class="btn btn--dark" href="team.html" style="flex:0 1 auto;width:auto;">Meet the Team</a>
-      <a class="btn btn--gold" href="atelier.html" style="flex:0 1 auto;width:auto;">The Atelier App</a>
-    </div>
-
-    <div class="infoGrid" style="animation:fadeUp 0.7s ease 0.55s both;opacity:0;">
-      <div class="infoCard"><strong>Development First</strong>Real talent development before monetization.</div>
-      <div class="infoCard"><strong>Editorial Direction</strong>Connected to Elyra Editorial media presence.</div>
-      <div class="infoCard"><strong>Brand Campaigns</strong>Placements, partnerships & promotional activations.</div>
-      <div class="infoCard"><strong>Premium Standard</strong>Clear process, professional coordination, no confusion.</div>
-    </div>
-
-  </div>
-
-  <div class="hero__right" style="animation:fadeUp 0.7s ease 0.3s both;opacity:0;">
-    <div class="brandCard">
-      <img class="brandCard__logo" src="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png" alt="House of Elévara Logo"/>
-      <div class="brandCard__text">
-        <h3>Unlike Traditional Agencies</h3>
-        <p>
-          Elévara prioritizes both development and monetization — ensuring that every individual within our system is not only seen, but strategically placed into opportunities that generate income, exposure, and brand equity.
+        <p style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;">Georgia · Texas · New York · Expanding Nationally</p>
+        <h1 class="hero__title" style="animation:fadeUp 0.7s ease 0.2s both;opacity:0;">
+          House of<br>Elévara
+          <span class="hero__accent">Model Management</span>
+        </h1>
+        <p class="hero__copy" style="animation:fadeUp 0.7s ease 0.35s both;opacity:0;">
+          A professional talent ecosystem designed to elevate individuals into marketable, revenue-generating brands. We operate at the intersection of fashion, media, and digital influence — positioning talent for visibility, opportunity, and long-term success.
         </p>
-        <div class="btnRow" style="flex-direction:row;flex-wrap:wrap;">
-          <a class="btn btn--gold" href="roster.html" style="flex:0 1 auto;width:auto;">Meet the Talent</a>
-          <a class="btn btn--ghost" href="contact.html" style="flex:0 1 auto;width:auto;">Contact</a>
+        <div class="btnRow" style="animation:fadeUp 0.7s ease 0.45s both;opacity:0;flex-direction:row;flex-wrap:wrap;">
+          <a class="btn btn--gold" href="apply.html" style="flex:0 1 auto;width:auto;">Apply as Talent</a>
+          <a class="btn btn--dark" href="book.html" style="flex:0 1 auto;width:auto;">Request a Booking</a>
+          <a class="btn btn--ghost" href="roster.html" style="flex:0 1 auto;width:auto;">View Our Talent</a>
+        </div>
+        <div class="infoGrid" style="animation:fadeUp 0.7s ease 0.55s both;opacity:0;">
+          <div class="infoCard"><strong>Development First</strong>Real talent development before monetization.</div>
+          <div class="infoCard"><strong>Editorial Direction</strong>Connected to Elyra Editorial media presence.</div>
+          <div class="infoCard"><strong>Brand Campaigns</strong>Placements, partnerships & promotional activations.</div>
+          <div class="infoCard"><strong>Premium Standard</strong>Clear process, professional coordination, no confusion.</div>
+        </div>
+      </div>
+      <div class="hero__right" style="animation:fadeUp 0.7s ease 0.3s both;opacity:0;">
+        <div class="brandCard">
+          <img class="brandCard__logo" src="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png" alt="House of Elévara Logo"/>
+          <div class="brandCard__text">
+            <h3>Unlike Traditional Agencies</h3>
+            <p>Elévara prioritizes both development and monetization — ensuring that every individual within our system is not only seen, but strategically placed into opportunities that generate income, exposure, and brand equity.</p>
+            <div class="btnRow" style="flex-direction:row;flex-wrap:wrap;">
+              <a class="btn btn--gold" href="roster.html" style="flex:0 1 auto;width:auto;">Meet the Talent</a>
+              <a class="btn btn--ghost" href="contact.html" style="flex:0 1 auto;width:auto;">Contact</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-```
-
   </section>
 
-  <!-- TALENT PREVIEW -->
+  <!-- FEATURED TALENT -->
 
   <div class="container">
     <div class="sectionDivider">
       <div class="sectionDivider__line"></div>
-      <span class="sectionDivider__label">Our Talent</span>
+      <span class="sectionDivider__label">Featured Talent</span>
       <div class="sectionDivider__line"></div>
     </div>
   </div>
-
   <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
     <div class="readyBlock" style="margin-top:0;margin-bottom:24px;">
-      <h3>Meet the Roster</h3>
-      <p>
-        Professionally developed, strategically positioned, and ready to book. Click any profile to view full stats and submit a booking inquiry.
-      </p>
+      <h3>From the Roster</h3>
+      <p>Professionally developed, strategically positioned, and ready to book. Click the profile to view full stats and submit a booking inquiry.</p>
     </div>
-
-```
-<!-- ONE CARD — PAULA ONLY -->
-<div class="roster-preview">
-  <a class="roster-preview__card" href="roster.html">
-    <div class="roster-preview__shimmer"></div>
-    <img src="IMG_9110.jpeg" alt="Paula Sofia Arias — House of Elévara"/>
-    <div class="roster-preview__info">
-      <span class="roster-preview__name">Paula Sofia Arias</span>
-      <span class="roster-preview__meta">Women · New Jersey · Runway · TV · Editorial</span>
+    <div class="roster-preview">
+      <a class="roster-preview__card" href="roster.html">
+        <div class="roster-preview__shimmer"></div>
+        <img src="IMG_9110.jpeg" alt="Paula Sofia Arias — House of Elévara"/>
+        <div class="roster-preview__info">
+          <span class="roster-preview__name">Paula Sofia Arias</span>
+          <span class="roster-preview__meta">Women · New Jersey · Runway · TV · Editorial</span>
+        </div>
+      </a>
+      <a class="roster-preview__footer" href="roster.html">
+        <span class="roster-preview__footer-text">View Full Roster & Booking</span>
+        <span class="roster-preview__footer-arrow">→</span>
+      </a>
     </div>
-  </a>
-  <a class="roster-preview__footer" href="roster.html">
-    <span class="roster-preview__footer-text">View Full Profile & Booking</span>
-    <span class="roster-preview__footer-arrow">→</span>
-  </a>
-</div>
-```
-
   </section>
 
   <!-- THE ATELIER APP -->
@@ -290,19 +293,18 @@
   <div class="container">
     <div class="sectionDivider">
       <div class="sectionDivider__line"></div>
-      <span class="sectionDivider__label">The Atelier · Now Available</span>
+      <span class="sectionDivider__label">The Atelier · Coming Soon to App Store</span>
       <div class="sectionDivider__line"></div>
     </div>
   </div>
-
   <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
     <div class="cardGlow" style="position:relative;overflow:hidden;">
-      <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);opacity:0.6;"></div>
-      <div style="display:grid;grid-template-columns:1fr auto;gap:clamp(24px,4vw,48px);align-items:center;flex-wrap:wrap;">
+      <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);opacity:0.6;pointer-events:none;"></div>
+      <div class="two-col">
         <div>
-          <p style="font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">By House of Elévara LLC · iOS</p>
-          <h3 style="font-family:var(--font-display);font-size:clamp(28px,4vw,42px);font-weight:300;color:var(--white);margin-bottom:12px;line-height:1.1;">The Atelier — <em style="font-style:italic;color:var(--gold2);">Where Talent Rises</em></h3>
-          <p style="font-size:13.5px;color:var(--muted2);line-height:1.85;margin-bottom:20px;max-width:56ch;">The professional booking platform for models, creators, athletes, and artists. Set your rate. Get booked by brands. Keep 70% of every booking — paid directly to your bank. No DMs. No chasing invoices. Just professional bookings with automated payments.</p>
+          <p style="font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">By House of Elévara LLC · Coming Soon · iOS</p>
+          <h3 style="font-family:var(--font-display);font-size:clamp(22px,4vw,42px);font-weight:300;color:var(--white);margin-bottom:12px;line-height:1.1;">The Atelier — <em style="font-style:italic;color:var(--gold2);">Where Every Creative Gets Booked</em></h3>
+          <p style="font-size:13.5px;color:var(--muted2);line-height:1.85;margin-bottom:20px;">The professional booking platform for models, creators, athletes, and artists. Set your rate. Get booked by brands. Keep 70% of every booking — paid directly to your bank.</p>
           <div class="infoGrid" style="margin-bottom:20px;">
             <div class="infoCard"><strong>The Floor</strong>Get discovered by brands browsing talent by city, niche, and tier.</div>
             <div class="infoCard"><strong>The Ledger</strong>Track every dollar earned and cash out instantly to your bank.</div>
@@ -314,13 +316,74 @@
             <a class="btn btn--ghost" href="apply.html" style="flex:0 1 auto;width:auto;">Apply as a Member</a>
           </div>
         </div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;">
-          <div style="width:100px;height:100px;border-radius:22px;border:1px solid var(--gold-line);background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:40px;box-shadow:0 8px 32px rgba(200,169,90,0.15);">🏛️</div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+          <div class="atelier-icon">
+            <img src="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png" alt="The Atelier App Icon"/>
+          </div>
           <span style="font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);text-align:center;">The Atelier</span>
           <span style="font-size:8px;letter-spacing:0.12em;color:var(--muted);text-align:center;">Coming to App Store</span>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- THE COLLECTION -->
+
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">The Collection · Arriving in Sequence</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
+  <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
+    <div class="collection-preview">
+      <div class="collection-preview__top"></div>
+      <div class="collection-preview__inner">
+        <p style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">Fragrance · Leather Goods · The Inaugural Collection</p>
+        <h3 style="font-family:var(--font-display);font-size:clamp(26px,5vw,48px);font-weight:300;color:var(--white);margin-bottom:12px;line-height:1.05;">Objects of <em style="font-style:italic;color:var(--gold2);">Intention.</em></h3>
+        <p style="font-size:13.5px;color:var(--muted2);line-height:1.85;margin-bottom:4px;">Four pieces. One language. Releasing in sequence — each piece funding the next. Fragrance and leather goods for those who need not announce themselves.</p>
+
+```
+    <div class="collection-pieces">
+      <div class="collection-piece">
+        <img src="C3111FC3-8A6B-4C4E-89B2-7098FE189F72.png" alt="N°01 — The Parfum, Noir"/>
+        <div class="collection-piece__info">
+          <span class="collection-piece__num">N° 01</span>
+          <div class="collection-piece__name">The <em>Parfum,</em> Noir</div>
+        </div>
+      </div>
+      <div class="collection-piece">
+        <img src="56BB386A-8644-422D-97E4-1F59BD0253D1.png" alt="N°04 — The Cardholder"/>
+        <div class="collection-piece__info">
+          <span class="collection-piece__num">N° 04</span>
+          <div class="collection-piece__name">The <em>Cardholder</em></div>
+        </div>
+      </div>
+      <div class="collection-piece">
+        <img src="7A9751D7-72E6-4559-8810-039AF20781AA.png" alt="N°02 — The Evening"/>
+        <div class="collection-piece__info">
+          <span class="collection-piece__num">N° 02</span>
+          <div class="collection-piece__name">The <em>Evening</em></div>
+        </div>
+      </div>
+      <div class="collection-piece">
+        <img src="3AABDEE1-C217-4E0D-A176-F947647BECAA.png" alt="N°03 — The Tote"/>
+        <div class="collection-piece__info">
+          <span class="collection-piece__num">N° 03</span>
+          <div class="collection-piece__name">The <em>Tote</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btnRow" style="flex-direction:row;flex-wrap:wrap;margin-top:4px;">
+      <a class="btn btn--gold" href="collection.html" style="flex:0 1 auto;width:auto;">View the Full Collection</a>
+      <a class="btn btn--ghost" href="collection.html" style="flex:0 1 auto;width:auto;">Notify Me at Launch</a>
+    </div>
+  </div>
+</div>
+```
+
   </section>
 
   <!-- ELYRA EDITORIAL -->
@@ -332,28 +395,25 @@
       <div class="sectionDivider__line"></div>
     </div>
   </div>
-
   <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
     <div style="border:1px solid var(--gold-line);border-radius:var(--radiusLg);overflow:hidden;position:relative;background:radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200,169,90,0.08), transparent 55%), var(--surface);">
-      <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);opacity:0.6;"></div>
+      <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);opacity:0.6;pointer-events:none;"></div>
+      <div style="padding:clamp(20px,5vw,56px);">
+        <p style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Fashion · Culture · Editorial</p>
+        <h3 style="font-family:var(--font-display);font-size:clamp(26px,5vw,56px);font-weight:300;color:var(--white);margin-bottom:16px;line-height:1.05;">Elyra <em style="font-style:italic;color:var(--gold2);">Editorial</em></h3>
+        <p style="font-size:13.5px;color:var(--muted2);line-height:1.85;margin-bottom:28px;">Elyra Editorial is the connected media and editorial presence of House of Elévara — a fashion and culture publication covering the intersection of talent, style, and influence.</p>
 
 ```
-  <div style="padding:clamp(32px,5vw,56px);">
-    <p style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Fashion · Culture · Editorial</p>
-    <h3 style="font-family:var(--font-display);font-size:clamp(32px,5vw,56px);font-weight:300;color:var(--white);margin-bottom:16px;line-height:1.05;">Elyra <em style="font-style:italic;color:var(--gold2);">Editorial</em></h3>
-    <p style="font-size:13.5px;color:var(--muted2);line-height:1.85;margin-bottom:28px;max-width:64ch;">Elyra Editorial is the connected media and editorial presence of House of Elévara — a fashion and culture publication covering the intersection of talent, style, and influence. Every issue features original editorial content, model features, industry perspectives, and exclusive campaigns produced by our talent ecosystem.</p>
-
-    <!-- CONTEST SECTION -->
-    <div style="border:1px solid var(--gold-line);border-radius:var(--radiusLg);background:radial-gradient(ellipse 80% 60% at 10% 0%, rgba(200,169,90,0.10), transparent 55%), var(--surface2);padding:28px 32px;margin-bottom:28px;position:relative;overflow:hidden;">
-      <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);opacity:0.5;"></div>
+    <div style="border:1px solid var(--gold-line);border-radius:var(--radiusLg);background:radial-gradient(ellipse 80% 60% at 10% 0%, rgba(200,169,90,0.10), transparent 55%), var(--surface2);padding:clamp(18px,4vw,32px);margin-bottom:28px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);opacity:0.5;pointer-events:none;"></div>
       <div style="display:inline-block;font-size:7.5px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--black);background:linear-gradient(135deg,var(--gold2),var(--gold));padding:5px 14px;border-radius:1px;margin-bottom:14px;">Now Accepting Submissions</div>
-      <h4 style="font-family:var(--font-display);font-size:clamp(22px,3vw,30px);font-weight:300;color:var(--white);margin-bottom:10px;letter-spacing:0.02em;">The Elyra Editorial Contest</h4>
-      <p style="font-size:13px;color:var(--muted2);line-height:1.88;margin-bottom:20px;max-width:58ch;">This is not just a contest — it is a platform. Elyra Editorial opens its pages to emerging and established talent through a competitive submission process that gives models, photographers, stylists, and creatives a real editorial credit and real exposure to an audience that matters. Winners are featured across our digital publication, social channels, and campaign archives. Every submission is reviewed by the House of Elévara editorial team.</p>
+      <h4 style="font-family:var(--font-display);font-size:clamp(18px,3vw,30px);font-weight:300;color:var(--white);margin-bottom:10px;letter-spacing:0.02em;">The Elyra Editorial Contest</h4>
+      <p style="font-size:13px;color:var(--muted2);line-height:1.88;margin-bottom:20px;">Elyra Editorial opens its pages to emerging and established talent through a competitive submission process — giving models, photographers, stylists, and creatives a real editorial credit and real exposure to an audience that matters.</p>
       <div class="infoGrid" style="margin-bottom:20px;">
         <div class="infoCard"><strong>Who Can Submit</strong>Models, photographers, stylists, makeup artists, and creative directors at any experience level.</div>
-        <div class="infoCard"><strong>What We Look For</strong>Originality, editorial quality, strong composition, and a distinct point of view that elevates the story.</div>
-        <div class="infoCard"><strong>Why It Matters</strong>An Elyra Editorial credit is a real publishing credit — something you carry in your portfolio, your bio, and your brand.</div>
-        <div class="infoCard"><strong>Winners Receive</strong>Full editorial feature, digital publication credit, social amplification, and priority consideration for House of Elévara campaigns.</div>
+        <div class="infoCard"><strong>What We Look For</strong>Originality, editorial quality, strong composition, and a distinct point of view.</div>
+        <div class="infoCard"><strong>Why It Matters</strong>A real publishing credit — something you carry in your portfolio, your bio, and your brand.</div>
+        <div class="infoCard"><strong>Winners Receive</strong>Full editorial feature, digital publication credit, social amplification, and priority campaign consideration.</div>
       </div>
       <div class="btnRow" style="flex-direction:row;flex-wrap:wrap;">
         <a class="btn btn--gold" href="https://www.elyraeditorial.com" target="_blank" rel="noopener noreferrer" style="flex:0 1 auto;width:auto;">Visit Elyra Editorial</a>
@@ -362,12 +422,11 @@
     </div>
 
     <div class="infoGrid">
-      <div class="infoCard"><strong>Digital Publication</strong>Published online at elyraeditorial.com with a growing readership across fashion and culture.</div>
-      <div class="infoCard"><strong>Social Reach</strong>Features amplified across Instagram and Facebook to our combined audience.</div>
-      <div class="infoCard"><strong>Talent Features</strong>In-depth profiles on models and creatives within the House of Elévara ecosystem.</div>
-      <div class="infoCard"><strong>Campaign Archives</strong>A permanent record of every editorial production — your credits live here forever.</div>
+      <div class="infoCard"><strong>Digital Publication</strong>Published online at elyraeditorial.com with a growing readership.</div>
+      <div class="infoCard"><strong>Social Reach</strong>Features amplified across Instagram and Facebook.</div>
+      <div class="infoCard"><strong>Talent Features</strong>In-depth profiles on models and creatives within the ecosystem.</div>
+      <div class="infoCard"><strong>Campaign Archives</strong>A permanent record of every editorial production.</div>
     </div>
-
     <div class="btnRow" style="margin-top:20px;flex-direction:row;flex-wrap:wrap;">
       <a class="btn btn--dark" href="https://www.elyraeditorial.com" target="_blank" rel="noopener noreferrer" style="flex:0 1 auto;width:auto;">Explore the Publication</a>
       <a class="btn btn--ghost" href="https://www.instagram.com/houseofelevara" target="_blank" rel="noopener noreferrer" style="flex:0 1 auto;width:auto;">Follow on Instagram</a>
@@ -387,80 +446,77 @@
       <div class="sectionDivider__line"></div>
     </div>
   </div>
-
   <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
     <div style="border:1px solid var(--gold-line);border-radius:var(--radiusLg);overflow:hidden;position:relative;background:radial-gradient(ellipse 100% 80% at 50% 0%, rgba(200,169,90,0.10), transparent 55%), var(--surface);">
-      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);opacity:0.8;"></div>
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);opacity:0.8;pointer-events:none;"></div>
+      <div style="padding:clamp(20px,5vw,60px);">
 
 ```
-  <div style="padding:clamp(36px,5vw,60px);">
-
-    <!-- HEADER ROW -->
-    <div style="display:grid;grid-template-columns:1fr auto;gap:clamp(24px,4vw,48px);align-items:center;margin-bottom:32px;flex-wrap:wrap;">
+    <!-- Header row — stacks on mobile -->
+    <div class="ambassador-header" style="display:grid;grid-template-columns:1fr auto;gap:clamp(16px,4vw,48px);align-items:center;margin-bottom:32px;">
       <div>
         <div style="display:inline-block;font-size:7.5px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--black);background:linear-gradient(135deg,var(--gold2),var(--gold));padding:5px 14px;border-radius:1px;margin-bottom:14px;">One-Time $100 Activation · No Monthly Fees</div>
-        <h3 style="font-family:var(--font-display);font-size:clamp(32px,5vw,52px);font-weight:300;color:var(--white);margin-bottom:12px;line-height:1.05;">The Elévara <em style="font-style:italic;color:var(--gold2);">Ambassador Program</em></h3>
-        <p style="font-size:13.5px;color:var(--muted2);line-height:1.85;max-width:58ch;">Refer someone to the House — earn $50. No ceiling. No expiration. Every model, creator, photographer, or stylist in your network who activates puts real money in your pocket. This is the most immediately profitable part of the Elévara ecosystem.</p>
+        <h3 style="font-family:var(--font-display);font-size:clamp(26px,5vw,52px);font-weight:300;color:var(--white);margin-bottom:12px;line-height:1.05;">The Elévara <em style="font-style:italic;color:var(--gold2);">Ambassador Program</em></h3>
+        <p style="font-size:13.5px;color:var(--muted2);line-height:1.85;">Refer someone to the House — earn $50. No ceiling. No expiration. Every model, creator, photographer, or stylist in your network who activates puts real money in your pocket.</p>
       </div>
       <div style="text-align:center;flex-shrink:0;">
-        <div style="font-family:var(--font-display);font-size:clamp(56px,7vw,88px);font-weight:300;color:var(--gold2);line-height:1;text-shadow:0 0 60px rgba(200,169,90,0.35);">$50</div>
+        <div style="font-family:var(--font-display);font-size:clamp(44px,7vw,88px);font-weight:300;color:var(--gold2);line-height:1;text-shadow:0 0 60px rgba(200,169,90,0.35);">$50</div>
         <div style="font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin-top:6px;">Per Referral</div>
       </div>
     </div>
 
-    <!-- HOW IT WORKS — INLINE FLOW -->
-    <div style="display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;margin-bottom:32px;padding:28px;border:1px solid var(--gold-line);border-radius:var(--radiusLg);background:var(--surface);">
-      <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 16px;min-width:80px;">
-        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--gold-line);background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:22px;">💳</div>
-        <div style="font-size:8px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);text-align:center;">Activate<br>$100</div>
+    <!-- Flow -->
+    <div class="ambassador-flow">
+      <div class="flow-node">
+        <div class="flow-node__circle">💳</div>
+        <div class="flow-node__label">Activate<br>$100</div>
       </div>
-      <div style="font-size:20px;color:var(--gold-line);padding:0 4px;margin-bottom:20px;">→</div>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 16px;min-width:80px;">
-        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--gold-line);background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:22px;">🔗</div>
-        <div style="font-size:8px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);text-align:center;">Get Your<br>Link</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <div class="flow-node__circle">🔗</div>
+        <div class="flow-node__label">Get Your<br>Link</div>
       </div>
-      <div style="font-size:20px;color:var(--gold-line);padding:0 4px;margin-bottom:20px;">→</div>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 16px;min-width:80px;">
-        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--gold-line);background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:22px;">📲</div>
-        <div style="font-size:8px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);text-align:center;">Share<br>It</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <div class="flow-node__circle">📲</div>
+        <div class="flow-node__label">Share<br>It</div>
       </div>
-      <div style="font-size:20px;color:var(--gold-line);padding:0 4px;margin-bottom:20px;">→</div>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 16px;min-width:80px;">
-        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--gold-line);background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:22px;">🏛️</div>
-        <div style="font-size:8px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);text-align:center;">They<br>Join</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <div class="flow-node__circle">🏛️</div>
+        <div class="flow-node__label">They<br>Join</div>
       </div>
-      <div style="font-size:20px;color:var(--gold-line);padding:0 4px;margin-bottom:20px;">→</div>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 16px;min-width:80px;">
-        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--gold);background:radial-gradient(ellipse 80% 80% at 30% 20%, rgba(200,169,90,0.22), transparent 60%), var(--surface2);display:flex;align-items:center;justify-content:center;font-size:22px;">💰</div>
-        <div style="font-size:8px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);text-align:center;">You Get<br>$50</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <div class="flow-node__circle" style="border-color:var(--gold);background:radial-gradient(ellipse 80% 80% at 30% 20%, rgba(200,169,90,0.22), transparent 60%), var(--surface2);">💰</div>
+        <div class="flow-node__label">You Get<br>$50</div>
       </div>
     </div>
 
-    <!-- EARNING SCENARIOS -->
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--gold-line);border-radius:var(--radiusLg);overflow:hidden;margin-bottom:28px;">
-      <div style="background:var(--surface);padding:20px 16px;text-align:center;">
+    <!-- Earnings -->
+    <div class="three-col-earn">
+      <div class="earn-cell">
         <div style="font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">2 Referrals / Month</div>
-        <div style="font-family:var(--font-display);font-size:36px;font-weight:300;color:var(--gold2);line-height:1;margin-bottom:4px;">$100</div>
+        <div style="font-family:var(--font-display);font-size:32px;font-weight:300;color:var(--gold2);line-height:1;margin-bottom:4px;">$100</div>
         <div style="font-size:9px;color:var(--muted);letter-spacing:0.1em;">monthly income</div>
       </div>
-      <div style="background:radial-gradient(ellipse 100% 80% at 50% 0%, rgba(200,169,90,0.10), transparent 60%), var(--surface2);padding:20px 16px;text-align:center;border-left:1px solid var(--gold-line);border-right:1px solid var(--gold-line);">
+      <div class="earn-cell earn-cell--mid">
         <div style="font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">10 Referrals / Month</div>
-        <div style="font-family:var(--font-display);font-size:36px;font-weight:300;color:var(--gold2);line-height:1;margin-bottom:4px;">$500</div>
+        <div style="font-family:var(--font-display);font-size:32px;font-weight:300;color:var(--gold2);line-height:1;margin-bottom:4px;">$500</div>
         <div style="font-size:9px;color:var(--muted);letter-spacing:0.1em;">monthly income</div>
       </div>
-      <div style="background:var(--surface);padding:20px 16px;text-align:center;">
+      <div class="earn-cell">
         <div style="font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">25 Referrals / Month</div>
-        <div style="font-family:var(--font-display);font-size:36px;font-weight:300;color:var(--gold2);line-height:1;margin-bottom:4px;">$1,250</div>
+        <div style="font-family:var(--font-display);font-size:32px;font-weight:300;color:var(--gold2);line-height:1;margin-bottom:4px;">$1,250</div>
         <div style="font-size:9px;color:var(--muted);letter-spacing:0.1em;">monthly income</div>
       </div>
     </div>
 
-    <!-- WHAT ELSE YOU GET -->
     <div class="infoGrid" style="margin-bottom:28px;">
-      <div class="infoCard"><strong>$50 Per Referral</strong>Every ambassador who activates through your link pays you $50. No cap. No expiration on your link.</div>
-      <div class="infoCard"><strong>50% Commission Split</strong>The House splits ambassador activation revenue 50/50 with the referring ambassador. You keep half.</div>
-      <div class="infoCard"><strong>Elévara Store Access</strong>Coming soon — Ambassadors earn commission on every product sale they drive before the program opens publicly.</div>
-      <div class="infoCard"><strong>Passive by Design</strong>Share your link once. Earn every time someone in your network activates. The money moves while you don't.</div>
+      <div class="infoCard"><strong>$50 Per Referral</strong>Every ambassador who activates through your link pays you $50. No cap. No expiration.</div>
+      <div class="infoCard"><strong>50% Commission Split</strong>The House splits activation revenue 50/50 with the referring ambassador.</div>
+      <div class="infoCard"><strong>Elévara Store Access</strong>Coming soon — Ambassadors earn commission on every product sale they drive.</div>
+      <div class="infoCard"><strong>Passive by Design</strong>Share your link once. Earn every time someone in your network activates.</div>
     </div>
 
     <div class="btnRow" style="flex-direction:row;flex-wrap:wrap;">
@@ -474,7 +530,7 @@
 
   </section>
 
-  <!-- DIVIDER -->
+  <!-- THE ELÉVARA STANDARD -->
 
   <div class="container">
     <div class="sectionDivider">
@@ -483,15 +539,10 @@
       <div class="sectionDivider__line"></div>
     </div>
   </div>
-
-  <!-- PILLARS -->
-
   <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
     <div class="readyBlock">
       <h3>Built Different. Built Better.</h3>
-      <p>
-        House of Elévara is built for premium presentation, disciplined coordination, and a consistent client experience — from first contact to confirmed booking. We don't just manage talent. We build brands.
-      </p>
+      <p>House of Elévara is built for premium presentation, disciplined coordination, and a consistent client experience. We don't just manage talent. We build brands.</p>
     </div>
     <div class="infoGrid" style="margin-top:20px;">
       <div class="infoCard"><strong>Model Management</strong>Talent onboarding, development, readiness, and professional representation.</div>
@@ -501,7 +552,7 @@
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
+  <!-- HOW BOOKING WORKS -->
 
   <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
     <div class="readyBlock">
@@ -525,9 +576,7 @@
   <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
     <div class="readyBlock">
       <h3>Standards & Readiness</h3>
-      <p>
-        Consistency is everything. How talent presents, communicates, and performs during bookings protects the brand, the client, and the experience.
-      </p>
+      <p>Consistency is everything. How talent presents, communicates, and performs during bookings protects the brand, the client, and the experience.</p>
     </div>
     <div class="infoGrid" style="margin-top:20px;">
       <div class="infoCard">Professional communication at all times</div>
@@ -559,15 +608,23 @@
       </details>
       <details class="infoCard">
         <summary><strong>What is Elyra Editorial?</strong></summary>
-        <p>Elyra Editorial is our connected media and editorial presence. Visit <a href="https://www.elyraeditorial.com" target="_blank" rel="noopener noreferrer">elyraeditorial.com</a> to explore our editorial direction.</p>
+        <p>Elyra Editorial is our connected media and editorial presence. Visit <a href="https://www.elyraeditorial.com" target="_blank" rel="noopener noreferrer">elyraeditorial.com</a>.</p>
       </details>
       <details class="infoCard">
         <summary><strong>Is joining free?</strong></summary>
-        <p>Yes. The roster is free to join. Optional paid membership tiers are available for talent who wants priority consideration, active development support, and ambassador earning opportunities. <a href="payments.html">View membership options.</a></p>
+        <p>Yes. The roster is free to join. Optional paid membership tiers are available. <a href="payments.html">View membership options.</a></p>
+      </details>
+      <details class="infoCard">
+        <summary><strong>What is The Atelier app?</strong></summary>
+        <p>The Atelier is our iOS booking platform coming soon to the App Store. Set your rate, get discovered, and keep 70% of every booking. <a href="atelier.html">Learn more.</a></p>
+      </details>
+      <details class="infoCard">
+        <summary><strong>What is the Collection?</strong></summary>
+        <p>The inaugural House of Elévara collection — four pieces releasing in sequence. Fragrance and leather goods designed with intention. <a href="collection.html">View the collection.</a></p>
       </details>
       <details class="infoCard">
         <summary><strong>Can I view and book specific models?</strong></summary>
-        <p>Yes. Visit our <a href="roster.html">Talent Roster</a> to browse active models, view full stats, and submit a booking inquiry directly from each profile.</p>
+        <p>Yes. Visit our <a href="roster.html">Talent Roster</a> to browse active models and submit a booking inquiry from each profile.</p>
       </details>
     </div>
   </section>
@@ -576,20 +633,10 @@
 
   <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
     <div class="grid2">
-      <a class="infoCard linkCard" href="mailto:admin@houseofelevara.com">
-        <strong>Email</strong>admin@houseofelevara.com
-      </a>
-      <a class="infoCard linkCard" href="tel:+14708980718">
-        <strong>Phone</strong>+1 (470) 898-0718
-      </a>
-      <a class="infoCard linkCard" target="_blank" rel="noopener noreferrer"
-         href="https://www.instagram.com/houseofelevara?igsh=NmtnYzV4bGcybjVy&utm_source=qr">
-        <strong>Instagram</strong>@houseofelevara
-      </a>
-      <a class="infoCard linkCard" target="_blank" rel="noopener noreferrer"
-         href="https://www.facebook.com/share/1C1VAtNo3q/?mibextid=wwXIfr">
-        <strong>Facebook</strong>Elyra Editorial
-      </a>
+      <a class="infoCard linkCard" href="mailto:admin@houseofelevara.com"><strong>Email</strong>admin@houseofelevara.com</a>
+      <a class="infoCard linkCard" href="tel:+14708980718"><strong>Phone</strong>+1 (470) 898-0718</a>
+      <a class="infoCard linkCard" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/houseofelevara?igsh=NmtnYzV4bGcybjVy&utm_source=qr"><strong>Instagram</strong>@houseofelevara</a>
+      <a class="infoCard linkCard" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/share/1C1VAtNo3q/?mibextid=wwXIfr"><strong>Facebook</strong>Elyra Editorial</a>
     </div>
   </section>
 
@@ -598,18 +645,17 @@
   <section class="container" style="margin-bottom:clamp(48px,8vw,88px);">
     <div class="readyBlock">
       <h3>Ready to Elevate?</h3>
-      <p>
-        If you're talent built for a premium standard — apply. If you're a client who demands professional coordination — request a booking. Either way, this is where it begins.
-      </p>
+      <p>If you're talent built for a premium standard — apply. If you're a client who demands professional coordination — request a booking. Either way, this is where it begins.</p>
       <div class="btnRow" style="flex-direction:row;flex-wrap:wrap;">
-        <a class="btn btn--gold" href="roster.html" style="flex:0 1 auto;width:auto;">View Our Talent</a>
+        <a class="btn btn--gold" href="apply.html" style="flex:0 1 auto;width:auto;">Apply as Talent</a>
         <a class="btn btn--dark" href="book.html" style="flex:0 1 auto;width:auto;">Request a Booking</a>
-        <a class="btn btn--ghost" href="apply.html" style="flex:0 1 auto;width:auto;">Apply as Talent</a>
+        <a class="btn btn--ghost" href="roster.html" style="flex:0 1 auto;width:auto;">View Our Talent</a>
       </div>
     </div>
   </section>
 
 </main>
+
 <footer class="footer">
   <div>© 2026 House of Elévara LLC</div>
   <div class="footer__muted">admin@houseofelevara.com &nbsp;·&nbsp; +1 (470) 898-0718</div>
