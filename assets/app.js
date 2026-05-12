@@ -393,7 +393,7 @@
     var style = document.createElement('style');
     style.textContent = '.h-reveal{position:relative;}.h-reveal::after{content:"";position:absolute;bottom:0;left:0;width:0;height:1px;background:linear-gradient(90deg,var(--gold2),var(--gold));transition:width 0.8s cubic-bezier(0.16,1,0.3,1);}.h-reveal.is-vis::after{width:100%;}';
     document.head.appendChild(style);
-    var headings = qsa('h1, h2, h3');
+    var headings = qsa('h2, h3');
     headings.forEach(function(h) { h.classList.add('h-reveal'); });
     var obs = new IntersectionObserver(function(entries) {
       entries.forEach(function(e) {
