@@ -18,11 +18,13 @@
 
   <meta property="og:title" content="The Atelier App | House of Elévara"/>
   <meta property="og:description" content="The professional booking platform for models, creators, athletes, and artists. Set your rate. Get booked. Keep 70%."/>
-  <meta property="og:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
+  <meta property="og:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
   <meta property="og:url" content="https://houseofelevara.com/atelier.html"/>
   <meta property="og:type" content="website"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
+  <meta name="twitter:title" content="The Atelier App | House of Elévara"/>
+  <meta name="twitter:description" content="The professional booking platform for models, creators, athletes, and artists. Set your rate. Get booked. Keep 70%."/>
+  <meta name="twitter:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
 
   <style>
 
@@ -253,6 +255,29 @@
       letter-spacing: 0.06em;
       font-style: italic;
       margin-top: 12px;
+    }
+
+    /* ── APPOINTMENT CTA ── */
+    .appointment-cta {
+      border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg);
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200,169,90,0.10), transparent 55%),
+        var(--surface);
+      padding: clamp(28px,4vw,40px);
+      text-align: center;
+      margin-bottom: clamp(40px,6vw,72px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .appointment-cta::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold2), transparent);
+      opacity: 0.6;
     }
 
     /* ── APP SCREENSHOTS ── */
@@ -1100,6 +1125,7 @@
   <div class="btnRow">
     <a class="btn btn--gold" href="apply.html">Apply as Talent</a>
     <a class="btn btn--ghost" href="book.html">Book Talent</a>
+    <a class="btn btn--dark" target="_blank" rel="noopener noreferrer" href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call">Schedule a Call</a>
   </div>
 </div>
 ```
@@ -1158,6 +1184,20 @@
 
   </section>
 
+  <!-- APPOINTMENT CTA -->
+
+  <section class="container">
+    <div class="appointment-cta">
+      <p style="font-size:9px;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Have Questions Before Launch?</p>
+      <h3 style="font-family:var(--font-display);font-size:clamp(22px,3vw,30px);font-weight:300;color:var(--white);margin-bottom:10px;letter-spacing:0.02em;">Schedule a Private Call</h3>
+      <p style="font-size:13.5px;color:var(--muted2);line-height:1.85;max-width:52ch;margin:0 auto 22px;">For brands, agencies, or talent who want to learn more about The Atelier before launch — book a private phone consultation. We will walk you through the platform, pricing, and what to expect.</p>
+      <div class="btnRow" style="justify-content:center;">
+        <a class="btn btn--gold" target="_blank" rel="noopener noreferrer" href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call">Book an Appointment</a>
+        <a class="btn btn--ghost" href="mailto:admin@houseofelevara.com?subject=The%20Atelier%20Inquiry">Email First</a>
+      </div>
+    </div>
+  </section>
+
   <!-- DIVIDER -->
 
   <div class="container">
@@ -1180,7 +1220,7 @@
 <div class="screenshots-grid">
 
   <!-- Welcome Screen -->
-  <div class="screenshot-card" onclick="openLightbox('glamour-society-website/4A48724C-60B0-43BB-A617-9DE9BAB4BED0.png')">
+  <div class="screenshot-card" onclick="openLightbox('4A48724C-60B0-43BB-A617-9DE9BAB4BED0.png')">
     <img
       src="4A48724C-60B0-43BB-A617-9DE9BAB4BED0.png"
       alt="The Atelier welcome screen — Where talent rises"
@@ -1190,7 +1230,7 @@
   </div>
 
   <!-- The Floor — center hero -->
-  <div class="screenshot-card screenshot-card--hero" onclick="openLightbox('glamour-society-website/48782673-4122-44BC-B0B0-9CB864B43B48.png')">
+  <div class="screenshot-card screenshot-card--hero" onclick="openLightbox('48782673-4122-44BC-B0B0-9CB864B43B48.png')">
     <img
       src="48782673-4122-44BC-B0B0-9CB864B43B48.png"
       alt="The Floor — browse and book creative talent"
@@ -1200,7 +1240,7 @@
   </div>
 
   <!-- Specialty Grid -->
-  <div class="screenshot-card" onclick="openLightbox('glamour-society-website/15EE95FF-E52A-40D8-843A-5A1E827B74DA.png')">
+  <div class="screenshot-card" onclick="openLightbox('15EE95FF-E52A-40D8-843A-5A1E827B74DA.png')">
     <img
       src="15EE95FF-E52A-40D8-843A-5A1E827B74DA.png"
       alt="Choose your specialty — models, creators, photographers, stylists and more"
@@ -1620,7 +1660,8 @@
       <div class="btnRow" style="flex-direction:row;flex-wrap:wrap;">
         <a class="btn btn--gold" href="apply.html" style="flex:0 1 auto;width:auto;">Apply as Talent</a>
         <a class="btn btn--dark" href="book.html" style="flex:0 1 auto;width:auto;">Book Talent</a>
-        <a class="btn btn--ghost" href="contact.html" style="flex:0 1 auto;width:auto;">Contact the House</a>
+        <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer" href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call" style="flex:0 1 auto;width:auto;">Schedule a Call</a>
+        <a class="btn btn--dark" href="contact.html" style="flex:0 1 auto;width:auto;">Contact the House</a>
       </div>
     </div>
   </section>
@@ -1635,8 +1676,9 @@
 </div>
 
 <footer class="footer">
-  <div>© 2026 House of Elévara LLC</div>
-  <div class="footer__muted">admin@houseofelevara.com &nbsp;·&nbsp; +1 (470) 898-0718</div>
+  <div>© 2026 House of Elevara LLC</div>
+  <div class="footer__muted">admin@houseofelevara.com &nbsp;·&nbsp; +1 (307) 289-4953</div>
+  <div class="footer__muted" style="margin-top:6px;">30 N Gould St, Ste N · Sheridan, WY 82801</div>
   <div class="footer__muted" style="margin-top:6px;">
     <a href="privacy.html" style="color:var(--gold2);text-decoration:none;">Privacy Policy</a>
     &nbsp;·&nbsp;
