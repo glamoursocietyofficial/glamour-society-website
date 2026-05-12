@@ -4,17 +4,23 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-  <title>Terms of Service — House of Elévara LLC</title>
-  <meta name="description" content="Terms of Service for House of Elévara LLC and The Atelier platform."/>
+  <title>Terms of Service — House of Elévara</title>
+  <meta name="description" content="Terms of Service for House of Elévara LLC, House of Elevara LLC, and The Atelier platform."/>
   <link rel="stylesheet" href="assets/styles.css"/>
   <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/png" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
+  <link rel="icon" type="image/png" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
   <link rel="shortcut icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
   <link rel="apple-touch-icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png">
   <meta name="apple-mobile-web-app-title" content="Elévara">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="theme-color" content="#060605">
+  <meta property="og:title" content="Terms of Service — House of Elévara"/>
+  <meta property="og:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
+  <meta property="og:url" content="https://houseofelevara.com/terms.html"/>
+  <meta property="og:type" content="website"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
   <style>
     .legal-hero {
       padding: clamp(48px,8vw,88px) 0 clamp(32px,5vw,56px);
@@ -115,9 +121,56 @@
       font-style: italic;
       line-height: 1.8;
     }
+    .llc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .llc-card {
+      border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg);
+      padding: 20px 22px;
+      background: var(--surface2);
+      position: relative;
+      overflow: hidden;
+    }
+    .llc-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold2), transparent);
+      opacity: 0.5;
+    }
+    .llc-card__tag {
+      font-size: 7.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: linear-gradient(135deg, var(--gold2), var(--gold));
+      padding: 4px 10px;
+      border-radius: 1px;
+      display: inline-block;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .llc-card__name {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .llc-card__detail {
+      font-size: 12px;
+      color: rgba(245,240,232,0.55);
+      line-height: 1.75;
+    }
+    @media (max-width: 600px) {
+      .llc-grid { grid-template-columns: 1fr; }
+    }
   </style>
-  <meta property="og:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
-    <meta name="twitter:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
 </head>
 <body>
 
@@ -173,100 +226,158 @@
 ```
 <div class="legal-hero">
   <a href="index.html" style="display:inline-flex;align-items:center;gap:8px;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-bottom:24px;opacity:0.8;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">← Back to House</a>
-  <div class="legal-eyebrow">Legal · House of Elévara LLC</div>
+  <div class="legal-eyebrow">Legal · House of Elévara</div>
   <h1 class="legal-title">Terms of <em>Service</em></h1>
   <div class="legal-meta">
     <span><strong>Effective</strong>May 1, 2026</span>
-    <span><strong>Updated</strong>May 1, 2026</span>
-    <span><strong>Governing Law</strong>Georgia, United States</span>
+    <span><strong>Updated</strong>May 12, 2026</span>
+    <span><strong>Jurisdictions</strong>Georgia &amp; Wyoming, United States</span>
   </div>
 </div>
 
 <div class="legal-section">
-  <p>These Terms of Service govern your access to and use of The Atelier mobile application and houseofelevara.com (collectively, the "Platform"), operated by House of Elévara LLC, a Georgia Limited Liability Company. By creating an account or using the Platform, you agree to these Terms.</p>
+  <p>These Terms of Service govern your access to and use of The Atelier mobile application and houseofelevara.com (collectively, the "Platform"), operated by two related legal entities under common ownership — House of Elévara LLC (Georgia) and House of Elevara LLC (Wyoming). By creating an account or using the Platform, you agree to these Terms in full.</p>
 </div>
 
 <div class="legal-section">
-  <div class="legal-section-num">01 · Eligibility</div>
+  <div class="legal-section-num">01 · Our Entity Structure</div>
+  <h2>The Two Entities</h2>
+  <p>The Platform is operated by two related legal entities. These entities are under common ownership and control and operate as a unified brand.</p>
+
+  <div class="llc-grid">
+    <div class="llc-card">
+      <div class="llc-card__tag">Editorial Brand</div>
+      <div class="llc-card__name">House of Elévara LLC</div>
+      <div class="llc-card__detail">
+        Registered in Georgia, United States.<br><br>
+        Governs: editorial programming, talent management, model roster, Elyra Editorial, ambassador program, and the Collection of fragrance and leather goods.<br><br>
+        Disputes related to these services are subject to Georgia law.
+      </div>
+    </div>
+    <div class="llc-card">
+      <div class="llc-card__tag">App &amp; Payments</div>
+      <div class="llc-card__name">House of Elevara LLC</div>
+      <div class="llc-card__detail">
+        Registered in Wyoming, United States.<br>
+        30 N Gould St, Ste N, Sheridan, WY 82801<br><br>
+        Governs: The Atelier mobile application, all payment processing, member services, Stripe Connect, and banking relationships.<br><br>
+        Disputes related to these services are subject to Wyoming law.
+      </div>
+    </div>
+  </div>
+
+  <div class="legal-highlight">When these Terms refer to "House of Elévara," "we," "us," or "our," they refer to both entities collectively unless the context specifies otherwise.</div>
+</div>
+
+<div class="legal-section">
+  <div class="legal-section-num">02 · Eligibility</div>
   <h2>Eligibility</h2>
-  <p>You must be at least 18 years old to use the Platform. By creating an account, you represent that you are 18 or older and have the legal capacity to enter into these Terms.</p>
+  <p>You must be at least 18 years old to use the Platform. By creating an account, you represent that you are 18 or older and have the legal capacity to enter into these Terms. The Atelier is a professional platform — it is not intended for minors under any circumstances.</p>
 </div>
 
 <div class="legal-section">
-  <div class="legal-section-num">02 · The Platform</div>
+  <div class="legal-section-num">03 · The Platform &amp; Two Roles</div>
   <h2>The Two Roles</h2>
-  <p><strong>House Members (Talent)</strong> are creative professionals who create profiles, set rates, and receive bookings through the Platform. Members keep 70% of every booking. House of Elévara retains 30% as a platform fee covering payment processing, infrastructure, and dispute coverage.</p>
-  <p><strong>Patrons (Clients)</strong> are brands, businesses, and individuals who browse talent and submit booking requests. Patrons pay the service rate plus a 30% House fee at checkout.</p>
+  <p><strong>House Members (Talent)</strong> are creative professionals — models, photographers, creators, stylists, athletes, artists, DJs, makeup artists, and others — who create profiles, set their own rates, and receive bookings through the Platform. Members keep 70% of every completed booking. House of Elévara retains 30% as a platform fee covering payment processing, dispute coverage, infrastructure, and platform operations.</p>
+  <p><strong>Patrons (Clients)</strong> are brands, businesses, agencies, and individuals who browse talent on The Floor and submit structured booking requests. Patrons pay the Member's service rate. The 30% House fee is factored into the total charged at checkout.</p>
+  <div class="legal-highlight">House of Elévara is a marketplace. We are not a party to the agreement between Members and Patrons. We facilitate the booking — we do not employ, contract, or represent either party.</div>
 </div>
 
 <div class="legal-section">
-  <div class="legal-section-num">03 · Bookings & Payments</div>
+  <div class="legal-section-num">04 · Bookings &amp; Payments</div>
   <h2>Bookings and Payments</h2>
   <ul>
-    <li>All payments are processed by Stripe, Inc. You agree to Stripe's terms of service</li>
-    <li>House of Elévara does not store full card numbers or bank account details</li>
-    <li>Booking payments are held by Stripe until work is confirmed complete</li>
+    <li>All payments are processed by Stripe, Inc. under the merchant account of House of Elevara LLC (Wyoming). You agree to Stripe's terms of service at stripe.com/legal</li>
+    <li>House of Elévara does not store full card numbers, routing numbers, or bank account details</li>
+    <li>Booking payments are held by Stripe until the Patron confirms the work is complete</li>
     <li>Members must connect a Stripe Express account to receive payouts</li>
-    <li>Members who earn over $600 in a calendar year will receive IRS Form 1099-NEC</li>
-    <li>Refunds and disputes are handled according to Stripe's dispute resolution process</li>
+    <li>Members who earn over $600 in a calendar year will receive IRS Form 1099-NEC. Tax reporting is administered under House of Elevara LLC (Wyoming)</li>
+    <li>Refunds and disputes are handled according to Stripe's dispute resolution process and our internal dispute review</li>
+    <li>Instant payouts from The Ledger are subject to Stripe's payout schedule and applicable fees</li>
   </ul>
 </div>
 
 <div class="legal-section">
-  <div class="legal-section-num">04 · User Conduct</div>
+  <div class="legal-section-num">05 · Referral Program</div>
+  <h2>Referral Program</h2>
+  <p>Every member receives a unique referral code. Referring a new talent Member earns 5% of the House fee on every booking they complete for 12 months from their join date. Referring a brand Patron earns 10% of the House fee on their first 3 bookings. Referral earnings are paid out automatically through Stripe and are visible in The Ledger.</p>
+  <ul>
+    <li>Referral commissions are paid on the House fee — not on the Member's earnings</li>
+    <li>Self-referrals or fraudulent referral activity will result in account termination</li>
+    <li>Referral earnings may be subject to applicable tax reporting</li>
+    <li>House of Elévara reserves the right to modify referral terms with 30 days notice</li>
+  </ul>
+</div>
+
+<div class="legal-section">
+  <div class="legal-section-num">06 · User Conduct</div>
   <h2>User Conduct</h2>
   <p>You agree not to:</p>
   <ul>
-    <li>Use the Platform for any unlawful purpose</li>
-    <li>Post false, misleading, or fraudulent information</li>
-    <li>Harass, threaten, or harm other users</li>
-    <li>Circumvent Platform payments by conducting bookings off-platform</li>
-    <li>Upload content that infringes intellectual property rights</li>
-    <li>Attempt to reverse engineer or compromise Platform security</li>
+    <li>Use the Platform for any unlawful purpose under applicable state or federal law</li>
+    <li>Post false, misleading, or fraudulent information on your profile or in booking briefs</li>
+    <li>Harass, threaten, discriminate against, or harm other users</li>
+    <li>Circumvent Platform payments by arranging bookings off-platform with connections made through The Atelier</li>
+    <li>Upload content that infringes intellectual property rights of any party</li>
+    <li>Attempt to reverse engineer, scrape, or compromise Platform security</li>
+    <li>Create multiple accounts or impersonate another person or entity</li>
   </ul>
 </div>
 
 <div class="legal-section">
-  <div class="legal-section-num">05 · Content</div>
+  <div class="legal-section-num">07 · Your Content</div>
   <h2>Your Content</h2>
-  <p>You retain ownership of content you upload to the Platform. By uploading content, you grant House of Elévara a non-exclusive, royalty-free license to display your content within the Platform for the purpose of facilitating bookings and operating the service.</p>
+  <p>You retain ownership of all content you upload to the Platform — photos, videos, portfolio media, rate card information, and booking briefs. By uploading content, you grant House of Elévara a non-exclusive, royalty-free license to display your content within the Platform for the purpose of facilitating bookings and operating the service.</p>
+  <p>You represent that you own or have the right to upload all content you post, and that your content does not violate any third-party rights.</p>
 </div>
 
 <div class="legal-section">
-  <div class="legal-section-num">06 · Account Deletion</div>
+  <div class="legal-section-num">08 · Account Deletion</div>
   <h2>Account Deletion</h2>
-  <p>You may delete your account at any time within the app via Settings → Delete My Account. Deletion is permanent. Financial records may be retained for up to 7 years as required by law.</p>
+  <p>You may delete your account at any time within The Atelier app via More → Settings → Delete My Account. Deletion is permanent and cannot be undone. All profile data, portfolio media, and booking history will be removed.</p>
+  <p>Financial records may be retained for up to 7 years as required by applicable law.</p>
 </div>
 
 <div class="legal-section">
-  <div class="legal-section-num">07 · Termination</div>
+  <div class="legal-section-num">09 · Termination</div>
   <h2>Termination</h2>
-  <p>We reserve the right to suspend or terminate accounts that violate these Terms, engage in fraudulent activity, or harm the Platform or its users. We will provide notice where reasonably possible.</p>
+  <p>We reserve the right to suspend or terminate accounts that violate these Terms, engage in fraudulent activity, or cause harm to the Platform or its users. We will provide notice where reasonably possible. Termination does not relieve you of payment obligations for completed bookings.</p>
 </div>
 
 <div class="legal-section">
-  <div class="legal-section-num">08 · Disclaimers</div>
+  <div class="legal-section-num">10 · Disclaimers</div>
   <h2>Disclaimers</h2>
-  <p>The Platform is provided "as is" without warranties of any kind. House of Elévara does not guarantee the quality, reliability, or fitness of any talent or booking. We are a marketplace and are not a party to agreements between Members and Patrons.</p>
+  <p>The Platform is provided "as is" without warranties of any kind, express or implied. House of Elévara does not guarantee the quality, reliability, suitability, or fitness of any talent or booking outcome. We are a marketplace connecting parties — we are not responsible for the actions or performance of Members or Patrons.</p>
 </div>
 
 <div class="legal-section">
-  <div class="legal-section-num">09 · Limitation of Liability</div>
+  <div class="legal-section-num">11 · Limitation of Liability</div>
   <h2>Limitation of Liability</h2>
-  <p>To the fullest extent permitted by law, House of Elévara LLC shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the Platform. Our total liability shall not exceed the fees paid by you in the 12 months preceding the claim.</p>
+  <p>To the fullest extent permitted by law, neither House of Elévara LLC (Georgia) nor House of Elevara LLC (Wyoming) shall be liable for any indirect, incidental, special, or consequential damages arising from your use of the Platform. Our total aggregate liability shall not exceed the fees paid by you in the 12 months preceding the claim.</p>
 </div>
 
 <div class="legal-section">
-  <div class="legal-section-num">10 · Governing Law</div>
-  <h2>Governing Law</h2>
-  <p>These Terms are governed by the laws of the State of Georgia, United States. Any disputes shall be resolved in the courts of Georgia.</p>
+  <div class="legal-section-num">12 · Governing Law &amp; Disputes</div>
+  <h2>Governing Law &amp; Disputes</h2>
+  <p>The governing law depends on which service or entity is the subject of the dispute:</p>
+  <ul>
+    <li><strong>The Atelier app, payments, and member services</strong> — governed by the laws of the State of Wyoming. Disputes shall be resolved in Wyoming courts or through binding arbitration under Wyoming law</li>
+    <li><strong>Editorial programming, talent management, ambassador program, and the Collection</strong> — governed by the laws of the State of Georgia. Disputes shall be resolved in Georgia courts</li>
+    <li><strong>All services</strong> — subject to applicable United States federal law regardless of state jurisdiction</li>
+  </ul>
+  <p>You waive any objection to venue in the applicable jurisdiction.</p>
 </div>
 
 <div class="legal-section">
-  <div class="legal-section-num">11 · Changes & Contact</div>
-  <h2>Changes & Contact</h2>
-  <p>We may update these Terms from time to time. Continued use of the Platform after changes constitutes acceptance.</p>
-  <p>Questions: <a href="mailto:admin@houseofelevara.com">admin@houseofelevara.com</a></p>
+  <div class="legal-section-num">13 · Changes &amp; Contact</div>
+  <h2>Changes &amp; Contact</h2>
+  <p>We may update these Terms from time to time. We will notify you of material changes by email or in-app notice. Your continued use of the Platform after changes constitutes acceptance of the updated Terms.</p>
+  <ul>
+    <li><strong>Email:</strong> <a href="mailto:admin@houseofelevara.com">admin@houseofelevara.com</a></li>
+    <li><strong>Phone:</strong> +1 (307) 289-4953</li>
+    <li><strong>Mailing Address:</strong> House of Elevara LLC · 30 N Gould St, Ste N · Sheridan, WY 82801</li>
+    <li><strong>Website:</strong> <a href="https://www.houseofelevara.com">houseofelevara.com</a></li>
+  </ul>
 </div>
 ```
 
@@ -274,8 +385,9 @@
 </main>
 
 <footer class="footer">
-  <div>© 2026 House of Elévara LLC</div>
-  <div class="footer__muted">admin@houseofelevara.com &nbsp;·&nbsp; +1 (470) 898-0718</div>
+  <div>© 2026 House of Elevara LLC</div>
+  <div class="footer__muted">admin@houseofelevara.com &nbsp;·&nbsp; +1 (307) 289-4953</div>
+  <div class="footer__muted" style="margin-top:6px;">30 N Gould St, Ste N · Sheridan, WY 82801</div>
   <div class="footer__muted" style="margin-top:6px;">
     <a href="privacy.html" style="color:var(--gold2);text-decoration:none;">Privacy Policy</a>
     &nbsp;·&nbsp;
@@ -283,7 +395,7 @@
   </div>
 </footer>
 
-<script src="assets/app.js?v=99"></script>
+<script src="assets/app.js?v=101"></script>
 
 </body>
 </html>
