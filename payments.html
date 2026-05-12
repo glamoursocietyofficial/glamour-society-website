@@ -5,16 +5,23 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <title>Membership & Opportunities | House of Elévara</title>
-  <meta name="description" content="Join House of Elévara LLC — a professional talent ecosystem for models ready to elevate their brand, visibility, and income. Explore free and premium membership options."/>
+  <meta name="description" content="Join House of Elévara — a professional talent ecosystem for models ready to elevate their brand, visibility, and income. Explore free and premium membership options."/>
   <link rel="stylesheet" href="assets/styles.css"/>
   <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/png" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
+  <link rel="icon" type="image/png" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
   <link rel="shortcut icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
   <link rel="apple-touch-icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png">
   <meta name="apple-mobile-web-app-title" content="Elévara">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="theme-color" content="#060605">
+  <meta property="og:title" content="Membership & Opportunities | House of Elévara"/>
+  <meta property="og:description" content="Professional talent ecosystem for models ready to elevate their brand, visibility, and income."/>
+  <meta property="og:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
+  <meta property="og:url" content="https://houseofelevara.com/payments.html"/>
+  <meta property="og:type" content="website"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
 
   <style>
     /* ── MEMBERSHIP TIERS ── */
@@ -178,6 +185,28 @@
       opacity: 0.75;
     }
 
+    /* ── APPOINTMENT CTA ── */
+    .appt-cta {
+      border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg);
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200,169,90,0.10), transparent 55%),
+        var(--surface);
+      padding: clamp(28px,4vw,40px);
+      text-align: center;
+      margin-bottom: clamp(32px,4vw,48px);
+      position: relative;
+      overflow: hidden;
+    }
+    .appt-cta::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold2), transparent);
+      opacity: 0.6;
+    }
+
     /* ── GROWTH NOTICE ── */
     .growth-notice {
       border: 1px solid var(--gold-line);
@@ -332,8 +361,6 @@
     }
   </style>
 
-  <meta property="og:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
-    <meta name="twitter:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
 </head>
 <body>
 
@@ -405,11 +432,29 @@
   </p>
   <div class="btnRow">
     <a class="btn btn--dark" href="apply.html">Apply for Free</a>
-    <a class="btn btn--ghost" href="contact.html">Have a Question?</a>
+    <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer"
+       href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call">Schedule a Call First</a>
+    <a class="btn btn--dark" href="contact.html">Have a Question?</a>
   </div>
 </div>
 ```
 
+  </div>
+
+  <!-- APPOINTMENT CTA -->
+
+  <div class="container">
+    <div class="appt-cta">
+      <p style="font-size:9px;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">Before You Purchase</p>
+      <h3 style="font-family:var(--font-display);font-size:clamp(20px,3vw,28px);font-weight:300;color:var(--white);margin-bottom:10px;">Schedule a Private Consultation</h3>
+      <p style="font-size:13px;color:var(--muted2);line-height:1.85;max-width:52ch;margin:0 auto 20px;">We strongly recommend scheduling a call before purchasing any paid membership. We'll answer your questions, walk you through expectations, and confirm you're selecting the right tier for your goals.</p>
+      <div class="btnRow" style="justify-content:center;">
+        <a class="btn btn--gold" target="_blank" rel="noopener noreferrer"
+           href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call">Book a Free Consultation</a>
+        <a class="btn btn--ghost"
+           href="mailto:admin@houseofelevara.com?subject=Membership%20Question%20%7C%20House%20of%20El%C3%A9vara">Email a Question</a>
+      </div>
+    </div>
   </div>
 
   <!-- GROWTH NOTICE -->
@@ -482,18 +527,18 @@
       <li>Early access to the Elévara store — earn commission or salary on product sales</li>
     </ul>
     <div class="tier__footer">
+      <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer"
+         href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call">
+        Schedule a Call First
+      </a>
       <a class="btn btn--gold" target="_blank" rel="noopener noreferrer"
          href="https://buy.stripe.com/5kQfZa9Tt9b322g5gu4sE05">
         Become an Ambassador — $100
       </a>
-      <a class="btn btn--ghost"
-         href="mailto:admin@houseofelevara.com?subject=Brand%20Ambassadorship%20Question%20%7C%20House%20of%20El%C3%A9vara">
-        Ask a Question
-      </a>
       <a class="btn btn--dark" href="ambassador.html">
         View Full Ambassador Program →
       </a>
-      <p class="tier__disclaimer">Secure checkout via Stripe. Referral commissions paid per confirmed ambassador enrollment.</p>
+      <p class="tier__disclaimer">Secure checkout via Stripe. Referral commissions paid per confirmed ambassador enrollment. We recommend a call before purchasing.</p>
     </div>
   </div>
 
@@ -518,15 +563,19 @@
       <li>Stronger positioning as brand relationships develop</li>
     </ul>
     <div class="tier__footer">
+      <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer"
+         href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call">
+        Schedule a Call First
+      </a>
       <a class="btn btn--gold" target="_blank" rel="noopener noreferrer"
          href="https://buy.stripe.com/fZu14g0iT72V8qE38m4sE0g">
         Start Monthly Membership — $75
       </a>
-      <a class="btn btn--ghost"
+      <a class="btn btn--dark"
          href="mailto:admin@houseofelevara.com?subject=Monthly%20Membership%20%7C%20House%20of%20El%C3%A9vara">
         Ask a Question
       </a>
-      <p class="tier__disclaimer">Secure checkout via Stripe. Cancel anytime through your billing portal.</p>
+      <p class="tier__disclaimer">Secure checkout via Stripe. Cancel anytime through your billing portal. We recommend a call before purchasing.</p>
     </div>
   </div>
 
@@ -552,15 +601,19 @@
       <li>First priority consideration as new opportunities and brand deals scale</li>
     </ul>
     <div class="tier__footer">
+      <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer"
+         href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call">
+        Schedule a Call First
+      </a>
       <a class="btn btn--gold" target="_blank" rel="noopener noreferrer"
          href="https://buy.stripe.com/bJebIUfdNaf722gbES4sE0h">
         Start Annual Membership — $675
       </a>
-      <a class="btn btn--ghost"
+      <a class="btn btn--dark"
          href="mailto:admin@houseofelevara.com?subject=Annual%20Membership%20%7C%20House%20of%20El%C3%A9vara">
         Ask a Question
       </a>
-      <p class="tier__disclaimer">Secure checkout via Stripe. Billed once annually. Equivalent to $56.25/month.</p>
+      <p class="tier__disclaimer">Secure checkout via Stripe. Billed once annually. Equivalent to $56.25/month. We recommend a call before purchasing.</p>
     </div>
   </div>
 
@@ -569,7 +622,7 @@
 
   </div>
 
-<!-- STORE TEASER -->
+  <!-- STORE TEASER -->
 
   <div class="container" style="margin-bottom:clamp(32px,4vw,48px);">
     <div class="sectionDivider">
@@ -616,10 +669,12 @@
           Participation in any paid tier does not guarantee bookings, income, travel reimbursement, or campaign selection. What it does guarantee is that your profile receives active attention from a dedicated team, consistent coordination, and the strongest possible positioning within the Elévara system as opportunities are developed and brand relationships are built.
         </p>
         <p>
-          We are committed to building this the right way — with integrity, transparency, a real team behind every talent we represent, and a genuine investment in your long-term success.
+          We are committed to building this the right way — with integrity, transparency, a real team behind every talent we represent, and a genuine investment in your long-term success. We strongly encourage scheduling a private call before purchasing any tier.
         </p>
       </div>
       <div class="btnRow">
+        <a class="btn btn--gold" target="_blank" rel="noopener noreferrer"
+           href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call">Schedule a Free Consultation</a>
         <a class="btn btn--dark" href="apply.html">Begin with a Free Application</a>
         <a class="btn btn--ghost"
            href="mailto:admin@houseofelevara.com?subject=Membership%20Question%20%7C%20House%20of%20El%C3%A9vara">
@@ -632,8 +687,9 @@
 </main>
 
 <footer class="footer">
-  <div>All payments processed securely via Stripe &nbsp;·&nbsp; © 2026 House of Elévara LLC</div>
-  <div class="footer__muted">admin@houseofelevara.com &nbsp;·&nbsp; +1 (470) 898-0718</div>
+  <div>All payments processed securely via Stripe &nbsp;·&nbsp; © 2026 House of Elevara LLC</div>
+  <div class="footer__muted">admin@houseofelevara.com &nbsp;·&nbsp; +1 (307) 289-4953</div>
+  <div class="footer__muted" style="margin-top:6px;">30 N Gould St, Ste N · Sheridan, WY 82801</div>
   <div class="footer__muted" style="margin-top:6px;">
     <a href="privacy.html" style="color:var(--gold2);text-decoration:none;">Privacy Policy</a>
     &nbsp;·&nbsp;
@@ -641,7 +697,7 @@
   </div>
 </footer>
 
-<script src="assets/app.js?v=99"></script>
+<script src="assets/app.js?v=101"></script>
 
 </body>
 </html>
