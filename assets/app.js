@@ -1,5 +1,5 @@
 /* ============================================================
-HOUSE OF ELÉVARA — CINEMATIC LUXURY APP.JS v3.1
+HOUSE OF ELÉVARA — CINEMATIC LUXURY APP.JS v3.0
 ============================================================ */
 
 (function () {
@@ -7,11 +7,7 @@ HOUSE OF ELÉVARA — CINEMATIC LUXURY APP.JS v3.1
 
 const qs  = (id) => document.getElementById(id);
 const qsa = (sel, ctx = document) => […ctx.querySelectorAll(sel)];
-const on  = (el, ev, fn, opts) => el && el.addEventListener(ev, fn, opts);
-
-// Respect reduced-motion preferences
-const PREFERS_REDUCED = window.matchMedia(’(prefers-reduced-motion: reduce)’).matches;
-const IS_COARSE = window.matchMedia(’(pointer: coarse)’).matches;
+const on  = (el, ev, fn) => el && el.addEventListener(ev, fn);
 
 /* ===== MOBILE MENU ===== */
 function closeDropdown() {
@@ -26,9 +22,6 @@ if (!menu) return;
 menu.classList.add(‘is-open’);
 menu.setAttribute(‘aria-hidden’,‘false’);
 document.body.classList.add(‘no-scroll’);
-// Focus management for accessibility
-const closeBtn = qs(‘closeMenu’);
-if (closeBtn) setTimeout(() => closeBtn.focus(), 60);
 }
 function closeMenu() {
 const menu = qs(‘mobileMenu’);
@@ -37,9 +30,6 @@ menu.classList.remove(‘is-open’);
 menu.setAttribute(‘aria-hidden’,‘true’);
 document.body.classList.remove(‘no-scroll’);
 closeDropdown();
-// Return focus to the menu opener
-const opener = qs(‘openMenu’);
-if (opener) opener.focus();
 }
 function toggleDrop() {
 const dm = qs(‘dropMenu’), opener = qs(‘dropOpener’), chev = qs(‘dropChev’);
@@ -48,14 +38,6 @@ const isOpen = dm.classList.toggle(‘is-open’);
 dm.setAttribute(‘aria-hidden’, String(!isOpen));
 opener.setAttribute(‘aria-expanded’, String(isOpen));
 if (chev) chev.textContent = isOpen ? ‘▴’ : ‘▾’;
-}
-// Close menu when any link inside it is clicked
-function bindMenuLinks() {
-const menu = qs(‘mobileMenu’);
-if (!menu) return;
-qsa(‘a’, menu).forEach((a) => {
-on(a, ‘click’, () => closeMenu());
-});
 }
 
 window.GS_openMenu   = openMenu;
@@ -67,7 +49,6 @@ window.EV_toggleDrop = toggleDrop;
 
 /* ===== PAGE ENTRANCE ===== */
 function initPageEntrance() {
-if (PREFERS_REDUCED) return;
 const veil = document.createElement(‘div’);
 veil.style.cssText = ‘position:fixed;inset:0;background:#060605;z-index:999998;pointer-events:none;transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1);’;
 document.body.appendChild(veil);
@@ -83,10 +64,6 @@ setTimeout(() => veil.remove(), 750);
 function initScrollReveal() {
 const els = qsa(’.reveal’);
 if (!els.length) return;
-if (PREFERS_REDUCED) {
-els.forEach((el) => el.classList.add(‘is-visible’));
-return;
-}
 const obs = new IntersectionObserver((entries) => {
 entries.forEach((e) => {
 if (e.isIntersecting) { e.target.classList.add(‘is-visible’); obs.unobserve(e.target); }
@@ -97,7 +74,6 @@ els.forEach((el) => obs.observe(el));
 
 /* ===== AUTO ANIMATE ON SCROLL ===== */
 function initAutoAnimate() {
-if (PREFERS_REDUCED) return;
 const targets = qsa(’.infoCard, .card, .cardGlow, .readyBlock, .brandCard, .sectionDivider’);
 const obs = new IntersectionObserver((entries) => {
 entries.forEach((entry, i) => {
@@ -118,7 +94,6 @@ targets.forEach((el) => obs.observe(el));
 
 /* ===== MAGNETIC BUTTONS ===== */
 function initMagneticButtons() {
-if (PREFERS_REDUCED || IS_COARSE) return;
 qsa(’.btn–gold, .btn–ghost’).forEach((btn) => {
 on(btn, ‘mousemove’, (e) => {
 const r = btn.getBoundingClientRect();
@@ -136,7 +111,7 @@ setTimeout(() => { btn.style.transition = ‘’; }, 400);
 
 /* ===== GOLD CURSOR TRAIL ===== */
 function initCursorTrail() {
-if (PREFERS_REDUCED || IS_COARSE) return;
+if (window.matchMedia(’(pointer: coarse)’).matches) return;
 const trail = [];
 const COUNT = 6;
 for (let i = 0; i < COUNT; i++) {
@@ -168,36 +143,23 @@ function initTopbarScroll() {
 const topbar = document.querySelector(’.topbar’);
 if (!topbar) return;
 let last = 0;
-let ticking = false;
-function update() {
+on(window, ‘scroll’, () => {
 const y = window.scrollY;
 topbar.style.background = y > 60 ? ‘rgba(6,6,5,0.98)’ : ‘’;
 topbar.style.boxShadow  = y > 60 ? ‘0 4px 40px rgba(0,0,0,0.7)’ : ‘’;
-// Don’t hide the topbar while the mobile menu is open
-const menuOpen = qs(‘mobileMenu’) && qs(‘mobileMenu’).classList.contains(‘is-open’);
-if (!menuOpen && y > last && y > 200) {
+if (y > last && y > 200) {
 topbar.style.transform  = ‘translateY(-100%)’;
 topbar.style.transition = ‘transform 0.35s cubic-bezier(0.16,1,0.3,1)’;
 } else {
 topbar.style.transform = ‘translateY(0)’;
 }
 last = y;
-ticking = false;
-}
-on(window, ‘scroll’, () => {
-if (!ticking) {
-requestAnimationFrame(update);
-ticking = true;
-}
 }, { passive: true });
 }
 
 /* ===== CARD SHIMMER ===== */
 function initCardShimmer() {
-if (PREFERS_REDUCED || IS_COARSE) return;
 qsa(’.card, .cardGlow, .infoCard, .readyBlock, .brandCard’).forEach((card) => {
-// Skip cards that are links - shimmer overlay can intercept clicks
-if (card.tagName === ‘A’) return;
 const sh = document.createElement(‘div’);
 sh.style.cssText = ‘position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(200,169,90,0.05),rgba(200,169,90,0.09),rgba(200,169,90,0.05),transparent);pointer-events:none;z-index:0;border-radius:inherit;’;
 if (getComputedStyle(card).position === ‘static’) card.style.position = ‘relative’;
@@ -209,7 +171,6 @@ on(card, ‘mouseleave’, () => { sh.style.transition = ‘none’; sh.style.le
 
 /* ===== BUTTON RIPPLE ===== */
 function initRipple() {
-if (PREFERS_REDUCED) return;
 if (!document.querySelector(’#rippleStyle’)) {
 const s = document.createElement(‘style’);
 s.id = ‘rippleStyle’;
@@ -230,7 +191,6 @@ setTimeout(() => rpl.remove(), 600);
 
 /* ===== FAQ SMOOTH ===== */
 function initFaqSmooth() {
-if (PREFERS_REDUCED) return;
 qsa(‘details’).forEach((d) => {
 on(d, ‘toggle’, () => {
 if (d.open) {
@@ -245,13 +205,10 @@ if (p) p.style.animation = ‘fadeUp 0.3s ease both’;
 function initSmoothScroll() {
 qsa(‘a[href^=”#”]’).forEach((a) => {
 on(a, ‘click’, (e) => {
-const href = a.getAttribute(‘href’);
-// Skip plain “#” links (no target)
-if (!href || href === ‘#’) return;
-const t = document.querySelector(href);
+const t = document.querySelector(a.getAttribute(‘href’));
 if (!t) return;
 e.preventDefault();
-t.scrollIntoView({ behavior: PREFERS_REDUCED ? ‘auto’ : ‘smooth’, block: ‘start’ });
+t.scrollIntoView({ behavior: ‘smooth’, block: ‘start’ });
 });
 });
 }
@@ -267,31 +224,6 @@ link.classList.add(‘is-active’);
 });
 }
 
-/* ===== EXTERNAL LINKS — open in new tab safely ===== */
-function initExternalLinks() {
-const host = window.location.hostname;
-qsa(‘a[href^=“http”]’).forEach((a) => {
-try {
-const url = new URL(a.href);
-if (url.hostname && url.hostname !== host) {
-if (!a.getAttribute(‘target’)) a.setAttribute(‘target’, ‘_blank’);
-const rel = (a.getAttribute(‘rel’) || ‘’).split(’ ‘).filter(Boolean);
-if (!rel.includes(‘noopener’)) rel.push(‘noopener’);
-if (!rel.includes(‘noreferrer’)) rel.push(‘noreferrer’);
-a.setAttribute(‘rel’, rel.join(’ ’));
-}
-} catch (e) { /* ignore malformed URLs */ }
-});
-}
-
-/* ===== LAZY-LOAD HINT FOR IMAGES ===== */
-function initLazyImages() {
-qsa(‘img’).forEach((img) => {
-if (!img.hasAttribute(‘loading’)) img.setAttribute(‘loading’, ‘lazy’);
-if (!img.hasAttribute(‘decoding’)) img.setAttribute(‘decoding’, ‘async’);
-});
-}
-
 /* ===== INIT ===== */
 document.addEventListener(‘DOMContentLoaded’, () => {
 on(qs(‘openMenu’),    ‘click’, openMenu);
@@ -300,7 +232,6 @@ on(qs(‘menuBackdrop’),‘click’, closeMenu);
 on(qs(‘dropOpener’),  ‘click’, toggleDrop);
 
 ```
-bindMenuLinks();
 initPageEntrance();
 initScrollReveal();
 initAutoAnimate();
@@ -312,8 +243,6 @@ initRipple();
 initFaqSmooth();
 initSmoothScroll();
 initActiveNav();
-initExternalLinks();
-initLazyImages();
 ```
 
 });
