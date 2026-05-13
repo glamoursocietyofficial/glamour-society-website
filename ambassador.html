@@ -1,11 +1,10 @@
 <!doctype html>
-
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <title>Ambassador Program | House of Elévara</title>
-  <meta name="description" content="The House of Elévara Ambassador Program — earn $50 per referral, build passive income, and unlock the Elévara Store. One-time $100 activation."/>
+  <meta name="description" content="Website-based referral program. Earn $50 per Ambassador referral. Does not affect app features or functionality."/>
   <link rel="icon" type="image/png" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
   <link rel="shortcut icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
   <link rel="apple-touch-icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png">
@@ -16,7 +15,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="theme-color" content="#060605">
   <meta property="og:title" content="Ambassador Program | House of Elévara"/>
-  <meta property="og:description" content="Earn $50 per referral. Build passive income. Unlock the Elévara Store."/>
+  <meta property="og:description" content="Website-based referral program. Earn $50 per referral."/>
   <meta property="og:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
   <meta property="og:url" content="https://houseofelevara.com/ambassador.html"/>
   <meta property="og:type" content="website"/>
@@ -24,14 +23,11 @@
   <meta name="twitter:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
 
   <style>
-
-    /* ── HERO ── */
     .amb-hero {
       padding: clamp(56px,8vw,96px) 0 clamp(40px,6vw,64px);
       position: relative;
       text-align: center;
     }
-
     .amb-hero__badge {
       display: inline-flex;
       align-items: center;
@@ -47,7 +43,6 @@
       margin-bottom: 24px;
       animation: fadeUp 0.6s ease both;
     }
-
     .amb-hero__title {
       font-family: var(--font-display);
       font-size: clamp(48px,8vw,96px);
@@ -57,23 +52,20 @@
       margin-bottom: 20px;
       animation: fadeUp 0.7s ease 0.1s both;
     }
-
     .amb-hero__title em {
       font-style: italic;
       color: var(--gold2);
       display: block;
     }
-
     .amb-hero__sub {
       font-size: 15px;
       color: var(--muted2);
       line-height: 1.85;
-      max-width: 56ch;
+      max-width: 62ch;
       margin: 0 auto 36px;
       letter-spacing: 0.02em;
       animation: fadeUp 0.7s ease 0.2s both;
     }
-
     .amb-hero__price {
       font-family: var(--font-display);
       font-size: clamp(56px,8vw,100px);
@@ -84,7 +76,6 @@
       animation: fadeUp 0.7s ease 0.3s both;
       text-shadow: 0 0 60px rgba(200,169,90,0.3);
     }
-
     .amb-hero__price-label {
       font-size: 10px;
       letter-spacing: 0.28em;
@@ -93,22 +84,40 @@
       margin-bottom: 32px;
       animation: fadeUp 0.7s ease 0.35s both;
     }
-
-    /* ── EARNINGS COUNTER ANIMATION ── */
+    .disclaimer-box {
+      max-width: 680px;
+      margin: 32px auto;
+      padding: 20px 28px;
+      border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg);
+      background: var(--surface2);
+      animation: fadeUp 0.7s ease 0.4s both;
+    }
+    .disclaimer-box__title {
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .disclaimer-box__text {
+      font-size: 12px;
+      color: var(--muted2);
+      line-height: 1.8;
+    }
     .earnings-ticker {
       display: flex;
       justify-content: center;
       gap: clamp(16px,4vw,48px);
       flex-wrap: wrap;
       margin: 40px 0;
-      animation: fadeUp 0.7s ease 0.4s both;
+      animation: fadeUp 0.7s ease 0.5s both;
     }
-
     .earnings-stat {
       text-align: center;
       position: relative;
     }
-
     .earnings-stat__num {
       font-family: var(--font-display);
       font-size: clamp(36px,5vw,64px);
@@ -116,742 +125,24 @@
       color: var(--gold2);
       line-height: 1;
       margin-bottom: 6px;
-      position: relative;
     }
-
-    .earnings-stat__num::after {
-      content: attr(data-suffix);
-      font-size: 0.45em;
-      color: var(--gold);
-      vertical-align: super;
-    }
-
     .earnings-stat__label {
       font-size: 8.5px;
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--muted);
     }
-
     .earnings-divider {
       width: 1px;
       height: 60px;
       background: linear-gradient(180deg, transparent, var(--gold-line), transparent);
       align-self: center;
     }
-
-    /* ── HOW IT WORKS — ANIMATED FLOW ── */
-    .flow-section {
-      position: relative;
-      margin: clamp(40px,6vw,72px) 0;
-    }
-
-    .flow-title {
-      text-align: center;
-      font-family: var(--font-display);
-      font-size: clamp(28px,4vw,48px);
-      font-weight: 300;
-      margin-bottom: 48px;
-      color: var(--white);
-    }
-
-    .flow-title em { font-style: italic; color: var(--gold2); }
-
-    .flow-diagram {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      padding: 20px 0;
-    }
-
-    .flow-node {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
-      flex-shrink: 0;
-      position: relative;
-    }
-
-    .flow-node__circle {
-      width: 88px;
-      height: 88px;
-      border-radius: 50%;
-      border: 1px solid var(--gold-line);
-      background:
-        radial-gradient(ellipse 80% 80% at 30% 20%, rgba(200,169,90,0.12), transparent 60%),
-        var(--surface2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      position: relative;
-      transition: all 0.3s ease;
-      animation: goldPulse 4s ease-in-out infinite;
-    }
-
-    .flow-node:nth-child(3) .flow-node__circle { animation-delay: 0.5s; }
-    .flow-node:nth-child(5) .flow-node__circle { animation-delay: 1s; }
-    .flow-node:nth-child(7) .flow-node__circle { animation-delay: 1.5s; }
-    .flow-node:nth-child(9) .flow-node__circle { animation-delay: 2s; }
-
-    .flow-node__circle:hover {
-      border-color: var(--gold);
-      background:
-        radial-gradient(ellipse 80% 80% at 30% 20%, rgba(200,169,90,0.22), transparent 60%),
-        var(--surface3);
-      transform: scale(1.08);
-    }
-
-    .flow-node__step {
-      position: absolute;
-      top: -8px;
-      right: -8px;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold2), var(--gold));
-      color: var(--black);
-      font-size: 8px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      letter-spacing: 0;
-    }
-
-    .flow-node__label {
-      font-size: 9px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--gold);
-      text-align: center;
-      max-width: 88px;
-    }
-
-    .flow-node__desc {
-      font-size: 10.5px;
-      color: var(--muted2);
-      text-align: center;
-      max-width: 88px;
-      line-height: 1.5;
-    }
-
-    .flow-arrow {
-      font-size: 24px;
-      color: var(--gold-line);
-      flex-shrink: 0;
-      padding: 0 8px;
-      margin-bottom: 40px;
-      animation: floaty 2s ease-in-out infinite;
-    }
-
-    .flow-arrow:nth-child(4) { animation-delay: 0.3s; }
-    .flow-arrow:nth-child(6) { animation-delay: 0.6s; }
-    .flow-arrow:nth-child(8) { animation-delay: 0.9s; }
-
-    /* ── EARNINGS CALCULATOR ── */
-    .calc-section {
-      border: 1px solid var(--gold-line);
-      border-radius: var(--radiusLg);
-      background:
-        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200,169,90,0.08), transparent 55%),
-        var(--surface);
-      padding: clamp(36px,5vw,56px) clamp(28px,4vw,48px);
-      position: relative;
-      overflow: hidden;
-      margin: clamp(40px,6vw,72px) 0;
-    }
-
-    .calc-section::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold2), transparent);
-      opacity: 0.6;
-    }
-
-    .calc-title {
-      font-family: var(--font-display);
-      font-size: clamp(24px,3vw,36px);
-      font-weight: 300;
-      color: var(--white);
-      margin-bottom: 8px;
-      text-align: center;
-    }
-
-    .calc-sub {
-      font-size: 13px;
-      color: var(--muted2);
-      text-align: center;
-      margin-bottom: 32px;
-      line-height: 1.7;
-    }
-
-    .calc-slider-wrap {
-      max-width: 500px;
-      margin: 0 auto 32px;
-    }
-
-    .calc-slider-label {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-
-    .calc-slider-label span {
-      font-size: 9px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    .calc-slider-label strong {
-      font-family: var(--font-display);
-      font-size: 28px;
-      font-weight: 300;
-      color: var(--gold2);
-    }
-
-    .calc-slider {
-      width: 100%;
-      -webkit-appearance: none;
-      appearance: none;
-      height: 2px;
-      background: var(--line);
-      border-radius: 1px;
-      outline: none;
-      cursor: pointer;
-      position: relative;
-    }
-
-    .calc-slider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold2), var(--gold));
-      cursor: pointer;
-      border: 2px solid var(--black);
-      box-shadow: 0 0 16px rgba(200,169,90,0.4);
-      transition: box-shadow 0.2s;
-    }
-
-    .calc-slider::-webkit-slider-thumb:hover {
-      box-shadow: 0 0 28px rgba(200,169,90,0.7);
-    }
-
-    .calc-results {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      border: 1px solid var(--gold-line);
-      border-radius: var(--radiusLg);
-      overflow: hidden;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .calc-result {
-      background: var(--surface);
-      padding: 20px 16px;
-      text-align: center;
-      transition: background 0.2s;
-    }
-
-    .calc-result:hover { background: var(--gold-dim); }
-
-    .calc-result__label {
-      font-size: 7.5px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .calc-result__value {
-      font-family: var(--font-display);
-      font-size: clamp(24px,3vw,36px);
-      font-weight: 300;
-      color: var(--gold2);
-      line-height: 1;
-    }
-
-    .calc-result__sub {
-      font-size: 9px;
-      color: var(--muted);
-      margin-top: 4px;
-      letter-spacing: 0.08em;
-    }
-
-    /* ── WHO EARNS ── */
-    .earner-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-top: 20px;
-    }
-
-    .earner-card {
-      border: 1px solid var(--gold-line);
-      border-radius: var(--radiusLg);
-      background:
-        radial-gradient(ellipse 80% 60% at 10% 0%, rgba(200,169,90,0.07), transparent 55%),
-        var(--surface);
-      padding: clamp(24px,3vw,36px);
-      position: relative;
-      overflow: hidden;
-      transition: all 0.25s ease;
-    }
-
-    .earner-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold2), transparent);
-      opacity: 0.5;
-    }
-
-    .earner-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--sh-md), var(--glow);
-      border-color: var(--gold);
-    }
-
-    .earner-card__icon {
-      font-size: 36px;
-      margin-bottom: 16px;
-      display: block;
-      animation: floaty 4s ease-in-out infinite;
-    }
-
-    .earner-card:nth-child(2) .earner-card__icon { animation-delay: 0.5s; }
-
-    .earner-card__type {
-      font-size: 8.5px;
-      letter-spacing: 0.26em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 8px;
-      display: block;
-    }
-
-    .earner-card__title {
-      font-family: var(--font-display);
-      font-size: clamp(24px,3vw,34px);
-      font-weight: 300;
-      color: var(--white);
-      margin-bottom: 12px;
-      line-height: 1.1;
-    }
-
-    .earner-card__desc {
-      font-size: 13px;
-      color: var(--muted2);
-      line-height: 1.82;
-      margin-bottom: 20px;
-    }
-
-    .earner-earn-row {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
-
-    .earner-earn {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 14px;
-      border: 1px solid var(--line);
-      border-radius: var(--radiusLg);
-      background: var(--surface2);
-      transition: all 0.2s;
-    }
-
-    .earner-earn:hover {
-      border-color: var(--gold-line);
-      background: var(--gold-dim);
-    }
-
-    .earner-earn__label {
-      font-size: 11px;
-      color: var(--muted2);
-      letter-spacing: 0.04em;
-    }
-
-    .earner-earn__amount {
-      font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 300;
-      color: var(--gold2);
-    }
-
-    /* ── REFERRAL POWER ── */
-    .referral-power {
-      border: 1px solid var(--gold-line);
-      border-radius: var(--radiusLg);
-      background:
-        radial-gradient(ellipse 100% 80% at 50% 0%, rgba(200,169,90,0.10), transparent 55%),
-        var(--surface);
-      padding: clamp(36px,5vw,56px) clamp(28px,4vw,48px);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      margin: clamp(40px,6vw,72px) 0;
-    }
-
-    .referral-power::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold2), transparent);
-      opacity: 0.7;
-    }
-
-    /* Animated rings */
-    .referral-rings {
-      position: relative;
-      width: 200px;
-      height: 200px;
-      margin: 0 auto 32px;
-    }
-
-    .referral-ring {
-      position: absolute;
-      border-radius: 50%;
-      border: 1px solid var(--gold-line);
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      animation: orbitSpin linear infinite;
-    }
-
-    .referral-ring:nth-child(1) {
-      width: 200px; height: 200px;
-      animation-duration: 20s;
-      border-color: rgba(200,169,90,0.15);
-    }
-
-    .referral-ring:nth-child(2) {
-      width: 148px; height: 148px;
-      animation-duration: 14s;
-      animation-direction: reverse;
-      border-color: rgba(200,169,90,0.22);
-    }
-
-    .referral-ring:nth-child(3) {
-      width: 96px; height: 96px;
-      animation-duration: 9s;
-      border-color: rgba(200,169,90,0.32);
-    }
-
-    .referral-ring::before {
-      content: '';
-      position: absolute;
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--gold2);
-      top: -4px;
-      left: 50%;
-      transform: translateX(-50%);
-      box-shadow: 0 0 12px rgba(200,169,90,0.6);
-    }
-
-    .referral-center {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 56px; height: 56px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold2), var(--gold));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      box-shadow: 0 0 40px rgba(200,169,90,0.4);
-      animation: goldPulse 3s ease-in-out infinite;
-    }
-
-    .referral-power__title {
-      font-family: var(--font-display);
-      font-size: clamp(28px,4vw,48px);
-      font-weight: 300;
-      color: var(--white);
-      margin-bottom: 12px;
-    }
-
-    .referral-power__title em { font-style: italic; color: var(--gold2); }
-
-    .referral-power__sub {
-      font-size: 14px;
-      color: var(--muted2);
-      line-height: 1.85;
-      max-width: 52ch;
-      margin: 0 auto 32px;
-    }
-
-    .referral-scenarios {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      border: 1px solid var(--gold-line);
-      border-radius: var(--radiusLg);
-      overflow: hidden;
-      max-width: 680px;
-      margin: 0 auto 28px;
-    }
-
-    .referral-scenario {
-      background: var(--surface);
-      padding: 20px 16px;
-      text-align: center;
-      transition: background 0.2s;
-    }
-
-    .referral-scenario:hover { background: var(--gold-dim); }
-
-    .referral-scenario__refs {
-      font-size: 8.5px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 8px;
-    }
-
-    .referral-scenario__earn {
-      font-family: var(--font-display);
-      font-size: 32px;
-      font-weight: 300;
-      color: var(--gold2);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-
-    .referral-scenario__period {
-      font-size: 9px;
-      color: var(--muted);
-      letter-spacing: 0.1em;
-    }
-
-    /* ── STORE SECTION ── */
-    .store-section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(24px,4vw,48px);
-      align-items: center;
-      border: 1px solid var(--gold-line);
-      border-radius: var(--radiusLg);
-      background:
-        radial-gradient(ellipse 80% 60% at 10% 0%, rgba(200,169,90,0.09), transparent 55%),
-        var(--surface);
-      padding: clamp(32px,4vw,52px);
-      position: relative;
-      overflow: hidden;
-      margin: clamp(40px,6vw,72px) 0;
-    }
-
-    .store-section::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold2), transparent);
-      opacity: 0.5;
-    }
-
-    .store-coming-badge {
-      display: inline-block;
-      font-size: 7.5px;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--black);
-      background: linear-gradient(135deg, var(--gold2), var(--gold));
-      padding: 5px 14px;
-      border-radius: 1px;
-      margin-bottom: 16px;
-    }
-
-    .store-section__title {
-      font-family: var(--font-display);
-      font-size: clamp(28px,4vw,44px);
-      font-weight: 300;
-      color: var(--white);
-      margin-bottom: 14px;
-      line-height: 1.1;
-    }
-
-    .store-section__title em { font-style: italic; color: var(--gold2); }
-
-    .store-section__desc {
-      font-size: 13.5px;
-      color: var(--muted2);
-      line-height: 1.85;
-      margin-bottom: 24px;
-    }
-
-    .store-visual {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .store-item {
-      border: 1px solid var(--gold-line);
-      border-radius: var(--radiusLg);
-      background: var(--surface2);
-      padding: 14px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      transition: all 0.22s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .store-item::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(200,169,90,0.3), transparent);
-    }
-
-    .store-item:hover {
-      border-color: var(--gold);
-      background: var(--gold-dim);
-      transform: translateX(4px);
-    }
-
-    .store-item__left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .store-item__icon {
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      border: 1px solid var(--gold-line);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      background: var(--surface);
-      flex-shrink: 0;
-    }
-
-    .store-item__name {
-      font-size: 12px;
-      color: var(--white);
-      font-weight: 500;
-      letter-spacing: 0.04em;
-    }
-
-    .store-item__type {
-      font-size: 9px;
-      color: var(--muted);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .store-item__commission {
-      font-family: var(--font-display);
-      font-size: 18px;
-      color: var(--gold2);
-      flex-shrink: 0;
-    }
-
-    /* ── CTA ── */
-    .amb-cta {
-      border: 1px solid var(--gold-line);
-      border-radius: var(--radiusLg);
-      background:
-        radial-gradient(ellipse 100% 80% at 50% 0%, rgba(200,169,90,0.12), transparent 55%),
-        var(--surface);
-      padding: clamp(48px,6vw,72px) clamp(28px,4vw,48px);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      margin-bottom: clamp(48px,8vw,88px);
-    }
-
-    .amb-cta::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--gold2), transparent);
-      opacity: 0.8;
-    }
-
-    .amb-cta__title {
-      font-family: var(--font-display);
-      font-size: clamp(32px,5vw,60px);
-      font-weight: 300;
-      color: var(--white);
-      margin-bottom: 12px;
-      line-height: 1.05;
-    }
-
-    .amb-cta__title em { font-style: italic; color: var(--gold2); }
-
-    .amb-cta__sub {
-      font-size: 14px;
-      color: var(--muted2);
-      line-height: 1.85;
-      max-width: 52ch;
-      margin: 0 auto 32px;
-    }
-
-    .amb-cta__price {
-      font-family: var(--font-display);
-      font-size: clamp(48px,7vw,80px);
-      font-weight: 300;
-      color: var(--gold2);
-      line-height: 1;
-      margin-bottom: 6px;
-      text-shadow: 0 0 60px rgba(200,169,90,0.3);
-    }
-
-    .amb-cta__price-note {
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 28px;
-    }
-
-    /* responsive */
     @media (max-width: 768px) {
-      .flow-diagram { gap: 0; }
-      .flow-arrow { padding: 0 4px; font-size: 18px; }
-      .flow-node__circle { width: 68px; height: 68px; font-size: 22px; }
-      .earner-grid { grid-template-columns: 1fr; }
-      .referral-scenarios { grid-template-columns: 1fr; }
-      .store-section { grid-template-columns: 1fr; }
-      .calc-results { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 480px) {
       .earnings-ticker { gap: 12px; }
       .earnings-divider { display: none; }
-      .flow-diagram { flex-direction: column; }
-      .flow-arrow { transform: rotate(90deg); margin: 0; }
     }
-
   </style>
-
 </head>
 <body>
 
@@ -905,55 +196,86 @@
 
 <main>
 
-  <!-- HERO -->
-
   <section class="container">
     <div class="amb-hero">
       <a href="payments.html" style="display:inline-flex;align-items:center;gap:8px;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-bottom:24px;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">← Back to Membership</a>
 
-  <div class="amb-hero__badge">✦ House of Elévara · Ambassador Program</div>
-  <h1 class="amb-hero__title">
-    Build Income.<br>
-    <em>While You Sleep.</em>
-  </h1>
-  <p class="amb-hero__sub">One activation. Unlimited earning potential. Every person you bring into the House earns you $50 — and that's just the beginning. The referral program, the Store, and the booking platform all work together to build you real passive income.</p>
+      <div class="amb-hero__badge">✦ House of Elévara · Website Referral Program</div>
+      <h1 class="amb-hero__title">
+        Ambassador<br>
+        <em>Referral Program</em>
+      </h1>
+      <p class="amb-hero__sub">A website-based referral initiative for houseofelevara.com. Earn $50 for every person who activates Ambassador status through your unique referral code. Plus future Store commission access when the Elévara Store launches. This program operates independently of The Atelier iOS app and does not affect app features, placement, or functionality.</p>
 
-  <div class="amb-hero__price">$100</div>
-  <div class="amb-hero__price-label">One-time activation · No monthly fees · No expiration</div>
+      <div class="amb-hero__price">$100</div>
+      <div class="amb-hero__price-label">One-time activation · Website only · No app benefits</div>
 
-  <div class="earnings-ticker">
-    <div class="earnings-stat">
-      <div class="earnings-stat__num" data-suffix="">$50</div>
-      <div class="earnings-stat__label">Per Referral</div>
-    </div>
-    <div class="earnings-divider"></div>
-    <div class="earnings-stat">
-      <div class="earnings-stat__num" data-suffix="">50%</div>
-      <div class="earnings-stat__label">Commission Split</div>
-    </div>
-    <div class="earnings-divider"></div>
-    <div class="earnings-stat">
-      <div class="earnings-stat__num" data-suffix="">∞</div>
-      <div class="earnings-stat__label">Earning Potential</div>
-    </div>
-    <div class="earnings-divider"></div>
-    <div class="earnings-stat">
-      <div class="earnings-stat__num" data-suffix="">$0</div>
-      <div class="earnings-stat__label">Monthly Fees</div>
-    </div>
-  </div>
+      <div class="disclaimer-box">
+        <div class="disclaimer-box__title">⚠️ Important — Website Program Only</div>
+        <div class="disclaimer-box__text">
+          The Ambassador Program is a website referral initiative hosted at houseofelevara.com. It does not unlock features in The Atelier app, does not affect app placement or visibility, and does not grant special app access. Ambassadors receive: (1) $50 per referral when someone activates through their code, (2) a profile badge on the website, and (3) future commission eligibility for the Elévara Store when it launches. All app features remain available to every user regardless of Ambassador status.
+        </div>
+      </div>
 
-  <div class="btnRow" style="justify-content:center;flex-direction:row;flex-wrap:wrap;">
-    <a class="btn btn--gold" href="https://buy.stripe.com/5kQfZa9Tt9b322g5gu4sE05" target="_blank" rel="noopener noreferrer">Activate Now — $100</a>
-    <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer"
-       href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call">Schedule a Call First</a>
-    <a class="btn btn--dark" href="mailto:admin@houseofelevara.com?subject=Ambassador%20Program%20Question">Ask a Question</a>
-  </div>
-</div>
+      <div class="earnings-ticker">
+        <div class="earnings-stat">
+          <div class="earnings-stat__num">$50</div>
+          <div class="earnings-stat__label">Per Referral</div>
+        </div>
+        <div class="earnings-divider"></div>
+        <div class="earnings-stat">
+          <div class="earnings-stat__num">∞</div>
+          <div class="earnings-stat__label">Referrals Allowed</div>
+        </div>
+        <div class="earnings-divider"></div>
+        <div class="earnings-stat">
+          <div class="earnings-stat__num">$0</div>
+          <div class="earnings-stat__label">Monthly Fees</div>
+        </div>
+        <div class="earnings-divider"></div>
+        <div class="earnings-stat">
+          <div class="earnings-stat__num">0</div>
+          <div class="earnings-stat__label">App Benefits</div>
+        </div>
+      </div>
 
+      <div class="btnRow" style="justify-content:center;flex-direction:row;flex-wrap:wrap;">
+        <a class="btn btn--gold" href="https://buy.stripe.com/5kQfZa9Tt9b322g5gu4sE05" target="_blank" rel="noopener noreferrer">Activate — $100</a>
+        <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer"
+           href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call">Schedule a Call First</a>
+        <a class="btn btn--dark" href="mailto:admin@houseofelevara.com?subject=Ambassador%20Program%20Question">Ask a Question</a>
+      </div>
+    </div>
   </section>
 
-  <!-- HOW IT WORKS -->
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">What You Get</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
+
+  <section class="container" style="margin-bottom:clamp(48px,8vw,88px);">
+    <div class="grid2">
+      <div class="cardGlow">
+        <h3 class="goldTitle">Referral Earnings</h3>
+        <p class="muted">Earn $50 for every person who activates Ambassador status using your unique referral code. No cap on referrals. Paid automatically when they activate via Stripe.</p>
+      </div>
+      <div class="cardGlow">
+        <h3 class="goldTitle">Website Profile Badge</h3>
+        <p class="muted">Ambassador status displays as a badge on your houseofelevara.com profile. This is a website-only visual indicator and does not affect The Atelier app.</p>
+      </div>
+      <div class="cardGlow">
+        <h3 class="goldTitle">Store Commission Access</h3>
+        <p class="muted">When the Elévara Store launches, Ambassadors will be eligible for product commission programs. Commission structure announced to active Ambassadors first.</p>
+      </div>
+      <div class="cardGlow">
+        <h3 class="goldTitle">Editorial Consideration</h3>
+        <p class="muted">Ambassadors may be considered for editorial features on Elyra Editorial (elyraeditorial.com), our independent fashion and culture publication.</p>
+      </div>
+    </div>
+  </section>
 
   <div class="container">
     <div class="sectionDivider">
@@ -963,335 +285,38 @@
     </div>
   </div>
 
-  <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
-    <h2 class="flow-title">Simple. <em>Automatic. Profitable.</em></h2>
-
-<div class="flow-diagram">
-
-  <div class="flow-node">
-    <div class="flow-node__circle">
-      💳
-      <div class="flow-node__step">1</div>
+  <section class="container" style="margin-bottom:clamp(48px,8vw,88px);">
+    <div class="readyBlock" style="margin-top:0;">
+      <h3>Simple Referral Process</h3>
+      <p>Pay $100 to activate. Receive your unique referral code. Share it. When someone activates through your code, you earn $50. Repeat as many times as you want.</p>
     </div>
-    <div class="flow-node__label">Activate</div>
-    <div class="flow-node__desc">Pay $100 once. Ambassador status is permanent.</div>
-  </div>
-
-  <div class="flow-arrow">→</div>
-
-  <div class="flow-node">
-    <div class="flow-node__circle">
-      🔗
-      <div class="flow-node__step">2</div>
+    <div class="infoGrid" style="margin-top:20px;">
+      <div class="infoCard"><strong>1. Activate</strong>Pay $100 once via Stripe. Ambassador status is permanent.</div>
+      <div class="infoCard"><strong>2. Get Your Code</strong>Receive your unique referral code via email from admin@houseofelevara.com.</div>
+      <div class="infoCard"><strong>3. Share Your Code</strong>Post it. Text it. Story it. Tag it. However you move.</div>
+      <div class="infoCard"><strong>4. They Activate</strong>Someone uses your code to activate their own Ambassador status ($100).</div>
+      <div class="infoCard"><strong>5. You Get Paid</strong>$50 is sent to your bank account automatically via Stripe. Every time.</div>
+      <div class="infoCard"><strong>6. Repeat</strong>No limit on referrals. Your code never expires.</div>
     </div>
-    <div class="flow-node__label">Get Your Link</div>
-    <div class="flow-node__desc">Receive your unique referral code from the House.</div>
-  </div>
-
-  <div class="flow-arrow">→</div>
-
-  <div class="flow-node">
-    <div class="flow-node__circle">
-      📲
-      <div class="flow-node__step">3</div>
-    </div>
-    <div class="flow-node__label">Share It</div>
-    <div class="flow-node__desc">Post it. Text it. Story it. Tag it. However you move.</div>
-  </div>
-
-  <div class="flow-arrow">→</div>
-
-  <div class="flow-node">
-    <div class="flow-node__circle">
-      🏛️
-      <div class="flow-node__step">4</div>
-    </div>
-    <div class="flow-node__label">They Join</div>
-    <div class="flow-node__desc">Someone activates their Ambassador status using your code.</div>
-  </div>
-
-  <div class="flow-arrow">→</div>
-
-  <div class="flow-node">
-    <div class="flow-node__circle">
-      💰
-      <div class="flow-node__step">5</div>
-    </div>
-    <div class="flow-node__label">You Get Paid</div>
-    <div class="flow-node__desc">$50 lands in your account. Automatically. Every time.</div>
-  </div>
-
-</div>
-
   </section>
-
-  <!-- EARNINGS CALCULATOR -->
 
   <div class="container">
     <div class="sectionDivider">
       <div class="sectionDivider__line"></div>
-      <span class="sectionDivider__label">Calculate Your Earnings</span>
-      <div class="sectionDivider__line"></div>
-    </div>
-  </div>
-
-  <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
-    <div class="calc-section">
-      <h2 class="calc-title">How Much Can You Make?</h2>
-      <p class="calc-sub">Drag the slider to see your referral earnings. Remember — you keep doing this forever. No ceiling.</p>
-
-  <div class="calc-slider-wrap">
-    <div class="calc-slider-label">
-      <span>Referrals per month</span>
-      <strong id="refCount">5</strong>
-    </div>
-    <input type="range" class="calc-slider" id="refSlider" min="1" max="50" value="5" oninput="updateCalc(this.value)">
-  </div>
-
-  <div class="calc-results">
-    <div class="calc-result">
-      <span class="calc-result__label">Per Referral</span>
-      <div class="calc-result__value">$50</div>
-      <div class="calc-result__sub">Fixed commission</div>
-    </div>
-    <div class="calc-result">
-      <span class="calc-result__label">Monthly Earnings</span>
-      <div class="calc-result__value" id="monthly">$250</div>
-      <div class="calc-result__sub">From referrals only</div>
-    </div>
-    <div class="calc-result">
-      <span class="calc-result__label">Annual Earnings</span>
-      <div class="calc-result__value" id="annual">$3,000</div>
-      <div class="calc-result__sub">Referrals + growth</div>
-    </div>
-  </div>
-
-  <p style="text-align:center;font-size:10px;color:var(--muted);margin-top:18px;letter-spacing:0.08em;">This is referral income only — does not include Store commissions, booking earnings, or bonuses.</p>
-</div>
-
-  </section>
-
-  <!-- WHO EARNS -->
-
-  <div class="container">
-    <div class="sectionDivider">
-      <div class="sectionDivider__line"></div>
-      <span class="sectionDivider__label">Who This Is For</span>
-      <div class="sectionDivider__line"></div>
-    </div>
-  </div>
-
-  <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
-    <div class="readyBlock" style="margin-top:0;margin-bottom:20px;">
-      <h3>Every Ambassador Earns Multiple Ways</h3>
-      <p>Whether you're a model, a UGC creator, or just someone with a strong network — the Ambassador Program was built to reward the way you already move.</p>
-    </div>
-
-<div class="earner-grid">
-
-  <!-- MODELS -->
-
-  <div class="earner-card">
-    <span class="earner-card__icon">👗</span>
-    <span class="earner-card__type">For Models</span>
-    <h3 class="earner-card__title">Models & Talent</h3>
-    <p class="earner-card__desc">You're already connected to other models, photographers, stylists, and creatives. Every person in your circle who activates their Ambassador status earns you $50 — and you can introduce the entire roster to the program.</p>
-    <div class="earner-earn-row">
-      <div class="earner-earn">
-        <span class="earner-earn__label">Per ambassador referral</span>
-        <span class="earner-earn__amount">$50</span>
-      </div>
-      <div class="earner-earn">
-        <span class="earner-earn__label">10 referrals / month</span>
-        <span class="earner-earn__amount">$500</span>
-      </div>
-      <div class="earner-earn">
-        <span class="earner-earn__label">Store commission (coming)</span>
-        <span class="earner-earn__amount">TBD%</span>
-      </div>
-      <div class="earner-earn">
-        <span class="earner-earn__label">Booking earnings (70%)</span>
-        <span class="earner-earn__amount">Your rate</span>
-      </div>
-    </div>
-    <p style="font-size:11px;color:var(--muted);line-height:1.7;">Stack your referral income on top of your booking income and Store commissions. A model doing 5 bookings a month at $500 each + 10 referrals = over $2,000 from the House alone.</p>
-  </div>
-
-  <!-- UGC CREATORS -->
-
-  <div class="earner-card">
-    <span class="earner-card__icon">📱</span>
-    <span class="earner-card__type">For UGC Creators</span>
-    <h3 class="earner-card__title">Content Creators</h3>
-    <p class="earner-card__desc">You create content for a living — now let that content work for you. Promote your Ambassador link in your videos, stories, and posts. Every creator, brand, or influencer who activates through your link puts $50 in your pocket.</p>
-    <div class="earner-earn-row">
-      <div class="earner-earn">
-        <span class="earner-earn__label">Per ambassador referral</span>
-        <span class="earner-earn__amount">$50</span>
-      </div>
-      <div class="earner-earn">
-        <span class="earner-earn__label">20 referrals / month</span>
-        <span class="earner-earn__amount">$1,000</span>
-      </div>
-      <div class="earner-earn">
-        <span class="earner-earn__label">UGC bookings via The Floor</span>
-        <span class="earner-earn__amount">Your rate</span>
-      </div>
-      <div class="earner-earn">
-        <span class="earner-earn__label">Store product commissions</span>
-        <span class="earner-earn__amount">Coming Soon</span>
-      </div>
-    </div>
-    <p style="font-size:11px;color:var(--muted);line-height:1.7;">UGC creators with even modest followings can generate consistent referral income. Post once, earn every time someone in your audience activates. This is leverage.</p>
-  </div>
-
-</div>
-
-  </section>
-
-  <!-- REFERRAL POWER -->
-
-  <div class="container">
-    <div class="sectionDivider">
-      <div class="sectionDivider__line"></div>
-      <span class="sectionDivider__label">The Referral Opportunity</span>
+      <span class="sectionDivider__label">Final CTA</span>
       <div class="sectionDivider__line"></div>
     </div>
   </div>
 
   <section class="container">
-    <div class="referral-power">
-      <div class="referral-rings">
-        <div class="referral-ring"></div>
-        <div class="referral-ring"></div>
-        <div class="referral-ring"></div>
-        <div class="referral-center">🏛️</div>
-      </div>
-      <h2 class="referral-power__title">The Most <em>Profitable</em> Part</h2>
-      <p class="referral-power__sub">The referral program is not a side feature — it is the most immediately profitable part of the Ambassador Program. Every person you introduce to the House who activates earns you $50, period. There is no ceiling on how many people you can refer.</p>
-
-  <div class="referral-scenarios">
-    <div class="referral-scenario">
-      <div class="referral-scenario__refs">2 Referrals / Month</div>
-      <div class="referral-scenario__earn">$100</div>
-      <div class="referral-scenario__period">Monthly income</div>
-    </div>
-    <div class="referral-scenario">
-      <div class="referral-scenario__refs">10 Referrals / Month</div>
-      <div class="referral-scenario__earn">$500</div>
-      <div class="referral-scenario__period">Monthly income</div>
-    </div>
-    <div class="referral-scenario">
-      <div class="referral-scenario__refs">25 Referrals / Month</div>
-      <div class="referral-scenario__earn">$1,250</div>
-      <div class="referral-scenario__period">Monthly income</div>
-    </div>
-  </div>
-
-  <div class="infoGrid" style="max-width:680px;margin:0 auto;">
-    <div class="infoCard"><strong>Paid Per Confirmation</strong>Every commission is paid when an Ambassador activates — not when they apply. Real money, real transactions.</div>
-    <div class="infoCard"><strong>No Expiration</strong>Your referral link never expires. Someone you referred 6 months ago activating today still pays you $50.</div>
-    <div class="infoCard"><strong>No Cap</strong>There is no limit on how many people you can refer. 2 referrals or 200 — the math stays the same.</div>
-    <div class="infoCard"><strong>Passive by Design</strong>Share once. Earn every time someone in your network acts on it. You don't have to be online for the money to move.</div>
-  </div>
-</div>
-
-  </section>
-
-  <!-- STORE -->
-
-  <div class="container">
-    <div class="sectionDivider">
-      <div class="sectionDivider__line"></div>
-      <span class="sectionDivider__label">The Elévara Store · Coming Soon</span>
-      <div class="sectionDivider__line"></div>
-    </div>
-  </div>
-
-  <section class="container">
-    <div class="store-section">
-      <div>
-        <div class="store-coming-badge">Coming Soon · Early Access for Ambassadors</div>
-        <h2 class="store-section__title">The Elévara <em>Store</em></h2>
-        <p class="store-section__desc">The House of Elévara online store is in development. When it launches, Ambassadors will be the first to earn commission on every product sale they drive — before the program opens to anyone else. Digital products, physical releases, and exclusive brand collections are all planned.</p>
-        <ul class="cleanList" style="margin-bottom:24px;">
-          <li>Ambassadors earn commission on every product sale they generate</li>
-          <li>Top-performing Ambassadors eligible for salaried store roles</li>
-          <li>Early access guaranteed — before public launch</li>
-          <li>Commission structure announced to active Ambassadors first</li>
-          <li>Digital and physical product lines — multiple categories</li>
-        </ul>
-        <div class="btnRow" style="margin-top:0;flex-direction:row;flex-wrap:wrap;">
-          <a class="btn btn--gold" href="https://buy.stripe.com/5kQfZa9Tt9b322g5gu4sE05" target="_blank" rel="noopener noreferrer">Activate Before Launch</a>
-          <a class="btn btn--ghost" href="mailto:admin@houseofelevara.com?subject=Store%20Ambassador%20Inquiry">Ask About the Store</a>
-        </div>
-      </div>
-
-  <div class="store-visual">
-    <div class="store-item">
-      <div class="store-item__left">
-        <div class="store-item__icon">👕</div>
-        <div>
-          <div class="store-item__name">Elévara Merch</div>
-          <div class="store-item__type">Physical · Apparel</div>
-        </div>
-      </div>
-      <div class="store-item__commission">Commission</div>
-    </div>
-    <div class="store-item">
-      <div class="store-item__left">
-        <div class="store-item__icon">📦</div>
-        <div>
-          <div class="store-item__name">Brand Collaborations</div>
-          <div class="store-item__type">Physical · Limited</div>
-        </div>
-      </div>
-      <div class="store-item__commission">Commission</div>
-    </div>
-    <div class="store-item">
-      <div class="store-item__left">
-        <div class="store-item__icon">🎓</div>
-        <div>
-          <div class="store-item__name">Digital Products</div>
-          <div class="store-item__type">Digital · Courses & Guides</div>
-        </div>
-      </div>
-      <div class="store-item__commission">Commission</div>
-    </div>
-    <div class="store-item">
-      <div class="store-item__left">
-        <div class="store-item__icon">✨</div>
-        <div>
-          <div class="store-item__name">Exclusive Drops</div>
-          <div class="store-item__type">Limited · Ambassador First</div>
-        </div>
-      </div>
-      <div class="store-item__commission">Commission</div>
-    </div>
-    <div style="border:1px dashed var(--line);border-radius:var(--radiusLg);padding:14px 18px;text-align:center;">
-      <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);">More Categories Announced Soon</div>
-    </div>
-  </div>
-</div>
-
-  </section>
-
-  <!-- FINAL CTA -->
-
-  <section class="container">
-    <div class="amb-cta">
-      <div class="amb-cta__title">
-        One Investment.<br><em>Unlimited Returns.</em>
-      </div>
-      <p class="amb-cta__sub">$100 activates your Ambassador status permanently. The referral income, the Store commissions, and the booking earnings all stack. This is how you build income that works while you're not.</p>
-      <div class="amb-cta__price">$100</div>
-      <div class="amb-cta__price-note">One-time · No monthly fees · No expiration · Permanent status</div>
-      <div class="btnRow" style="justify-content:center;flex-direction:row;flex-wrap:wrap;">
+    <div class="readyBlock" style="text-align:center;margin-bottom:clamp(48px,8vw,88px);">
+      <h3>Website Referral Program — $100 One-Time</h3>
+      <p>Activate your Ambassador status on houseofelevara.com. Earn $50 per referral. No monthly fees. No app benefits. This is a website-only initiative.</p>
+      <div class="btnRow" style="justify-content:center;margin-top:28px;flex-direction:row;flex-wrap:wrap;">
+        <a class="btn btn--gold" href="https://buy.stripe.com/5kQfZa9Tt9b322g5gu4sE05" target="_blank" rel="noopener noreferrer">Activate Ambassador — $100</a>
         <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer"
-           href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call">Schedule a Call First</a>
-        <a class="btn btn--gold" href="https://buy.stripe.com/5kQfZa9Tt9b322g5gu4sE05" target="_blank" rel="noopener noreferrer">Activate Ambassador Status — $100</a>
+           href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call">Schedule a Call</a>
         <a class="btn btn--dark" href="payments.html">View All Membership Options</a>
-        <a class="btn btn--dark" href="apply.html">Apply as Talent First</a>
       </div>
       <p style="font-size:10px;color:var(--muted);margin-top:20px;letter-spacing:0.08em;">Secure checkout via Stripe · admin@houseofelevara.com</p>
     </div>
@@ -1311,25 +336,6 @@
 </footer>
 
 <script src="assets/app.js?v=101"></script>
-
-<script>
-  function updateCalc(val) {
-    const refs = parseInt(val);
-    document.getElementById('refCount').textContent = refs;
-    const monthly = refs * 50;
-    const annual = monthly * 12;
-    document.getElementById('monthly').textContent = '$' + monthly.toLocaleString();
-    document.getElementById('annual').textContent = '$' + annual.toLocaleString();
-
-    // Update slider fill
-    const slider = document.getElementById('refSlider');
-    const pct = (refs - 1) / (50 - 1) * 100;
-    slider.style.background = `linear-gradient(to right, var(--gold) ${pct}%, var(--line) ${pct}%)`;
-  }
-
-  // Init
-  updateCalc(5);
-</script>
 
 </body>
 </html>
