@@ -392,6 +392,13 @@
       letter-spacing: 0.28em;
       text-transform: uppercase;
       color: var(--gold2);
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.25s;
+    }
+
+    .pc__live:hover {
+      background: rgba(201,169,97,0.22);
     }
 
     .pc__live::before {
@@ -524,6 +531,7 @@
       <a class="nav__link" href="atelier.html">The Atelier</a>
       <a class="nav__link" href="roster.html">Talent</a>
       <a class="nav__link is-active" href="collection.html">Collection</a>
+      <a class="nav__link" href="https://shop.houseofelevara.com" target="_blank" rel="noopener">Shop</a>
       <a class="nav__link" href="payments.html">Membership</a>
       <a class="nav__link" href="team.html">Our Team</a>
       <a class="nav__link" href="contact.html">Contact</a>
@@ -550,6 +558,7 @@
       <a href="atelier.html" class="mobileMenu__link" onclick="GS_closeMenu()">The Atelier</a>
       <a href="roster.html" class="mobileMenu__link" onclick="GS_closeMenu()">Talent</a>
       <a href="collection.html" class="mobileMenu__link" onclick="GS_closeMenu()">Collection</a>
+      <a href="https://shop.houseofelevara.com" class="mobileMenu__link" target="_blank" rel="noopener" onclick="GS_closeMenu()">Shop</a>
       <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Membership</a>
       <a href="team.html" class="mobileMenu__link" onclick="GS_closeMenu()">Our Team</a>
       <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
@@ -639,75 +648,73 @@
 
   <div class="product-grid">
 
-```
-<!-- N°01 — The Parfum, Noir -->
-<div class="pc">
-  <img
-    class="pc__img" loading="lazy"
-    loading="lazy" src="C3111FC3-8A6B-4C4E-89B2-7098FE189F72.png"
-    alt="House of Elévara N°01 — The Parfum, Noir"
-  />
-  <div class="pc__info">
-    <div class="pc__num">N° 01</div>
-    <div class="pc__cat">Fragrance</div>
-    <div class="pc__name">The <em>Parfum,</em> Noir</div>
-    <div class="pc__desc">The signature scent. Dark, precise, and entirely self-possessed. Oud, amber, vanilla, and sandalwood — built for after dark.</div>
-    <div class="pc__price">$58 — $68</div>
-    <div class="pc__live">Arriving First</div>
-  </div>
-</div>
+    <!-- N°01 — The Parfum, Noir -->
+    <div class="pc">
+      <img
+        class="pc__img" loading="lazy"
+        src="C3111FC3-8A6B-4C4E-89B2-7098FE189F72.png"
+        alt="House of Elévara N°01 — The Parfum, Noir"
+      />
+      <div class="pc__info">
+        <div class="pc__num">N° 01</div>
+        <div class="pc__cat">Fragrance</div>
+        <div class="pc__name">The <em>Parfum,</em> Noir</div>
+        <div class="pc__desc">The signature scent. Dark, precise, and entirely self-possessed. Oud, amber, vanilla, and sandalwood — built for after dark.</div>
+        <div class="pc__price">$58 — $68</div>
+        <a class="pc__live" href="https://shop.houseofelevara.com" target="_blank" rel="noopener">Shop Now — Live</a>
+      </div>
+    </div>
 
-<!-- N°04 — The Cardholder -->
-<div class="pc">
-  <img
-    class="pc__img" loading="lazy"
-    loading="lazy" src="56BB386A-8644-422D-97E4-1F59BD0253D1.png"
-    alt="House of Elévara N°04 — The Cardholder"
-  />
-  <div class="pc__info">
-    <div class="pc__num">N° 04</div>
-    <div class="pc__cat">Leather Goods</div>
-    <div class="pc__name">The <em>Cardholder</em></div>
-    <div class="pc__desc">Black calfskin. Four card slots. Gold foil debossed wordmark. The first leather piece in the House — and the one carried every day.</div>
-    <div class="pc__price">$58 — $78</div>
-    <div class="pc__soon">Month 2 — Coming Soon</div>
-  </div>
-</div>
+    <!-- N°04 — The Cardholder -->
+    <div class="pc">
+      <img
+        class="pc__img" loading="lazy"
+        src="56BB386A-8644-422D-97E4-1F59BD0253D1.png"
+        alt="House of Elévara N°04 — The Cardholder"
+      />
+      <div class="pc__info">
+        <div class="pc__num">N° 04</div>
+        <div class="pc__cat">Leather Goods</div>
+        <div class="pc__name">The <em>Cardholder</em></div>
+        <div class="pc__desc">Black calfskin. Four card slots. Gold foil debossed wordmark. The first leather piece in the House — and the one carried every day.</div>
+        <div class="pc__price">$58 — $78</div>
+        <div class="pc__soon">Month 2 — Coming Soon</div>
+      </div>
+    </div>
 
-<!-- N°02 — The Evening -->
-<div class="pc">
-  <img
-    class="pc__img" loading="lazy"
-    loading="lazy" src="7A9751D7-72E6-4559-8810-039AF20781AA.png"
-    alt="House of Elévara N°02 — The Evening"
-  />
-  <div class="pc__info">
-    <div class="pc__num">N° 02</div>
-    <div class="pc__cat">Leather Goods</div>
-    <div class="pc__name">The <em>Evening</em></div>
-    <div class="pc__desc">Smooth calfskin. Gold chain strap. Structured without stiffness. The bag that changes a room before you say a word.</div>
-    <div class="pc__price">$280 — $360</div>
-    <div class="pc__soon">Month 3 — Waitlist Opening</div>
-  </div>
-</div>
+    <!-- N°02 — The Evening -->
+    <div class="pc">
+      <img
+        class="pc__img" loading="lazy"
+        src="7A9751D7-72E6-4559-8810-039AF20781AA.png"
+        alt="House of Elévara N°02 — The Evening"
+      />
+      <div class="pc__info">
+        <div class="pc__num">N° 02</div>
+        <div class="pc__cat">Leather Goods</div>
+        <div class="pc__name">The <em>Evening</em></div>
+        <div class="pc__desc">Smooth calfskin. Gold chain strap. Structured without stiffness. The bag that changes a room before you say a word.</div>
+        <div class="pc__price">$280 — $360</div>
+        <a class="pc__soon" href="https://shop.houseofelevara.com" target="_blank" rel="noopener" style="text-decoration:none;">Month 3 — Join Waitlist</a>
+      </div>
+    </div>
 
-<!-- N°03 — The Tote -->
-<div class="pc">
-  <img
-    class="pc__img" loading="lazy"
-    loading="lazy" src="3AABDEE1-C217-4E0D-A176-F947647BECAA.png"
-    alt="House of Elévara N°03 — The Tote"
-  />
-  <div class="pc__info">
-    <div class="pc__num">N° 03</div>
-    <div class="pc__cat">Leather Goods</div>
-    <div class="pc__name">The <em>Tote</em></div>
-    <div class="pc__desc">Pebbled calfskin. Rolled leather handles. Gold corner reinforcements. Built for everything — work, travel, and everything after.</div>
-    <div class="pc__price">$240 — $320</div>
-    <div class="pc__soon">Month 4 — Coming Soon</div>
-  </div>
-</div>
-```
+    <!-- N°03 — The Tote -->
+    <div class="pc">
+      <img
+        class="pc__img" loading="lazy"
+        src="3AABDEE1-C217-4E0D-A176-F947647BECAA.png"
+        alt="House of Elévara N°03 — The Tote"
+      />
+      <div class="pc__info">
+        <div class="pc__num">N° 03</div>
+        <div class="pc__cat">Leather Goods</div>
+        <div class="pc__name">The <em>Tote</em></div>
+        <div class="pc__desc">Pebbled calfskin. Rolled leather handles. Gold corner reinforcements. Built for everything — work, travel, and everything after.</div>
+        <div class="pc__price">$240 — $320</div>
+        <div class="pc__soon">Month 4 — Coming Soon</div>
+      </div>
+    </div>
 
   </div>
 </div>
@@ -720,51 +727,49 @@
     <div class="container">
       <div class="notify__inner">
 
-```
-<div>
-  <div class="notify__eyebrow">Be First</div>
-  <h2 class="notify__title">
-    Notified at<br><em>Launch.</em>
-  </h2>
-  <p class="notify__body">
-    The collection releases without fanfare — one piece at a time, each one funding the next. Enter your email and you will be among the first to know when N° 01 — The Parfum, Noir drops. And the first to own it.
-  </p>
-</div>
+        <div>
+          <div class="notify__eyebrow">Be First</div>
+          <h2 class="notify__title">
+            Notified at<br><em>Launch.</em>
+          </h2>
+          <p class="notify__body">
+            The collection releases without fanfare — one piece at a time, each one funding the next. Enter your email and you will be among the first to know when N° 01 — The Parfum, Noir drops. And the first to own it.
+          </p>
+        </div>
 
-<div>
-  <div class="notify__form" id="notifyForm">
-    <div>
-      <label class="notify__label" for="notifyName">Your Name</label>
-      <input
-        class="notify__input"
-        type="text"
-        id="notifyName"
-        placeholder="First &amp; Last Name"
-        autocomplete="name"
-      />
-    </div>
-    <div>
-      <label class="notify__label" for="notifyEmail">Email Address</label>
-      <input
-        class="notify__input"
-        type="email"
-        id="notifyEmail"
-        placeholder="your@email.com"
-        autocomplete="email"
-      />
-    </div>
-    <button class="notify__btn" onclick="handleNotify()">
-      Notify Me at Launch
-    </button>
-  </div>
-  <div class="notify__thanks" id="notifyThanks">
-    You're on the list — we'll be in touch.
-  </div>
-</div>
-```
+        <div>
+          <div class="notify__form" id="notifyForm">
+            <div>
+              <label class="notify__label" for="notifyName">Your Name</label>
+              <input
+                class="notify__input"
+                type="text"
+                id="notifyName"
+                placeholder="First &amp; Last Name"
+                autocomplete="name"
+              />
+            </div>
+            <div>
+              <label class="notify__label" for="notifyEmail">Email Address</label>
+              <input
+                class="notify__input"
+                type="email"
+                id="notifyEmail"
+                placeholder="your@email.com"
+                autocomplete="email"
+              />
+            </div>
+            <button class="notify__btn" onclick="handleNotify()">
+              Notify Me at Launch
+            </button>
+          </div>
+          <div class="notify__thanks" id="notifyThanks">
+            You're on the list — we'll be in touch.
+          </div>
+        </div>
 
-  </div>
-</div>
+      </div>
+    </div>
 
   </section>
 
