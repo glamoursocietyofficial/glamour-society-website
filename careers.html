@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Careers | House of Elévara</title>
+  <meta name="description" content="Join the House of Elévara team. Remote-first opportunities for models, creators, talent managers, and business professionals."/>
+  <link rel="icon" type="image/png" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
+  <link rel="apple-touch-icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png">
+  <link rel="stylesheet" href="assets/styles.css"/>
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-title" content="Elévara">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="theme-color" content="#060605">
+  <meta property="og:title" content="Careers | House of Elévara"/>
+  <meta property="og:description" content="We are assembling the right people before the world knows our name. Join the House."/>
+  <meta property="og:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
+  <meta property="og:url" content="https://houseofelevara.com/careers.html"/>
+  <meta property="og:type" content="website"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
+
+  <style>
+
+    /* ── HERO ── */
+    .careers-hero {
+      padding: clamp(80px, 12vw, 130px) 0 clamp(40px, 5vw, 60px);
+      animation: fadeUp 0.7s ease both;
+      position: relative;
+    }
+    .careers-hero::after {
+      content: '';
+      display: block;
+      width: 56px; height: 1px;
+      background: var(--gold);
+      margin-top: 28px;
+      animation: revealLine 0.8s ease 0.3s both;
+    }
+    .careers-hero__eyebrow {
+      font-size: 9px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .careers-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(42px, 6.5vw, 80px);
+      font-weight: 300;
+      line-height: 1.06;
+      margin-bottom: 16px;
+      letter-spacing: 0.01em;
+    }
+    .careers-hero p {
+      color: var(--muted2);
+      max-width: 62ch;
+      line-height: 1.85;
+      font-size: 14px;
+    }
+
+    /* ── WHO SECTION TABS ── */
+    .who-tabs {
+      display: flex;
+      gap: 0;
+      border: 1px solid var(--gold-line);
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .who-tab {
+      flex: 1;
+      min-width: 140px;
+      padding: 14px 20px;
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: transparent;
+      border: none;
+      border-right: 1px solid var(--gold-line);
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: var(--font-body);
+    }
+    .who-tab:last-child { border-right: none; }
+    .who-tab:hover { color: var(--gold2); background: var(--surface); }
+    .who-tab.active {
+      color: var(--black);
+      background: var(--gold);
+      font-weight: 600;
+    }
+    .who-panel { display: none; }
+    .who-panel.active { display: block; animation: fadeUp 0.4s ease both; }
+
+    /* ── ROLE CARD ── */
+    .role-list { display: flex; flex-direction: column; gap: 1px; background: var(--gold-line); border: 1px solid var(--gold-line); margin-top: 24px; }
+    .role-item {
+      background: var(--black2);
+      padding: 24px 28px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: start;
+      transition: background 0.2s;
+    }
+    .role-item:hover { background: var(--black3); }
+    .role-badge {
+      display: inline-block;
+      font-size: 7.5px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .role-badge--gold   { background: linear-gradient(135deg, var(--gold2), var(--gold)); color: var(--black); }
+    .role-badge--ghost  { border: 1px solid var(--gold-line); color: var(--gold2); }
+    .role-badge--perf   { background: var(--surface2); border: 1px solid var(--gold-line); color: var(--gold2); }
+    .role-name {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 6px;
+      letter-spacing: 0.01em;
+    }
+    .role-desc { font-size: 12.5px; color: var(--muted2); line-height: 1.8; max-width: 560px; }
+    .role-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+      min-width: 150px;
+    }
+    .role-location {
+      font-size: 8.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .role-comp {
+      font-size: 11px;
+      color: var(--gold2);
+      letter-spacing: 0.06em;
+    }
+    @media (max-width: 640px) {
+      .role-item { grid-template-columns: 1fr; }
+      .role-meta { align-items: flex-start; }
+    }
+
+    /* ── VALUES GRID ── */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1px;
+      background: var(--gold-line);
+      border: 1px solid var(--gold-line);
+      margin-top: 24px;
+    }
+    .value-item {
+      background: var(--black2);
+      padding: 28px 26px;
+      transition: background 0.2s;
+    }
+    .value-item:hover { background: var(--black3); }
+    .value-icon { font-size: 18px; margin-bottom: 12px; opacity: 0.7; }
+    .value-title {
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold2);
+      margin-bottom: 8px;
+    }
+    .value-desc { font-size: 12.5px; color: var(--muted2); line-height: 1.75; }
+
+    /* ── APPLY PATH ── */
+    .apply-path {
+      border: 1px solid var(--gold-line);
+      background:
+        radial-gradient(ellipse 90% 70% at 8% 0%, rgba(200,169,90,0.07), transparent 52%),
+        var(--surface);
+      padding: clamp(28px, 4vw, 48px);
+      position: relative;
+      overflow: hidden;
+      margin-top: 24px;
+    }
+    .apply-path::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold2), transparent);
+      opacity: 0.55;
+    }
+    .path-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .path-step {
+      position: relative;
+      padding: 20px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+    .path-step__num {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--gold-line);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .path-step__title {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold2);
+      margin-bottom: 6px;
+    }
+    .path-step__desc { font-size: 12px; color: var(--muted2); line-height: 1.75; }
+
+    /* ── MILESTONE BANNER ── */
+    .milestone-banner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--gold-line);
+      border: 1px solid var(--gold-line);
+      margin-top: 24px;
+    }
+    .milestone-half {
+      padding: 36px 32px;
+      text-align: center;
+    }
+    .milestone-half--dark { background: var(--black3); }
+    .milestone-half--gold { background: linear-gradient(135deg, var(--gold), var(--gold2)); }
+    .milestone-num {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 300;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .milestone-half--dark  .milestone-num { color: var(--gold2); }
+    .milestone-half--gold  .milestone-num { color: var(--black); }
+    .milestone-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; }
+    .milestone-half--dark  .milestone-label { color: var(--muted); }
+    .milestone-half--gold  .milestone-label { color: rgba(0,0,0,0.65); }
+    @media (max-width: 600px) { .milestone-banner { grid-template-columns: 1fr; } }
+
+    /* ── OPEN INTEREST CARD ── */
+    .open-interest {
+      border: 1px solid var(--gold-line);
+      background: var(--surface);
+      padding: 28px 28px;
+      margin-top: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .open-interest p { font-size: 12.5px; color: var(--muted2); line-height: 1.8; max-width: 560px; }
+
+  </style>
+</head>
+<body>
+
+<div class="ambient-orbs"></div>
+
+<!-- ── TOPBAR ── -->
+<header class="topbar">
+  <div class="container topbar__inner">
+    <a class="brand" href="index.html" aria-label="House of Elévara Home">
+      <div class="brand__glam3d">ELÉVARA</div>
+      <div class="brand__subwrap">
+        <span class="brand__subMain">House of Elévara LLC</span>
+      </div>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link" href="apply.html">Apply</a>
+      <a class="nav__link" href="atelier.html">The Atelier</a>
+      <a class="nav__link" href="roster.html">Talent</a>
+      <a class="nav__link" href="payments.html">Membership</a>
+      <a class="nav__link" href="team.html">Our Team</a>
+      <a class="nav__link is-active" href="careers.html">Careers</a>
+      <a class="nav__link" href="contact.html">Contact</a>
+    </nav>
+    <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
+  </div>
+</header>
+
+<!-- ── MOBILE MENU ── -->
+<div class="mobileMenu" id="mobileMenu" aria-hidden="true">
+  <button class="mobileMenu__backdrop" id="menuBackdrop" type="button" aria-label="Close menu" onclick="GS_closeMenu()"></button>
+  <div class="mobileMenu__panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <div class="mobileMenu__topRow">
+      <div class="mobileMenu__brand">House of Elévara</div>
+      <button class="mobileMenu__close" id="closeMenu" type="button" aria-label="Close menu" onclick="GS_closeMenu()">✕</button>
+    </div>
+    <button class="mobileMenu__dropdownBtn" id="dropOpener" type="button" aria-expanded="false" onclick="GS_toggleDrop()">
+      Menu <span id="dropChev">▾</span>
+    </button>
+    <div class="mobileMenu__dropdown" id="dropMenu" aria-hidden="true">
+      <a href="index.html"   class="mobileMenu__link" onclick="GS_closeMenu()">Home</a>
+      <a href="apply.html"   class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
+      <a href="atelier.html" class="mobileMenu__link" onclick="GS_closeMenu()">The Atelier</a>
+      <a href="roster.html"  class="mobileMenu__link" onclick="GS_closeMenu()">Talent</a>
+      <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Membership</a>
+      <a href="team.html"    class="mobileMenu__link" onclick="GS_closeMenu()">Our Team</a>
+      <a href="careers.html" class="mobileMenu__link" onclick="GS_closeMenu()">Careers</a>
+      <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
+    </div>
+    <div class="mobileMenu__divider"></div>
+    <a class="mobileMenu__cta" href="apply.html" onclick="GS_closeMenu()">Apply as Talent</a>
+    <a class="mobileMenu__cta ghost" href="mailto:admin@houseofelevara.com" onclick="GS_closeMenu()">Email Us</a>
+  </div>
+</div>
+
+<main>
+
+  <!-- ── HERO ── -->
+  <div class="container">
+    <div class="careers-hero">
+      <a href="index.html" style="display:inline-flex;align-items:center;gap:8px;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-bottom:20px;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">← Back to Home</a>
+      <span class="careers-hero__eyebrow">Join the House · Remote-First · Performance-Driven</span>
+      <h1>We Are Assembling<br>the Right People.</h1>
+      <p>House of Elévara is building something that will generate millions. We are being deliberate about who sits at the table. Whether you are talent, a creator, a manager, or a business professional — if you belong here, you will know it.</p>
+      <div class="btnRow">
+        <a class="btn btn--gold" href="#open-roles">View Open Roles</a>
+        <a class="btn btn--ghost" href="mailto:admin@houseofelevara.com?subject=Career%20Inquiry%20%7C%20House%20of%20El%C3%A9vara">Email Us Directly</a>
+        <a class="btn btn--dark" href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call" target="_blank" rel="noopener noreferrer">Schedule a Call</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DIVIDER ── -->
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">Who We're Looking For</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
+
+  <!-- ── WHO TABS ── -->
+  <div class="container" style="margin-bottom: clamp(40px,6vw,72px);">
+    <div class="who-tabs" id="whoTabs">
+      <button class="who-tab active" data-tab="talent">Models & Talent</button>
+      <button class="who-tab" data-tab="creators">Creators & UGC</button>
+      <button class="who-tab" data-tab="managers">Talent Managers</button>
+      <button class="who-tab" data-tab="business">Business & Operations</button>
+    </div>
+
+    <!-- MODELS & TALENT -->
+    <div class="who-panel active" id="tab-talent">
+      <div class="grid2">
+        <div class="cardGlow">
+          <h3 class="goldTitle">Models & Talent</h3>
+          <p class="muted tiny" style="margin-bottom:18px;line-height:1.8;">House of Elévara is a talent-first agency. We develop the next generation of models and position them for real income, real visibility, and real brand equity. This is not a pay-to-play operation — we are selective by design.</p>
+          <ul class="cleanList">
+            <li>Open to all experience levels — trained and untrained</li>
+            <li>Runway, editorial, commercial, UGC, and digital campaigns</li>
+            <li>Revenue-share model — earn from every booking and referral</li>
+            <li>70% of every Atelier booking paid directly to your bank</li>
+            <li>Editorial credits through Elyra Editorial publication</li>
+            <li>Optional paid membership for priority placement and a dedicated talent manager</li>
+          </ul>
+          <div class="btnRow" style="margin-top:20px;flex-direction:row;flex-wrap:wrap;">
+            <a class="btn btn--gold" style="flex:0 1 auto;width:auto;" href="https://docs.google.com/forms/d/e/1FAIpQLSfLdP8fi5cfD9TIPL1RNPC9X7g_Rr_F125t717deLraWhirxQ/viewform" target="_blank" rel="noopener noreferrer">Apply as Talent</a>
+            <a class="btn btn--ghost" style="flex:0 1 auto;width:auto;" href="payments.html">View Membership Options</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="goldTitle">What We Look For</h3>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div class="infoCard" style="padding:12px 14px;">
+              <strong>Professionalism</strong>You communicate clearly, show up on time, and take the process seriously from the first email.
+            </div>
+            <div class="infoCard" style="padding:12px 14px;">
+              <strong>Coachability</strong>You are open to direction, feedback, and development. Elévara invests in talent that is willing to grow.
+            </div>
+            <div class="infoCard" style="padding:12px 14px;">
+              <strong>Consistency</strong>You show up — in communication, presentation, and follow-through. Every time.
+            </div>
+            <div class="infoCard" style="padding:12px 14px;">
+              <strong>Ambition</strong>You are building something long-term. Not looking for a one-time shoot — building a career.
+            </div>
+            <div class="infoCard" style="padding:12px 14px;">
+              <strong>Presence</strong>You carry yourself with intention. Online and off. The brand is reflected in how you present.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CREATORS & UGC -->
+    <div class="who-panel" id="tab-creators">
+      <div class="grid2">
+        <div class="cardGlow">
+          <h3 class="goldTitle">Creators & UGC Talent</h3>
+          <p class="muted tiny" style="margin-bottom:18px;line-height:1.8;">The creator economy is where brand value gets built in real time. House of Elévara works with UGC creators, influencers, and digital-first talent to produce authentic content that moves product and builds culture.</p>
+          <ul class="cleanList">
+            <li>UGC campaigns for the House's own product line (fragrance, accessories)</li>
+            <li>Brand partnership placements for creators with niche audiences</li>
+            <li>Ambassador program — earn $50 per referral with no ceiling</li>
+            <li>Atelier app bookings — get discovered by brands actively looking</li>
+            <li>Editorial features in Elyra Editorial for portfolio building</li>
+            <li>Affiliate tracking via UpPromote — earn from every sale you drive</li>
+          </ul>
+          <div class="btnRow" style="margin-top:20px;flex-direction:row;flex-wrap:wrap;">
+            <a class="btn btn--gold" style="flex:0 1 auto;width:auto;" href="https://docs.google.com/forms/d/e/1FAIpQLSfLdP8fi5cfD9TIPL1RNPC9X7g_Rr_F125t717deLraWhirxQ/viewform" target="_blank" rel="noopener noreferrer">Apply as Creator</a>
+            <a class="btn btn--ghost" style="flex:0 1 auto;width:auto;" href="ambassador.html">View Ambassador Program</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="goldTitle">Creator Requirements</h3>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div class="infoCard" style="padding:12px 14px;">
+              <strong>Platform Presence</strong>Active on at least one platform — Instagram, TikTok, YouTube, or similar. Any follower count considered.
+            </div>
+            <div class="infoCard" style="padding:12px 14px;">
+              <strong>Content Quality</strong>You produce content that is clean, intentional, and aesthetically consistent. Raw talent is welcome — polish is teachable.
+            </div>
+            <div class="infoCard" style="padding:12px 14px;">
+              <strong>Brand Alignment</strong>Your aesthetic and voice are compatible with a luxury, elevated standard. You understand the difference between content and noise.
+            </div>
+            <div class="infoCard" style="padding:12px 14px;">
+              <strong>Reliability</strong>Deadlines are non-negotiable. When a brand pays for content, it arrives on time and on brief.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TALENT MANAGERS -->
+    <div class="who-panel" id="tab-managers">
+      <div class="grid2">
+        <div class="cardGlow">
+          <h3 class="goldTitle">Talent Managers</h3>
+          <p class="muted tiny" style="margin-bottom:18px;line-height:1.8;">The House is expanding its talent management infrastructure. We are looking for experienced coordinators and managers who understand how to develop talent, manage client relationships, and move opportunities through a pipeline with precision.</p>
+          <ul class="cleanList">
+            <li>Manage a roster of active talent across fashion, UGC, and commercial markets</li>
+            <li>Coordinate bookings, briefs, deliverables, and client communications</li>
+            <li>Work with the admissions pipeline to develop incoming talent</li>
+            <li>Represent the House's standard in every external interaction</li>
+            <li>Remote-first with flexible scheduling</li>
+            <li>Performance-based compensation with growth potential</li>
+          </ul>
+          <div class="btnRow" style="margin-top:20px;flex-direction:row;flex-wrap:wrap;">
+            <a class="btn btn--gold" style="flex:0 1 auto;width:auto;" href="mailto:admin@houseofelevara.com?subject=Talent%20Manager%20Application%20%7C%20House%20of%20El%C3%A9vara">Apply Now</a>
+            <a class="btn btn--ghost" style="flex:0 1 auto;width:auto;" href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call" target="_blank" rel="noopener noreferrer">Schedule a Call</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="goldTitle">Manager Requirements</h3>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div class="infoCard" style="padding:12px 14px;">
+              <strong>Industry Experience</strong>Prior experience in talent management, modeling agencies, entertainment, or related fields strongly preferred.
+            </div>
+            <div class="infoCard" style="padding:12px 14px;">
+              <strong>Relationship Management</strong>You build trust with talent and clients alike. You communicate with discretion, clarity, and professionalism.
+            </div>
+            <div class="infoCard" style="padding:12px 14px;">
+              <strong>Organizational Skills</strong>You manage multiple moving parts simultaneously without dropping the standard. Every booking is documented.
+            </div>
+            <div class="infoCard" style="padding:12px 14px;">
+              <strong>Brand Representation</strong>You understand that every interaction you have carries the weight of the House. You operate accordingly.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUSINESS & OPERATIONS -->
+    <div class="who-panel" id="tab-business">
+      <div class="grid2">
+        <div class="cardGlow">
+          <h3 class="goldTitle">Business & Operations</h3>
+          <p class="muted tiny" style="margin-bottom:18px;line-height:1.8;">Behind every successful brand is a team of operators, strategists, and relationship builders who keep the machine moving. The House is looking for exceptional professionals to join our business and operations team.</p>
+          <ul class="cleanList">
+            <li>Head of Investor Relations — own the full capital strategy</li>
+            <li>Head of Business Development — close deals, earn on performance, path to $100K salary</li>
+            <li>Admissions Director — manage the full talent intake pipeline</li>
+            <li>All roles are remote-first with flexible hours</li>
+            <li>Performance-based compensation with clear growth paths</li>
+            <li>Direct access to the founder and executive leadership</li>
+          </ul>
+          <div class="btnRow" style="margin-top:20px;flex-direction:row;flex-wrap:wrap;">
+            <a class="btn btn--gold" style="flex:0 1 auto;width:auto;" href="#open-roles">View Open Roles</a>
+            <a class="btn btn--ghost" style="flex:0 1 auto;width:auto;" href="mailto:admin@houseofelevara.com?subject=Business%20Operations%20Inquiry%20%7C%20House%20of%20El%C3%A9vara">Email Us</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="goldTitle">What Drives Us</h3>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div class="infoCard" style="padding:12px 14px;">
+              <strong>Results Over Activity</strong>We don't track hours. We track outcomes. Deliver, and you thrive here.
+            </div>
+            <div class="infoCard" style="padding:12px 14px;">
+              <strong>Long-Term Thinking</strong>We are building for decades. Everyone at the table understands they are constructing something that will outlast the moment.
+            </div>
+            <div class="infoCard" style="padding:12px 14px;">
+              <strong>Discretion</strong>We handle investor relationships, talent careers, and brand reputation. Discretion is foundational.
+            </div>
+            <div class="infoCard" style="padding:12px 14px;">
+              <strong>No Ceiling</strong>Performance-based paths ensure the most productive people earn the most. We do not cap ambition.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Milestone banner for BizDev role -->
+      <div class="milestone-banner">
+        <div class="milestone-half milestone-half--dark">
+          <div class="milestone-num">$100,000</div>
+          <div class="milestone-label">Base Salary — Phase 2</div>
+          <p class="tiny muted" style="margin-top:10px;">Head of Business Development salary upon hitting the $500K revenue milestone.</p>
+        </div>
+        <div class="milestone-half milestone-half--gold">
+          <div class="milestone-num">$500K</div>
+          <div class="milestone-label" style="color:rgba(0,0,0,0.6);">Revenue Milestone Trigger</div>
+          <p class="tiny" style="margin-top:10px;color:rgba(0,0,0,0.65);">Salary review activated once your work contributes $500,000 in revenue to the House.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DIVIDER ── -->
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">Open Roles</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
+
+  <!-- ── OPEN ROLES ── -->
+  <div class="container" id="open-roles" style="margin-bottom: clamp(40px,6vw,72px);">
+    <span style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:10px;">Current Opportunities</span>
+    <h2 style="font-family:var(--font-display);font-size:clamp(32px,4.5vw,52px);font-weight:300;color:var(--white);margin-bottom:8px;">Every Role. <em style="font-style:italic;color:var(--gold2);">Remote. Results-Driven.</em></h2>
+    <p class="muted tiny" style="margin-bottom:0;">We are selective. If you see a fit — apply now. Applications are reviewed directly by leadership.</p>
+
+    <div class="role-list">
+
+      <!-- Investor Relations -->
+      <div class="role-item">
+        <div>
+          <span class="role-badge role-badge--gold">Leadership</span>
+          <div class="role-name">Head of Investor Relations</div>
+          <div class="role-desc">Own the House's full investor strategy — institutional and private capital relationships, investor storytelling, and financial reporting. You will architect the IR program that funds the next decade of growth. Principal-level seat at the table.</div>
+        </div>
+        <div class="role-meta">
+          <span class="role-location">Remote · United States</span>
+          <span class="role-comp">Compensation: Negotiable</span>
+          <a class="btn btn--gold btn--sm" href="mailto:admin@houseofelevara.com?subject=Head%20of%20Investor%20Relations%20%E2%80%94%20Application">Apply Now</a>
+        </div>
+      </div>
+
+      <!-- Business Development -->
+      <div class="role-item">
+        <div>
+          <span class="role-badge role-badge--perf">Performance-Based</span>
+          <div class="role-name">Head of Business Development</div>
+          <div class="role-desc">Grow the House from the outside. Secure investor relationships, close strategic brand partnerships, source licensing deals, and bring in wholesale accounts. Commission-only with a defined path to a $100,000 base salary once you drive $500K in revenue. No ceiling on earnings in Phase 1.</div>
+        </div>
+        <div class="role-meta">
+          <span class="role-location">Remote · United States</span>
+          <span class="role-comp">Commission → $100K Base</span>
+          <a class="btn btn--gold btn--sm" href="mailto:admin@houseofelevara.com?subject=Head%20of%20Business%20Development%20%E2%80%94%20Application">Apply Now</a>
+        </div>
+      </div>
+
+      <!-- Admissions Director -->
+      <div class="role-item">
+        <div>
+          <span class="role-badge role-badge--ghost">Operations</span>
+          <div class="role-name">Admissions Director</div>
+          <div class="role-desc">Manage the full talent admissions pipeline — reviewing applications, coordinating interviews, onboarding approved talent, and maintaining the standards that define who carries the Elévara name. You are the first impression for every talent that enters the House.</div>
+        </div>
+        <div class="role-meta">
+          <span class="role-location">Remote · United States</span>
+          <span class="role-comp">Competitive</span>
+          <a class="btn btn--gold btn--sm" href="mailto:admin@houseofelevara.com?subject=Admissions%20Director%20%E2%80%94%20Application">Apply Now</a>
+        </div>
+      </div>
+
+      <!-- Talent Manager -->
+      <div class="role-item">
+        <div>
+          <span class="role-badge role-badge--ghost">Talent</span>
+          <div class="role-name">Talent Manager</div>
+          <div class="role-desc">Manage a roster of active talent — coordinating bookings, client relationships, briefs, and deliverables. You are the bridge between talent and opportunity. You represent the House in every external interaction and hold the standard without exception.</div>
+        </div>
+        <div class="role-meta">
+          <span class="role-location">Remote · United States</span>
+          <span class="role-comp">Performance-Based</span>
+          <a class="btn btn--gold btn--sm" href="mailto:admin@houseofelevara.com?subject=Talent%20Manager%20%E2%80%94%20Application">Apply Now</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Open Interest -->
+    <div class="open-interest">
+      <div>
+        <div class="goldTitle" style="margin-bottom:8px;">Don't See Your Role?</div>
+        <p>We are always open to hearing from exceptional people — in editorial, marketing, photography, styling, or operations. If you believe you belong in this House, introduce yourself. We read every message.</p>
+      </div>
+      <a class="btn btn--ghost" href="mailto:admin@houseofelevara.com?subject=General%20Interest%20%7C%20House%20of%20El%C3%A9vara" style="flex-shrink:0;">Reach Out</a>
+    </div>
+  </div>
+
+  <!-- ── DIVIDER ── -->
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">How to Apply</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
+
+  <!-- ── APPLICATION PATH ── -->
+  <div class="container" style="margin-bottom: clamp(40px,6vw,72px);">
+    <span style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:10px;">The Process</span>
+    <h2 style="font-family:var(--font-display);font-size:clamp(32px,4.5vw,52px);font-weight:300;color:var(--white);margin-bottom:8px;">Simple. <em style="font-style:italic;color:var(--gold2);">Direct. No Confusion.</em></h2>
+    <p class="muted tiny" style="margin-bottom:0;">Since we don't yet use a formal applicant tracking system, every application comes directly to our team. That means your message gets read — not filtered by software.</p>
+
+    <div class="apply-path">
+      <h3 class="goldTitle" style="margin-bottom:6px;">How to Apply Right Now</h3>
+      <p class="muted tiny" style="line-height:1.8;">Click the Apply button on any role above. It will open an email addressed directly to our team with the role pre-filled in the subject line. Send your resume, a brief introduction, and anything relevant to your background. That's it. No portals, no logins, no automated rejections.</p>
+
+      <div class="path-steps">
+        <div class="path-step">
+          <div class="path-step__num">01</div>
+          <div class="path-step__title">Send Your Email</div>
+          <p class="path-step__desc">Click Apply on your role. Send a brief intro, your resume or portfolio, and why you're the right fit for the House.</p>
+        </div>
+        <div class="path-step">
+          <div class="path-step__num">02</div>
+          <div class="path-step__title">Direct Review</div>
+          <p class="path-step__desc">Your application is reviewed directly by leadership — not filtered by software. Every message is read.</p>
+        </div>
+        <div class="path-step">
+          <div class="path-step__num">03</div>
+          <div class="path-step__title">Introductory Call</div>
+          <p class="path-step__desc">If selected, we schedule a call to walk through the role, the vision, and what the opportunity looks like for you specifically.</p>
+        </div>
+        <div class="path-step">
+          <div class="path-step__num">04</div>
+          <div class="path-step__title">Onboard & Build</div>
+          <p class="path-step__desc">Once confirmed, onboarding covers expectations, tools, and how to get the most out of your role within the House.</p>
+        </div>
+      </div>
+
+      <p class="tiny muted" style="margin-top:20px;padding-top:16px;border-top:1px solid var(--line);">
+        Prefer to talk first? <a href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call" target="_blank" rel="noopener noreferrer" style="color:var(--gold2);text-decoration:underline;text-underline-offset:3px;">Schedule a call here</a> — no commitment required.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── VALUES ── -->
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">Culture & Values</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
+
+  <div class="container" style="margin-bottom: clamp(40px,6vw,72px);">
+    <h2 style="font-family:var(--font-display);font-size:clamp(32px,4.5vw,52px);font-weight:300;color:var(--white);margin-bottom:8px;">What the House <em style="font-style:italic;color:var(--gold2);">Stands For.</em></h2>
+    <p class="muted tiny">We operate at the intersection of luxury, talent, and technology. Everyone on this team represents the brand — and the brand represents a standard most organizations never reach.</p>
+    <div class="values-grid">
+      <div class="value-item">
+        <div class="value-icon">◆</div>
+        <div class="value-title">Excellence First</div>
+        <div class="value-desc">We don't do average. Every email, every deliverable, every interaction carries the weight of the brand. Standards are non-negotiable.</div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">◆</div>
+        <div class="value-title">Remote by Design</div>
+        <div class="value-desc">The House operates fully distributed. We hire for output, not presence. Where you work doesn't matter — what you produce does.</div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">◆</div>
+        <div class="value-title">Results Over Activity</div>
+        <div class="value-desc">We don't track hours. We track outcomes. If you deliver, you thrive here. If you need hand-holding, this isn't your seat.</div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">◆</div>
+        <div class="value-title">No Ceiling</div>
+        <div class="value-desc">Performance-based paths ensure the most productive people earn the most. We do not cap ambition — we reward it.</div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">◆</div>
+        <div class="value-title">Long-Term Thinking</div>
+        <div class="value-desc">We are building for decades, not quarters. Everyone at the table understands they are constructing something that will outlast the moment.</div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">◆</div>
+        <div class="value-title">Discretion & Trust</div>
+        <div class="value-desc">We handle investor relationships, talent careers, and brand reputation. Discretion is not optional — it is foundational to everything we do.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── READY BLOCK ── -->
+  <div class="container" style="margin-bottom: clamp(48px,8vw,96px);">
+    <div class="readyBlock" style="text-align:center;padding:clamp(48px,7vw,80px) clamp(24px,5vw,64px);">
+      <p style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">House of Elévara</p>
+      <h2 style="font-family:var(--font-display);font-size:clamp(28px,4vw,48px);font-weight:300;color:var(--white);margin-bottom:12px;">We are building something<br>that will generate <em style="font-style:italic;color:var(--gold2);">millions.</em></h2>
+      <p class="muted" style="font-size:13px;max-width:480px;margin:0 auto 28px;line-height:1.85;">The people who join us now will be the ones who built it. If you are serious about what that means — apply now.</p>
+      <div class="btnRow" style="justify-content:center;">
+        <a class="btn btn--gold" href="#open-roles">View Open Roles</a>
+        <a class="btn btn--ghost" href="mailto:admin@houseofelevara.com?subject=Career%20Inquiry%20%7C%20House%20of%20El%C3%A9vara">Email Us Directly</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div>© 2026 House of Elevara LLC</div>
+  <div class="footer__muted">admin@houseofelevara.com &nbsp;·&nbsp; +1 (307) 289-4953</div>
+  <div class="footer__muted" style="margin-top:6px;">30 N Gould St, Ste N · Sheridan, WY 82801</div>
+  <div class="footer__muted" style="margin-top:6px;">
+    <a href="privacy.html" style="color:var(--gold2);text-decoration:none;">Privacy Policy</a>
+    &nbsp;·&nbsp;
+    <a href="terms.html" style="color:var(--gold2);text-decoration:none;">Terms of Service</a>
+  </div>
+</footer>
+
+<script src="assets/app.js?v=101"></script>
+
+<script>
+  // Tab switching
+  document.addEventListener('DOMContentLoaded', function() {
+    var tabs = document.querySelectorAll('.who-tab');
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        tabs.forEach(function(t) { t.classList.remove('active'); });
+        document.querySelectorAll('.who-panel').forEach(function(p) { p.classList.remove('active'); });
+        tab.classList.add('active');
+        var panel = document.getElementById('tab-' + tab.dataset.tab);
+        if (panel) panel.classList.add('active');
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
