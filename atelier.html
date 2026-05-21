@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <title>The Atelier App | House of Elévara</title>
-  <meta name="description" content="The Atelier by House of Elévara — the professional booking platform for models, creators, athletes, and artists. Set your rate. Get booked. Keep 70%."/>
+  <meta name="description" content="The Atelier by House of Elévara — the professional booking platform for models, creators, athletes, and artists. Set your rate. Get booked. Keep 70%. Now live on the App Store."/>
   <link rel="stylesheet" href="assets/styles.css"/>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
@@ -15,7 +15,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="theme-color" content="#060605">
   <meta property="og:title" content="The Atelier App | House of Elévara"/>
-  <meta property="og:description" content="Free iOS app for creative professionals. Set your rate. Get booked. Keep 70%."/>
+  <meta property="og:description" content="Free iOS app for creative professionals. Set your rate. Get booked. Keep 70%. Now live on the App Store."/>
   <meta property="og:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
   <meta property="og:url" content="https://houseofelevara.com/atelier.html"/>
   <meta property="og:type" content="website"/>
@@ -91,9 +91,11 @@
       text-transform: uppercase;
       color: var(--muted);
     }
-    .coming-soon-banner {
-      background: linear-gradient(135deg, rgba(201,169,97,0.08), rgba(201,169,97,0.04));
-      border: 1px solid rgba(201,169,97,0.25);
+
+    /* ── LIVE DOWNLOAD BANNER ── */
+    .live-banner {
+      background: linear-gradient(135deg, rgba(201,169,97,0.10), rgba(201,169,97,0.05));
+      border: 1px solid rgba(201,169,97,0.35);
       border-radius: 4px;
       padding: clamp(32px,5vw,56px) clamp(24px,4vw,48px);
       text-align: center;
@@ -101,127 +103,128 @@
       overflow: hidden;
       margin-bottom: clamp(40px,6vw,72px);
     }
-    .coming-soon-banner::before {
+    .live-banner::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(201,169,97,0.6), transparent);
+      background: linear-gradient(90deg, transparent, rgba(201,169,97,0.8), transparent);
     }
-    .coming-soon-banner::after {
+    .live-banner::after {
       content: '';
       position: absolute;
       bottom: 0; left: 0; right: 0;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(201,169,97,0.3), transparent);
+      background: linear-gradient(90deg, transparent, rgba(201,169,97,0.4), transparent);
     }
-    .coming-soon-banner__eyebrow {
-      font-size: 8px;
-      letter-spacing: 0.36em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 12px;
-      display: flex;
+    .live-badge {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--gold2), var(--gold));
+      color: var(--black);
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 2px;
+      margin-bottom: 18px;
     }
-    .coming-soon-banner__eyebrow::before,
-    .coming-soon-banner__eyebrow::after {
-      content: '✦';
-      font-size: 6px;
-      opacity: 0.6;
-    }
-    .coming-soon-banner__title {
+    .live-badge::before { content: '✦'; font-size: 7px; }
+    .live-badge::after  { content: '✦'; font-size: 7px; }
+    .live-banner__title {
       font-family: var(--font-display);
-      font-size: clamp(28px, 4vw, 42px);
+      font-size: clamp(28px, 4vw, 44px);
       font-weight: 300;
       color: var(--white);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       letter-spacing: 0.02em;
     }
-    .coming-soon-banner__sub {
+    .live-banner__sub {
       font-size: 14px;
       color: var(--muted2);
       line-height: 1.8;
       max-width: 52ch;
       margin: 0 auto 28px;
     }
-    .coming-soon-banner__badges {
+    .live-banner__badges {
       display: flex;
       justify-content: center;
       gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 28px;
+      margin-bottom: 32px;
     }
-    .coming-soon-badge {
+    .live-stat-badge {
       display: flex;
       align-items: center;
-      gap: 8px;
-      background: rgba(0,0,0,0.4);
-      border: 1px solid rgba(201,169,97,0.2);
+      gap: 10px;
+      background: rgba(0,0,0,0.45);
+      border: 1px solid rgba(201,169,97,0.22);
       border-radius: 2px;
       padding: 10px 18px;
       font-size: 11px;
       color: rgba(245,240,232,0.7);
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
     }
-    .coming-soon-badge__icon {
-      font-size: 18px;
-    }
-    .coming-soon-badge__text strong {
+    .live-stat-badge__icon { font-size: 18px; }
+    .live-stat-badge__text strong {
       display: block;
       font-size: 13px;
       color: var(--white);
       font-weight: 500;
       letter-spacing: 0.02em;
     }
-    .waitlist-form {
+
+    /* App Store Download Button */
+    .appstore-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--white);
+      color: var(--black);
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-family: var(--font-body);
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+      margin-bottom: 14px;
+    }
+    .appstore-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 40px rgba(200,169,90,0.3);
+    }
+    .appstore-btn__icon {
+      font-size: 28px;
+      line-height: 1;
+    }
+    .appstore-btn__text {
       display: flex;
-      gap: 0;
-      max-width: 460px;
-      margin: 0 auto;
-      border: 1px solid rgba(201,169,97,0.3);
-      border-radius: 2px;
-      overflow: hidden;
+      flex-direction: column;
+      align-items: flex-start;
     }
-    .waitlist-form__input {
-      flex: 1;
-      background: rgba(0,0,0,0.6);
-      border: none;
-      outline: none;
-      padding: 14px 18px;
-      font-size: 13px;
-      color: var(--white);
-      font-family: inherit;
-      letter-spacing: 0.02em;
-    }
-    .waitlist-form__input::placeholder {
-      color: rgba(245,240,232,0.35);
-    }
-    .waitlist-form__btn {
-      background: linear-gradient(135deg, #e2c87a, #c8a95a);
-      color: #0A0A0A;
-      border: none;
-      padding: 14px 22px;
+    .appstore-btn__eyebrow {
       font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      cursor: pointer;
-      font-family: inherit;
-      white-space: nowrap;
-      transition: opacity 0.2s;
+      letter-spacing: 0.08em;
+      color: #333;
+      line-height: 1;
+      margin-bottom: 2px;
     }
-    .waitlist-form__btn:hover { opacity: 0.88; }
-    .waitlist-success {
-      display: none;
-      font-size: 13px;
-      color: var(--gold2);
-      letter-spacing: 0.06em;
-      font-style: italic;
-      margin-top: 12px;
+    .appstore-btn__label {
+      font-size: 18px;
+      font-weight: 600;
+      color: #000;
+      letter-spacing: -0.01em;
+      line-height: 1;
     }
+    .live-banner__note {
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      margin-top: 4px;
+    }
+
     .appointment-cta {
       border: 1px solid var(--gold-line);
       border-radius: var(--radiusLg);
@@ -446,17 +449,18 @@
       <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
     </div>
     <div class="mobileMenu__divider"></div>
-    <a class="mobileMenu__cta" href="book.html" onclick="GS_closeMenu()">Request a Booking</a>
+    <a class="mobileMenu__cta" href="https://apps.apple.com/app/id6768399257" target="_blank" rel="noopener noreferrer" onclick="GS_closeMenu()">Download the App</a>
     <a class="mobileMenu__cta ghost" href="mailto:admin@houseofelevara.com" onclick="GS_closeMenu()">Email Us</a>
   </div>
 </div>
 
 <main>
 
+  <!-- ── HERO ── -->
   <section class="container">
     <div class="atelier-hero">
       <a href="index.html" style="display:inline-flex;align-items:center;gap:8px;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-bottom:20px;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">← Back to Home</a>
-      <div class="atelier-hero__eyebrow">Coming Soon to the App Store · iOS</div>
+      <div class="atelier-hero__eyebrow">Now Live on the App Store · iOS · Free</div>
       <h1 class="atelier-hero__title">
         The <em>Atelier</em><br>
         by House of Elévara
@@ -477,73 +481,85 @@
           <span class="atelier-hero__stat-num">∞</span>
           <span class="atelier-hero__stat-label">Booking categories</span>
         </div>
+        <div class="atelier-hero__stat">
+          <span class="atelier-hero__stat-num">5.0</span>
+          <span class="atelier-hero__stat-label">App Store rating</span>
+        </div>
       </div>
       <div class="btnRow">
-        <a class="btn btn--gold" href="apply.html">Apply as Talent</a>
-        <a class="btn btn--ghost" href="book.html">Book Talent</a>
-        <a class="btn btn--dark" target="_blank" rel="noopener noreferrer" href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call">Schedule a Call</a>
+        <a class="btn btn--gold" href="https://apps.apple.com/app/id6768399257" target="_blank" rel="noopener noreferrer">Download on the App Store</a>
+        <a class="btn btn--ghost" href="apply.html">Apply as Talent</a>
+        <a class="btn btn--dark" href="book.html">Book Talent</a>
       </div>
     </div>
   </section>
 
+  <!-- ── FREE APP NOTICE ── -->
   <section class="container">
     <div style="max-width:780px;margin:0 auto 32px;padding:20px 28px;border:1px solid var(--gold-line);border-radius:var(--radiusLg);background:var(--surface2);">
-      <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:600;">⚠️ Important — Free iOS App</div>
+      <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:600;">ℹ️ Free iOS App — Available Now</div>
       <div style="font-size:12.5px;color:var(--muted2);line-height:1.85;">
-        The Atelier is a free iOS app. All features described on this page — The Floor, The Salon, The Ledger, bookings, messaging, and payments — are available to every app user at no cost. Website membership services (houseofelevara.com/payments.html) operate separately and do not unlock app features or affect app functionality.
+        The Atelier is a free iOS app available now on the App Store. All features — The Floor, The Salon, The Ledger, bookings, messaging, and payments — are available to every app user at no cost. Website membership services (houseofelevara.com/payments.html) operate separately and do not unlock app features or affect app functionality.
       </div>
     </div>
   </section>
 
+  <!-- ── LIVE DOWNLOAD BANNER ── -->
   <section class="container">
-    <div class="coming-soon-banner">
-      <div class="coming-soon-banner__eyebrow">Coming Soon to the App Store</div>
-      <h2 class="coming-soon-banner__title">Where Every Creative Gets Booked</h2>
-      <p class="coming-soon-banner__sub">
-        The Atelier is launching on iOS. Be the first to know when it drops — join the waitlist and get early access before we open to the public.
+    <div class="live-banner">
+      <div class="live-badge">Now Live on the App Store</div>
+      <h2 class="live-banner__title">Where Every Creative Gets Booked</h2>
+      <p class="live-banner__sub">
+        The Atelier is live on iOS. Download it now and be among the first members on The Floor — get discovered by brands before the platform scales.
       </p>
-      <div class="coming-soon-banner__badges">
-        <div class="coming-soon-badge">
-          <span class="coming-soon-badge__icon">📱</span>
-          <div class="coming-soon-badge__text">
+      <div class="live-banner__badges">
+        <div class="live-stat-badge">
+          <span class="live-stat-badge__icon">📱</span>
+          <div class="live-stat-badge__text">
             <strong>iOS App</strong>
-            Coming Soon
+            Available Now — Free
           </div>
         </div>
-        <div class="coming-soon-badge">
-          <span class="coming-soon-badge__icon">⚡</span>
-          <div class="coming-soon-badge__text">
+        <div class="live-stat-badge">
+          <span class="live-stat-badge__icon">⚡</span>
+          <div class="live-stat-badge__text">
             <strong>Instant Payouts</strong>
             via Stripe Connect
           </div>
         </div>
-        <div class="coming-soon-badge">
-          <span class="coming-soon-badge__icon">🏛️</span>
-          <div class="coming-soon-badge__text">
+        <div class="live-stat-badge">
+          <span class="live-stat-badge__icon">🏛️</span>
+          <div class="live-stat-badge__text">
             <strong>Free to Join</strong>
-            Talent makes residual income from the House 30%
+            Keep 70% of every booking
+          </div>
+        </div>
+        <div class="live-stat-badge">
+          <span class="live-stat-badge__icon">⭐</span>
+          <div class="live-stat-badge__text">
+            <strong>5.0 Rating</strong>
+            App Store · Rated by Members
           </div>
         </div>
       </div>
-      <div class="waitlist-form" id="waitlistForm">
-        <input
-          class="waitlist-form__input"
-          type="email"
-          id="waitlistEmail"
-          placeholder="Enter your email for early access"
-          autocomplete="email"
-        />
-        <button class="waitlist-form__btn" onclick="submitWaitlist()">Notify Me</button>
-      </div>
-      <p class="waitlist-success" id="waitlistSuccess">✦ You're on the list. We'll notify you at launch.</p>
+
+      <a class="appstore-btn" href="https://apps.apple.com/app/id6768399257" target="_blank" rel="noopener noreferrer">
+        <span class="appstore-btn__icon">🍎</span>
+        <div class="appstore-btn__text">
+          <span class="appstore-btn__eyebrow">Download on the</span>
+          <span class="appstore-btn__label">App Store</span>
+        </div>
+      </a>
+      <p class="live-banner__note">Free · iOS 17.0+ · House of Elévara LLC</p>
     </div>
   </section>
 
+  <!-- ── SCHEDULE CALL ── -->
   <section class="container">
     <div class="appointment-cta">
-      <p style="font-size:9px;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Have Questions Before Launch?</p>
+      <p style="font-size:9px;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Questions About the Platform?</p>
       <h3 style="font-family:var(--font-display);font-size:clamp(22px,3vw,30px);font-weight:300;color:var(--white);margin-bottom:10px;letter-spacing:0.02em;">Schedule a Private Call</h3>
-      <p style="font-size:13.5px;color:var(--muted2);line-height:1.85;max-width:52ch;margin:0 auto 22px;">For brands, agencies, or talent who want to learn more about The Atelier before launch — book a private phone consultation. We will walk you through the platform, pricing, and what to expect.</p>
+      <p style="font-size:13.5px;color:var(--muted2);line-height:1.85;max-width:52ch;margin:0 auto 22px;">For brands, agencies, or talent who want to learn more about The Atelier — book a private phone consultation. We will walk you through the platform, how bookings work, and what to expect.</p>
       <div class="btnRow" style="justify-content:center;">
         <a class="btn btn--gold" target="_blank" rel="noopener noreferrer" href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call">Book an Appointment</a>
         <a class="btn btn--ghost" href="mailto:admin@houseofelevara.com?subject=The%20Atelier%20Inquiry">Email First</a>
@@ -551,6 +567,7 @@
     </div>
   </section>
 
+  <!-- ── HOW IT WORKS ── -->
   <div class="container">
     <div class="sectionDivider">
       <div class="sectionDivider__line"></div>
@@ -563,8 +580,8 @@
     <div class="how-grid">
       <div class="how-step">
         <div class="how-step__num">01</div>
-        <div class="how-step__title">Build Your Profile</div>
-        <p class="how-step__desc">Create your House Member profile in minutes. Upload your portfolio to The Archive, set your services and rates on your Rate Card, and mark your availability on My Calendar.</p>
+        <div class="how-step__title">Download & Build Your Profile</div>
+        <p class="how-step__desc">Download The Atelier free from the App Store. Create your House Member profile in minutes — upload your portfolio to The Archive, set your services and rates on your Rate Card, and mark your availability.</p>
       </div>
       <div class="how-step">
         <div class="how-step__num">02</div>
@@ -589,11 +606,12 @@
       <div class="how-step">
         <div class="how-step__num">06</div>
         <div class="how-step__title">Grow Your Tier & Earnings</div>
-        <p class="how-step__desc">Every booking builds your tier — Rising, Pro, Elite. Higher tiers unlock The Vault wealth tools at Elite.</p>
+        <p class="how-step__desc">Every booking builds your tier — Rising, Pro, Elite. Higher tiers unlock more visibility on The Floor and eventually The Vault wealth tools at Elite.</p>
       </div>
     </div>
   </section>
 
+  <!-- ── TWO SIDES ── -->
   <div class="container">
     <div class="sectionDivider">
       <div class="sectionDivider__line"></div>
@@ -619,7 +637,7 @@
           <li>Earn passive income through referrals</li>
         </ul>
         <div class="btnRow" style="margin-top:24px;">
-          <a class="btn btn--gold" href="apply.html">Apply as a Member</a>
+          <a class="btn btn--gold" href="https://apps.apple.com/app/id6768399257" target="_blank" rel="noopener noreferrer">Download & Join Now</a>
         </div>
       </div>
       <div class="split-panel">
@@ -643,6 +661,7 @@
     </div>
   </section>
 
+  <!-- ── FEATURES ── -->
   <div class="container">
     <div class="sectionDivider">
       <div class="sectionDivider__line"></div>
@@ -686,7 +705,7 @@
       <div class="feature-card">
         <div class="feature-card__name">Growth</div>
         <div class="feature-card__title">Tier System</div>
-        <p class="feature-card__desc">Rising · Pro · Elite. Every booking builds your tier and unlocks new features as you grow.</p>
+        <p class="feature-card__desc">Rising · Pro · Elite. Every booking builds your tier and unlocks new visibility and features as you grow within the House.</p>
       </div>
       <div class="feature-card">
         <div class="feature-card__name">Wealth · Coming Soon</div>
@@ -696,14 +715,15 @@
     </div>
   </section>
 
+  <!-- ── READY BLOCK ── -->
   <section class="container" style="margin-bottom:clamp(48px,8vw,88px);">
     <div class="readyBlock">
       <h3>The House Is Open.</h3>
       <p>
-        Whether you are talent ready to get booked professionally or a brand ready to find the right creator — The Atelier is where it happens. No DMs. No chasing. Just professional bookings with automated payments.
+        Whether you are talent ready to get booked professionally or a brand ready to find the right creative — The Atelier is live and ready. Download it now. No waitlist. No delay.
       </p>
       <div class="btnRow" style="flex-direction:row;flex-wrap:wrap;">
-        <a class="btn btn--gold" href="apply.html" style="flex:0 1 auto;width:auto;">Apply as Talent</a>
+        <a class="btn btn--gold" href="https://apps.apple.com/app/id6768399257" target="_blank" rel="noopener noreferrer" style="flex:0 1 auto;width:auto;">Download on the App Store</a>
         <a class="btn btn--dark" href="book.html" style="flex:0 1 auto;width:auto;">Book Talent</a>
         <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer" href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call" style="flex:0 1 auto;width:auto;">Schedule a Call</a>
         <a class="btn btn--dark" href="contact.html" style="flex:0 1 auto;width:auto;">Contact the House</a>
@@ -725,28 +745,6 @@
 </footer>
 
 <script src="assets/app.js?v=101"></script>
-
-<script>
-  function submitWaitlist() {
-    const email = document.getElementById('waitlistEmail').value.trim();
-    if (!email || !email.includes('@')) {
-      document.getElementById('waitlistEmail').style.borderBottom = '1px solid rgba(200,80,80,0.6)';
-      document.getElementById('waitlistEmail').placeholder = 'Please enter a valid email';
-      return;
-    }
-    document.getElementById('waitlistForm').style.display = 'none';
-    document.getElementById('waitlistSuccess').style.display = 'block';
-  }
-
-  document.addEventListener('DOMContentLoaded', function() {
-    const input = document.getElementById('waitlistEmail');
-    if (input) {
-      input.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter') submitWaitlist();
-      });
-    }
-  });
-</script>
 
 </body>
 </html>
