@@ -260,16 +260,16 @@
     }
     .seen-at__item:hover::before { opacity: 1; }
     .seen-at__item:hover::after { opacity: 1; }
-    .seen-at__logo {
-      width: auto;
-      height: 38px;
-      max-width: 130px;
-      object-fit: contain;
-      object-position: center;
-      filter: brightness(0) invert(1);
-      opacity: 0.65;
-      transition: opacity 0.32s, transform 0.32s;
-    }
+   .seen-at__logo {
+  display: block;
+  width: auto;
+  height: 38px;
+  max-width: 130px;
+  object-fit: contain;
+  object-position: center;
+  opacity: 1;
+  transition: opacity 0.32s, transform 0.32s;
+}
     .seen-at__item:hover .seen-at__logo {
       opacity: 1;
       transform: scale(1.05);
