@@ -163,68 +163,156 @@
 
     /* ── FOUNDATION SECTION ── */
     .foundation-block {
-      border: 1px solid var(--gold-line);
-      border-radius: var(--radiusLg);
-      overflow: hidden;
-      position: relative;
-      background:
-        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200,169,90,0.07), transparent 55%),
-        var(--surface);
+      border: 1px solid var(--gold-line); border-radius: var(--radiusLg);
+      overflow: hidden; position: relative;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200,169,90,0.07), transparent 55%), var(--surface);
     }
-    .foundation-block__top {
-      position: absolute; top: 0; left: 0; right: 0; height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold2), transparent);
-      opacity: 0.55;
-    }
+    .foundation-block__top { position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold2), transparent); opacity: 0.55; }
     .foundation-block__inner { padding: clamp(20px,5vw,56px); }
     .foundation-programs {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1px;
-      background: var(--gold-line);
-      border: 1px solid var(--gold-line);
-      border-radius: var(--radiusLg);
-      overflow: hidden;
-      margin: 24px 0;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1px; background: var(--gold-line); border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg); overflow: hidden; margin: 24px 0;
     }
-    .foundation-program {
-      background: var(--black2);
-      padding: 22px 20px;
-      transition: background 0.2s;
-    }
+    .foundation-program { background: var(--black2); padding: 22px 20px; transition: background 0.2s; }
     .foundation-program:hover { background: var(--black3); }
     .foundation-program__icon { font-size: 20px; margin-bottom: 10px; opacity: 0.8; }
-    .foundation-program__title {
-      font-size: 9px; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--gold2); margin-bottom: 6px;
-    }
+    .foundation-program__title { font-size: 9px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold2); margin-bottom: 6px; }
     .foundation-program__desc { font-size: 12px; color: var(--muted2); line-height: 1.75; }
     .foundation-launch-badge {
       display: inline-flex; align-items: center; gap: 8px;
-      font-size: 7.5px; letter-spacing: 0.26em; text-transform: uppercase;
-      color: var(--gold2); margin-bottom: 14px;
+      font-size: 7.5px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold2); margin-bottom: 14px;
     }
-    .foundation-launch-badge::before {
-      content: ''; width: 6px; height: 6px; border-radius: 50%;
-      background: var(--gold2); animation: goldPulse 2s ease-in-out infinite;
+    .foundation-launch-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold2); animation: goldPulse 2s ease-in-out infinite; }
+
+    /* ── AS SEEN AT ── */
+    .seen-at {
+      padding: clamp(48px,7vw,80px) 0;
+      margin-bottom: clamp(40px,6vw,72px);
+      position: relative;
+      overflow: hidden;
+    }
+    .seen-at::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 100% at 50% 50%, rgba(200,169,90,0.06), transparent 65%);
+      pointer-events: none;
+    }
+    .seen-at::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 10%; right: 10%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-line), transparent);
+    }
+    .seen-at__label {
+      font-size: 8px;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: clamp(28px,4vw,44px);
+      display: block;
+    }
+    .seen-at__track {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .seen-at__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: clamp(24px,3vw,36px) clamp(24px,3vw,40px);
+      border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg);
+      background: var(--surface);
+      transition: all 0.32s cubic-bezier(0.16,1,0.3,1);
+      text-decoration: none;
+      min-width: 170px;
+      position: relative;
+      overflow: hidden;
+    }
+    .seen-at__item::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold2), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .seen-at__item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 80% at 50% 0%, rgba(200,169,90,0.08), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.32s;
+      pointer-events: none;
+    }
+    .seen-at__item:hover {
+      border-color: rgba(200,169,90,0.5);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(200,169,90,0.12);
+    }
+    .seen-at__item:hover::before { opacity: 1; }
+    .seen-at__item:hover::after { opacity: 1; }
+    .seen-at__logo {
+      width: auto;
+      height: 38px;
+      max-width: 130px;
+      object-fit: contain;
+      object-position: center;
+      filter: brightness(0) invert(1);
+      opacity: 0.65;
+      transition: opacity 0.32s, transform 0.32s;
+    }
+    .seen-at__item:hover .seen-at__logo {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    .seen-at__item-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .seen-at__item-name {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.08em;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .seen-at__item-role {
+      font-size: 7.5px;
+      color: var(--gold);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .seen-at__cta {
+      text-align: center;
+      margin-top: clamp(28px,4vw,44px);
+      position: relative;
+    }
+    .seen-at__cta::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--gold-line);
+      margin: 0 auto 20px;
     }
 
-    @media (max-width: 768px) {
-      .roster-preview { max-width: 100%; }
-      .two-col { grid-template-columns: 1fr; }
-      .ambassador-header { display: flex !important; flex-direction: column !important; gap: 16px !important; }
-      .three-col-earn { grid-template-columns: 1fr; }
-      .earn-cell--mid { border-left: none; border-right: none; border-top: 1px solid var(--gold-line); border-bottom: 1px solid var(--gold-line); }
-      .flow-arrow { display: none; }
-      .collection-pieces { grid-template-columns: repeat(2,1fr); }
-      .shop-pieces { grid-template-columns: repeat(2,1fr); }
-      .foundation-programs { grid-template-columns: repeat(2,1fr); }
-    }
-    @media (max-width: 480px) {
-      .flow-node__circle { width: 48px; height: 48px; font-size: 17px; }
-      .flow-node { min-width: 52px; padding: 6px 6px; }
-      .foundation-programs { grid-template-columns: 1fr; }
+    @media (max-width: 640px) {
+      .seen-at__item { min-width: 140px; padding: 20px 16px; gap: 12px; }
+      .seen-at__logo { height: 28px; max-width: 100px; }
+      .seen-at__item-name { font-size: 10px; }
     }
   </style>
 
@@ -324,6 +412,46 @@
       </div>
     </div>
   </section>
+
+  <!-- ── AS SEEN AT ── -->
+  <div class="container">
+    <div class="seen-at">
+      <span class="seen-at__label">Our Leadership Team Has Worked With</span>
+      <div class="seen-at__track">
+        <a class="seen-at__item" href="https://www.pg.com" target="_blank" rel="noopener noreferrer">
+          <img src="pg.png" alt="Procter & Gamble" class="seen-at__logo"/>
+          <div class="seen-at__item-info">
+            <span class="seen-at__item-name">Procter & Gamble</span>
+            <span class="seen-at__item-role">Fortune 100</span>
+          </div>
+        </a>
+        <a class="seen-at__item" href="https://www.livenationentertainment.com" target="_blank" rel="noopener noreferrer">
+          <img src="livenation.png" alt="Live Nation" class="seen-at__logo"/>
+          <div class="seen-at__item-info">
+            <span class="seen-at__item-name">Live Nation</span>
+            <span class="seen-at__item-role">Entertainment</span>
+          </div>
+        </a>
+        <a class="seen-at__item" href="https://www.fifa.com" target="_blank" rel="noopener noreferrer">
+          <img src="yychtb4v.png" alt="FIFA" class="seen-at__logo"/>
+          <div class="seen-at__item-info">
+            <span class="seen-at__item-name">FIFA</span>
+            <span class="seen-at__item-role">Global Sports</span>
+          </div>
+        </a>
+        <a class="seen-at__item" href="https://reap.mit.edu" target="_blank" rel="noopener noreferrer">
+          <img src="Square-shaped-logo.png" alt="MIT REAP" class="seen-at__logo"/>
+          <div class="seen-at__item-info">
+            <span class="seen-at__item-name">MIT</span>
+            <span class="seen-at__item-role">REAP Program</span>
+          </div>
+        </a>
+      </div>
+      <div class="seen-at__cta">
+        <a href="team.html" style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">Meet the Full Leadership Team →</a>
+      </div>
+    </div>
+  </div>
 
   <!-- SHOP -->
   <div class="container">
@@ -548,7 +676,7 @@
     </div>
   </section>
 
-  <!-- ── ELÉVARA FOUNDATION ── -->
+  <!-- ELÉVARA FOUNDATION -->
   <div class="container">
     <div class="sectionDivider">
       <div class="sectionDivider__line"></div>
@@ -564,46 +692,19 @@
         <p style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Community · Grants · Creative Empowerment</p>
         <h3 style="font-family:var(--font-display);font-size:clamp(26px,5vw,56px);font-weight:300;color:var(--white);margin-bottom:16px;line-height:1.05;">The Elévara <em style="font-style:italic;color:var(--gold2);">Foundation</em></h3>
         <p style="font-size:13.5px;color:var(--muted2);line-height:1.85;margin-bottom:28px;">The Elévara Foundation is the nonprofit arm of the House — a 501(c)(3) organization dedicated to removing financial barriers for emerging creative talent. We believe the next generation of models, artists, and creators shouldn't be held back by access to capital, equipment, or mentorship. The Foundation exists to change that.</p>
-
         <div class="foundation-programs">
-          <div class="foundation-program">
-            <div class="foundation-program__icon">🎨</div>
-            <div class="foundation-program__title">Portfolio Grants</div>
-            <div class="foundation-program__desc">Funding for emerging talent to build professional portfolios — photography, design, and creative production costs covered.</div>
-          </div>
-          <div class="foundation-program">
-            <div class="foundation-program__icon">💼</div>
-            <div class="foundation-program__title">Business Capital</div>
-            <div class="foundation-program__desc">Seed capital for creatives launching independent brands, studios, or agencies within the fashion and entertainment space.</div>
-          </div>
-          <div class="foundation-program">
-            <div class="foundation-program__icon">🎤</div>
-            <div class="foundation-program__title">Equipment Access</div>
-            <div class="foundation-program__desc">Grants for cameras, lighting, audio, and production equipment — giving emerging talent the tools professionals already have.</div>
-          </div>
-          <div class="foundation-program">
-            <div class="foundation-program__icon">🏛️</div>
-            <div class="foundation-program__title">Mentorship Program</div>
-            <div class="foundation-program__desc">Direct access to established industry professionals for guidance on career development, brand building, and business strategy.</div>
-          </div>
-          <div class="foundation-program">
-            <div class="foundation-program__icon">📚</div>
-            <div class="foundation-program__title">Education & Workshops</div>
-            <div class="foundation-program__desc">Free and subsidized workshops on industry business knowledge — contracts, rates, rights, and how to build a sustainable creative career.</div>
-          </div>
-          <div class="foundation-program">
-            <div class="foundation-program__icon">🤝</div>
-            <div class="foundation-program__title">Community Support</div>
-            <div class="foundation-program__desc">Building a network of creatives who support each other — connecting emerging talent with working professionals and real opportunities.</div>
-          </div>
+          <div class="foundation-program"><div class="foundation-program__icon">🎨</div><div class="foundation-program__title">Portfolio Grants</div><div class="foundation-program__desc">Funding for emerging talent to build professional portfolios — photography, design, and creative production costs covered.</div></div>
+          <div class="foundation-program"><div class="foundation-program__icon">💼</div><div class="foundation-program__title">Business Capital</div><div class="foundation-program__desc">Seed capital for creatives launching independent brands, studios, or agencies within the fashion and entertainment space.</div></div>
+          <div class="foundation-program"><div class="foundation-program__icon">🎤</div><div class="foundation-program__title">Equipment Access</div><div class="foundation-program__desc">Grants for cameras, lighting, audio, and production equipment — giving emerging talent the tools professionals already have.</div></div>
+          <div class="foundation-program"><div class="foundation-program__icon">🏛️</div><div class="foundation-program__title">Mentorship Program</div><div class="foundation-program__desc">Direct access to established industry professionals for guidance on career development, brand building, and business strategy.</div></div>
+          <div class="foundation-program"><div class="foundation-program__icon">📚</div><div class="foundation-program__title">Education & Workshops</div><div class="foundation-program__desc">Free and subsidized workshops on industry business knowledge — contracts, rates, rights, and how to build a sustainable creative career.</div></div>
+          <div class="foundation-program"><div class="foundation-program__icon">🤝</div><div class="foundation-program__title">Community Support</div><div class="foundation-program__desc">Building a network of creatives who support each other — connecting emerging talent with working professionals and real opportunities.</div></div>
         </div>
-
         <div style="border:1px solid var(--gold-line);border-radius:var(--radiusLg);background:radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200,169,90,0.07), transparent 55%), var(--surface2);padding:clamp(18px,4vw,32px);margin-bottom:24px;text-align:center;position:relative;overflow:hidden;">
           <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);opacity:0.5;pointer-events:none;"></div>
           <div style="font-family:var(--font-display);font-size:clamp(22px,3vw,36px);font-weight:300;color:var(--gold2);margin-bottom:8px;">100% to Programs</div>
           <p style="font-size:12.5px;color:var(--muted2);line-height:1.8;max-width:52ch;margin:0 auto;">Every dollar donated to the Elévara Foundation goes directly to programs and recipients — not overhead. EIN pending. Launching June 2026.</p>
         </div>
-
         <div class="btnRow" style="flex-direction:row;flex-wrap:wrap;">
           <a class="btn btn--gold" href="https://elevarafoundation.org" target="_blank" rel="noopener noreferrer" style="flex:0 1 auto;width:auto;">Visit the Foundation</a>
           <a class="btn btn--ghost" href="https://elevarafoundation.org" target="_blank" rel="noopener noreferrer" style="flex:0 1 auto;width:auto;">Support the Mission</a>
@@ -636,30 +737,15 @@
           </div>
         </div>
         <div class="ambassador-flow">
-          <div class="flow-node">
-            <div class="flow-node__circle">💳</div>
-            <div class="flow-node__label">Activate<br>$100</div>
-          </div>
+          <div class="flow-node"><div class="flow-node__circle">💳</div><div class="flow-node__label">Activate<br>$100</div></div>
           <div class="flow-arrow">→</div>
-          <div class="flow-node">
-            <div class="flow-node__circle">🔗</div>
-            <div class="flow-node__label">Get Your<br>Link</div>
-          </div>
+          <div class="flow-node"><div class="flow-node__circle">🔗</div><div class="flow-node__label">Get Your<br>Link</div></div>
           <div class="flow-arrow">→</div>
-          <div class="flow-node">
-            <div class="flow-node__circle">📲</div>
-            <div class="flow-node__label">Share<br>It</div>
-          </div>
+          <div class="flow-node"><div class="flow-node__circle">📲</div><div class="flow-node__label">Share<br>It</div></div>
           <div class="flow-arrow">→</div>
-          <div class="flow-node">
-            <div class="flow-node__circle">🏛️</div>
-            <div class="flow-node__label">They<br>Join</div>
-          </div>
+          <div class="flow-node"><div class="flow-node__circle">🏛️</div><div class="flow-node__label">They<br>Join</div></div>
           <div class="flow-arrow">→</div>
-          <div class="flow-node">
-            <div class="flow-node__circle" style="border-color:var(--gold);background:radial-gradient(ellipse 80% 80% at 30% 20%, rgba(200,169,90,0.22), transparent 60%), var(--surface2);">💰</div>
-            <div class="flow-node__label">You Get<br>$50</div>
-          </div>
+          <div class="flow-node"><div class="flow-node__circle" style="border-color:var(--gold);background:radial-gradient(ellipse 80% 80% at 30% 20%, rgba(200,169,90,0.22), transparent 60%), var(--surface2);">💰</div><div class="flow-node__label">You Get<br>$50</div></div>
         </div>
         <div class="three-col-earn">
           <div class="earn-cell">
@@ -753,50 +839,17 @@
       <p>Quick answers for talent and clients.</p>
     </div>
     <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px;">
-      <details class="infoCard">
-        <summary><strong>How do I apply?</strong></summary>
-        <p>Apply through the <a href="apply.html">Apply</a> page. If selected, we schedule an interview and share onboarding next steps.</p>
-      </details>
-      <details class="infoCard">
-        <summary><strong>How do bookings work?</strong></summary>
-        <p>Use <a href="book.html">Request a Booking</a> or email us directly. We confirm availability, details, and expectations with full documentation.</p>
-      </details>
-      <details class="infoCard">
-        <summary><strong>Do you offer brand partnerships and campaigns?</strong></summary>
-        <p>Yes. We coordinate brand campaigns and placements with a structured process and clearly defined deliverables for both parties.</p>
-      </details>
-      <details class="infoCard">
-        <summary><strong>What is Elyra Editorial?</strong></summary>
-        <p>Elyra Editorial is our connected media and editorial presence. Visit <a href="https://www.elyraeditorial.com" target="_blank" rel="noopener noreferrer">elyraeditorial.com</a>.</p>
-      </details>
-      <details class="infoCard">
-        <summary><strong>What is the Elévara Foundation?</strong></summary>
-        <p>The Elévara Foundation is our 501(c)(3) nonprofit launching June 2026 — dedicated to removing financial barriers for emerging creative talent through grants, capital, equipment, and mentorship. Visit <a href="https://elevarafoundation.org" target="_blank" rel="noopener noreferrer">elevarafoundation.org</a>.</p>
-      </details>
-      <details class="infoCard">
-        <summary><strong>Is joining free?</strong></summary>
-        <p>Yes. The roster is free to join. Optional paid membership tiers are available. <a href="payments.html">View membership options.</a></p>
-      </details>
-      <details class="infoCard">
-        <summary><strong>What is The Atelier app?</strong></summary>
-        <p>The Atelier is our free iOS booking platform — now live on the App Store. Set your rate, get discovered, and keep 70% of every booking. <a href="https://apps.apple.com/app/id6768399257" target="_blank" rel="noopener noreferrer">Download it here.</a></p>
-      </details>
-      <details class="infoCard">
-        <summary><strong>What is the Collection?</strong></summary>
-        <p>The inaugural House of Elévara collection — four pieces releasing in sequence. Fragrance and leather goods designed with intention. <a href="collection.html">View the collection.</a></p>
-      </details>
-      <details class="infoCard">
-        <summary><strong>Can I view and book specific models?</strong></summary>
-        <p>Yes. Visit our <a href="roster.html">Talent Roster</a> to browse active models and submit a booking inquiry from each profile.</p>
-      </details>
-      <details class="infoCard">
-        <summary><strong>Can I schedule a private call before purchasing?</strong></summary>
-        <p>Yes. We strongly recommend scheduling an appointment before any membership, ambassador activation, or collection purchase. <a href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call" target="_blank" rel="noopener noreferrer">Book a call here.</a></p>
-      </details>
-      <details class="infoCard">
-        <summary><strong>Are you hiring?</strong></summary>
-        <p>Yes. We are actively building our team. View open roles for models, creators, talent managers, and business professionals on our <a href="careers.html">Careers page.</a></p>
-      </details>
+      <details class="infoCard"><summary><strong>How do I apply?</strong></summary><p>Apply through the <a href="apply.html">Apply</a> page. If selected, we schedule an interview and share onboarding next steps.</p></details>
+      <details class="infoCard"><summary><strong>How do bookings work?</strong></summary><p>Use <a href="book.html">Request a Booking</a> or email us directly. We confirm availability, details, and expectations with full documentation.</p></details>
+      <details class="infoCard"><summary><strong>Do you offer brand partnerships and campaigns?</strong></summary><p>Yes. We coordinate brand campaigns and placements with a structured process and clearly defined deliverables for both parties.</p></details>
+      <details class="infoCard"><summary><strong>What is Elyra Editorial?</strong></summary><p>Elyra Editorial is our connected media and editorial presence. Visit <a href="https://www.elyraeditorial.com" target="_blank" rel="noopener noreferrer">elyraeditorial.com</a>.</p></details>
+      <details class="infoCard"><summary><strong>What is the Elévara Foundation?</strong></summary><p>The Elévara Foundation is our 501(c)(3) nonprofit launching June 2026. Visit <a href="https://elevarafoundation.org" target="_blank" rel="noopener noreferrer">elevarafoundation.org</a>.</p></details>
+      <details class="infoCard"><summary><strong>Is joining free?</strong></summary><p>Yes. The roster is free to join. Optional paid membership tiers are available. <a href="payments.html">View membership options.</a></p></details>
+      <details class="infoCard"><summary><strong>What is The Atelier app?</strong></summary><p>The Atelier is our free iOS booking platform — now live on the App Store. <a href="https://apps.apple.com/app/id6768399257" target="_blank" rel="noopener noreferrer">Download it here.</a></p></details>
+      <details class="infoCard"><summary><strong>What is the Collection?</strong></summary><p>The inaugural House of Elévara collection — four pieces releasing in sequence. <a href="collection.html">View the collection.</a></p></details>
+      <details class="infoCard"><summary><strong>Can I view and book specific models?</strong></summary><p>Yes. Visit our <a href="roster.html">Talent Roster</a> to browse active models and submit a booking inquiry from each profile.</p></details>
+      <details class="infoCard"><summary><strong>Can I schedule a private call before purchasing?</strong></summary><p>Yes. <a href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call" target="_blank" rel="noopener noreferrer">Book a call here.</a></p></details>
+      <details class="infoCard"><summary><strong>Are you hiring?</strong></summary><p>Yes. View open roles on our <a href="careers.html">Careers page.</a></p></details>
     </div>
   </section>
 
