@@ -1,0 +1,680 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Vorane | House of Élévara</title>
+  <meta name="description" content="A Vorane is not a face we hired. She is the figure the room turns toward — before she enters. Apply to Vorane, a house of Élévara."/>
+  <link rel="icon" type="image/png" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
+  <link rel="shortcut icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
+  <link rel="apple-touch-icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png">
+  <link rel="stylesheet" href="assets/styles.css"/>
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-title" content="Elévara">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="theme-color" content="#060605">
+  <meta property="og:title" content="Vorane | House of Élévara"/>
+  <meta property="og:description" content="A Vorane is not a face we hired. She is the figure the room turns toward — before she enters."/>
+  <meta property="og:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
+  <meta property="og:url" content="https://houseofelevara.com/vorane.html"/>
+  <meta property="og:type" content="website"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
+
+  <style>
+    .vorane-hero {
+      padding: clamp(56px, 8vw, 96px) 0 clamp(32px, 4vw, 48px);
+      animation: fadeUp 0.7s ease both;
+      position: relative;
+    }
+    .vorane-hero::after {
+      content: '';
+      display: block;
+      width: 56px; height: 1px;
+      background: var(--gold);
+      margin-top: 28px;
+      animation: revealLine 0.8s ease 0.3s both;
+    }
+    .vorane-hero__eyebrow {
+      font-size: 9px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .vorane-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(42px, 6.5vw, 76px);
+      font-weight: 300;
+      line-height: 1.06;
+      margin-bottom: 16px;
+      letter-spacing: 0.01em;
+    }
+    .vorane-hero p {
+      color: var(--muted2);
+      max-width: 64ch;
+      line-height: 1.85;
+      font-size: 14px;
+    }
+
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--gold-line);
+      border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg);
+      overflow: hidden;
+      margin: 20px 0;
+    }
+    .pillar-cell {
+      background: var(--black2);
+      padding: 22px 20px;
+      transition: background 0.22s ease;
+    }
+    .pillar-cell:hover { background: var(--black3); }
+    .pillar-cell--mid {
+      background: radial-gradient(ellipse 100% 80% at 50% 0%, rgba(200,169,90,0.10), transparent 60%), var(--surface2);
+      border-left: 1px solid var(--gold-line);
+      border-right: 1px solid var(--gold-line);
+    }
+    .pillar-cell__label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold2);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .pillar-cell p { font-size: 12.5px; color: var(--muted2); line-height: 1.75; }
+
+    .who-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 12px;
+    }
+    .who-row {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .who-row:last-child { border-bottom: none; }
+    .who-row__marker {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 300;
+      color: var(--gold-line);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 32px;
+    }
+    .who-row__title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold2);
+      margin-bottom: 5px;
+    }
+    .who-row p { font-size: 12.5px; color: var(--muted2); line-height: 1.75; }
+
+    .track-block {
+      border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg);
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200,169,90,0.09), transparent 55%), var(--surface);
+      padding: clamp(20px, 4vw, 40px);
+      position: relative;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+    .track-block::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold2), transparent);
+      opacity: 0.55;
+    }
+    .track-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 7.5px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold2);
+      margin-bottom: 14px;
+    }
+    .track-label::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold2);
+      animation: goldPulse 2s ease-in-out infinite;
+    }
+
+    .q-block { margin-bottom: 28px; }
+    .q-block:last-of-type { margin-bottom: 0; }
+    .q-num {
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .q-text {
+      font-family: var(--font-display);
+      font-size: clamp(18px, 2.5vw, 24px);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--white);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .q-note {
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .q-input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--gold-line);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.7;
+      padding: 10px 0;
+      outline: none;
+      transition: border-color 0.3s ease;
+      resize: none;
+      -webkit-appearance: none;
+      border-radius: 0;
+    }
+    .q-input:focus { border-bottom-color: var(--gold); }
+    .q-input::placeholder { color: rgba(245,240,232,0.2); font-style: italic; }
+    .q-wordcount {
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      text-align: right;
+      margin-top: 6px;
+      display: block;
+      min-height: 14px;
+    }
+
+    .photo-upload-zone {
+      border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg);
+      padding: 3rem 2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.3s ease, background 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      background: var(--surface);
+    }
+    .photo-upload-zone:hover { border-color: rgba(200,169,90,0.5); background: var(--surface2); }
+    .photo-upload-zone input[type="file"] {
+      position: absolute; inset: 0;
+      opacity: 0; cursor: pointer;
+      width: 100%; height: 100%;
+    }
+    .photo-upload-zone__label {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-style: italic;
+      color: var(--muted2);
+      display: block;
+      margin-bottom: 6px;
+      pointer-events: none;
+    }
+    .photo-upload-zone__sub {
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      pointer-events: none;
+    }
+    .photo-preview { display: none; margin-top: 14px; }
+    .photo-preview img { max-width: 180px; max-height: 180px; object-fit: cover; border-radius: var(--radiusLg); border: 1px solid var(--gold-line); }
+
+    .field-label {
+      font-size: 9px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .field-error {
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      color: #c0654a;
+      margin-top: 6px;
+      display: none;
+    }
+    .field-error.show { display: block; }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 28px;
+    }
+
+    .success-state { display: none; }
+    .success-state.show { display: block; }
+
+    @media (max-width: 768px) {
+      .pillar-grid { grid-template-columns: 1fr; }
+      .contact-row { grid-template-columns: 1fr; }
+    }
+  </style>
+
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container topbar__inner">
+    <a class="brand" href="index.html" aria-label="House of Elévara Home">
+      <div class="brand__glam3d">ELÉVARA</div>
+      <div class="brand__subwrap">
+        <span class="brand__subMain">House of Elévara LLC</span>
+      </div>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link" href="apply.html">Apply</a>
+      <a class="nav__link" href="atelier.html">The Atelier</a>
+      <a class="nav__link" href="roster.html">Talent</a>
+      <a class="nav__link is-active" href="vorane.html">Vorane</a>
+      <a class="nav__link" href="collection.html">Collection</a>
+      <a class="nav__link" href="https://shop.houseofelevara.com" target="_blank" rel="noopener">Shop</a>
+      <a class="nav__link" href="payments.html">Membership</a>
+      <a class="nav__link" href="ambassador.html">Ambassador</a>
+      <a class="nav__link" href="team.html">Our Team</a>
+      <a class="nav__link" href="contact.html">Contact</a>
+    </nav>
+    <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
+  </div>
+</header>
+
+<div class="mobileMenu" id="mobileMenu" aria-hidden="true">
+  <button class="mobileMenu__backdrop" id="menuBackdrop" type="button" aria-label="Close menu" onclick="GS_closeMenu()"></button>
+  <div class="mobileMenu__panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <div class="mobileMenu__topRow">
+      <div class="mobileMenu__brand">House of Elévara</div>
+      <button class="mobileMenu__close" id="closeMenu" type="button" aria-label="Close menu" onclick="GS_closeMenu()">✕</button>
+    </div>
+    <button class="mobileMenu__dropdownBtn" id="dropOpener" type="button" aria-expanded="false" onclick="GS_toggleDrop()">
+      Menu <span id="dropChev">▾</span>
+    </button>
+    <div class="mobileMenu__dropdown" id="dropMenu" aria-hidden="true">
+      <a href="index.html" class="mobileMenu__link" onclick="GS_closeMenu()">Home</a>
+      <a href="apply.html" class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
+      <a href="atelier.html" class="mobileMenu__link" onclick="GS_closeMenu()">The Atelier</a>
+      <a href="roster.html" class="mobileMenu__link" onclick="GS_closeMenu()">Talent</a>
+      <a href="vorane.html" class="mobileMenu__link" onclick="GS_closeMenu()">Vorane</a>
+      <a href="collection.html" class="mobileMenu__link" onclick="GS_closeMenu()">Collection</a>
+      <a href="https://shop.houseofelevara.com" class="mobileMenu__link" target="_blank" rel="noopener" onclick="GS_closeMenu()">Shop</a>
+      <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Membership</a>
+      <a href="ambassador.html" class="mobileMenu__link" onclick="GS_closeMenu()">Ambassador</a>
+      <a href="team.html" class="mobileMenu__link" onclick="GS_closeMenu()">Our Team</a>
+      <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
+    </div>
+    <div class="mobileMenu__divider"></div>
+    <a class="mobileMenu__cta" href="book.html" onclick="GS_closeMenu()">Request a Booking</a>
+    <a class="mobileMenu__cta ghost" href="mailto:admin@houseofelevara.com" onclick="GS_closeMenu()">Email Us</a>
+  </div>
+</div>
+
+<main>
+
+  <!-- HERO -->
+  <div class="container">
+    <div class="vorane-hero">
+      <a href="index.html" style="display:inline-flex;align-items:center;gap:8px;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-bottom:20px;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">← Back to Home</a>
+      <span class="vorane-hero__eyebrow">A House of Élévara · Recognition, Not a Campaign</span>
+      <h1>Are you<br><em style="font-style:italic;color:var(--gold2);">a Vorane?</em></h1>
+      <p>We are not building a brand that chases its audience. We are building a brand that names a kind of person who already exists — and then gives her the products, the scent, and the room she has been quietly looking for.</p>
+    </div>
+  </div>
+
+  <!-- WHAT IS VORANE -->
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">The Name · vo · rane · voh-RAHN</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
+
+  <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
+    <div class="cardGlow" style="position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);opacity:0.6;pointer-events:none;"></div>
+      <p style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">From the Latin vorare</p>
+      <h3 style="font-family:var(--font-display);font-size:clamp(22px,4vw,42px);font-weight:300;color:var(--white);margin-bottom:14px;line-height:1.1;">To consume. To draw in. <em style="font-style:italic;color:var(--gold2);">To take in completely.</em></h3>
+      <p style="font-size:13.5px;color:var(--muted2);line-height:1.85;margin-bottom:24px;max-width:68ch;">Not a model we hired. Not a platform we built. The same root that gives us "devour," but stripped of violence. In Vorane, the word is closer to gravity than hunger — the quiet pull of a person whose presence reorganizes a room.</p>
+      <div class="pillar-grid">
+        <div class="pillar-cell">
+          <span class="pillar-cell__label">Origin</span>
+          <p>Vorane is the original. We do not catch trends. We name a sensibility that has been moving through rooms long before we put a word on it.</p>
+        </div>
+        <div class="pillar-cell pillar-cell--mid">
+          <span class="pillar-cell__label">Gravity</span>
+          <p>A Vorane alters a room by entering it. Every product, film, and casting decision must carry the same quiet authority. Loud is the opposite of Vorane.</p>
+        </div>
+        <div class="pillar-cell">
+          <span class="pillar-cell__label">Becoming</span>
+          <p>A Vorane is not made by us — she is recognized by us. The brand is the mirror, not the maker. The right person will say: that is me.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO A VORANE IS -->
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">Who a Vorane Is</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
+
+  <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
+    <div class="grid2">
+
+      <div class="cardGlow">
+        <h3 class="goldTitle">The Five Markers</h3>
+        <div class="who-grid">
+          <div class="who-row">
+            <div class="who-row__marker">01</div>
+            <div>
+              <div class="who-row__title">Presence</div>
+              <p>Stillness. People look at her before she has done anything. She does not perform — she is observed.</p>
+            </div>
+          </div>
+          <div class="who-row">
+            <div class="who-row__marker">02</div>
+            <div>
+              <div class="who-row__title">Voice</div>
+              <p>Lower register. Slower than the room. She finishes her sentences. She does not apologize for taking up time.</p>
+            </div>
+          </div>
+          <div class="who-row">
+            <div class="who-row__marker">03</div>
+            <div>
+              <div class="who-row__title">Restraint</div>
+              <p>Her wardrobe, her home, her plate — they are quiet. She would rather wear one thing than three.</p>
+            </div>
+          </div>
+          <div class="who-row">
+            <div class="who-row__marker">04</div>
+            <div>
+              <div class="who-row__title">A Life of Her Own</div>
+              <p>A practice. A discipline. A body of work. Vorane is not how she becomes someone — it is how the world recognizes who she already is.</p>
+            </div>
+          </div>
+          <div class="who-row">
+            <div class="who-row__marker">05</div>
+            <div>
+              <div class="who-row__title">Unisex by Design</div>
+              <p>Everything above applies regardless of gender. We will name male, female, and nonbinary Voranes. The bar is identical for all.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="goldTitle">Who a Vorane Is Not</h3>
+        <ul class="cleanList" style="margin-bottom:24px;">
+          <li>A working model whose presence is for hire. Voranes are named — not booked.</li>
+          <li>An influencer building toward followers. We do not optimize for reach.</li>
+          <li>Someone who is still finding herself. A Vorane is already herself when we meet her.</li>
+          <li>Anyone who applies because the brand sounds glamorous. The application is a filter, not a funnel.</li>
+        </ul>
+        <div style="padding-top:20px;border-top:1px solid var(--line);">
+          <h3 class="goldTitle" style="font-size:17px;">The Pull Quote</h3>
+          <div style="border:1px solid var(--gold-line);border-radius:var(--radiusLg);background:radial-gradient(ellipse 80% 60% at 10% 0%, rgba(200,169,90,0.07), transparent 55%), var(--surface2);padding:clamp(16px,3vw,28px);margin-top:14px;position:relative;overflow:hidden;">
+            <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);opacity:0.5;pointer-events:none;"></div>
+            <p style="font-family:var(--font-display);font-size:clamp(16px,2.2vw,22px);font-weight:300;font-style:italic;color:var(--white);line-height:1.45;margin:0;">A Vorane is not a face we hired. She is the figure the room turns toward — <em style="color:var(--gold2);">before she enters.</em></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- THE THREE TRACKS -->
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">The Casting Process · Three Tracks</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
+
+  <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
+    <div class="infoGrid" style="grid-template-columns:repeat(3,1fr);margin-bottom:20px;">
+      <div class="infoCard">
+        <strong>Track A — The Founding Five</strong>Hand-picked by the founder. Named publicly at launch. Equity participation and multi-year collaboration. Not a modeling contract.
+      </div>
+      <div class="infoCard">
+        <strong>Track B — Public Application</strong>Three questions. No portfolio. No resume. No headshot field. We screen for voice, not credentials. Applications reviewed weekly.
+      </div>
+      <div class="infoCard">
+        <strong>Track C — Private Recognition</strong>Any team member can name a Vorane. One photo. One sentence. This is how we keep our eyes open in real life, not just in DMs.
+      </div>
+    </div>
+    <div class="readyBlock" style="margin-top:0;">
+      <h3>There is no "you got in" email.</h3>
+      <p>Strong applications move to a 15-minute call with the founder. Recognized candidates are quietly added to the roster. A Vorane will know when we ask her to be in something.</p>
+    </div>
+  </section>
+
+  <!-- THE APPLICATION -->
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">Track B · The Application · Now Open</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
+
+  <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
+    <div id="form-wrapper">
+      <div class="track-block" style="margin-top:0;max-width:720px;">
+        <div class="track-label">Application Open</div>
+        <p style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Three Questions · No Portfolio · No Resume</p>
+        <h3 style="font-family:var(--font-display);font-size:clamp(22px,4vw,38px);font-weight:300;color:var(--white);margin-bottom:16px;line-height:1.1;">The Application</h3>
+        <p style="font-size:13.5px;color:var(--muted2);line-height:1.85;margin-bottom:28px;">Applications are read weekly by a panel of three. There is no announcement. You will know when we ask you to be in something.</p>
+
+        <form id="vorane-form" novalidate>
+
+          <!-- Q1 -->
+          <div class="q-block">
+            <span class="q-num">01</span>
+            <p class="q-text">What is the last thing you walked away from?</p>
+            <textarea class="q-input" id="q1" name="q1" placeholder="Write freely." rows="4" maxlength="1000"></textarea>
+            <span class="q-wordcount" id="q1-count"></span>
+            <span class="field-error" id="q1-error">This question requires an answer.</span>
+          </div>
+
+          <!-- Q2 -->
+          <div class="q-block">
+            <span class="q-num">02</span>
+            <p class="q-text">Describe a room you altered by entering it.</p>
+            <span class="q-note">75 words.</span>
+            <textarea class="q-input" id="q2" name="q2" placeholder="Be exact." rows="4" maxlength="800"></textarea>
+            <span class="q-wordcount" id="q2-count">0 / 75</span>
+            <span class="field-error" id="q2-error">Please write between 50 and 100 words.</span>
+          </div>
+
+          <!-- Q3 Photo -->
+          <div class="q-block">
+            <span class="q-num">03</span>
+            <p class="q-text">Send us one photograph of yourself, taken by someone who knows you.</p>
+            <span class="q-note">No professional shots. No filters. No caption.</span>
+            <div class="photo-upload-zone" id="upload-area">
+              <input type="file" id="photo" name="photo" accept="image/*" />
+              <span class="photo-upload-zone__label" id="upload-label">Choose a photograph</span>
+              <span class="photo-upload-zone__sub">JPG or PNG · Max 10MB</span>
+              <div class="photo-preview" id="upload-preview">
+                <img id="preview-img" src="" alt="Your photograph" />
+              </div>
+            </div>
+            <span class="field-error" id="photo-error">Please include a photograph.</span>
+          </div>
+
+          <!-- Contact -->
+          <div class="contact-row">
+            <div>
+              <label class="field-label" for="name">Your name</label>
+              <input class="q-input" type="text" id="name" name="name" placeholder="As you sign it" />
+              <span class="field-error" id="name-error">Your name is required.</span>
+            </div>
+            <div>
+              <label class="field-label" for="email">Email</label>
+              <input class="q-input" type="email" id="email" name="email" placeholder="Where we may reach you" />
+              <span class="field-error" id="email-error">A valid email is required.</span>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <div style="padding-top:24px;border-top:1px solid var(--line);">
+            <p style="font-size:13px;color:var(--muted2);line-height:1.8;margin-bottom:20px;max-width:52ch;">Applications are read weekly. If yours moves us, we will reach out for a brief conversation with the founder.</p>
+            <div class="btnRow" style="flex-direction:row;flex-wrap:wrap;">
+              <button type="submit" class="btn btn--gold" id="submit-btn" style="flex:0 1 auto;width:auto;">Submit Application →</button>
+            </div>
+          </div>
+
+        </form>
+
+        <!-- Success -->
+        <div class="success-state" id="success">
+          <div style="padding-top:20px;">
+            <h3 style="font-family:var(--font-display);font-size:clamp(24px,4vw,40px);font-weight:300;font-style:italic;color:var(--white);margin-bottom:16px;">We have your application.</h3>
+            <p style="font-size:13.5px;color:var(--muted2);line-height:1.85;max-width:52ch;">We read every submission. If yours calls to us, someone from the house will be in touch. There is no timeline. There is no announcement. You will simply hear from us.</p>
+            <div class="btnRow" style="flex-direction:row;flex-wrap:wrap;">
+              <a class="btn btn--ghost" href="index.html" style="flex:0 1 auto;width:auto;">Return to the House</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="container" style="margin-bottom:clamp(48px,8vw,88px);">
+    <div class="readyBlock">
+      <h3>A house of Élévara.</h3>
+      <p>Vorane is built under the House of Elévara — a luxury brand and talent development company operating across fragrance, fashion, and creator empowerment. Everything we build answers one question: would a Vorane wear this, walk into this, be this?</p>
+      <div class="btnRow" style="flex-direction:row;flex-wrap:wrap;">
+        <a class="btn btn--gold" href="index.html" style="flex:0 1 auto;width:auto;">Explore the House</a>
+        <a class="btn btn--ghost" href="apply.html" style="flex:0 1 auto;width:auto;">General Talent Apply</a>
+        <a class="btn btn--dark" href="contact.html" style="flex:0 1 auto;width:auto;">Contact</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div>© 2026 House of Elevara LLC</div>
+  <div class="footer__muted">admin@houseofelevara.com &nbsp;·&nbsp; +1 (307) 289-4953</div>
+  <div class="footer__muted" style="margin-top:6px;">30 N Gould St, Ste N · Sheridan, WY 82801</div>
+  <div class="footer__muted" style="margin-top:8px;">
+    <a href="privacy.html" style="color:var(--gold2);text-decoration:none;margin:0 8px;">Privacy Policy</a>
+    &nbsp;·&nbsp;
+    <a href="terms.html" style="color:var(--gold2);text-decoration:none;margin:0 8px;">Terms of Service</a>
+  </div>
+</footer>
+
+<script src="assets/app.js?v=101"></script>
+
+<script>
+  function countWords(str) {
+    return str.trim() === '' ? 0 : str.trim().split(/\s+/).length;
+  }
+
+  document.getElementById('q1').addEventListener('input', function() {
+    const n = countWords(this.value);
+    document.getElementById('q1-count').textContent = n + ' word' + (n !== 1 ? 's' : '');
+  });
+
+  document.getElementById('q2').addEventListener('input', function() {
+    const n = countWords(this.value);
+    document.getElementById('q2-count').textContent = n + ' / 75';
+  });
+
+  document.getElementById('photo').addEventListener('change', function() {
+    const file = this.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      document.getElementById('preview-img').src = e.target.result;
+      document.getElementById('upload-preview').style.display = 'block';
+      document.getElementById('upload-label').textContent = file.name;
+    };
+    reader.readAsDataURL(file);
+  });
+
+  document.getElementById('vorane-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    let valid = true;
+
+    const q1 = document.getElementById('q1').value.trim();
+    const q1Error = document.getElementById('q1-error');
+    if (!q1) { q1Error.classList.add('show'); valid = false; }
+    else { q1Error.classList.remove('show'); }
+
+    const q2Words = countWords(document.getElementById('q2').value);
+    const q2Error = document.getElementById('q2-error');
+    if (q2Words < 50 || q2Words > 100) { q2Error.classList.add('show'); valid = false; }
+    else { q2Error.classList.remove('show'); }
+
+    const photo = document.getElementById('photo').files[0];
+    const photoError = document.getElementById('photo-error');
+    if (!photo) { photoError.classList.add('show'); valid = false; }
+    else { photoError.classList.remove('show'); }
+
+    const name = document.getElementById('name').value.trim();
+    const nameError = document.getElementById('name-error');
+    if (!name) { nameError.classList.add('show'); valid = false; }
+    else { nameError.classList.remove('show'); }
+
+    const email = document.getElementById('email').value.trim();
+    const emailError = document.getElementById('email-error');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { emailError.classList.add('show'); valid = false; }
+    else { emailError.classList.remove('show'); }
+
+    if (!valid) return;
+
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    setTimeout(function() {
+      document.getElementById('vorane-form').style.display = 'none';
+      document.getElementById('success').classList.add('show');
+    }, 1200);
+  });
+</script>
+
+</body>
+</html>
