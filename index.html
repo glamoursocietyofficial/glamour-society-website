@@ -314,6 +314,38 @@
       .seen-at__logo { height: 28px; max-width: 100px; }
       .seen-at__item-name { font-size: 10px; }
     }
+
+    /* ── VORANE SECTION ── */
+    .vorane-preview {
+      border: 1px solid var(--gold-line); border-radius: var(--radiusLg);
+      overflow: hidden; position: relative;
+      background: radial-gradient(ellipse 100% 80% at 50% 0%, rgba(200,169,90,0.10), transparent 55%), var(--surface);
+    }
+    .vorane-preview__top { position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg,transparent,var(--gold2),transparent); opacity: 0.9; }
+    .vorane-preview__inner { padding: clamp(20px,5vw,60px); }
+    .vorane-pillars {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
+      background: var(--gold-line); border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg); overflow: hidden; margin: 20px 0;
+    }
+    .vorane-pillar { background: var(--black2); padding: 22px 20px; transition: background 0.2s; }
+    .vorane-pillar:hover { background: var(--black3); }
+    .vorane-pillar--mid {
+      background: radial-gradient(ellipse 100% 80% at 50% 0%, rgba(200,169,90,0.10), transparent 60%), var(--surface2);
+      border-left: 1px solid var(--gold-line); border-right: 1px solid var(--gold-line);
+    }
+    .vorane-pillar__label { font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold2); margin-bottom: 8px; display: block; }
+    .vorane-pillar p { font-size: 12.5px; color: var(--muted2); line-height: 1.75; }
+    .vorane-live-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 7.5px; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--gold2); margin-bottom: 14px;
+    }
+    .vorane-live-badge::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--gold2); animation: goldPulse 2s ease-in-out infinite;
+    }
+    @media (max-width: 768px) { .vorane-pillars { grid-template-columns: 1fr; } }
   </style>
 
 </head>
@@ -330,6 +362,7 @@
       <a class="nav__link" href="apply.html">Apply</a>
       <a class="nav__link" href="atelier.html">The Atelier</a>
       <a class="nav__link" href="roster.html">Talent</a>
+      <a class="nav__link" href="vorane.html">Vorane</a>
       <a class="nav__link" href="collection.html">Collection</a>
       <a class="nav__link" href="https://shop.houseofelevara.com" target="_blank" rel="noopener">Shop</a>
       <a class="nav__link" href="payments.html">Membership</a>
@@ -357,6 +390,7 @@
       <a href="apply.html" class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
       <a href="atelier.html" class="mobileMenu__link" onclick="GS_closeMenu()">The Atelier</a>
       <a href="roster.html" class="mobileMenu__link" onclick="GS_closeMenu()">Talent</a>
+      <a href="vorane.html" class="mobileMenu__link" onclick="GS_closeMenu()">Vorane</a>
       <a href="collection.html" class="mobileMenu__link" onclick="GS_closeMenu()">Collection</a>
       <a href="https://shop.houseofelevara.com" class="mobileMenu__link" target="_blank" rel="noopener" onclick="GS_closeMenu()">Shop</a>
       <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Membership</a>
@@ -537,6 +571,54 @@
         <span class="roster-preview__footer-text">View Full Roster & Booking</span>
         <span class="roster-preview__footer-arrow">→</span>
       </a>
+    </div>
+  </section>
+
+  <!-- VORANE -->
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">Vorane · A House of Élévara · Now Casting</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
+  <section class="container" style="margin-bottom:clamp(40px,6vw,72px);">
+    <div class="vorane-preview">
+      <div class="vorane-preview__top"></div>
+      <div class="vorane-preview__inner">
+        <div class="vorane-live-badge">Casting Open · houseofelevara.com/vorane</div>
+        <p style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">Recognition · Not a Campaign · Named, Not Hired</p>
+        <h3 style="font-family:var(--font-display);font-size:clamp(26px,5vw,52px);font-weight:300;color:var(--white);margin-bottom:14px;line-height:1.05;">Are you <em style="font-style:italic;color:var(--gold2);">a Vorane?</em></h3>
+        <p style="font-size:13.5px;color:var(--muted2);line-height:1.85;margin-bottom:4px;">We are not building a brand that chases its audience. We are building a brand that names a kind of person who already exists — and then gives her the products, the scent, and the room she has been quietly looking for.</p>
+        <div class="vorane-pillars">
+          <div class="vorane-pillar">
+            <span class="vorane-pillar__label">Origin</span>
+            <p>We do not catch trends. We name a sensibility that has been moving through rooms long before we put a word on it.</p>
+          </div>
+          <div class="vorane-pillar vorane-pillar--mid">
+            <span class="vorane-pillar__label">Gravity</span>
+            <p>A Vorane alters a room by entering it. Quiet authority. Loud is the opposite of Vorane.</p>
+          </div>
+          <div class="vorane-pillar">
+            <span class="vorane-pillar__label">Becoming</span>
+            <p>A Vorane is not made by us — she is recognized by us. The brand is the mirror, not the maker.</p>
+          </div>
+        </div>
+        <div style="border:1px solid var(--gold-line);border-radius:var(--radiusLg);background:radial-gradient(ellipse 80% 60% at 10% 0%, rgba(200,169,90,0.07), transparent 55%), var(--surface2);padding:clamp(18px,4vw,32px);margin-bottom:24px;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);opacity:0.5;pointer-events:none;"></div>
+          <p style="font-family:var(--font-display);font-size:clamp(18px,3vw,28px);font-weight:300;font-style:italic;color:var(--white);line-height:1.35;margin:0;">A Vorane is not a face we hired. She is the figure the room turns toward — <em style="color:var(--gold2);">before she enters.</em></p>
+        </div>
+        <div class="infoGrid" style="margin-bottom:24px;">
+          <div class="infoCard"><strong>Named, Not Booked</strong>Voranes are recognized by the house — not hired from a casting call. The bar is presence, not portfolio.</div>
+          <div class="infoCard"><strong>Three Questions</strong>The application is one page. No resume. No headshot field. We screen for voice, not credentials.</div>
+          <div class="infoCard"><strong>Unisex by Design</strong>Male, female, and nonbinary Voranes. Different ages, races, body types, and fields. The bar is identical for all.</div>
+          <div class="infoCard"><strong>The Founding Five</strong>Five Voranes hand-picked and named at launch. Multi-year collaboration. Equity participation. Not a modeling contract.</div>
+        </div>
+        <div class="btnRow" style="flex-direction:row;flex-wrap:wrap;">
+          <a class="btn btn--gold" href="vorane.html" style="flex:0 1 auto;width:auto;">Apply to Vorane</a>
+          <a class="btn btn--ghost" href="vorane.html" style="flex:0 1 auto;width:auto;">Learn More</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -841,6 +923,7 @@
     <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px;">
       <details class="infoCard"><summary><strong>How do I apply?</strong></summary><p>Apply through the <a href="apply.html">Apply</a> page. If selected, we schedule an interview and share onboarding next steps.</p></details>
       <details class="infoCard"><summary><strong>How do bookings work?</strong></summary><p>Use <a href="book.html">Request a Booking</a> or email us directly. We confirm availability, details, and expectations with full documentation.</p></details>
+      <details class="infoCard"><summary><strong>What is Vorane?</strong></summary><p>Vorane is a recognition collective under House of Elévara — a brand that names a kind of person who already exists, and gives her the products, the scent, and the room she has been looking for. <a href="vorane.html">Apply or learn more.</a></p></details>
       <details class="infoCard"><summary><strong>Do you offer brand partnerships and campaigns?</strong></summary><p>Yes. We coordinate brand campaigns and placements with a structured process and clearly defined deliverables for both parties.</p></details>
       <details class="infoCard"><summary><strong>What is Elyra Editorial?</strong></summary><p>Elyra Editorial is our connected media and editorial presence. Visit <a href="https://www.elyraeditorial.com" target="_blank" rel="noopener noreferrer">elyraeditorial.com</a>.</p></details>
       <details class="infoCard"><summary><strong>What is the Elévara Foundation?</strong></summary><p>The Elévara Foundation is our 501(c)(3) nonprofit launching June 2026. Visit <a href="https://elevarafoundation.org" target="_blank" rel="noopener noreferrer">elevarafoundation.org</a>.</p></details>
