@@ -1,40 +1,134 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Atelier — Credits</title>
+  <title>The Atelier — Studio Credits</title>
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background: #000;
-      color: #c8a96a;
+      background: #060605;
+      color: #f5f0e8;
       font-family: Georgia, serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      margin: 0;
+      min-height: 100vh;
+      padding: 32px 24px;
       text-align: center;
-      padding: 20px;
     }
-    h1 { font-size: 22px; font-weight: normal; margin-bottom: 12px; }
-    p { font-size: 14px; color: #888; }
-    a {
-      display: inline-block;
-      margin-top: 24px;
-      padding: 12px 28px;
-      border: 1px solid #c8a96a;
+    .icon {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+    .eyebrow {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
       color: #c8a96a;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: clamp(24px, 6vw, 32px);
+      font-weight: 300;
+      color: #f5f0e8;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+    }
+    p {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: rgba(245,240,232,0.55);
+      line-height: 1.8;
+      max-width: 36ch;
+      margin-bottom: 32px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 13px 32px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
       text-decoration: none;
-      font-size: 13px;
-      letter-spacing: 2px;
+      border-radius: 2px;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.85; }
+    .btn--gold {
+      background: linear-gradient(135deg, #c8a96a, #a8893a);
+      color: #060605;
+    }
+    .btn--ghost {
+      background: transparent;
+      color: #c8a96a;
+      border: 1px solid rgba(200,169,106,0.35);
+      margin-top: 12px;
+    }
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: rgba(200,169,106,0.3);
+      margin: 0 auto 28px;
+    }
+    .note {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 10px;
+      color: rgba(245,240,232,0.25);
+      letter-spacing: 0.1em;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <h1>Credits Added</h1>
-  <p>Your Studio credits have been added.<br>Return to The Atelier to continue.</p>
-  <a href="theatelier://credits">OPEN THE ATELIER</a>
+  <div id="content"></div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const status = params.get('status');
+    const el = document.getElementById('content');
+
+    if (status === 'success') {
+      el.innerHTML = `
+        <div class="icon">✦</div>
+        <div class="eyebrow">Payment Confirmed</div>
+        <h1>Credits Added</h1>
+        <div class="divider"></div>
+        <p>Your Studio credits have been added to your account. Return to The Atelier to continue.</p>
+        <a class="btn btn--gold" href="theatelier://credits">Open The Atelier</a>
+        <br>
+        <a class="btn btn--ghost" href="https://apps.apple.com/app/id6768399257">Download on App Store</a>
+        <p class="note">House of Elévara LLC &nbsp;·&nbsp; The Atelier</p>
+      `;
+    } else if (status === 'cancelled') {
+      el.innerHTML = `
+        <div class="icon">○</div>
+        <div class="eyebrow">Payment Cancelled</div>
+        <h1>No Charge Made</h1>
+        <div class="divider"></div>
+        <p>Your payment was cancelled. No credits were added and you were not charged. Return to The Atelier to try again.</p>
+        <a class="btn btn--gold" href="theatelier://credits">Return to The Atelier</a>
+        <br>
+        <a class="btn btn--ghost" href="https://apps.apple.com/app/id6768399257">Download on App Store</a>
+        <p class="note">House of Elévara LLC &nbsp;·&nbsp; The Atelier</p>
+      `;
+    } else {
+      el.innerHTML = `
+        <div class="icon">✦</div>
+        <div class="eyebrow">The Atelier</div>
+        <h1>Studio Credits</h1>
+        <div class="divider"></div>
+        <p>Return to The Atelier to manage your Studio credits.</p>
+        <a class="btn btn--gold" href="theatelier://credits">Open The Atelier</a>
+        <br>
+        <a class="btn btn--ghost" href="https://apps.apple.com/app/id6768399257">Download on App Store</a>
+        <p class="note">House of Elévara LLC &nbsp;·&nbsp; The Atelier</p>
+      `;
+    }
+  </script>
 </body>
 </html>
