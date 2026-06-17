@@ -1,11 +1,10 @@
 <!doctype html>
-
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <title>Our Talent | House of Elévara</title>
-  <meta name="description" content="Meet Paula Sofia Arias — represented by House of Elévara. Available for runway, editorial, commercial, TV, and brand campaigns."/>
+  <meta name="description" content="Meet the talent represented by House of Elévara — professional models available for runway, editorial, commercial, TV, and brand campaigns."/>
   <link rel="stylesheet" href="assets/styles.css"/>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png"/>
@@ -16,7 +15,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="theme-color" content="#060605">
   <meta property="og:title" content="Our Talent | House of Elévara"/>
-  <meta property="og:description" content="Meet Paula Sofia Arias — represented by House of Elévara. Available for runway, editorial, commercial, TV, and brand campaigns."/>
+  <meta property="og:description" content="Meet the talent represented by House of Elévara — professional models available for runway, editorial, commercial, TV, and brand campaigns."/>
   <meta property="og:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
   <meta property="og:url" content="https://houseofelevara.com/roster.html"/>
   <meta property="og:type" content="website"/>
@@ -24,22 +23,18 @@
   <meta name="twitter:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
 
   <style>
-
-    /* ── TALENT PROFILE LAYOUT ── */
     .talent-profile {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2px;
       margin-top: 20px;
     }
-
     .talent-photo {
       position: relative;
       overflow: hidden;
       aspect-ratio: 3/4;
       background: var(--black2);
     }
-
     .talent-photo img {
       width: 100%;
       height: 100%;
@@ -48,9 +43,7 @@
       display: block;
       transition: transform 0.7s cubic-bezier(0.16,1,0.3,1);
     }
-
     .talent-photo:hover img { transform: scale(1.03); }
-
     .talent-photo__shimmer {
       position: absolute;
       top: 0; left: 0; right: 0;
@@ -61,7 +54,6 @@
       transition: opacity 0.3s;
     }
     .talent-photo:hover .talent-photo__shimmer { opacity: 0.8; }
-
     .talent-photo__badge {
       position: absolute;
       top: 16px; right: 16px;
@@ -75,10 +67,7 @@
       padding: 5px 10px;
       border-radius: 1px;
     }
-
-    /* ── INFO PANEL ── */
     .talent-info { margin-top: 40px; }
-
     .talent-name {
       font-family: var(--font-display);
       font-size: clamp(48px, 8vw, 88px);
@@ -87,9 +76,7 @@
       letter-spacing: 0.01em;
       margin-bottom: 8px;
     }
-
     .talent-name em { font-style: italic; color: var(--gold2); }
-
     .talent-location {
       font-size: 9px;
       letter-spacing: 0.28em;
@@ -100,9 +87,7 @@
       align-items: center;
       gap: 10px;
     }
-
     .talent-location::before { content: '◆'; font-size: 5px; }
-
     .talent-bio {
       font-size: 14px;
       color: var(--muted2);
@@ -111,8 +96,6 @@
       margin-bottom: 32px;
       letter-spacing: 0.02em;
     }
-
-    /* ── STATS GRID ── */
     .talent-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -122,7 +105,6 @@
       overflow: hidden;
       margin-bottom: 32px;
     }
-
     .talent-stat {
       background: var(--surface);
       padding: 18px 16px;
@@ -130,7 +112,6 @@
       transition: background 0.2s ease;
     }
     .talent-stat:hover { background: var(--gold-dim); }
-
     .talent-stat__label {
       font-size: 8px;
       letter-spacing: 0.22em;
@@ -139,7 +120,6 @@
       display: block;
       margin-bottom: 6px;
     }
-
     .talent-stat__value {
       font-family: var(--font-display);
       font-size: 28px;
@@ -148,10 +128,7 @@
       letter-spacing: 0.02em;
       line-height: 1;
     }
-
-    /* ── CATEGORIES ── */
     .talent-categories { margin-bottom: 32px; }
-
     .talent-categories__label {
       font-size: 8.5px;
       letter-spacing: 0.24em;
@@ -160,9 +137,7 @@
       margin-bottom: 12px;
       display: block;
     }
-
     .talent-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-
     .talent-tag {
       font-size: 9px;
       letter-spacing: 0.16em;
@@ -175,10 +150,7 @@
       background: var(--gold-dim);
     }
     .talent-tag:hover { color: var(--gold2); border-color: var(--gold); }
-
-    /* ── EXPERIENCE ── */
     .talent-experience { margin-bottom: 32px; }
-
     .talent-experience__label {
       font-size: 8.5px;
       letter-spacing: 0.24em;
@@ -187,7 +159,6 @@
       margin-bottom: 14px;
       display: block;
     }
-
     .talent-credits {
       display: flex;
       flex-direction: column;
@@ -196,7 +167,6 @@
       border-radius: var(--radiusLg);
       overflow: hidden;
     }
-
     .talent-credit {
       display: flex;
       align-items: center;
@@ -207,27 +177,10 @@
     }
     .talent-credit:last-child { border-bottom: none; }
     .talent-credit:hover { background: var(--gold-dim); }
-
-    .talent-credit__name {
-      font-size: 12.5px;
-      color: var(--white);
-      font-weight: 500;
-      letter-spacing: 0.03em;
-    }
-
+    .talent-credit__name { font-size: 12.5px; color: var(--white); font-weight: 500; letter-spacing: 0.03em; }
     .talent-credit__role { font-size: 10px; color: var(--muted2); letter-spacing: 0.06em; }
-
-    .talent-credit__year {
-      font-size: 10px;
-      color: var(--gold);
-      letter-spacing: 0.1em;
-      flex-shrink: 0;
-      margin-left: 12px;
-    }
-
-    /* ── SKILLS ── */
+    .talent-credit__year { font-size: 10px; color: var(--gold); letter-spacing: 0.1em; flex-shrink: 0; margin-left: 12px; }
     .talent-skills { margin-bottom: 32px; }
-
     .talent-skills__label {
       font-size: 8.5px;
       letter-spacing: 0.24em;
@@ -236,13 +189,7 @@
       margin-bottom: 12px;
       display: block;
     }
-
-    .talent-skills__grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 8px;
-    }
-
+    .talent-skills__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
     .talent-skill {
       background: var(--surface);
       border: 1px solid var(--line);
@@ -254,14 +201,10 @@
       transition: all 0.2s ease;
     }
     .talent-skill:hover { border-color: var(--gold-line); color: var(--gold2); background: var(--gold-dim); }
-
-    /* ── BOOKING CTA ── */
     .talent-booking {
       border: 1px solid var(--gold-line);
       border-radius: var(--radiusLg);
-      background:
-        radial-gradient(ellipse 100% 80% at 10% 0%, rgba(200,169,90,0.10), transparent 55%),
-        var(--surface);
+      background: radial-gradient(ellipse 100% 80% at 10% 0%, rgba(200,169,90,0.10), transparent 55%), var(--surface);
       padding: 32px;
       position: relative;
       overflow: hidden;
@@ -275,45 +218,31 @@
       background: linear-gradient(90deg, transparent, var(--gold2), transparent);
       opacity: 0.6;
     }
-    .talent-booking h3 {
-      font-family: var(--font-display);
-      font-size: 26px;
-      font-weight: 400;
-      margin-bottom: 8px;
-      letter-spacing: 0.02em;
-    }
-    .talent-booking p {
-      font-size: 13px;
-      color: var(--muted2);
-      line-height: 1.8;
-      margin-bottom: 20px;
-    }
-
-    /* ── ADDITIONAL INFO ── */
-    .talent-additional {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      margin-bottom: 32px;
-    }
-
-    .talent-detail {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radiusLg);
-      padding: 14px 16px;
-    }
-
-    .talent-detail__label {
-      font-size: 7.5px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      display: block;
-      margin-bottom: 4px;
-    }
-
+    .talent-booking h3 { font-family: var(--font-display); font-size: 26px; font-weight: 400; margin-bottom: 8px; letter-spacing: 0.02em; }
+    .talent-booking p { font-size: 13px; color: var(--muted2); line-height: 1.8; margin-bottom: 20px; }
+    .talent-additional { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 32px; }
+    .talent-detail { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radiusLg); padding: 14px 16px; }
+    .talent-detail__label { font-size: 7.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 4px; }
     .talent-detail__value { font-size: 13px; color: var(--white); font-weight: 500; }
+
+    /* Roster divider between talents */
+    .talent-divider {
+      margin: clamp(48px,8vw,88px) 0;
+      border: none;
+      border-top: 1px solid var(--gold-line);
+      position: relative;
+    }
+    .talent-divider::after {
+      content: '✦';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--black);
+      color: var(--gold);
+      font-size: 10px;
+      padding: 0 16px;
+    }
 
     @media (max-width: 768px) {
       .talent-profile { grid-template-columns: 1fr; }
@@ -322,13 +251,9 @@
       .talent-skills__grid { grid-template-columns: 1fr; }
       .talent-additional { grid-template-columns: 1fr; }
     }
-
   </style>
-
 </head>
 <body>
-
-<!-- HEADER -->
 
 <header class="topbar">
   <div class="container topbar__inner">
@@ -350,8 +275,6 @@
     <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
   </div>
 </header>
-
-<!-- MOBILE MENU -->
 
 <div class="mobileMenu" id="mobileMenu" aria-hidden="true">
   <button class="mobileMenu__backdrop" id="menuBackdrop" type="button" aria-label="Close menu" onclick="GS_closeMenu()"></button>
@@ -380,192 +303,284 @@
 
 <main>
 
-  <!-- PAGE HEADER -->
-
   <div class="container">
     <div class="pageHeader">
       <a href="index.html" style="display:inline-flex;align-items:center;gap:8px;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-bottom:20px;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">← Back to Home</a>
-
-```
-  <span style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block;">
-    Women · New Jersey
-  </span>
-  <h1>Our<br>Talent</h1>
-  <p>
-    House of Elévara represents a curated selection of professional models developed for visibility, bookings, and long-term brand equity. Every talent on our roster has been selected and positioned with intention.
-  </p>
-</div>
-```
-
+      <span style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block;">Women · Nationwide</span>
+      <h1>Our<br>Talent</h1>
+      <p>House of Elévara represents a curated selection of professional models developed for visibility, bookings, and long-term brand equity. Every talent on our roster has been selected and positioned with intention.</p>
+    </div>
   </div>
 
-  <!-- PAULA SOFIA ARIAS — FULL PROFILE -->
-
+  <!-- ── PAULA SOFIA ARIAS ── -->
   <div class="container" style="margin-bottom:clamp(48px,8vw,88px);">
-
-```
-<div class="sectionDivider" style="margin-top:0;">
-  <div class="sectionDivider__line"></div>
-  <span class="sectionDivider__label">Paula Sofia Arias</span>
-  <div class="sectionDivider__line"></div>
-</div>
-
-<div class="talent-profile">
-  <div class="talent-photo">
-    <div class="talent-photo__shimmer"></div>
-    <div class="talent-photo__badge">Featured</div>
-    <img src="IMG_9110.jpeg" alt="Paula Sofia Arias — House of Elévara" loading="lazy"/>
-  </div>
-  <div class="talent-photo">
-    <div class="talent-photo__shimmer"></div>
-    <img src="IMG_9109.jpeg" alt="Paula Sofia Arias — House of Elévara" loading="lazy"/>
-  </div>
-</div>
-
-<div class="talent-info">
-
-  <h2 class="talent-name">Paula Sofia<br><em>Arias</em></h2>
-  <span class="talent-location">Women · New Jersey · Experienced · Paid Only</span>
-
-  <p class="talent-bio">
-    Accomplished fashion model with three years of experience in runway, freelance, and television modeling. Skilled at enhancing brand visibility, collaborating with top industry professionals, and executing high-impact projects. Proficient in fashion trend analysis, styling collaboration, and maintaining peak physical fitness for diverse modeling roles. Bilingual — English and Spanish.
-  </p>
-
-  <div class="talent-stats">
-    <div class="talent-stat"><span class="talent-stat__label">Height</span><span class="talent-stat__value">5' 5"</span></div>
-    <div class="talent-stat"><span class="talent-stat__label">Weight</span><span class="talent-stat__value">110</span></div>
-    <div class="talent-stat"><span class="talent-stat__label">Bust</span><span class="talent-stat__value">31"</span></div>
-    <div class="talent-stat"><span class="talent-stat__label">Waist</span><span class="talent-stat__value">24"</span></div>
-    <div class="talent-stat"><span class="talent-stat__label">Hips</span><span class="talent-stat__value">33"</span></div>
-    <div class="talent-stat"><span class="talent-stat__label">Dress</span><span class="talent-stat__value">0</span></div>
-    <div class="talent-stat"><span class="talent-stat__label">Shoe</span><span class="talent-stat__value">6</span></div>
-    <div class="talent-stat"><span class="talent-stat__label">Cup</span><span class="talent-stat__value">A</span></div>
-    <div class="talent-stat"><span class="talent-stat__label">Age</span><span class="talent-stat__value">25</span></div>
-  </div>
-
-  <div class="talent-additional">
-    <div class="talent-detail"><span class="talent-detail__label">Hair</span><span class="talent-detail__value">Dark Brown</span></div>
-    <div class="talent-detail"><span class="talent-detail__label">Eyes</span><span class="talent-detail__value">Brown</span></div>
-    <div class="talent-detail"><span class="talent-detail__label">Languages</span><span class="talent-detail__value">English · Spanish</span></div>
-    <div class="talent-detail"><span class="talent-detail__label">Experience Level</span><span class="talent-detail__value">Experienced · 3 Years</span></div>
-    <div class="talent-detail"><span class="talent-detail__label">Education</span><span class="talent-detail__value">LIM College — B.S. Business Administration</span></div>
-    <div class="talent-detail"><span class="talent-detail__label">Compensation</span><span class="talent-detail__value">Paid Assignments Only</span></div>
-  </div>
-
-  <div class="talent-categories">
-    <span class="talent-categories__label">Available For</span>
-    <div class="talent-tags">
-      <span class="talent-tag">Runway</span>
-      <span class="talent-tag">Editorial</span>
-      <span class="talent-tag">Commercial</span>
-      <span class="talent-tag">Television</span>
-      <span class="talent-tag">Promotional</span>
-      <span class="talent-tag">E-Commerce</span>
-      <span class="talent-tag">Brand Campaigns</span>
-      <span class="talent-tag">Lookbook</span>
-      <span class="talent-tag">Events</span>
-      <span class="talent-tag">Music Video</span>
+    <div class="sectionDivider" style="margin-top:0;">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">Paula Sofia Arias</span>
+      <div class="sectionDivider__line"></div>
     </div>
-  </div>
 
-  <div class="talent-experience">
-    <span class="talent-experience__label">Notable Credits & Experience</span>
-    <div class="talent-credits">
-      <div class="talent-credit">
-        <div>
-          <div class="talent-credit__name">NBC Access Hollywood / NY Live</div>
-          <div class="talent-credit__role">Appeared on 15+ Fashion Segments</div>
-        </div>
-        <span class="talent-credit__year">2023 – Now</span>
+    <div class="talent-profile">
+      <div class="talent-photo">
+        <div class="talent-photo__shimmer"></div>
+        <div class="talent-photo__badge">Featured</div>
+        <img src="IMG_9110.jpeg" alt="Paula Sofia Arias — House of Elévara" loading="lazy"/>
       </div>
-      <div class="talent-credit">
-        <div>
-          <div class="talent-credit__name">Brooklyn Bound Vintage</div>
-          <div class="talent-credit__role">Runway Model</div>
-        </div>
-        <span class="talent-credit__year">F/W 2026</span>
-      </div>
-      <div class="talent-credit">
-        <div>
-          <div class="talent-credit__name">Riccardo Maggiore Salon</div>
-          <div class="talent-credit__role">Promotional Model</div>
-        </div>
-        <span class="talent-credit__year">F/W 2025</span>
-      </div>
-      <div class="talent-credit">
-        <div>
-          <div class="talent-credit__name">Dr. Lara Devgan Scientific Beauty</div>
-          <div class="talent-credit__role">Promotional Model</div>
-        </div>
-        <span class="talent-credit__year">S/S 2025</span>
+      <div class="talent-photo">
+        <div class="talent-photo__shimmer"></div>
+        <img src="IMG_9109.jpeg" alt="Paula Sofia Arias — House of Elévara" loading="lazy"/>
       </div>
     </div>
-  </div>
 
-  <div class="talent-skills">
-    <span class="talent-skills__label">Skills</span>
-    <div class="talent-skills__grid">
-      <div class="talent-skill">Posing & Movement</div>
-      <div class="talent-skill">Runway Technique</div>
-      <div class="talent-skill">Facial Expression</div>
-      <div class="talent-skill">Physical Stamina</div>
-      <div class="talent-skill">Make-Up Application</div>
-      <div class="talent-skill">Styling Collaboration</div>
+    <div class="talent-info">
+      <h2 class="talent-name">Paula Sofia<br><em>Arias</em></h2>
+      <span class="talent-location">Women · New Jersey · Experienced · Paid Only</span>
+      <p class="talent-bio">Accomplished fashion model with three years of experience in runway, freelance, and television modeling. Skilled at enhancing brand visibility, collaborating with top industry professionals, and executing high-impact projects. Proficient in fashion trend analysis, styling collaboration, and maintaining peak physical fitness for diverse modeling roles. Bilingual — English and Spanish.</p>
+
+      <div class="talent-stats">
+        <div class="talent-stat"><span class="talent-stat__label">Height</span><span class="talent-stat__value">5' 5"</span></div>
+        <div class="talent-stat"><span class="talent-stat__label">Weight</span><span class="talent-stat__value">110</span></div>
+        <div class="talent-stat"><span class="talent-stat__label">Bust</span><span class="talent-stat__value">31"</span></div>
+        <div class="talent-stat"><span class="talent-stat__label">Waist</span><span class="talent-stat__value">24"</span></div>
+        <div class="talent-stat"><span class="talent-stat__label">Hips</span><span class="talent-stat__value">33"</span></div>
+        <div class="talent-stat"><span class="talent-stat__label">Dress</span><span class="talent-stat__value">0</span></div>
+        <div class="talent-stat"><span class="talent-stat__label">Shoe</span><span class="talent-stat__value">6</span></div>
+        <div class="talent-stat"><span class="talent-stat__label">Cup</span><span class="talent-stat__value">A</span></div>
+        <div class="talent-stat"><span class="talent-stat__label">Age</span><span class="talent-stat__value">25</span></div>
+      </div>
+
+      <div class="talent-additional">
+        <div class="talent-detail"><span class="talent-detail__label">Hair</span><span class="talent-detail__value">Dark Brown</span></div>
+        <div class="talent-detail"><span class="talent-detail__label">Eyes</span><span class="talent-detail__value">Brown</span></div>
+        <div class="talent-detail"><span class="talent-detail__label">Languages</span><span class="talent-detail__value">English · Spanish</span></div>
+        <div class="talent-detail"><span class="talent-detail__label">Experience Level</span><span class="talent-detail__value">Experienced · 3 Years</span></div>
+        <div class="talent-detail"><span class="talent-detail__label">Education</span><span class="talent-detail__value">LIM College — B.S. Business Administration</span></div>
+        <div class="talent-detail"><span class="talent-detail__label">Compensation</span><span class="talent-detail__value">Paid Assignments Only</span></div>
+      </div>
+
+      <div class="talent-categories">
+        <span class="talent-categories__label">Available For</span>
+        <div class="talent-tags">
+          <span class="talent-tag">Runway</span>
+          <span class="talent-tag">Editorial</span>
+          <span class="talent-tag">Commercial</span>
+          <span class="talent-tag">Television</span>
+          <span class="talent-tag">Promotional</span>
+          <span class="talent-tag">E-Commerce</span>
+          <span class="talent-tag">Brand Campaigns</span>
+          <span class="talent-tag">Lookbook</span>
+          <span class="talent-tag">Events</span>
+          <span class="talent-tag">Music Video</span>
+        </div>
+      </div>
+
+      <div class="talent-experience">
+        <span class="talent-experience__label">Notable Credits & Experience</span>
+        <div class="talent-credits">
+          <div class="talent-credit">
+            <div>
+              <div class="talent-credit__name">NBC Access Hollywood / NY Live</div>
+              <div class="talent-credit__role">Appeared on 15+ Fashion Segments</div>
+            </div>
+            <span class="talent-credit__year">2023 – Now</span>
+          </div>
+          <div class="talent-credit">
+            <div>
+              <div class="talent-credit__name">Brooklyn Bound Vintage</div>
+              <div class="talent-credit__role">Runway Model</div>
+            </div>
+            <span class="talent-credit__year">F/W 2026</span>
+          </div>
+          <div class="talent-credit">
+            <div>
+              <div class="talent-credit__name">Riccardo Maggiore Salon</div>
+              <div class="talent-credit__role">Promotional Model</div>
+            </div>
+            <span class="talent-credit__year">F/W 2025</span>
+          </div>
+          <div class="talent-credit">
+            <div>
+              <div class="talent-credit__name">Dr. Lara Devgan Scientific Beauty</div>
+              <div class="talent-credit__role">Promotional Model</div>
+            </div>
+            <span class="talent-credit__year">S/S 2025</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="talent-skills">
+        <span class="talent-skills__label">Skills</span>
+        <div class="talent-skills__grid">
+          <div class="talent-skill">Posing & Movement</div>
+          <div class="talent-skill">Runway Technique</div>
+          <div class="talent-skill">Facial Expression</div>
+          <div class="talent-skill">Physical Stamina</div>
+          <div class="talent-skill">Make-Up Application</div>
+          <div class="talent-skill">Styling Collaboration</div>
+        </div>
+      </div>
+
+      <div class="talent-booking">
+        <h3>Book Paula Sofia Arias</h3>
+        <p>Available for runway, editorial, commercial, television, and brand campaign assignments. All bookings are coordinated through House of Elévara LLC. Submit an inquiry and our team will confirm availability and details within 24 hours.</p>
+        <div class="btnRow" style="margin-top:0;flex-direction:row;flex-wrap:wrap;">
+          <a class="btn btn--gold" href="mailto:admin@houseofelevara.com?subject=Booking%20Inquiry%20%E2%80%94%20Paula%20Sofia%20Arias%20%7C%20House%20of%20El%C3%A9vara&body=Hello%20House%20of%20El%C3%A9vara%2C%0A%0AI%20am%20interested%20in%20booking%20Paula%20Sofia%20Arias.%0A%0AProject%20Type%3A%0ADate%3A%0ALocation%3A%0ABudget%3A%0ADetails%3A%0A%0AContact%20Name%3A%0APhone%3A%0A%0AThank%20you%2C" style="flex:0 1 auto;width:auto;">Inquire to Book Paula</a>
+          <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer" href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call" style="flex:0 1 auto;width:auto;">Schedule a Call</a>
+          <a class="btn btn--dark" href="book.html" style="flex:0 1 auto;width:auto;">General Booking Page</a>
+        </div>
+      </div>
+
+      <div class="readyBlock" style="text-align:center;">
+        <h3 style="text-align:center;">View Full Portfolio</h3>
+        <p style="text-align:center;max-width:48ch;margin:0 auto;">Paula maintains an active modeling portfolio with over 50 professional photos available for review.</p>
+        <div class="btnRow" style="justify-content:center;flex-direction:row;flex-wrap:wrap;">
+          <a class="btn btn--dark" href="https://paulaarias.modelingfolio.com/" target="_blank" rel="noopener noreferrer" style="flex:0 1 auto;width:auto;">View Portfolio</a>
+          <a class="btn btn--ghost" href="mailto:admin@houseofelevara.com?subject=Booking%20Inquiry%20%E2%80%94%20Paula%20Sofia%20Arias%20%7C%20House%20of%20El%C3%A9vara" style="flex:0 1 auto;width:auto;">Contact for Booking</a>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="talent-booking">
-    <h3>Book Paula Sofia Arias</h3>
-    <p>
-      Available for runway, editorial, commercial, television, and brand campaign assignments. All bookings are coordinated through House of Elévara LLC. Submit an inquiry and our team will confirm availability and details within 24 hours.
-    </p>
-    <div class="btnRow" style="margin-top:0;flex-direction:row;flex-wrap:wrap;">
-      <a class="btn btn--gold"
-         href="mailto:admin@houseofelevara.com?subject=Booking%20Inquiry%20%E2%80%94%20Paula%20Sofia%20Arias%20%7C%20House%20of%20El%C3%A9vara&body=Hello%20House%20of%20El%C3%A9vara%2C%0A%0AI%20am%20interested%20in%20booking%20Paula%20Sofia%20Arias.%0A%0AProject%20Type%3A%0ADate%3A%0ALocation%3A%0ABudget%3A%0ADetails%3A%0A%0AContact%20Name%3A%0APhone%3A%0A%0AThank%20you%2C"
-         style="flex:0 1 auto;width:auto;">
-        Inquire to Book Paula
-      </a>
-      <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer"
-         href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call"
-         style="flex:0 1 auto;width:auto;">
-        Schedule a Call
-      </a>
-      <a class="btn btn--dark" href="book.html" style="flex:0 1 auto;width:auto;">
-        General Booking Page
-      </a>
-    </div>
+  <!-- ── DIVIDER ── -->
+  <div class="container">
+    <hr class="talent-divider"/>
   </div>
 
-  <div class="readyBlock" style="text-align:center;">
-    <h3 style="text-align:center;">View Full Portfolio</h3>
-    <p style="text-align:center;max-width:48ch;margin:0 auto;">
-      Paula maintains an active modeling portfolio with over 50 professional photos available for review.
-    </p>
-    <div class="btnRow" style="justify-content:center;flex-direction:row;flex-wrap:wrap;">
-      <a class="btn btn--dark"
-         href="https://paulaarias.modelingfolio.com/"
-         target="_blank"
-         rel="noopener noreferrer"
-         style="flex:0 1 auto;width:auto;">
-        View Portfolio
-      </a>
-      <a class="btn btn--ghost"
-         href="mailto:admin@houseofelevara.com?subject=Booking%20Inquiry%20%E2%80%94%20Paula%20Sofia%20Arias%20%7C%20House%20of%20El%C3%A9vara"
-         style="flex:0 1 auto;width:auto;">
-        Contact for Booking
-      </a>
+  <!-- ── SABRINA VEILLARD ── -->
+  <div class="container" style="margin-bottom:clamp(48px,8vw,88px);">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">Sabrina Veillard</span>
+      <div class="sectionDivider__line"></div>
     </div>
-  </div>
 
-</div>
-```
+    <div class="talent-profile">
+      <div class="talent-photo">
+        <div class="talent-photo__shimmer"></div>
+        <div class="talent-photo__badge">Featured</div>
+        <img src="SV Beige Outfit (22).JPG" alt="Sabrina Veillard — House of Elévara" loading="lazy"/>
+      </div>
+      <div class="talent-photo">
+        <div class="talent-photo__shimmer"></div>
+        <img src="2b910820e8568a95f9e8083ded0f8987-xxlarge_(2).jpg" alt="Sabrina Veillard — House of Elévara" loading="lazy"/>
+      </div>
+    </div>
 
+    <div class="talent-info">
+      <h2 class="talent-name">Sabrina<br><em>Veillard</em></h2>
+      <span class="talent-location">Women · Georgia · Emerging · Paid Only</span>
+      <p class="talent-bio">Passionate model with a growing portfolio in editorial and lifestyle photography. Skilled in posing, taking creative direction, and adapting to diverse fashion styles and aesthetics. Known for professionalism, positivity, and a strong work ethic on set. Committed to delivering high-impact results for every project — from casual lifestyle to high-fashion editorial.</p>
+
+      <div class="talent-stats">
+        <div class="talent-stat"><span class="talent-stat__label">Height</span><span class="talent-stat__value">5' 9"</span></div>
+        <div class="talent-stat"><span class="talent-stat__label">Weight</span><span class="talent-stat__value">145</span></div>
+        <div class="talent-stat"><span class="talent-stat__label">Bust</span><span class="talent-stat__value">32"</span></div>
+        <div class="talent-stat"><span class="talent-stat__label">Waist</span><span class="talent-stat__value">26"</span></div>
+        <div class="talent-stat"><span class="talent-stat__label">Hips</span><span class="talent-stat__value">36"</span></div>
+        <div class="talent-stat"><span class="talent-stat__label">Dress</span><span class="talent-stat__value">8–10</span></div>
+        <div class="talent-stat"><span class="talent-stat__label">Shoe</span><span class="talent-stat__value">11</span></div>
+        <div class="talent-stat"><span class="talent-stat__label">Hair</span><span class="talent-stat__value">Black</span></div>
+        <div class="talent-stat"><span class="talent-stat__label">Eyes</span><span class="talent-stat__value">Brown</span></div>
+      </div>
+
+      <div class="talent-additional">
+        <div class="talent-detail"><span class="talent-detail__label">Location</span><span class="talent-detail__value">Lawrenceville, GA</span></div>
+        <div class="talent-detail"><span class="talent-detail__label">Languages</span><span class="talent-detail__value">English</span></div>
+        <div class="talent-detail"><span class="talent-detail__label">Education</span><span class="talent-detail__value">Georgia Gwinnett College — B.A. Political Science</span></div>
+        <div class="talent-detail"><span class="talent-detail__label">Certification</span><span class="talent-detail__value">Paralegal Certification</span></div>
+        <div class="talent-detail"><span class="talent-detail__label">Instagram</span><span class="talent-detail__value"><a href="https://www.instagram.com/thesabiveill/" target="_blank" rel="noopener noreferrer" style="color:var(--gold2);text-decoration:none;">@thesabiveill</a></span></div>
+        <div class="talent-detail"><span class="talent-detail__label">Portfolio</span><span class="talent-detail__value"><a href="https://sabrinaveillard.com/" target="_blank" rel="noopener noreferrer" style="color:var(--gold2);text-decoration:none;">sabrinaveillard.com</a></span></div>
+      </div>
+
+      <div class="talent-categories">
+        <span class="talent-categories__label">Available For</span>
+        <div class="talent-tags">
+          <span class="talent-tag">Editorial</span>
+          <span class="talent-tag">Lifestyle</span>
+          <span class="talent-tag">Commercial</span>
+          <span class="talent-tag">Fashion</span>
+          <span class="talent-tag">Athletic</span>
+          <span class="talent-tag">E-Commerce</span>
+          <span class="talent-tag">Lookbook</span>
+          <span class="talent-tag">Brand Campaigns</span>
+          <span class="talent-tag">Events</span>
+          <span class="talent-tag">Art Photoshoots</span>
+        </div>
+      </div>
+
+      <div class="talent-experience">
+        <span class="talent-experience__label">Notable Credits & Experience</span>
+        <div class="talent-credits">
+          <div class="talent-credit">
+            <div>
+              <div class="talent-credit__name">Kelcey JetsLife Reed Jr — Studio Power Shoot</div>
+              <div class="talent-credit__role">Editorial Model · Art Photoshoot · w/ Jordy Toscano & Sherman Trotz</div>
+            </div>
+            <span class="talent-credit__year">2025</span>
+          </div>
+          <div class="talent-credit">
+            <div>
+              <div class="talent-credit__name">MarszFilmz</div>
+              <div class="talent-credit__role">Casual, Lifestyle, Professional & Fashion Editorial — Dunwoody, GA</div>
+            </div>
+            <span class="talent-credit__year">2025</span>
+          </div>
+          <div class="talent-credit">
+            <div>
+              <div class="talent-credit__name">Allie Hine</div>
+              <div class="talent-credit__role">Casual & Lifestyle Portfolio — Atlanta, GA</div>
+            </div>
+            <span class="talent-credit__year">2024</span>
+          </div>
+          <div class="talent-credit">
+            <div>
+              <div class="talent-credit__name">SoulStudiosAtlanta</div>
+              <div class="talent-credit__role">Editorial Model · Casual, Athletic & Formal</div>
+            </div>
+            <span class="talent-credit__year">2024</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="talent-skills">
+        <span class="talent-skills__label">Skills</span>
+        <div class="talent-skills__grid">
+          <div class="talent-skill">Posing Techniques</div>
+          <div class="talent-skill">Camera Awareness</div>
+          <div class="talent-skill">Model Etiquette</div>
+          <div class="talent-skill">Adaptability</div>
+          <div class="talent-skill">Audition Preparation</div>
+          <div class="talent-skill">Social Media Presence</div>
+          <div class="talent-skill">Fashion Trend Awareness</div>
+          <div class="talent-skill">Physical Fitness</div>
+        </div>
+      </div>
+
+      <div class="talent-booking">
+        <h3>Book Sabrina Veillard</h3>
+        <p>Available for editorial, lifestyle, commercial, fashion, and brand campaign assignments across the Atlanta metro area and beyond. All bookings are coordinated through House of Elévara LLC. Submit an inquiry and our team will confirm availability and details within 24 hours.</p>
+        <div class="btnRow" style="margin-top:0;flex-direction:row;flex-wrap:wrap;">
+          <a class="btn btn--gold" href="mailto:admin@houseofelevara.com?subject=Booking%20Inquiry%20%E2%80%94%20Sabrina%20Veillard%20%7C%20House%20of%20El%C3%A9vara&body=Hello%20House%20of%20El%C3%A9vara%2C%0A%0AI%20am%20interested%20in%20booking%20Sabrina%20Veillard.%0A%0AProject%20Type%3A%0ADate%3A%0ALocation%3A%0ABudget%3A%0ADetails%3A%0A%0AContact%20Name%3A%0APhone%3A%0A%0AThank%20you%2C" style="flex:0 1 auto;width:auto;">Inquire to Book Sabrina</a>
+          <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer" href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call" style="flex:0 1 auto;width:auto;">Schedule a Call</a>
+          <a class="btn btn--dark" href="book.html" style="flex:0 1 auto;width:auto;">General Booking Page</a>
+        </div>
+      </div>
+
+      <div class="readyBlock" style="text-align:center;">
+        <h3 style="text-align:center;">View Full Portfolio</h3>
+        <p style="text-align:center;max-width:48ch;margin:0 auto;">Sabrina maintains an active modeling portfolio available for review at sabrinaveillard.com.</p>
+        <div class="btnRow" style="justify-content:center;flex-direction:row;flex-wrap:wrap;">
+          <a class="btn btn--dark" href="https://sabrinaveillard.com/" target="_blank" rel="noopener noreferrer" style="flex:0 1 auto;width:auto;">View Portfolio</a>
+          <a class="btn btn--ghost" href="mailto:admin@houseofelevara.com?subject=Booking%20Inquiry%20%E2%80%94%20Sabrina%20Veillard%20%7C%20House%20of%20El%C3%A9vara" style="flex:0 1 auto;width:auto;">Contact for Booking</a>
+        </div>
+      </div>
+    </div>
   </div>
 
 </main>
 
 <footer class="footer">
-  <div>© 2026 House of Elevara LLC</div>
+  <div>© 2026 House of Elévara LLC</div>
   <div class="footer__muted">admin@houseofelevara.com &nbsp;·&nbsp; +1 (307) 289-4953</div>
   <div class="footer__muted" style="margin-top:6px;">30 N Gould St, Ste N · Sheridan, WY 82801</div>
   <div class="footer__muted" style="margin-top:6px;">
@@ -576,6 +591,5 @@
 </footer>
 
 <script src="assets/app.js?v=101"></script>
-
 </body>
 </html>
