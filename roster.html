@@ -244,12 +244,123 @@
       padding: 0 16px;
     }
 
+    /* ── DIRECTOR / DUAL CREDIT TREATMENT ── */
+    .talent-photo__badge--director {
+      background: rgba(6,6,5,0.72);
+      color: var(--gold2);
+      border: 1px solid var(--gold);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    .talent-photo__badge--left { right: auto; left: 16px; }
+    .talent-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 7.5px;
+      font-weight: 700;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: linear-gradient(135deg, var(--gold2), var(--gold));
+      padding: 6px 15px;
+      border-radius: 1px;
+      margin-bottom: 18px;
+    }
+    .talent-statement {
+      border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg);
+      background: radial-gradient(ellipse 90% 70% at 10% 0%, rgba(200,169,90,0.09), transparent 55%), var(--surface2);
+      padding: clamp(20px,4vw,36px);
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .talent-statement::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold2), transparent);
+      opacity: 0.55;
+    }
+    .talent-statement p {
+      font-family: var(--font-display);
+      font-size: clamp(18px,3vw,30px);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.38;
+      margin: 0;
+      letter-spacing: 0.01em;
+    }
+    .talent-statement em { color: var(--gold2); font-style: italic; }
+    .dual-credit {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--gold-line);
+      border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg);
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    .dual-credit__cell { background: var(--surface); padding: 24px 20px; transition: background 0.2s ease; }
+    .dual-credit__cell:hover { background: var(--gold-dim); }
+    .dual-credit__cell--mid {
+      background: radial-gradient(ellipse 100% 80% at 50% 0%, rgba(200,169,90,0.10), transparent 60%), var(--surface2);
+    }
+    .dual-credit__num {
+      font-family: var(--font-display);
+      font-size: 13px;
+      color: rgba(201,169,97,0.65);
+      display: block;
+      margin-bottom: 10px;
+      letter-spacing: 0.14em;
+    }
+    .dual-credit__label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold2);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .dual-credit p { font-size: 12.5px; color: var(--muted2); line-height: 1.78; margin: 0; }
+    .talent-onrequest {
+      border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg);
+      background: var(--surface);
+      padding: 22px 24px;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    .talent-onrequest__label {
+      font-size: 8px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 10px;
+    }
+    .talent-onrequest__value {
+      font-family: var(--font-display);
+      font-size: clamp(20px,3vw,30px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .talent-onrequest__note { font-size: 12px; color: var(--muted2); line-height: 1.75; max-width: 56ch; margin: 0 auto; }
+
     @media (max-width: 768px) {
       .talent-profile { grid-template-columns: 1fr; }
       .talent-name { font-size: clamp(40px, 10vw, 64px); }
       .talent-stats { grid-template-columns: repeat(3, 1fr); }
       .talent-skills__grid { grid-template-columns: 1fr; }
       .talent-additional { grid-template-columns: 1fr; }
+      .dual-credit { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -268,8 +379,13 @@
       <a class="nav__link" href="apply.html">Apply</a>
       <a class="nav__link" href="atelier.html">The Atelier</a>
       <a class="nav__link is-active" href="roster.html">Talent</a>
+      <a class="nav__link" href="vorane.html">Vorane</a>
+      <a class="nav__link" href="collection.html">Collection</a>
+      <a class="nav__link" href="https://shop.houseofelevara.com" target="_blank" rel="noopener">Shop</a>
       <a class="nav__link" href="payments.html">Membership</a>
+      <a class="nav__link" href="ambassador.html">Ambassador</a>
       <a class="nav__link" href="team.html">Our Team</a>
+      <a class="nav__link" href="careers.html">Careers</a>
       <a class="nav__link" href="contact.html">Contact</a>
     </nav>
     <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
@@ -291,8 +407,13 @@
       <a href="apply.html" class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
       <a href="atelier.html" class="mobileMenu__link" onclick="GS_closeMenu()">The Atelier</a>
       <a href="roster.html" class="mobileMenu__link" onclick="GS_closeMenu()">Talent</a>
+      <a href="vorane.html" class="mobileMenu__link" onclick="GS_closeMenu()">Vorane</a>
+      <a href="collection.html" class="mobileMenu__link" onclick="GS_closeMenu()">Collection</a>
+      <a href="https://shop.houseofelevara.com" class="mobileMenu__link" target="_blank" rel="noopener" onclick="GS_closeMenu()">Shop</a>
       <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Membership</a>
+      <a href="ambassador.html" class="mobileMenu__link" onclick="GS_closeMenu()">Ambassador</a>
       <a href="team.html" class="mobileMenu__link" onclick="GS_closeMenu()">Our Team</a>
+      <a href="careers.html" class="mobileMenu__link" onclick="GS_closeMenu()">Careers</a>
       <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
     </div>
     <div class="mobileMenu__divider"></div>
@@ -310,6 +431,111 @@
       <h1>Our<br>Talent</h1>
       <p>House of Elévara represents a curated selection of professional models developed for visibility, bookings, and long-term brand equity. Every talent on our roster has been selected and positioned with intention.</p>
     </div>
+  </div>
+
+  <!-- ── LEORA SLATER ── -->
+  <div class="container" style="margin-bottom:clamp(48px,8vw,88px);">
+    <div class="sectionDivider" style="margin-top:0;">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">Leora Slater · Creative Director</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+
+    <div class="talent-profile">
+      <div class="talent-photo">
+        <div class="talent-photo__shimmer"></div>
+        <div class="talent-photo__badge talent-photo__badge--director">Creative Director</div>
+        <img src="IMG_2368.jpeg" alt="Leora Slater — Creative Director, House of Elévara" loading="lazy"/>
+      </div>
+      <div class="talent-photo">
+        <div class="talent-photo__shimmer"></div>
+        <img src="IMG_7806.jpeg" alt="Leora Slater — House of Elévara" loading="lazy"/>
+      </div>
+    </div>
+
+    <div class="talent-info">
+      <span class="talent-eyebrow">The Dual Credit · Rare by Definition</span>
+      <h2 class="talent-name">Leora<br><em>Slater</em></h2>
+      <span class="talent-location">Women · Miami, Florida · Creative Director · By Selection Only</span>
+      <p class="talent-bio">Leora Slater directs the visual language of House of Elévara. Every campaign, every editorial frame, every object that carries the house name passes through her eye before it reaches the world. She now joins the roster as talent by her own choosing — not hired into the frame, but stepping into the one she normally builds. That combination is rare: a creative director who understands the shot from both sides of the lens, and who arrives on set already fluent in the intention behind it. Based in Miami. Booked selectively.</p>
+
+      <div class="talent-statement">
+        <p>She is not a face the House hired. She is the eye the House trusts — <em>now standing in front of the lens instead of behind it.</em></p>
+      </div>
+
+      <div class="dual-credit">
+        <div class="dual-credit__cell">
+          <span class="dual-credit__num">I.</span>
+          <span class="dual-credit__label">Direction</span>
+          <p>Creative Director of House of Elévara. Sets the visual standard across campaign, editorial, and product — the house aesthetic runs through her.</p>
+        </div>
+        <div class="dual-credit__cell dual-credit__cell--mid">
+          <span class="dual-credit__num">II.</span>
+          <span class="dual-credit__label">Presence</span>
+          <p>She books as talent because the frame calls for her, not because a slot needed filling. Selective by design — a limited number of engagements per season.</p>
+        </div>
+        <div class="dual-credit__cell">
+          <span class="dual-credit__num">III.</span>
+          <span class="dual-credit__label">Advantage</span>
+          <p>Clients book a model who already thinks like a director. No translation required between concept and execution — she arrives understanding the brief.</p>
+        </div>
+      </div>
+
+      <div class="talent-additional">
+        <div class="talent-detail"><span class="talent-detail__label">Based In</span><span class="talent-detail__value">Miami, Florida</span></div>
+        <div class="talent-detail"><span class="talent-detail__label">Role</span><span class="talent-detail__value">Creative Director · House Talent</span></div>
+        <div class="talent-detail"><span class="talent-detail__label">Representation</span><span class="talent-detail__value">House of Elévara LLC</span></div>
+        <div class="talent-detail"><span class="talent-detail__label">Availability</span><span class="talent-detail__value">Selective · Paid Assignments</span></div>
+        <div class="talent-detail"><span class="talent-detail__label">Travel</span><span class="talent-detail__value">Available Nationwide</span></div>
+        <div class="talent-detail"><span class="talent-detail__label">Booking</span><span class="talent-detail__value">Direct Through the House</span></div>
+      </div>
+
+      <div class="talent-onrequest">
+        <span class="talent-onrequest__label">Digitals & Measurements</span>
+        <div class="talent-onrequest__value">Released on Confirmation</div>
+        <p class="talent-onrequest__note">Full digitals, sizing, and additional imagery are provided directly to confirmed clients during booking coordination. Submit an inquiry to request the complete package.</p>
+      </div>
+
+      <div class="talent-categories">
+        <span class="talent-categories__label">Available For</span>
+        <div class="talent-tags">
+          <span class="talent-tag">Editorial</span>
+          <span class="talent-tag">Campaign</span>
+          <span class="talent-tag">Fashion</span>
+          <span class="talent-tag">Beauty</span>
+          <span class="talent-tag">Lookbook</span>
+          <span class="talent-tag">Creative Direction</span>
+          <span class="talent-tag">Art Direction</span>
+          <span class="talent-tag">Brand Partnerships</span>
+          <span class="talent-tag">E-Commerce</span>
+          <span class="talent-tag">Events</span>
+        </div>
+      </div>
+
+      <div class="talent-booking">
+        <h3>Book Leora Slater</h3>
+        <p>Available for editorial, campaign, fashion, and brand partnership assignments — as talent, as creative director, or as both on the same production. All bookings are coordinated directly through House of Elévara LLC. Submit an inquiry and our team will confirm availability, digitals, and details within 24 hours.</p>
+        <div class="btnRow" style="margin-top:0;flex-direction:row;flex-wrap:wrap;">
+          <a class="btn btn--gold" href="mailto:admin@houseofelevara.com?subject=Booking%20Inquiry%20%E2%80%94%20Leora%20Slater%20%7C%20House%20of%20El%C3%A9vara&body=Hello%20House%20of%20El%C3%A9vara%2C%0A%0AI%20am%20interested%20in%20booking%20Leora%20Slater.%0A%0AEngagement%20Type%20(Talent%20%2F%20Creative%20Direction%20%2F%20Both)%3A%0AProject%20Type%3A%0ADate%3A%0ALocation%3A%0ABudget%3A%0ADetails%3A%0A%0AContact%20Name%3A%0APhone%3A%0A%0AThank%20you%2C" style="flex:0 1 auto;width:auto;">Inquire to Book Leora</a>
+          <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer" href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call" style="flex:0 1 auto;width:auto;">Schedule a Call</a>
+          <a class="btn btn--dark" href="book.html" style="flex:0 1 auto;width:auto;">General Booking Page</a>
+        </div>
+      </div>
+
+      <div class="readyBlock" style="text-align:center;">
+        <h3 style="text-align:center;">Direction & Talent, Together</h3>
+        <p style="text-align:center;max-width:52ch;margin:0 auto;">Leora can be booked as talent, retained for creative direction, or engaged for both on a single production — a combination available nowhere else on the roster.</p>
+        <div class="btnRow" style="justify-content:center;flex-direction:row;flex-wrap:wrap;">
+          <a class="btn btn--dark" href="team.html" style="flex:0 1 auto;width:auto;">Meet the Leadership Team</a>
+          <a class="btn btn--ghost" href="mailto:admin@houseofelevara.com?subject=Booking%20Inquiry%20%E2%80%94%20Leora%20Slater%20%7C%20House%20of%20El%C3%A9vara" style="flex:0 1 auto;width:auto;">Contact for Booking</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DIVIDER ── -->
+  <div class="container">
+    <hr class="talent-divider"/>
   </div>
 
   <!-- ── PAULA SOFIA ARIAS ── -->
