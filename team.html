@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <title>Meet the Team | House of Elévara</title>
-  <meta name="description" content="Meet the leadership team behind House of Elévara LLC — experienced professionals from Live Nation, Delta Air Lines, FIFA, Procter & Gamble, and more."/>
+  <meta name="description" content="Meet the leadership team behind House of Elévara LLC — experienced professionals in creative direction, capital strategy, and talent operations."/>
   <link rel="stylesheet" href="assets/styles.css"/>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
@@ -65,6 +65,53 @@
     .member-contact::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold2), transparent); opacity: 0.5; }
     .member-contact__label { font-size: 8.5px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
     .member-contact__text { font-size: 13px; color: var(--muted2); line-height: 1.7; margin-bottom: 16px; }
+
+    /* ── CREATIVE STATEMENT (Leora) ── */
+    .statement-block {
+      border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg);
+      background: radial-gradient(ellipse 90% 70% at 10% 0%, rgba(200,169,90,0.08), transparent 55%), var(--surface);
+      padding: clamp(24px,4vw,40px);
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .statement-block::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold2), transparent);
+      opacity: 0.55;
+    }
+    .statement-block__mark { font-family: var(--font-display); font-size: 40px; color: var(--gold); opacity: 0.3; line-height: 0.6; margin-bottom: 14px; }
+    .statement-block p { font-size: 13.5px; color: var(--muted2); line-height: 1.95; margin-bottom: 16px; letter-spacing: 0.02em; }
+    .statement-block p:last-of-type { margin-bottom: 0; }
+    .statement-lead {
+      font-family: var(--font-display) !important;
+      font-size: clamp(17px,2.6vw,26px) !important;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--white) !important;
+      line-height: 1.4 !important;
+      margin-bottom: 20px !important;
+    }
+    .statement-lead em { color: var(--gold2); font-style: italic; }
+    .statement-sign {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      font-size: 8.5px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .pillar-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--gold-line); border: 1px solid var(--gold-line); border-radius: var(--radiusLg); overflow: hidden; margin-bottom: 32px; }
+    .pillar { background: var(--surface); padding: 22px 20px; transition: background 0.2s; }
+    .pillar:hover { background: var(--gold-dim); }
+    .pillar--mid { background: radial-gradient(ellipse 100% 80% at 50% 0%, rgba(200,169,90,0.10), transparent 60%), var(--surface2); }
+    .pillar__label { font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold2); display: block; margin-bottom: 8px; }
+    .pillar p { font-size: 12.5px; color: var(--muted2); line-height: 1.78; margin: 0; }
+
     .coming-section { border: 1px solid var(--line); border-radius: var(--radiusLg); background: var(--surface); padding: clamp(32px,4vw,52px); text-align: center; margin-bottom: clamp(48px,8vw,88px); position: relative; overflow: hidden; animation: fadeUp 0.7s ease 0.4s both; }
     .coming-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-line), transparent); }
     .coming-eyebrow { font-size: 8.5px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
@@ -76,7 +123,7 @@
     .slot-card__circle { width: 56px; height: 56px; border-radius: 50%; border: 1px dashed var(--gold-line); display: flex; align-items: center; justify-content: center; font-size: 20px; }
     .slot-card__label { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
     .slot-card__role { font-size: 11px; color: var(--muted); letter-spacing: 0.06em; }
-    @media (max-width: 900px) { .member-profile { grid-template-columns: 1fr; } .member-photo-wrap { position: static; } .member-photo { max-width: 380px; } .slot-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 900px) { .member-profile { grid-template-columns: 1fr; } .member-photo-wrap { position: static; } .member-photo { max-width: 380px; } .slot-grid { grid-template-columns: 1fr 1fr; } .pillar-grid { grid-template-columns: 1fr; } }
     @media (max-width: 580px) { .member-stats { grid-template-columns: 1fr 1fr; } .slot-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
@@ -93,9 +140,13 @@
       <a class="nav__link" href="apply.html">Apply</a>
       <a class="nav__link" href="atelier.html">The Atelier</a>
       <a class="nav__link" href="roster.html">Talent</a>
+      <a class="nav__link" href="vorane.html">Vorane</a>
+      <a class="nav__link" href="collection.html">Collection</a>
+      <a class="nav__link" href="https://shop.houseofelevara.com" target="_blank" rel="noopener">Shop</a>
       <a class="nav__link" href="payments.html">Membership</a>
-      <a class="nav__link" href="careers.html">Careers</a>
+      <a class="nav__link" href="ambassador.html">Ambassador</a>
       <a class="nav__link is-active" href="team.html">Our Team</a>
+      <a class="nav__link" href="careers.html">Careers</a>
       <a class="nav__link" href="contact.html">Contact</a>
     </nav>
     <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
@@ -117,9 +168,13 @@
       <a href="apply.html" class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
       <a href="atelier.html" class="mobileMenu__link" onclick="GS_closeMenu()">The Atelier</a>
       <a href="roster.html" class="mobileMenu__link" onclick="GS_closeMenu()">Talent</a>
+      <a href="vorane.html" class="mobileMenu__link" onclick="GS_closeMenu()">Vorane</a>
+      <a href="collection.html" class="mobileMenu__link" onclick="GS_closeMenu()">Collection</a>
+      <a href="https://shop.houseofelevara.com" class="mobileMenu__link" target="_blank" rel="noopener" onclick="GS_closeMenu()">Shop</a>
       <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Membership</a>
-      <a href="careers.html" class="mobileMenu__link" onclick="GS_closeMenu()">Careers</a>
+      <a href="ambassador.html" class="mobileMenu__link" onclick="GS_closeMenu()">Ambassador</a>
       <a href="team.html" class="mobileMenu__link" onclick="GS_closeMenu()">Our Team</a>
+      <a href="careers.html" class="mobileMenu__link" onclick="GS_closeMenu()">Careers</a>
       <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
     </div>
     <div class="mobileMenu__divider"></div>
@@ -136,15 +191,15 @@
       <a href="index.html" style="display:inline-flex;align-items:center;gap:8px;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-bottom:20px;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">← Back to Home</a>
       <div class="team-hero__eyebrow">Leadership · House of Elévara LLC</div>
       <h1 class="team-hero__title">Meet <em>the Team</em></h1>
-      <p class="team-hero__sub">House of Elévara is built by professionals who have operated at the highest levels of entertainment, sports, corporate talent management, and venture capital. Every person on this team brings real-world experience from globally recognized organizations — and a genuine commitment to building something that lasts.</p>
+      <p class="team-hero__sub">House of Elévara is built by professionals who have operated at the highest levels of creative direction, capital strategy, and brand building. Every person on this team brings real-world experience — and a genuine commitment to building something that lasts.</p>
     </div>
   </section>
 
-  <!-- ── MAYA PRICE ── -->
+  <!-- ── LEORA SLATER ── -->
   <div class="container">
     <div class="sectionDivider" style="margin-top:0;">
       <div class="sectionDivider__line"></div>
-      <span class="sectionDivider__label">Maya Price</span>
+      <span class="sectionDivider__label">Leora Slater</span>
       <div class="sectionDivider__line"></div>
     </div>
   </div>
@@ -153,69 +208,100 @@
       <div class="member-photo-wrap">
         <div class="member-photo">
           <div class="member-photo__shimmer"></div>
-          <img src="IMG_9489.png" loading="lazy" alt="Maya Price — Head of Entertainment and Talent Operations"/>
+          <img src="IMG_2368.jpeg" loading="lazy" alt="Leora Slater — Creative Director"/>
           <div class="member-photo__overlay">
-            <div class="member-photo__name">Maya Price</div>
-            <div class="member-photo__role">Head of Entertainment & Talent Operations</div>
+            <div class="member-photo__name">Leora Slater</div>
+            <div class="member-photo__role">Creative Director</div>
           </div>
         </div>
         <div class="member-brands">
-          <span class="member-brands__label">Career Background</span>
+          <span class="member-brands__label">Disciplines</span>
           <div class="member-brands__grid">
-            <a class="brand-card" href="https://www.livenationentertainment.com" target="_blank" rel="noopener noreferrer">
-              <div class="brand-card__icon">🎵</div>
-              <div class="brand-card__info"><div class="brand-card__name">Live Nation Entertainment</div><div class="brand-card__role">Talent Relations</div></div>
-              <div class="brand-card__loc">↗ Global</div>
-            </a>
-            <a class="brand-card" href="https://www.delta.com" target="_blank" rel="noopener noreferrer">
-              <div class="brand-card__icon">✈️</div>
-              <div class="brand-card__info"><div class="brand-card__name">Delta Air Lines</div><div class="brand-card__role">HR & People Operations</div></div>
-              <div class="brand-card__loc">↗ Atlanta</div>
-            </a>
-            <a class="brand-card" href="https://www.fifa.com" target="_blank" rel="noopener noreferrer">
-              <div class="brand-card__icon">⚽</div>
-              <div class="brand-card__info"><div class="brand-card__name">FIFA</div><div class="brand-card__role">Talent & Engagement</div></div>
-              <div class="brand-card__loc">↗ Global</div>
-            </a>
-            <a class="brand-card" href="https://www.gsu.edu" target="_blank" rel="noopener noreferrer">
-              <div class="brand-card__icon">🎓</div>
-              <div class="brand-card__info"><div class="brand-card__name">Georgia State University</div><div class="brand-card__role">Graduate — Atlanta</div></div>
-              <div class="brand-card__loc">↗ Atlanta</div>
+            <div class="brand-card">
+              <div class="brand-card__icon">🎬</div>
+              <div class="brand-card__info"><div class="brand-card__name">Creative Direction</div><div class="brand-card__role">Campaign & Brand World-Building</div></div>
+            </div>
+            <div class="brand-card">
+              <div class="brand-card__icon">📷</div>
+              <div class="brand-card__info"><div class="brand-card__name">Photography &amp; Film</div><div class="brand-card__role">Visual Storytelling Since Age Eight</div></div>
+            </div>
+            <div class="brand-card">
+              <div class="brand-card__icon">👗</div>
+              <div class="brand-card__info"><div class="brand-card__name">Fashion &amp; Styling</div><div class="brand-card__role">Editorial Concept & Art Direction</div></div>
+            </div>
+            <a class="brand-card" href="roster.html">
+              <div class="brand-card__icon">✦</div>
+              <div class="brand-card__info"><div class="brand-card__name">House Talent</div><div class="brand-card__role">Also Represented on the Roster</div></div>
+              <div class="brand-card__loc">↗ View</div>
             </a>
           </div>
         </div>
       </div>
       <div class="member-info">
         <div class="member-info__eyebrow">House of Elévara LLC · Leadership</div>
-        <h2 class="member-info__name">Maya <em>Price</em></h2>
-        <div class="member-info__title">Head of Entertainment & Talent Operations</div>
+        <h2 class="member-info__name">Leora <em>Slater</em></h2>
+        <div class="member-info__title">Creative Director</div>
         <div class="member-stats">
-          <div class="member-stat"><span class="member-stat__label">Experience</span><span class="member-stat__value">8+ Years</span></div>
-          <div class="member-stat"><span class="member-stat__label">Based In</span><span class="member-stat__value">Atlanta, GA</span></div>
-          <div class="member-stat"><span class="member-stat__label">Origin</span><span class="member-stat__value">Louisville, KY</span></div>
+          <div class="member-stat"><span class="member-stat__label">Based In</span><span class="member-stat__value">Miami, FL</span></div>
+          <div class="member-stat"><span class="member-stat__label">Origin</span><span class="member-stat__value">West Virginia</span></div>
+          <div class="member-stat"><span class="member-stat__label">Discipline</span><span class="member-stat__value">Creative Direction</span></div>
         </div>
-        <p class="member-info__bio">Maya Price is a seasoned Talent Relations and Operations executive with over eight years of expertise building high-performance cultures and strategic talent ecosystems. A graduate of Georgia State University and Atlanta-raised professional, she has held senior roles with some of the world's most recognized organizations — including Live Nation Entertainment, Delta Air Lines, and FIFA — where she led talent relations, elevated employee experience, and drove engagement across diverse global teams.</p>
-        <p class="member-info__bio">At Live Nation, Maya operated at the intersection of entertainment and people strategy, managing complex talent dynamics at one of the largest live entertainment companies in the world. At Delta Air Lines, she refined her HR infrastructure expertise, building systems that supported thousands of employees across a global operation. At FIFA, she brought her skills to the international stage — coordinating talent and engagement across one of the most high-profile sporting organizations on the planet.</p>
-        <p class="member-info__bio">As Head of Entertainment & Talent Operations at House of Elévara LLC, Maya oversees the full spectrum of talent strategy and operational infrastructure — from acquisition and onboarding to event coordination, performance analytics, and cross-functional leadership. Known for her people-first philosophy and her ability to navigate complex organizational dynamics, she brings both the strategic vision and the operational precision required to build something that lasts.</p>
+        <p class="member-info__bio">Leora Slater is the Creative Director of House of Elévara. She directs the visual language of the House — every campaign, every editorial frame, every object that carries the name passes through her eye before it reaches the world. Based in Miami and raised in the hills of West Virginia, she builds from a rare combination: the patience to notice what others overlook, and the precision to execute at a luxury standard.</p>
+        <p class="member-info__bio">She has been behind a camera since she was eight years old — documenting ordinary moments because, to her, they were never ordinary. That instinct became a discipline. Today it shapes campaign concepts, art direction, editorial narrative, and the tone of every asset the House produces. She also appears in front of the lens as House talent, a dual credit that lets her carry a concept from idea to frame without translation.</p>
+
+        <div class="pillar-grid">
+          <div class="pillar">
+            <span class="pillar__label">Instinct</span>
+            <p>Trained by nature before she was trained by fashion. She notices the detail that makes an image feel like something rather than merely look like something.</p>
+          </div>
+          <div class="pillar pillar--mid">
+            <span class="pillar__label">Intention</span>
+            <p>Luxury defined by craftsmanship and restraint, not price. Every frame is deliberate — nothing in a House campaign arrives by accident.</p>
+          </div>
+          <div class="pillar">
+            <span class="pillar__label">Memory</span>
+            <p>The goal is never content people scroll past. It is work people carry with them long after they have looked away.</p>
+          </div>
+        </div>
+
+        <span class="resp-label">In Her Own Words</span>
+        <div class="statement-block">
+          <div class="statement-block__mark">"</div>
+          <p class="statement-lead">I didn't grow up surrounded by fashion houses, luxury campaigns, or creative agencies. I grew up in the hills of West Virginia — where mornings began with fog rolling over the mountains, and <em>nature was the first masterpiece I ever studied.</em></p>
+          <p>Before I knew the names of luxury brands, I knew how golden light looked through the trees, how silence could tell a story, and how beauty lived in the smallest details.</p>
+          <p>I've always believed that everything is art. The way we as humans live is art — and art needs to be captured. The way sunlight hits a window. The sound of rain on a tin roof. A cup of coffee that is the perfect shade. A weathered pair of cowboy boots. A handwritten note. A luxury hotel lobby. A woman walking through a city at midnight. An empty yacht in a marina. Every color, texture, emotion, and movement has the power to become a story.</p>
+          <p>Since I was eight years old, I've been obsessed with cameras. I filmed everything. I documented ordinary moments because, to me, they were never ordinary. I didn't realize I was teaching myself visual storytelling — I was simply chasing the feeling that came from creating something beautiful. That feeling has never left.</p>
+          <p>My mind is constantly overflowing with ideas. Entire campaigns play out in my head. Films begin with a single image. A song becomes a color palette. A conversation becomes a concept. I don't just see the world as it is — I instinctively imagine how it could be transformed, every single second.</p>
+          <p>Fashion has always fascinated me because it speaks before a single word is said. Film captures emotion that language sometimes can't. Photography freezes a feeling that would otherwise disappear forever. Creative direction is where all of those worlds collide.</p>
+          <p>Growing up in the country taught me to notice what others overlook. Luxury taught me that excellence lives in precision. Those two worlds aren't opposites — they're the foundation of how I see everything I create. Authenticity and refinement can exist in the same frame.</p>
+          <p>I don't want to create content that people scroll past. I want to create worlds people remember. I want every frame to feel intentional, every campaign to feel cinematic, and every detail to have meaning — because details are never just details. They are the difference between something people see and something they feel.</p>
+          <p>To me, luxury isn't defined by a price tag. It's defined by intention. It's craftsmanship. It's restraint. It's confidence. It's creating something so timeless that it still evokes emotion years later.</p>
+          <p>Being a creative director isn't simply the career I want — it's the language I've been speaking my entire life. My purpose is to turn ideas into experiences, moments into stories, and stories into art that people carry with them long after they've looked away. Life is art, so let's capture it all.</p>
+          <div class="statement-sign">Leora Slater · Creative Director</div>
+        </div>
+
         <span class="resp-label">Key Responsibilities</span>
         <ul class="resp-list">
-          <li>Lead the strategy, execution, and oversight of all entertainment and talent operations across House of Elévara LLC</li>
-          <li>Build and manage end-to-end talent acquisition and onboarding processes for performers, creatives, and operational staff</li>
-          <li>Oversee event coordination, scheduling, and on-site operations for all company-produced experiences and activations</li>
-          <li>Establish KPIs, performance dashboards, and reporting structures to measure operational and talent effectiveness</li>
-          <li>Partner cross-functionally with marketing, production, and executive leadership to align talent strategy with brand vision</li>
-          <li>Cultivate strategic relationships with agencies, vendors, venues, and industry partners to expand the company's network and capabilities</li>
-          <li>Champion a culture of excellence, inclusivity, and high performance across all talent and operational touchpoints</li>
+          <li>Own and direct the visual identity of House of Elévara across every arm of the ecosystem</li>
+          <li>Lead creative concept development for campaigns, editorials, product launches, and brand activations</li>
+          <li>Art direct photo and film production — from mood and casting through styling, location, and final selects</li>
+          <li>Maintain the House aesthetic standard across web, social, editorial, packaging, and campaign assets</li>
+          <li>Partner with the Founder on brand positioning, launch sequencing, and creative strategy</li>
+          <li>Guide talent on presentation, portfolio direction, and on-set performance</li>
+          <li>Build and manage relationships with photographers, stylists, and production collaborators</li>
+          <li>Serve as House talent on select productions where the frame calls for her</li>
         </ul>
+
         <div class="member-contact">
-          <div class="member-contact__label">Talent & Operations Inquiries</div>
-          <p class="member-contact__text">For talent partnerships, operational collaborations, and entertainment coordination — reach Maya directly or route through the House of Elévara team.</p>
+          <div class="member-contact__label">Creative &amp; Production Inquiries</div>
+          <p class="member-contact__text">For creative direction, campaign collaboration, editorial production, and booking Leora as talent — route through the House of Elévara team.</p>
           <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;">
-            <a href="tel:+16784852113" style="font-size:13px;color:var(--muted2);text-decoration:none;letter-spacing:0.04em;transition:color 0.2s;" onmouseover="this.style.color='var(--gold2)'" onmouseout="this.style.color='var(--muted2)'">📞 +1 (678) 485-2113</a>
             <a href="mailto:admin@houseofelevara.com" style="font-size:13px;color:var(--muted2);text-decoration:none;letter-spacing:0.04em;transition:color 0.2s;" onmouseover="this.style.color='var(--gold2)'" onmouseout="this.style.color='var(--muted2)'">✉ admin@houseofelevara.com</a>
+            <a href="tel:+13072894953" style="font-size:13px;color:var(--muted2);text-decoration:none;letter-spacing:0.04em;transition:color 0.2s;" onmouseover="this.style.color='var(--gold2)'" onmouseout="this.style.color='var(--muted2)'">📞 +1 (307) 289-4953</a>
           </div>
           <div class="btnRow" style="margin-top:0;flex-direction:row;flex-wrap:wrap;">
-            <a class="btn btn--gold" href="mailto:admin@houseofelevara.com?subject=Talent%20Operations%20Inquiry%20%7C%20House%20of%20El%C3%A9vara" style="flex:0 1 auto;width:auto;">Contact the Team</a>
+            <a class="btn btn--gold" href="mailto:admin@houseofelevara.com?subject=Creative%20Direction%20Inquiry%20%7C%20House%20of%20El%C3%A9vara" style="flex:0 1 auto;width:auto;">Contact the Team</a>
+            <a class="btn btn--dark" href="roster.html" style="flex:0 1 auto;width:auto;">View Her Talent Profile</a>
             <a class="btn btn--ghost" href="contact.html" style="flex:0 1 auto;width:auto;">All Contact Options</a>
           </div>
         </div>
@@ -247,12 +333,12 @@
           <div class="member-brands__grid">
             <a class="brand-card" href="https://www.pg.com" target="_blank" rel="noopener noreferrer">
               <div class="brand-card__icon">🏭</div>
-              <div class="brand-card__info"><div class="brand-card__name">Procter & Gamble</div><div class="brand-card__role">Project Management & HR</div></div>
+              <div class="brand-card__info"><div class="brand-card__name">Procter &amp; Gamble</div><div class="brand-card__role">Project Management &amp; HR</div></div>
               <div class="brand-card__loc">↗ Fortune 100</div>
             </a>
             <a class="brand-card" href="https://ebuilders.us" target="_blank" rel="noopener noreferrer">
               <div class="brand-card__icon">🏛️</div>
-              <div class="brand-card__info"><div class="brand-card__name">Empire Builders LLC</div><div class="brand-card__role">President & Executive Consultant</div></div>
+              <div class="brand-card__info"><div class="brand-card__name">Empire Builders LLC</div><div class="brand-card__role">President &amp; Executive Consultant</div></div>
               <div class="brand-card__loc">↗ Lexington, KY</div>
             </a>
             <a class="brand-card" href="https://www.linkedin.com/in/vinceedwards1/" target="_blank" rel="noopener noreferrer">
@@ -283,7 +369,7 @@
           <div class="member-stat"><span class="member-stat__label">Capital Secured</span><span class="member-stat__value">$100M+</span></div>
         </div>
         <p class="member-info__bio">Vince Edwards is a seasoned business development executive, operator, and capital strategist with over 20 years of experience spanning Fortune 100 corporations, government investment programs, and high-growth startups. A graduate of the University of Kentucky with a B.S. in Mathematics and a certificate alumnus of the MIT Regional Entrepreneurship Accelerator Program (MIT REAP) — where he led the first U.S.-based team to complete the program — Vince brings the analytical foundation of a mathematician and the strategic depth of an MIT-trained operator to everything he builds.</p>
-        <p class="member-info__bio">As Founder and CEO of Empire Builders LLC — a full-service business consulting firm that builds, grows, and elevates companies to new levels — Vince has spent nearly a decade helping businesses across every industry obtain capital, scale operations, and reach their fullest potential. He has worked with Fortune 100 companies including Procter & Gamble and IBM, secured over $100 million in financing for clients, and assisted in raising $8M+ for early-stage ventures through relationships with Maxim Investment Bank and the Keiretsu Forum — the largest angel network organization in the world.</p>
+        <p class="member-info__bio">As Founder and CEO of Empire Builders LLC — a full-service business consulting firm that builds, grows, and elevates companies to new levels — Vince has spent nearly a decade helping businesses across every industry obtain capital, scale operations, and reach their fullest potential. He has worked with Fortune 100 companies including Procter &amp; Gamble and IBM, secured over $100 million in financing for clients, and assisted in raising $8M+ for early-stage ventures through relationships with Maxim Investment Bank and the Keiretsu Forum — the largest angel network organization in the world.</p>
         <p class="member-info__bio">As Head of Investor Relations at House of Elévara LLC, Vince leads the capital strategy that will fund the next decade of the House's growth — building relationships with angel investors, family offices, and institutional capital partners, and driving the fundraising initiatives that turn vision into infrastructure. He is a problem solver, a capital raiser, and a builder — and he brings to this role what most IR professionals simply do not have: he has been on both sides of the table.</p>
         <span class="resp-label">Key Responsibilities</span>
         <ul class="resp-list">
@@ -306,7 +392,7 @@
               <div style="width:36px;height:36px;border-radius:50%;border:1px solid var(--gold-line);background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">👩‍💼</div>
               <div>
                 <div style="font-size:12px;font-weight:600;color:var(--white);letter-spacing:0.04em;">Dr. Esther R. Dyer</div>
-                <div style="font-size:10px;color:var(--gold);letter-spacing:0.08em;">Independent Director · CEO & Board Coach · Mentor</div>
+                <div style="font-size:10px;color:var(--gold);letter-spacing:0.08em;">Independent Director · CEO &amp; Board Coach · Mentor</div>
               </div>
             </div>
           </div>
@@ -351,12 +437,12 @@
     <div class="coming-section">
       <div class="coming-eyebrow">The Team Is Expanding</div>
       <h3 class="coming-title">More Leadership Coming Soon</h3>
-      <p class="coming-text">House of Elévara is actively building a team of seasoned professionals across creative direction, brand partnerships, and platform operations. As the company grows, so does the people behind it.</p>
+      <p class="coming-text">House of Elévara is actively building a team of seasoned professionals across talent operations, brand partnerships, and platform operations. As the company grows, so does the people behind it.</p>
       <div class="slot-grid">
         <div class="slot-card">
-          <div class="slot-card__circle">🎨</div>
+          <div class="slot-card__circle">🎤</div>
           <div class="slot-card__label">Coming Soon</div>
-          <div class="slot-card__role">Creative Director</div>
+          <div class="slot-card__role">Head of Talent Operations</div>
         </div>
         <div class="slot-card">
           <div class="slot-card__circle">🤝</div>
