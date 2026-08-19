@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-  <title>Membership & Opportunities | House of Elévara</title>
-  <meta name="description" content="Website-based talent management services. Does not affect The Atelier app features or functionality."/>
+  <title>Membership &amp; Opportunities | House of Elévara</title>
+  <meta name="description" content="Website-based talent management services from House of Elévara. Operates independently of The Atelier app."/>
   <link rel="stylesheet" href="assets/styles.css"/>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
@@ -14,15 +14,29 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="theme-color" content="#060605">
-  <meta property="og:title" content="Membership & Opportunities | House of Elévara"/>
+  <meta property="og:title" content="Membership &amp; Opportunities | House of Elévara"/>
   <meta property="og:description" content="Website-based talent management services for houseofelevara.com"/>
   <meta property="og:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
   <meta property="og:url" content="https://houseofelevara.com/payments.html"/>
   <meta property="og:type" content="website"/>
   <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Membership &amp; Opportunities | House of Elévara"/>
+  <meta name="twitter:description" content="Website-based talent management services for houseofelevara.com"/>
   <meta name="twitter:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
 
   <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    /* ── ICON SYSTEM ── */
+    .icon {
+      width: 26px; height: 26px;
+      stroke: var(--gold2); stroke-width: 1.15;
+      stroke-linecap: round; stroke-linejoin: round;
+      fill: none; display: block;
+    }
+    .icon--sm { width: 16px; height: 16px; }
+    .icon--lg { width: 34px; height: 34px; }
+
     .tiers {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -57,17 +71,11 @@
         radial-gradient(ellipse 100% 80% at 20% 0%, rgba(200,169,90,0.10), transparent 55%),
         var(--surface2);
     }
-    .tier--featured::before {
-      content: 'MOST POPULAR';
-      position: absolute;
-      top: 18px; right: -30px;
-      background: linear-gradient(135deg, var(--gold2), var(--gold));
-      color: var(--black);
-      font-size: 7.5px;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      padding: 5px 44px;
-      transform: rotate(45deg);
+    .tier--free {
+      border-color: var(--gold-line);
+      background:
+        radial-gradient(ellipse 100% 80% at 20% 0%, rgba(200,169,90,0.07), transparent 55%),
+        var(--surface);
     }
     .tier__shimmer {
       position: absolute;
@@ -78,7 +86,8 @@
       transition: opacity 0.3s;
     }
     .tier:hover .tier__shimmer,
-    .tier--featured .tier__shimmer { opacity: 0.7; }
+    .tier--featured .tier__shimmer,
+    .tier--free .tier__shimmer { opacity: 0.7; }
     .tier__tag {
       font-size: 8.5px;
       letter-spacing: 0.26em;
@@ -140,6 +149,8 @@
       flex-direction: column;
       gap: 10px;
       flex: 1;
+      padding: 0;
+      margin: 0;
     }
     .tier__list li {
       font-size: 12px;
@@ -189,67 +200,31 @@
       background: linear-gradient(90deg, transparent, var(--gold2), transparent);
       opacity: 0.6;
     }
-    .disclaimer-box {
+    .note-box {
       max-width: 780px;
       margin: 0 auto 32px;
-      padding: 24px 32px;
+      padding: 22px 30px;
       border: 1px solid var(--gold-line);
       border-radius: var(--radiusLg);
       background: var(--surface2);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      text-align: left;
       animation: fadeUp 0.7s ease 0.25s both;
     }
-    .disclaimer-box__title {
+    .note-box__title {
       font-size: 9px;
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       font-weight: 600;
     }
-    .disclaimer-box__text {
+    .note-box__text {
       font-size: 12.5px;
       color: var(--muted2);
       line-height: 1.85;
-    }
-    .growth-notice {
-      border: 1px solid var(--gold-line);
-      border-radius: var(--radiusLg);
-      background:
-        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200,169,90,0.08), transparent 55%),
-        var(--surface);
-      padding: 24px 30px;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 32px;
-      position: relative;
-      overflow: hidden;
-      animation: fadeUp 0.7s ease 0.2s both;
-    }
-    .growth-notice::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold2), transparent);
-      opacity: 0.6;
-    }
-    .growth-notice__icon {
-      font-size: 28px;
-      flex-shrink: 0;
-      animation: floaty 4s ease-in-out infinite;
-    }
-    .growth-notice__text {
-      font-size: 12.5px;
-      color: var(--muted2);
-      line-height: 1.8;
-    }
-    .growth-notice__text strong {
-      color: var(--gold2);
-      display: block;
-      font-size: 13px;
-      letter-spacing: 0.04em;
-      margin-bottom: 4px;
     }
 
     /* ── SHOP LIVE BLOCK ── */
@@ -316,12 +291,10 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 5px;
+      gap: 7px;
       background: var(--gold-dim);
       flex-shrink: 0;
-      animation: floaty 5s ease-in-out infinite;
     }
-    .store-block__badge-icon { font-size: 22px; color: var(--gold2); }
     .store-block__badge-label {
       font-size: 9px;
       font-weight: 600;
@@ -374,11 +347,26 @@
       .tiers { grid-template-columns: 1fr; }
       .store-block { grid-template-columns: 1fr; gap: 24px; }
       .store-block__badge { margin: 0 auto; }
-      .growth-notice { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
 <body>
+
+<!-- ══ SVG ICON SPRITE ══ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-mark" viewBox="0 0 24 24">
+      <path d="M12 3 13.9 9.4 20.5 9.6 15.3 13.6 17.1 20 12 16.2 6.9 20 8.7 13.6 3.5 9.6 10.1 9.4Z"/>
+    </symbol>
+    <symbol id="i-info" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8.6"/><path d="M12 11v5.4"/><path d="M12 7.9v.1"/>
+    </symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24">
+      <path d="M5.5 8h13l1 12.5a1 1 0 0 1-1 1.1H5.5a1 1 0 0 1-1-1.1Z"/>
+      <path d="M8.6 11V6.8a3.4 3.4 0 0 1 6.8 0V11"/>
+    </symbol>
+  </defs>
+</svg>
 
 <header class="topbar">
   <div class="container topbar__inner">
@@ -393,10 +381,13 @@
       <a class="nav__link" href="apply.html">Apply</a>
       <a class="nav__link" href="atelier.html">The Atelier</a>
       <a class="nav__link" href="roster.html">Talent</a>
-      <a class="nav__link is-active" href="payments.html">Membership</a>
+      <a class="nav__link" href="vorane.html">Vorane</a>
+      <a class="nav__link" href="collection.html">Collection</a>
       <a class="nav__link" href="https://shop.houseofelevara.com" target="_blank" rel="noopener">Shop</a>
-      <a class="nav__link" href="careers.html">Careers</a>
+      <a class="nav__link is-active" href="payments.html">Membership</a>
+      <a class="nav__link" href="ambassador.html">Ambassador</a>
       <a class="nav__link" href="team.html">Our Team</a>
+      <a class="nav__link" href="careers.html">Careers</a>
       <a class="nav__link" href="contact.html">Contact</a>
     </nav>
     <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
@@ -418,10 +409,13 @@
       <a href="apply.html" class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
       <a href="atelier.html" class="mobileMenu__link" onclick="GS_closeMenu()">The Atelier</a>
       <a href="roster.html" class="mobileMenu__link" onclick="GS_closeMenu()">Talent</a>
-      <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Membership</a>
+      <a href="vorane.html" class="mobileMenu__link" onclick="GS_closeMenu()">Vorane</a>
+      <a href="collection.html" class="mobileMenu__link" onclick="GS_closeMenu()">Collection</a>
       <a href="https://shop.houseofelevara.com" class="mobileMenu__link" target="_blank" rel="noopener" onclick="GS_closeMenu()">Shop</a>
-      <a href="careers.html" class="mobileMenu__link" onclick="GS_closeMenu()">Careers</a>
+      <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Membership</a>
+      <a href="ambassador.html" class="mobileMenu__link" onclick="GS_closeMenu()">Ambassador</a>
       <a href="team.html" class="mobileMenu__link" onclick="GS_closeMenu()">Our Team</a>
+      <a href="careers.html" class="mobileMenu__link" onclick="GS_closeMenu()">Careers</a>
       <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
     </div>
     <div class="mobileMenu__divider"></div>
@@ -437,7 +431,7 @@
       <a href="index.html" style="display:inline-flex;align-items:center;gap:8px;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-bottom:20px;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">← Back to Home</a>
       <p style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">Website Membership Services</p>
       <h1>Talent Management<br>Services</h1>
-      <p>House of Elévara offers professional talent management services for models, creators, and artists. These are website-based services hosted at houseofelevara.com and operate independently of The Atelier iOS app. All app features remain available to every user regardless of membership status.</p>
+      <p>House of Elévara offers professional talent management services for models, creators, and artists. These are website-based services hosted at houseofelevara.com and operate independently of The Atelier iOS app.</p>
       <div class="btnRow">
         <a class="btn btn--dark" href="apply.html">Apply for Free</a>
         <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer" href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call">Schedule a Call First</a>
@@ -447,10 +441,13 @@
   </div>
 
   <div class="container">
-    <div class="disclaimer-box">
-      <div class="disclaimer-box__title">⚠️ Important — Website Services Only</div>
-      <div class="disclaimer-box__text">
-        The membership tiers on this page are for professional talent management services provided by House of Elévara LLC via houseofelevara.com. These services include talent coordination, brand outreach, profile management, and editorial opportunities. These memberships do not unlock features in The Atelier app, do not affect app placement or visibility, and do not grant special app access. The Atelier app and its booking platform remain fully functional for all users regardless of website membership status.
+    <div class="note-box">
+      <svg class="icon icon--sm" style="flex-shrink:0;margin-top:3px;" aria-hidden="true"><use href="#i-info"/></svg>
+      <div>
+        <div class="note-box__title">Website Services · Separate from The Atelier</div>
+        <div class="note-box__text">
+          The tiers below are professional talent management services provided by House of Elévara LLC via houseofelevara.com — talent coordination, brand outreach, profile management, and editorial opportunities. They do not unlock features in The Atelier app, do not affect app placement or visibility, and do not grant special app access. Every feature of The Atelier remains available to all users regardless of membership status.
+        </div>
       </div>
     </div>
   </div>
@@ -468,16 +465,6 @@
   </div>
 
   <div class="container">
-    <div class="growth-notice">
-      <div class="growth-notice__icon">◈</div>
-      <div class="growth-notice__text">
-        <strong>Website Talent Management Services</strong>
-        We provide professional talent coordination, brand outreach, profile management, and editorial opportunities via houseofelevara.com. These services operate separately from The Atelier app.
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
     <div class="sectionDivider">
       <div class="sectionDivider__line"></div>
       <span class="sectionDivider__label">Choose Your Service Level</span>
@@ -488,7 +475,7 @@
   <div class="container" style="margin-bottom:clamp(32px,4vw,48px);">
     <div class="tiers">
 
-      <!-- FREE -->
+      <!-- FREE — ROSTER -->
       <div class="tier">
         <div class="tier__shimmer"></div>
         <span class="tier__tag">Foundation</span>
@@ -508,32 +495,32 @@
         </div>
       </div>
 
-      <!-- $100 AMBASSADOR -->
-      <div class="tier">
+      <!-- FREE — AMBASSADOR -->
+      <div class="tier tier--free">
         <div class="tier__shimmer"></div>
-        <span class="tier__tag">Website Referral Program</span>
-        <h2 class="tier__title">Brand Ambassadorship</h2>
+        <span class="tier__tag">Commission Program</span>
+        <h2 class="tier__title">Brand Ambassador</h2>
         <div class="tier__price">
-          <span class="tier__price-amount">$100</span>
-          <span class="tier__price-period">one-time</span>
+          <span class="tier__price-amount">Free</span>
+          <span class="tier__price-period">to join</span>
         </div>
-        <p class="tier__desc">Website-based referral program. Earn $50 for every Ambassador you refer. Earn commission on every product you sell from the Shop.</p>
+        <p class="tier__desc">Earn 10–25% commission on every product you sell from the Shop. No activation fee. No monthly cost. No inventory to buy.</p>
         <ul class="tier__list">
-          <li>Website Ambassador status on houseofelevara.com</li>
-          <li>Earn $50 for every Ambassador referral (50/50 commission split)</li>
-          <li>Earn commission on every product sold via your referral link at shop.houseofelevara.com</li>
-          <li>Website profile badge</li>
-          <li>Editorial consideration on Elyra Editorial (separate publication)</li>
+          <li>10% commission from your very first sale</li>
+          <li>15% once you reach $2,500 in lifetime sales</li>
+          <li>25% once you reach $10,000 — your rate never resets</li>
+          <li>Your own tracked link for shop.houseofelevara.com</li>
+          <li>The House handles payment, packaging, and shipping</li>
+          <li>Editorial consideration on Elyra Editorial</li>
         </ul>
         <div class="tier__footer">
-          <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer" href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call">Schedule a Call First</a>
-          <a class="btn btn--gold" target="_blank" rel="noopener noreferrer" href="https://buy.stripe.com/5kQfZa9Tt9b322g5gu4sE05">Become an Ambassador — $100</a>
-          <a class="btn btn--dark" href="ambassador.html">View Full Ambassador Program →</a>
-          <p class="tier__disclaimer">Secure checkout via Stripe. Website service only. Does not affect app.</p>
+          <a class="btn btn--gold" href="ambassador.html">View the Ambassador Program</a>
+          <a class="btn btn--ghost" href="mailto:admin@houseofelevara.com?subject=Ambassador%20Program%20Application">Apply to Become an Ambassador</a>
+          <p class="tier__disclaimer">Free to join. Commission paid on completed sales. Website program only.</p>
         </div>
       </div>
 
-      <!-- $75/month -->
+      <!-- $75 / MONTH -->
       <div class="tier tier--featured">
         <div class="tier__shimmer"></div>
         <span class="tier__tag">Website Management Service</span>
@@ -549,16 +536,15 @@
           <li>Profile management on houseofelevara.com</li>
           <li>Direct communication support via email</li>
           <li>Editorial consideration and promotional support</li>
-          <li>Ambassador commission on Shop product sales</li>
         </ul>
         <div class="tier__footer">
           <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer" href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call">Schedule a Call First</a>
           <a class="btn btn--gold" target="_blank" rel="noopener noreferrer" href="https://buy.stripe.com/fZu14g0iT72V8qE38m4sE0g">Start Monthly — $75</a>
-          <p class="tier__disclaimer">Secure checkout via Stripe. Cancel anytime. Website service only.</p>
+          <p class="tier__disclaimer">Secure checkout via Stripe. Cancel anytime. Website service only. Does not guarantee bookings or income.</p>
         </div>
       </div>
 
-      <!-- $675/year -->
+      <!-- $675 / YEAR -->
       <div class="tier">
         <div class="tier__shimmer"></div>
         <span class="tier__tag">Best Value · Website Service</span>
@@ -572,14 +558,13 @@
         <ul class="tier__list">
           <li>All Monthly Management benefits included</li>
           <li>Full year of dedicated talent coordination</li>
-          <li>Equivalent to $56.25/month — save $225 annually</li>
-          <li>Ambassador commission on Shop product sales</li>
+          <li>Equivalent to $56.25 per month — save $225 annually</li>
           <li>Website-based service via houseofelevara.com</li>
         </ul>
         <div class="tier__footer">
           <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer" href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call">Schedule a Call First</a>
           <a class="btn btn--gold" target="_blank" rel="noopener noreferrer" href="https://buy.stripe.com/bJebIUfdNaf722gbES4sE0h">Start Annual — $675</a>
-          <p class="tier__disclaimer">Secure checkout via Stripe. Billed annually. Website service only.</p>
+          <p class="tier__disclaimer">Secure checkout via Stripe. Billed annually. Website service only. Does not guarantee bookings or income.</p>
         </div>
       </div>
 
@@ -600,13 +585,13 @@
         <span style="font-size:8.5px;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px;">Fragrance · Leather Goods · The Inaugural Collection</span>
         <h2 class="store-block__title">The Elévara <em style="font-style:italic;color:var(--gold2);">Shop</em></h2>
         <p class="store-block__text">
-          The inaugural collection is live. N° 01 The Parfum is available for presale now. Four pieces releasing in sequence — fragrance and leather goods for those who need not announce themselves. Ambassadors earn commission on every product they sell.
+          The inaugural collection is live. N° 01 The Parfum is available now, with three pieces releasing in sequence — fragrance and leather goods for those who need not announce themselves. Ambassadors earn 10–25% on every piece they sell.
         </p>
         <ul class="cleanList" style="margin-bottom:20px;">
           <li>N° 01 The Parfum, Noir — $240 · Available Now</li>
-          <li>N° 04 The Cardholder — $175 · Coming in Sequence</li>
-          <li>N° 02 The Evening Bag — $685 · Coming in Sequence</li>
-          <li>N° 03 The Tote — $795 · Coming in Sequence</li>
+          <li>N° 02 The Evening — $685 · Arriving in Sequence</li>
+          <li>N° 03 The Tote — $795 · Arriving in Sequence</li>
+          <li>N° 04 The Cardholder — $175 · Arriving in Sequence</li>
         </ul>
         <div class="btnRow" style="flex-direction:row;flex-wrap:wrap;">
           <a class="btn btn--gold" href="https://shop.houseofelevara.com" target="_blank" rel="noopener noreferrer" style="flex:0 1 auto;width:auto;">Shop Now</a>
@@ -615,7 +600,7 @@
         </div>
       </div>
       <div class="store-block__badge">
-        <span class="store-block__badge-icon">◈</span>
+        <svg class="icon icon--lg" aria-hidden="true"><use href="#i-bag"/></svg>
         <span class="store-block__badge-label">Elévara<br>Shop</span>
         <span class="store-block__badge-sub">Live Now</span>
       </div>
@@ -625,12 +610,12 @@
   <!-- ── POLICY ── -->
   <div class="container" style="margin-bottom:clamp(48px,8vw,88px);">
     <div class="policy-block">
-      <h3 class="policy-block__title">Transparency & Expectations</h3>
+      <h3 class="policy-block__title">Transparency &amp; Expectations</h3>
       <div class="policy-block__text">
-        <p>House of Elévara provides professional talent management services via houseofelevara.com. Membership fees support talent coordination, brand outreach, profile management, and editorial opportunities. These are website services and do not affect The Atelier app.</p>
+        <p>Membership fees support talent coordination, brand outreach, profile management, and editorial opportunities delivered through houseofelevara.com.</p>
         <p>Participation in any paid tier does not guarantee bookings, income, or campaign selection. What it provides is dedicated talent management, ongoing coordination, and professional representation via our website platform.</p>
-        <p>The Atelier iOS app operates independently. All app features — including booking, messaging, portfolios, and earnings — are available to every user regardless of website membership status.</p>
-        <p>The Elévara Shop is live at shop.houseofelevara.com. Ambassadors earn commission on every product sold through their referral link. Commission rates and payout terms are outlined in the Ambassador Program.</p>
+        <p>The Ambassador Program is free to join and separate from the paid tiers above. Ambassadors earn 10–25% commission on completed product sales driven through their link, with rates rising by lifetime sales volume. Full terms are set out in the <a href="ambassador.html" style="color:var(--gold2);text-decoration:none;">Ambassador Program</a>.</p>
+        <p>The Atelier iOS app operates independently. All app features — including booking, messaging, portfolios, and earnings — are available to every user regardless of website membership or Ambassador status.</p>
       </div>
       <div class="btnRow">
         <a class="btn btn--gold" target="_blank" rel="noopener noreferrer" href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call">Schedule a Free Consultation</a>
@@ -642,17 +627,20 @@
 </main>
 
 <footer class="footer">
-  <div>All payments processed securely via Stripe &nbsp;·&nbsp; © 2026 House of Elevara LLC</div>
+  <div>All payments processed securely via Stripe &nbsp;·&nbsp; © 2026 House of Elévara LLC</div>
   <div class="footer__muted">admin@houseofelevara.com &nbsp;·&nbsp; +1 (307) 289-4953</div>
   <div class="footer__muted" style="margin-top:6px;">30 N Gould St, Ste N · Sheridan, WY 82801</div>
-  <div class="footer__muted" style="margin-top:6px;">
-    <a href="privacy.html" style="color:var(--gold2);text-decoration:none;">Privacy Policy</a>
+  <div class="footer__muted" style="margin-top:8px;">
+    <a href="privacy.html" style="color:var(--gold2);text-decoration:none;margin:0 8px;">Privacy Policy</a>
     &nbsp;·&nbsp;
-    <a href="terms.html" style="color:var(--gold2);text-decoration:none;">Terms of Service</a>
+    <a href="terms.html" style="color:var(--gold2);text-decoration:none;margin:0 8px;">Terms of Service</a>
   </div>
 </footer>
 
 <script src="assets/app.js?v=101"></script>
+
+<!-- Tidio Chat Widget -->
+<script src="https://code.tidio.co/h8ks9rxfom7avd6huvahecatbr5xkfl7.js" async></script>
 
 </body>
 </html>
