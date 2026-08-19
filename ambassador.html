@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <title>Ambassador Program | House of Elévara</title>
-  <meta name="description" content="Website-based referral program. Earn $50 per Ambassador referral. Does not affect app features or functionality."/>
+  <meta name="description" content="Earn 10–25% commission on every House of Elévara product you sell. Free to join. No activation fee. No monthly cost."/>
   <link rel="icon" type="image/png" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
   <link rel="shortcut icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
   <link rel="apple-touch-icon" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png">
@@ -15,153 +15,272 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="theme-color" content="#060605">
   <meta property="og:title" content="Ambassador Program | House of Elévara"/>
-  <meta property="og:description" content="Website-based referral program. Earn $50 per referral."/>
+  <meta property="og:description" content="Earn 10–25% commission on every House of Elévara product you sell. Free to join."/>
   <meta property="og:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
   <meta property="og:url" content="https://houseofelevara.com/ambassador.html"/>
   <meta property="og:type" content="website"/>
   <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Ambassador Program | House of Elévara"/>
+  <meta name="twitter:description" content="Earn 10–25% commission on every House of Elévara product you sell."/>
   <meta name="twitter:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
 
   <style>
-    .amb-hero {
-      padding: clamp(56px,8vw,96px) 0 clamp(40px,6vw,64px);
-      position: relative;
-      text-align: center;
-    }
-    .amb-hero__badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 8px;
-      font-weight: 700;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--black);
-      background: linear-gradient(135deg, var(--gold3), var(--gold2), var(--gold));
-      padding: 7px 20px;
-      border-radius: 1px;
-      margin-bottom: 24px;
-      animation: fadeUp 0.6s ease both;
-    }
-    .amb-hero__title {
-      font-family: var(--font-display);
-      font-size: clamp(48px,8vw,96px);
-      font-weight: 300;
-      line-height: 1.0;
-      letter-spacing: 0.01em;
-      margin-bottom: 20px;
-      animation: fadeUp 0.7s ease 0.1s both;
-    }
-    .amb-hero__title em {
-      font-style: italic;
-      color: var(--gold2);
+    *, *::before, *::after { box-sizing: border-box; }
+    body { overflow-x: hidden; }
+
+    /* ── ICON SYSTEM ── */
+    .icon {
+      width: 26px; height: 26px;
+      stroke: var(--gold2);
+      stroke-width: 1.15;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
       display: block;
     }
+    .icon--sm { width: 18px; height: 18px; }
+
+    /* ── HERO ── */
+    .amb-hero { padding: clamp(48px,7vw,88px) 0 clamp(32px,5vw,56px); text-align: center; }
+    .amb-hero__badge {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-size: 8px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--black); background: linear-gradient(135deg, var(--gold3), var(--gold2), var(--gold));
+      padding: 7px 20px; border-radius: 1px; margin-bottom: 26px;
+      animation: fadeUp 0.6s ease both;
+    }
+    .amb-hero__badge .icon { width: 13px; height: 13px; stroke: var(--black); stroke-width: 1.6; }
+    .amb-hero__title {
+      font-family: var(--font-display); font-size: clamp(42px,7.5vw,92px);
+      font-weight: 300; line-height: 1.0; letter-spacing: 0.01em; margin-bottom: 20px;
+      animation: fadeUp 0.7s ease 0.1s both;
+    }
+    .amb-hero__title em { font-style: italic; color: var(--gold2); display: block; }
     .amb-hero__sub {
-      font-size: 15px;
-      color: var(--muted2);
-      line-height: 1.85;
-      max-width: 62ch;
-      margin: 0 auto 36px;
-      letter-spacing: 0.02em;
+      font-size: 15px; color: var(--muted2); line-height: 1.85;
+      max-width: 60ch; margin: 0 auto 40px; letter-spacing: 0.02em;
       animation: fadeUp 0.7s ease 0.2s both;
     }
-    .amb-hero__price {
-      font-family: var(--font-display);
-      font-size: clamp(56px,8vw,100px);
-      font-weight: 300;
-      color: var(--gold2);
-      line-height: 1;
-      margin-bottom: 8px;
+    .amb-hero__rate {
+      font-family: var(--font-display); font-size: clamp(60px,11vw,132px);
+      font-weight: 300; color: var(--gold2); line-height: 1; margin-bottom: 10px;
+      text-shadow: 0 0 70px rgba(200,169,90,0.32);
       animation: fadeUp 0.7s ease 0.3s both;
-      text-shadow: 0 0 60px rgba(200,169,90,0.3);
     }
-    .amb-hero__price-label {
-      font-size: 10px;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 32px;
+    .amb-hero__rate span { font-size: 0.42em; letter-spacing: 0.02em; }
+    .amb-hero__rate-label {
+      font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 36px;
       animation: fadeUp 0.7s ease 0.35s both;
     }
-    .disclaimer-box {
-      max-width: 680px;
-      margin: 32px auto;
-      padding: 20px 28px;
-      border: 1px solid var(--gold-line);
-      border-radius: var(--radiusLg);
-      background: var(--surface2);
-      animation: fadeUp 0.7s ease 0.4s both;
+
+    /* ── STAT TICKER ── */
+    .stat-row {
+      display: flex; justify-content: center; align-items: stretch;
+      gap: clamp(14px,4vw,44px); flex-wrap: wrap; margin: 40px 0;
+      animation: fadeUp 0.7s ease 0.45s both;
     }
-    .disclaimer-box__title {
-      font-size: 9px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 10px;
-      font-weight: 600;
+    .stat { text-align: center; min-width: 96px; }
+    .stat__num {
+      font-family: var(--font-display); font-size: clamp(30px,4.5vw,54px);
+      font-weight: 300; color: var(--gold2); line-height: 1; margin-bottom: 8px;
     }
-    .disclaimer-box__text {
-      font-size: 12px;
-      color: var(--muted2);
-      line-height: 1.8;
-    }
-    .earnings-ticker {
-      display: flex;
-      justify-content: center;
-      gap: clamp(16px,4vw,48px);
-      flex-wrap: wrap;
-      margin: 40px 0;
-      animation: fadeUp 0.7s ease 0.5s both;
-    }
-    .earnings-stat {
-      text-align: center;
-      position: relative;
-    }
-    .earnings-stat__num {
-      font-family: var(--font-display);
-      font-size: clamp(36px,5vw,64px);
-      font-weight: 300;
-      color: var(--gold2);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-    .earnings-stat__label {
-      font-size: 8.5px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .earnings-divider {
-      width: 1px;
-      height: 60px;
+    .stat__label { font-size: 8.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+    .stat-rule {
+      width: 1px; align-self: center; height: 56px;
       background: linear-gradient(180deg, transparent, var(--gold-line), transparent);
-      align-self: center;
     }
-    @media (max-width: 768px) {
-      .earnings-ticker { gap: 12px; }
-      .earnings-divider { display: none; }
+    @media (max-width: 768px) { .stat-rule { display: none; } .stat-row { gap: 20px; } }
+
+    /* ── FLOW DIAGRAM ── */
+    .flow {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      align-items: start; gap: 0;
+      padding: clamp(24px,4vw,40px) clamp(12px,3vw,28px);
+      border: 1px solid var(--gold-line); border-radius: var(--radiusLg);
+      background: radial-gradient(ellipse 90% 70% at 50% 0%, rgba(200,169,90,0.06), transparent 60%), var(--surface);
+      position: relative; margin-bottom: 32px;
     }
+    .flow__step { display: flex; flex-direction: column; align-items: center; gap: 12px; position: relative; padding: 0 6px; }
+    .flow__step::after {
+      content: ''; position: absolute; top: 27px; left: calc(50% + 32px); right: calc(-50% + 32px);
+      height: 1px; background: linear-gradient(90deg, var(--gold-line), rgba(200,169,90,0.28), var(--gold-line));
+    }
+    .flow__step:last-child::after { display: none; }
+    .flow__disc {
+      width: 54px; height: 54px; border-radius: 50%;
+      border: 1px solid var(--gold-line); background: var(--surface2);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; position: relative; z-index: 2;
+      transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+    }
+    .flow__step:hover .flow__disc {
+      border-color: rgba(200,169,90,0.55);
+      background: radial-gradient(ellipse 80% 80% at 30% 20%, rgba(200,169,90,0.18), transparent 62%), var(--surface2);
+      transform: translateY(-3px);
+    }
+    .flow__disc--final {
+      border-color: var(--gold);
+      background: radial-gradient(ellipse 80% 80% at 30% 20%, rgba(200,169,90,0.22), transparent 60%), var(--surface2);
+      box-shadow: 0 0 28px rgba(200,169,90,0.16);
+    }
+    .flow__num {
+      font-size: 7px; letter-spacing: 0.2em; color: var(--gold); opacity: 0.65;
+    }
+    .flow__label {
+      font-size: 8px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted2); text-align: center; line-height: 1.6;
+    }
+    @media (max-width: 720px) {
+      .flow { grid-template-columns: 1fr; gap: 20px; }
+      .flow__step { flex-direction: row; justify-content: flex-start; gap: 16px; text-align: left; }
+      .flow__step::after {
+        top: 54px; bottom: -20px; left: 27px; right: auto; width: 1px; height: auto;
+        background: linear-gradient(180deg, var(--gold-line), rgba(200,169,90,0.28), var(--gold-line));
+      }
+      .flow__label { text-align: left; }
+      .flow__inner { display: flex; flex-direction: column; gap: 4px; }
+    }
+
+    /* ── TIER TABLE ── */
+    .tiers {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
+      background: var(--gold-line); border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg); overflow: hidden; margin: 24px 0 32px;
+    }
+    .tier { background: var(--black2); padding: clamp(24px,3.5vw,36px) 20px; text-align: center; transition: background 0.24s; position: relative; }
+    .tier:hover { background: var(--black3); }
+    .tier--top { background: radial-gradient(ellipse 100% 80% at 50% 0%, rgba(200,169,90,0.15), transparent 62%), var(--surface2); }
+    .tier--top::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold2), transparent);
+    }
+    .tier__name { font-size: 8px; font-weight: 700; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+    .tier__pct { font-family: var(--font-display); font-size: clamp(40px,6vw,64px); font-weight: 300; color: var(--gold2); line-height: 1; margin-bottom: 10px; }
+    .tier__req { font-size: 9.5px; color: var(--muted); letter-spacing: 0.06em; line-height: 1.7; }
+    @media (max-width: 640px) { .tiers { grid-template-columns: 1fr; } }
+
+    /* ── PRODUCT COMMISSION TABLE ── */
+    .comm-table {
+      border: 1px solid var(--gold-line); border-radius: var(--radiusLg);
+      overflow: hidden; margin: 24px 0 32px; background: var(--surface);
+    }
+    .comm-row {
+      display: grid; grid-template-columns: 1.6fr 0.8fr 0.8fr 0.8fr;
+      align-items: center; gap: 8px;
+      padding: 16px clamp(14px,3vw,26px);
+      border-bottom: 1px solid var(--gold-line);
+    }
+    .comm-row:last-child { border-bottom: none; }
+    .comm-row--head { background: var(--surface2); }
+    .comm-row--head > * {
+      font-size: 7.5px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold); font-weight: 600;
+    }
+    .comm-piece { font-family: var(--font-display); font-size: 15px; font-weight: 300; color: var(--white); line-height: 1.3; }
+    .comm-piece em { font-style: italic; color: var(--gold2); }
+    .comm-piece small { display: block; font-family: var(--font-body, inherit); font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-top: 3px; font-style: normal; }
+    .comm-val { font-family: var(--font-display); font-size: 15px; color: var(--muted2); text-align: right; }
+    .comm-val--gold { color: var(--gold2); }
+    .comm-val--top { color: var(--gold2); font-weight: 400; }
+    @media (max-width: 640px) {
+      .comm-row { grid-template-columns: 1fr 1fr; row-gap: 6px; }
+      .comm-row--head { display: none; }
+      .comm-val::before { content: attr(data-label); display: block; font-size: 7px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
+    }
+
+    /* ── FEATURE CARDS ── */
+    .feat-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
+      gap: 1px; background: var(--gold-line); border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg); overflow: hidden; margin: 24px 0;
+    }
+    .feat { background: var(--black2); padding: 26px 22px; transition: background 0.24s; }
+    .feat:hover { background: var(--black3); }
+    .feat__icon { margin-bottom: 14px; }
+    .feat__title { font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold2); margin-bottom: 8px; }
+    .feat__desc { font-size: 12.5px; color: var(--muted2); line-height: 1.78; }
+
+    .note-box {
+      max-width: 720px; margin: 32px auto 0;
+      padding: 22px 28px; border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg); background: var(--surface2);
+      display: flex; gap: 16px; align-items: flex-start; text-align: left;
+    }
+    .note-box__title { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 9px; font-weight: 600; }
+    .note-box__text { font-size: 12px; color: var(--muted2); line-height: 1.82; }
   </style>
 </head>
 <body>
+
+<!-- ══ SVG ICON SPRITE ══ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-mark" viewBox="0 0 24 24">
+      <path d="M12 3 13.9 9.4 20.5 9.6 15.3 13.6 17.1 20 12 16.2 6.9 20 8.7 13.6 3.5 9.6 10.1 9.4Z"/>
+    </symbol>
+    <symbol id="i-apply" viewBox="0 0 24 24">
+      <path d="M6 3h8l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/>
+      <path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h4"/>
+    </symbol>
+    <symbol id="i-link" viewBox="0 0 24 24">
+      <path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1.5 1.5"/>
+      <path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1.5-1.5"/>
+    </symbol>
+    <symbol id="i-share" viewBox="0 0 24 24">
+      <circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/>
+      <path d="M8.3 10.8 15.7 6.4"/><path d="M8.3 13.2l7.4 4.4"/>
+    </symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24">
+      <path d="M5.5 8h13l1 12.5a1 1 0 0 1-1 1.1H5.5a1 1 0 0 1-1-1.1Z"/>
+      <path d="M8.6 11V6.8a3.4 3.4 0 0 1 6.8 0V11"/>
+    </symbol>
+    <symbol id="i-payout" viewBox="0 0 24 24">
+      <rect x="2.5" y="6" width="19" height="13" rx="1.6"/>
+      <path d="M2.5 10.2h19"/><path d="M6.2 15h3.4"/>
+    </symbol>
+    <symbol id="i-free" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8.6"/><path d="M8.6 12h6.8"/><path d="M12 8.6v6.8"/>
+    </symbol>
+    <symbol id="i-rise" viewBox="0 0 24 24">
+      <path d="M3.5 17.5 9.5 11l4 4 7-8"/><path d="M15.5 3.5h5v5"/>
+    </symbol>
+    <symbol id="i-track" viewBox="0 0 24 24">
+      <path d="M3.5 20.5h17"/><rect x="5" y="12" width="3.4" height="6"/>
+      <rect x="10.3" y="8" width="3.4" height="10"/><rect x="15.6" y="4.5" width="3.4" height="13.5"/>
+    </symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24">
+      <rect x="4.5" y="10.5" width="15" height="10.2" rx="1.4"/>
+      <path d="M8 10.5V7.4a4 4 0 0 1 8 0v3.1"/>
+    </symbol>
+    <symbol id="i-editorial" viewBox="0 0 24 24">
+      <path d="M3.5 5.5h7a2.5 2.5 0 0 1 2.5 2.5v11a2 2 0 0 0-2-2h-7.5Z"/>
+      <path d="M20.5 5.5h-7a2.5 2.5 0 0 0-2.5 2.5v11a2 2 0 0 1 2-2h7.5Z"/>
+    </symbol>
+    <symbol id="i-info" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8.6"/><path d="M12 11v5.4"/><path d="M12 7.9v.1"/>
+    </symbol>
+  </defs>
+</svg>
 
 <header class="topbar">
   <div class="container topbar__inner">
     <a class="brand" href="index.html" aria-label="House of Elévara Home">
       <div class="brand__glam3d">ELÉVARA</div>
-      <div class="brand__subwrap">
-        <span class="brand__subMain">House of Elévara LLC</span>
-      </div>
+      <div class="brand__subwrap"><span class="brand__subMain">House of Elévara LLC</span></div>
     </a>
     <nav class="nav" aria-label="Primary">
       <a class="nav__link" href="index.html">Home</a>
       <a class="nav__link" href="apply.html">Apply</a>
       <a class="nav__link" href="atelier.html">The Atelier</a>
       <a class="nav__link" href="roster.html">Talent</a>
+      <a class="nav__link" href="vorane.html">Vorane</a>
+      <a class="nav__link" href="collection.html">Collection</a>
+      <a class="nav__link" href="https://shop.houseofelevara.com" target="_blank" rel="noopener">Shop</a>
       <a class="nav__link" href="payments.html">Membership</a>
       <a class="nav__link is-active" href="ambassador.html">Ambassador</a>
       <a class="nav__link" href="team.html">Our Team</a>
+      <a class="nav__link" href="careers.html">Careers</a>
       <a class="nav__link" href="contact.html">Contact</a>
     </nav>
     <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
@@ -183,9 +302,13 @@
       <a href="apply.html" class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
       <a href="atelier.html" class="mobileMenu__link" onclick="GS_closeMenu()">The Atelier</a>
       <a href="roster.html" class="mobileMenu__link" onclick="GS_closeMenu()">Talent</a>
+      <a href="vorane.html" class="mobileMenu__link" onclick="GS_closeMenu()">Vorane</a>
+      <a href="collection.html" class="mobileMenu__link" onclick="GS_closeMenu()">Collection</a>
+      <a href="https://shop.houseofelevara.com" class="mobileMenu__link" target="_blank" rel="noopener" onclick="GS_closeMenu()">Shop</a>
       <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Membership</a>
       <a href="ambassador.html" class="mobileMenu__link" onclick="GS_closeMenu()">Ambassador</a>
       <a href="team.html" class="mobileMenu__link" onclick="GS_closeMenu()">Our Team</a>
+      <a href="careers.html" class="mobileMenu__link" onclick="GS_closeMenu()">Careers</a>
       <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
     </div>
     <div class="mobileMenu__divider"></div>
@@ -196,87 +319,55 @@
 
 <main>
 
+  <!-- ══ HERO ══ -->
   <section class="container">
     <div class="amb-hero">
-      <a href="payments.html" style="display:inline-flex;align-items:center;gap:8px;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-bottom:24px;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">← Back to Membership</a>
-
-      <div class="amb-hero__badge">✦ House of Elévara · Website Referral Program</div>
-      <h1 class="amb-hero__title">
-        Ambassador<br>
-        <em>Referral Program</em>
-      </h1>
-      <p class="amb-hero__sub">A website-based referral initiative for houseofelevara.com. Earn $50 for every person who activates Ambassador status through your unique referral code. Plus future Store commission access when the Elévara Store launches. This program operates independently of The Atelier iOS app and does not affect app features, placement, or functionality.</p>
-
-      <div class="amb-hero__price">$100</div>
-      <div class="amb-hero__price-label">One-time activation · Website only · No app benefits</div>
-
-      <div class="disclaimer-box">
-        <div class="disclaimer-box__title">⚠️ Important — Website Program Only</div>
-        <div class="disclaimer-box__text">
-          The Ambassador Program is a website referral initiative hosted at houseofelevara.com. It does not unlock features in The Atelier app, does not affect app placement or visibility, and does not grant special app access. Ambassadors receive: (1) $50 per referral when someone activates through their code, (2) a profile badge on the website, and (3) future commission eligibility for the Elévara Store when it launches. All app features remain available to every user regardless of Ambassador status.
-        </div>
+      <div class="amb-hero__badge">
+        <svg class="icon" aria-hidden="true"><use href="#i-mark"/></svg>
+        Free to Join · No Activation Fee
       </div>
+      <h1 class="amb-hero__title">
+        Sell the House.<br>
+        <em>Keep the Commission.</em>
+      </h1>
+      <p class="amb-hero__sub">
+        The Elévara Ambassador Program pays you on every product sold through your link — fragrance, leather goods, the full collection at shop.houseofelevara.com. Commission begins at 10% and rises to 25% as you sell. No cap. No expiration. You are never asked to buy in. You are asked to sell.
+      </p>
 
-      <div class="earnings-ticker">
-        <div class="earnings-stat">
-          <div class="earnings-stat__num">$50</div>
-          <div class="earnings-stat__label">Per Referral</div>
+      <div class="amb-hero__rate">10–25<span>%</span></div>
+      <div class="amb-hero__rate-label">Commission on Every Sale</div>
+
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat__num">$0</div>
+          <div class="stat__label">To Join</div>
         </div>
-        <div class="earnings-divider"></div>
-        <div class="earnings-stat">
-          <div class="earnings-stat__num">∞</div>
-          <div class="earnings-stat__label">Referrals Allowed</div>
+        <div class="stat-rule"></div>
+        <div class="stat">
+          <div class="stat__num">$0</div>
+          <div class="stat__label">Monthly Cost</div>
         </div>
-        <div class="earnings-divider"></div>
-        <div class="earnings-stat">
-          <div class="earnings-stat__num">$0</div>
-          <div class="earnings-stat__label">Monthly Fees</div>
+        <div class="stat-rule"></div>
+        <div class="stat">
+          <div class="stat__num">∞</div>
+          <div class="stat__label">Earning Ceiling</div>
         </div>
-        <div class="earnings-divider"></div>
-        <div class="earnings-stat">
-          <div class="earnings-stat__num">0</div>
-          <div class="earnings-stat__label">App Benefits</div>
+        <div class="stat-rule"></div>
+        <div class="stat">
+          <div class="stat__num">25<span style="font-size:0.5em;">%</span></div>
+          <div class="stat__label">Top Rate</div>
         </div>
       </div>
 
       <div class="btnRow" style="justify-content:center;flex-direction:row;flex-wrap:wrap;">
-        <a class="btn btn--gold" href="https://buy.stripe.com/5kQfZa9Tt9b322g5gu4sE05" target="_blank" rel="noopener noreferrer">Activate — $100</a>
-        <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer"
-           href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call">Schedule a Call First</a>
-        <a class="btn btn--dark" href="mailto:admin@houseofelevara.com?subject=Ambassador%20Program%20Question">Ask a Question</a>
+        <a class="btn btn--gold" href="mailto:admin@houseofelevara.com?subject=Ambassador%20Program%20Application">Become an Ambassador</a>
+        <a class="btn btn--ghost" href="https://shop.houseofelevara.com" target="_blank" rel="noopener noreferrer">View the Collection</a>
+        <a class="btn btn--dark" target="_blank" rel="noopener noreferrer" href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call">Schedule a Call</a>
       </div>
     </div>
   </section>
 
-  <div class="container">
-    <div class="sectionDivider">
-      <div class="sectionDivider__line"></div>
-      <span class="sectionDivider__label">What You Get</span>
-      <div class="sectionDivider__line"></div>
-    </div>
-  </div>
-
-  <section class="container" style="margin-bottom:clamp(48px,8vw,88px);">
-    <div class="grid2">
-      <div class="cardGlow">
-        <h3 class="goldTitle">Referral Earnings</h3>
-        <p class="muted">Earn $50 for every person who activates Ambassador status using your unique referral code. No cap on referrals. Paid automatically when they activate via Stripe.</p>
-      </div>
-      <div class="cardGlow">
-        <h3 class="goldTitle">Website Profile Badge</h3>
-        <p class="muted">Ambassador status displays as a badge on your houseofelevara.com profile. This is a website-only visual indicator and does not affect The Atelier app.</p>
-      </div>
-      <div class="cardGlow">
-        <h3 class="goldTitle">Store Commission Access</h3>
-        <p class="muted">When the Elévara Store launches, Ambassadors will be eligible for product commission programs. Commission structure announced to active Ambassadors first.</p>
-      </div>
-      <div class="cardGlow">
-        <h3 class="goldTitle">Editorial Consideration</h3>
-        <p class="muted">Ambassadors may be considered for editorial features on Elyra Editorial (elyraeditorial.com), our independent fashion and culture publication.</p>
-      </div>
-    </div>
-  </section>
-
+  <!-- ══ HOW IT WORKS ══ -->
   <div class="container">
     <div class="sectionDivider">
       <div class="sectionDivider__line"></div>
@@ -284,58 +375,250 @@
       <div class="sectionDivider__line"></div>
     </div>
   </div>
-
-  <section class="container" style="margin-bottom:clamp(48px,8vw,88px);">
-    <div class="readyBlock" style="margin-top:0;">
-      <h3>Simple Referral Process</h3>
-      <p>Pay $100 to activate. Receive your unique referral code. Share it. When someone activates through your code, you earn $50. Repeat as many times as you want.</p>
+  <section class="container" style="margin-bottom:clamp(48px,7vw,80px);">
+    <div class="flow">
+      <div class="flow__step">
+        <div class="flow__disc"><svg class="icon" aria-hidden="true"><use href="#i-apply"/></svg></div>
+        <div class="flow__inner">
+          <div class="flow__num">01</div>
+          <div class="flow__label">Apply<br>Free</div>
+        </div>
+      </div>
+      <div class="flow__step">
+        <div class="flow__disc"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg></div>
+        <div class="flow__inner">
+          <div class="flow__num">02</div>
+          <div class="flow__label">Receive<br>Your Link</div>
+        </div>
+      </div>
+      <div class="flow__step">
+        <div class="flow__disc"><svg class="icon" aria-hidden="true"><use href="#i-share"/></svg></div>
+        <div class="flow__inner">
+          <div class="flow__num">03</div>
+          <div class="flow__label">Share<br>It</div>
+        </div>
+      </div>
+      <div class="flow__step">
+        <div class="flow__disc"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></div>
+        <div class="flow__inner">
+          <div class="flow__num">04</div>
+          <div class="flow__label">They<br>Purchase</div>
+        </div>
+      </div>
+      <div class="flow__step">
+        <div class="flow__disc flow__disc--final"><svg class="icon" aria-hidden="true"><use href="#i-payout"/></svg></div>
+        <div class="flow__inner">
+          <div class="flow__num">05</div>
+          <div class="flow__label">You Are<br>Paid</div>
+        </div>
+      </div>
     </div>
-    <div class="infoGrid" style="margin-top:20px;">
-      <div class="infoCard"><strong>1. Activate</strong>Pay $100 once via Stripe. Ambassador status is permanent.</div>
-      <div class="infoCard"><strong>2. Get Your Code</strong>Receive your unique referral code via email from admin@houseofelevara.com.</div>
-      <div class="infoCard"><strong>3. Share Your Code</strong>Post it. Text it. Story it. Tag it. However you move.</div>
-      <div class="infoCard"><strong>4. They Activate</strong>Someone uses your code to activate their own Ambassador status ($100).</div>
-      <div class="infoCard"><strong>5. You Get Paid</strong>$50 is sent to your bank account automatically via Stripe. Every time.</div>
-      <div class="infoCard"><strong>6. Repeat</strong>No limit on referrals. Your code never expires.</div>
+    <div class="readyBlock" style="margin-top:0;">
+      <h3>No Inventory. No Buy-In. No Risk.</h3>
+      <p>You never hold stock, never front money, and never pay to participate. The House fulfils every order, handles every payment, and ships every piece. Your link records the sale, and your commission is calculated automatically.</p>
     </div>
   </section>
 
+  <!-- ══ COMMISSION TIERS ══ -->
   <div class="container">
     <div class="sectionDivider">
       <div class="sectionDivider__line"></div>
-      <span class="sectionDivider__label">Final CTA</span>
+      <span class="sectionDivider__label">Commission Tiers</span>
       <div class="sectionDivider__line"></div>
     </div>
   </div>
+  <section class="container" style="margin-bottom:clamp(48px,7vw,80px);">
+    <div class="readyBlock" style="margin-top:0;margin-bottom:8px;">
+      <h3>Your Rate Rises. It Never Resets.</h3>
+      <p>Every Ambassador begins at 10%. As your lifetime sales grow, your rate increases — and once you reach a tier, it is yours permanently. The higher rate applies to everything you sell from that point forward.</p>
+    </div>
+    <div class="tiers">
+      <div class="tier">
+        <div class="tier__name">Ambassador</div>
+        <div class="tier__pct">10%</div>
+        <div class="tier__req">Your starting rate<br>From your first sale</div>
+      </div>
+      <div class="tier">
+        <div class="tier__name">Signature</div>
+        <div class="tier__pct">15%</div>
+        <div class="tier__req">Unlocked at<br>$2,500 lifetime sales</div>
+      </div>
+      <div class="tier tier--top">
+        <div class="tier__name">Maison</div>
+        <div class="tier__pct">25%</div>
+        <div class="tier__req">Unlocked at<br>$10,000 lifetime sales</div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ══ WHAT YOU EARN ══ -->
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">What You Earn</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
+  <section class="container" style="margin-bottom:clamp(48px,7vw,80px);">
+    <div class="readyBlock" style="margin-top:0;margin-bottom:8px;">
+      <h3>Real Numbers on Real Pieces</h3>
+      <p>The inaugural collection, and what each piece pays at every tier. These are the actual retail prices at shop.houseofelevara.com.</p>
+    </div>
+    <div class="comm-table">
+      <div class="comm-row comm-row--head">
+        <div>Piece</div>
+        <div style="text-align:right;">Retail</div>
+        <div style="text-align:right;">At 10%</div>
+        <div style="text-align:right;">At 25%</div>
+      </div>
+      <div class="comm-row">
+        <div class="comm-piece">N° 01 · The <em>Parfum,</em> Noir<small>Available Now</small></div>
+        <div class="comm-val" data-label="Retail">$240</div>
+        <div class="comm-val comm-val--gold" data-label="At 10%">$24</div>
+        <div class="comm-val comm-val--top" data-label="At 25%">$60</div>
+      </div>
+      <div class="comm-row">
+        <div class="comm-piece">N° 02 · The <em>Evening</em><small>Arriving in Sequence</small></div>
+        <div class="comm-val" data-label="Retail">$685</div>
+        <div class="comm-val comm-val--gold" data-label="At 10%">$68.50</div>
+        <div class="comm-val comm-val--top" data-label="At 25%">$171.25</div>
+      </div>
+      <div class="comm-row">
+        <div class="comm-piece">N° 03 · The <em>Tote</em><small>Arriving in Sequence</small></div>
+        <div class="comm-val" data-label="Retail">$795</div>
+        <div class="comm-val comm-val--gold" data-label="At 10%">$79.50</div>
+        <div class="comm-val comm-val--top" data-label="At 25%">$198.75</div>
+      </div>
+      <div class="comm-row">
+        <div class="comm-piece">N° 04 · The <em>Cardholder</em><small>Arriving in Sequence</small></div>
+        <div class="comm-val" data-label="Retail">$175</div>
+        <div class="comm-val comm-val--gold" data-label="At 10%">$17.50</div>
+        <div class="comm-val comm-val--top" data-label="At 25%">$43.75</div>
+      </div>
+    </div>
+    <div class="stat-row" style="margin-top:0;">
+      <div class="stat">
+        <div class="stat__num">$240</div>
+        <div class="stat__label">10 Parfums at 10%</div>
+      </div>
+      <div class="stat-rule"></div>
+      <div class="stat">
+        <div class="stat__num">$600</div>
+        <div class="stat__label">10 Parfums at 25%</div>
+      </div>
+      <div class="stat-rule"></div>
+      <div class="stat">
+        <div class="stat__num">$1,988</div>
+        <div class="stat__label">10 Totes at 25%</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WHAT YOU GET ══ -->
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">What You Get</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
+  <section class="container" style="margin-bottom:clamp(48px,7vw,80px);">
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="feat__icon"><svg class="icon" aria-hidden="true"><use href="#i-free"/></svg></div>
+        <div class="feat__title">Free to Join</div>
+        <div class="feat__desc">No activation fee. No monthly cost. No minimum purchase. You are never asked to buy inventory or pay to participate.</div>
+      </div>
+      <div class="feat">
+        <div class="feat__icon"><svg class="icon" aria-hidden="true"><use href="#i-rise"/></svg></div>
+        <div class="feat__title">A Rate That Rises</div>
+        <div class="feat__desc">Begin at 10%. Reach 15% at $2,500 in lifetime sales and 25% at $10,000. Once earned, your rate is permanent.</div>
+      </div>
+      <div class="feat">
+        <div class="feat__icon"><svg class="icon" aria-hidden="true"><use href="#i-track"/></svg></div>
+        <div class="feat__title">Tracked Automatically</div>
+        <div class="feat__desc">Your link records every sale it drives. Commission is calculated and paid without you chasing invoices or filing claims.</div>
+      </div>
+      <div class="feat">
+        <div class="feat__icon"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg></div>
+        <div class="feat__title">No Cap, No Expiry</div>
+        <div class="feat__desc">There is no ceiling on what you earn and no expiration on your link. Sell one piece or five hundred — the terms do not change.</div>
+      </div>
+      <div class="feat">
+        <div class="feat__icon"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></div>
+        <div class="feat__title">The House Fulfils</div>
+        <div class="feat__desc">Payment, packaging, shipping, and customer care are handled entirely by Elévara. You sell. We deliver.</div>
+      </div>
+      <div class="feat">
+        <div class="feat__icon"><svg class="icon" aria-hidden="true"><use href="#i-editorial"/></svg></div>
+        <div class="feat__title">Editorial Consideration</div>
+        <div class="feat__desc">Active Ambassadors may be considered for features in Elyra Editorial, our independent fashion and culture publication.</div>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <svg class="icon icon--sm" style="flex-shrink:0;margin-top:2px;" aria-hidden="true"><use href="#i-info"/></svg>
+      <div>
+        <div class="note-box__title">A Note on The Atelier</div>
+        <div class="note-box__text">
+          The Ambassador Program governs product sales at shop.houseofelevara.com. It is separate from The Atelier booking app — Ambassador status does not unlock app features, affect placement or visibility on The Floor, or influence booking outcomes. Every feature of The Atelier remains available to all users regardless of Ambassador status.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FAQ ══ -->
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">Frequently Asked</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
+  <section class="container" style="margin-bottom:clamp(48px,7vw,80px);">
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <details class="infoCard"><summary><strong>Does it really cost nothing to join?</strong></summary><p>Yes. There is no activation fee, no monthly cost, and no requirement to purchase anything. You earn on what you sell, not on what you buy.</p></details>
+      <details class="infoCard"><summary><strong>How do I reach a higher tier?</strong></summary><p>Tiers are based on lifetime sales driven through your link. Reach $2,500 and your rate becomes 15%. Reach $10,000 and it becomes 25%. Your rate never decreases.</p></details>
+      <details class="infoCard"><summary><strong>When and how am I paid?</strong></summary><p>Commission is calculated on completed, non-refunded orders and paid on a monthly cycle. Payout details are confirmed during onboarding.</p></details>
+      <details class="infoCard"><summary><strong>What happens if a customer returns an item?</strong></summary><p>Commission is earned on completed sales. If an order is refunded, the associated commission is reversed. This protects both the Ambassador and the House.</p></details>
+      <details class="infoCard"><summary><strong>Do I need a large following?</strong></summary><p>No. Ambassadors range from working models to stylists to people who simply know the right rooms. What matters is that the people you reach would genuinely want these pieces.</p></details>
+      <details class="infoCard"><summary><strong>Can I be an Ambassador and roster talent at the same time?</strong></summary><p>Yes. The two are independent. Roster talent are welcome to become Ambassadors, and Ambassador status has no effect on representation or bookings.</p></details>
+      <details class="infoCard"><summary><strong>What am I actually selling?</strong></summary><p>The inaugural House of Elévara collection — N° 01 The Parfum is available now, with The Evening, The Tote, and The Cardholder arriving in sequence. <a href="collection.html">View the full collection.</a></p></details>
+      <details class="infoCard"><summary><strong>Is there a contract?</strong></summary><p>Yes. Ambassadors receive a short written agreement covering commission terms, brand usage, and conduct. There is no minimum term and no exclusivity requirement.</p></details>
+    </div>
+  </section>
+
+  <!-- ══ FINAL CTA ══ -->
   <section class="container">
     <div class="readyBlock" style="text-align:center;margin-bottom:clamp(48px,8vw,88px);">
-      <h3>Website Referral Program — $100 One-Time</h3>
-      <p>Activate your Ambassador status on houseofelevara.com. Earn $50 per referral. No monthly fees. No app benefits. This is a website-only initiative.</p>
+      <h3>Start Earning on What You Already Recommend</h3>
+      <p>If people already ask what you are wearing, what you are carrying, and what you are wearing on your skin — you are already doing the work. This is where you get paid for it.</p>
       <div class="btnRow" style="justify-content:center;margin-top:28px;flex-direction:row;flex-wrap:wrap;">
-        <a class="btn btn--gold" href="https://buy.stripe.com/5kQfZa9Tt9b322g5gu4sE05" target="_blank" rel="noopener noreferrer">Activate Ambassador — $100</a>
-        <a class="btn btn--ghost" target="_blank" rel="noopener noreferrer"
-           href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call">Schedule a Call</a>
-        <a class="btn btn--dark" href="payments.html">View All Membership Options</a>
+        <a class="btn btn--gold" href="mailto:admin@houseofelevara.com?subject=Ambassador%20Program%20Application">Become an Ambassador</a>
+        <a class="btn btn--ghost" href="https://shop.houseofelevara.com" target="_blank" rel="noopener noreferrer">See What You'd Be Selling</a>
+        <a class="btn btn--dark" target="_blank" rel="noopener noreferrer" href="https://meet.goodtime.io/w/houseofelevaragmailcom/houseofelevara/phone-call">Schedule a Call</a>
       </div>
-      <p style="font-size:10px;color:var(--muted);margin-top:20px;letter-spacing:0.08em;">Secure checkout via Stripe · admin@houseofelevara.com</p>
+      <p style="font-size:10px;color:var(--muted);margin-top:20px;letter-spacing:0.08em;">admin@houseofelevara.com &nbsp;·&nbsp; +1 (307) 289-4953</p>
     </div>
   </section>
 
 </main>
 
 <footer class="footer">
-  <div>© 2026 House of Elevara LLC</div>
+  <div>© 2026 House of Elévara LLC</div>
   <div class="footer__muted">admin@houseofelevara.com &nbsp;·&nbsp; +1 (307) 289-4953</div>
   <div class="footer__muted" style="margin-top:6px;">30 N Gould St, Ste N · Sheridan, WY 82801</div>
-  <div class="footer__muted" style="margin-top:6px;">
-    <a href="privacy.html" style="color:var(--gold2);text-decoration:none;">Privacy Policy</a>
+  <div class="footer__muted" style="margin-top:8px;">
+    <a href="privacy.html" style="color:var(--gold2);text-decoration:none;margin:0 8px;">Privacy Policy</a>
     &nbsp;·&nbsp;
-    <a href="terms.html" style="color:var(--gold2);text-decoration:none;">Terms of Service</a>
+    <a href="terms.html" style="color:var(--gold2);text-decoration:none;margin:0 8px;">Terms of Service</a>
   </div>
 </footer>
 
 <script src="assets/app.js?v=101"></script>
+
+<!-- Tidio Chat Widget -->
+<script src="https://code.tidio.co/h8ks9rxfom7avd6huvahecatbr5xkfl7.js" async></script>
 
 </body>
 </html>
