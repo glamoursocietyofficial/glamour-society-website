@@ -17,8 +17,20 @@
   <meta property="og:title" content="Meet the Team | House of Elévara"/>
   <meta property="og:description" content="Meet the leadership team behind House of Elévara LLC."/>
   <meta property="og:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
+  <meta property="og:url" content="https://houseofelevara.com/team.html"/>
+  <meta property="og:type" content="website"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Meet the Team | House of Elévara"/>
+  <meta name="twitter:description" content="Meet the leadership team behind House of Elévara LLC."/>
   <meta name="twitter:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
   <style>
+    /* ── ICON SYSTEM ── */
+    .icon { width: 22px; height: 22px; stroke: var(--gold2); stroke-width: 1.15;
+            stroke-linecap: round; stroke-linejoin: round; fill: none; display: block; }
+    .icon--sm { width: 15px; height: 15px; }
+    .icon--lg { width: 26px; height: 26px; }
+    .icon--inline { display: inline-block; vertical-align: -3px; margin-right: 9px; }
+
     .team-hero { padding: clamp(56px,8vw,96px) 0 clamp(32px,4vw,56px); border-bottom: 1px solid var(--gold-line); margin-bottom: clamp(48px,6vw,72px); animation: fadeUp 0.7s ease both; }
     .team-hero__eyebrow { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; display: flex; align-items: center; gap: 12px; }
     .team-hero__eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--gold); opacity: 0.6; }
@@ -40,7 +52,7 @@
     .member-brands__grid { display: flex; flex-direction: column; gap: 8px; }
     .brand-card { border: 1px solid var(--gold-line); border-radius: var(--radiusLg); background: var(--surface); padding: 14px 18px; display: flex; align-items: center; gap: 14px; transition: all 0.22s ease; text-decoration: none; }
     .brand-card:hover { background: var(--surface2); border-color: var(--gold); transform: translateX(3px); }
-    .brand-card__icon { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--gold-line); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; background: var(--surface2); }
+    .brand-card__icon { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--gold-line); display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: var(--surface2); }
     .brand-card__info { flex: 1; }
     .brand-card__name { font-size: 12px; font-weight: 600; color: var(--white); letter-spacing: 0.04em; margin-bottom: 2px; }
     .brand-card__role { font-size: 10px; color: var(--gold); letter-spacing: 0.1em; }
@@ -60,11 +72,23 @@
     .resp-list li { font-size: 13px; color: var(--muted2); line-height: 1.8; padding: 14px 20px 14px 46px; position: relative; border-bottom: 1px solid var(--line); transition: background 0.2s; }
     .resp-list li:last-child { border-bottom: none; }
     .resp-list li:hover { background: var(--gold-dim); }
-    .resp-list li::before { content: '✦'; position: absolute; left: 18px; top: 17px; color: var(--gold); font-size: 8px; }
+    .resp-list li::before { content: ''; position: absolute; left: 18px; top: 26px; width: 11px; height: 1px; background: var(--gold); opacity: 0.75; }
     .member-contact { border: 1px solid var(--gold-line); border-radius: var(--radiusLg); background: radial-gradient(ellipse 80% 60% at 10% 0%, rgba(200,169,90,0.08), transparent 55%), var(--surface); padding: 24px 28px; position: relative; overflow: hidden; }
     .member-contact::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold2), transparent); opacity: 0.5; }
     .member-contact__label { font-size: 8.5px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
     .member-contact__text { font-size: 13px; color: var(--muted2); line-height: 1.7; margin-bottom: 16px; }
+    .contact-line { display: flex; align-items: center; font-size: 13px; color: var(--muted2); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
+    .contact-line:hover { color: var(--gold2); }
+
+    /* ── QUOTE CARDS ── */
+    .quote-card { border: 1px solid var(--gold-line); border-radius: var(--radiusLg); background: var(--surface); padding: 22px 24px; position: relative; overflow: hidden; }
+    .quote-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold2), transparent); opacity: 0.5; }
+    .quote-card__mark { font-family: var(--font-display); font-size: 30px; color: var(--gold); opacity: 0.35; line-height: 0.7; margin-bottom: 12px; }
+    .quote-card__text { font-size: 13px; color: var(--muted2); line-height: 1.85; margin-bottom: 16px; font-style: italic; }
+    .quote-card__by { display: flex; align-items: center; gap: 12px; }
+    .quote-card__avatar { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--gold-line); background: var(--surface2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .quote-card__name { font-size: 12px; font-weight: 600; color: var(--white); letter-spacing: 0.04em; }
+    .quote-card__title { font-size: 10px; color: var(--gold); letter-spacing: 0.08em; }
 
     /* ── CREATIVE STATEMENT (Leora) ── */
     .statement-block {
@@ -118,9 +142,9 @@
     .coming-title { font-family: var(--font-display); font-size: clamp(26px,3.5vw,38px); font-weight: 300; color: var(--white); margin-bottom: 12px; }
     .coming-text { font-size: 13px; color: var(--muted2); line-height: 1.8; max-width: 52ch; margin: 0 auto 28px; }
     .slot-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 20px; }
-    .slot-card { border: 1px dashed var(--line); border-radius: var(--radiusLg); padding: 28px 20px; display: flex; flex-direction: column; align-items: center; gap: 10px; opacity: 0.5; transition: opacity 0.2s; }
-    .slot-card:hover { opacity: 0.7; }
-    .slot-card__circle { width: 56px; height: 56px; border-radius: 50%; border: 1px dashed var(--gold-line); display: flex; align-items: center; justify-content: center; font-size: 20px; }
+    .slot-card { border: 1px dashed var(--line); border-radius: var(--radiusLg); padding: 28px 20px; display: flex; flex-direction: column; align-items: center; gap: 10px; opacity: 0.55; transition: opacity 0.2s; }
+    .slot-card:hover { opacity: 0.8; }
+    .slot-card__circle { width: 56px; height: 56px; border-radius: 50%; border: 1px dashed var(--gold-line); display: flex; align-items: center; justify-content: center; }
     .slot-card__label { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
     .slot-card__role { font-size: 11px; color: var(--muted); letter-spacing: 0.06em; }
     @media (max-width: 900px) { .member-profile { grid-template-columns: 1fr; } .member-photo-wrap { position: static; } .member-photo { max-width: 380px; } .slot-grid { grid-template-columns: 1fr 1fr; } .pillar-grid { grid-template-columns: 1fr; } }
@@ -128,6 +152,27 @@
   </style>
 </head>
 <body>
+
+<!-- ══ SVG ICON SPRITE ══ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-film" viewBox="0 0 24 24"><rect x="2.6" y="5.4" width="18.8" height="13.2" rx="1.4"/><path d="M7.4 5.4v13.2"/><path d="M16.6 5.4v13.2"/><path d="M2.6 12h18.8"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M3.4 8.2h3.2l1.4-2.4h8l1.4 2.4h3.2a1 1 0 0 1 1 1v9.4a1 1 0 0 1-1 1H3.4a1 1 0 0 1-1-1V9.2a1 1 0 0 1 1-1Z"/><circle cx="12" cy="13.4" r="3.4"/></symbol>
+    <symbol id="i-fashion" viewBox="0 0 24 24"><path d="M9 3.4h6l4.6 3.2-2.2 3.4-1.6-1v11.6H6.2V9l-1.6 1L2.4 6.6Z"/><path d="M9 3.4a3 3 0 0 0 6 0"/></symbol>
+    <symbol id="i-talent" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M12 7.6 13.2 11h3.4l-2.8 2.1 1.1 3.3L12 14.4 9.1 16.4l1.1-3.3L7.4 11h3.4Z"/></symbol>
+    <symbol id="i-factory" viewBox="0 0 24 24"><path d="M2.6 20.6V10.4l6 3.6V10.4l6 3.6V6.2h6.8v14.4Z"/><path d="M2.6 20.6h18.8"/></symbol>
+    <symbol id="i-columns" viewBox="0 0 24 24"><path d="M2.6 8.6 12 3.8l9.4 4.8"/><path d="M4.8 10.6v8.2"/><path d="M9.6 10.6v8.2"/><path d="M14.4 10.6v8.2"/><path d="M19.2 10.6v8.2"/><path d="M2.6 20.6h18.8"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M7.4 4h9.2v5.2a4.6 4.6 0 0 1-9.2 0Z"/><path d="M7.4 5.6H4.6v1.6a3 3 0 0 0 2.8 3"/><path d="M16.6 5.6h2.8v1.6a3 3 0 0 1-2.8 3"/><path d="M12 13.8v3.4"/><path d="M8.4 20.4h7.2"/><path d="M9.8 17.2h4.4v3.2H9.8Z"/></symbol>
+    <symbol id="i-grad" viewBox="0 0 24 24"><path d="M2.6 8.8 12 4.6l9.4 4.2L12 13Z"/><path d="M6.4 10.6v5a6.6 6.6 0 0 0 11.2 0v-5"/><path d="M21.4 8.8v5.4"/></symbol>
+    <symbol id="i-school" viewBox="0 0 24 24"><path d="M4.4 20.6V9.4L12 4.2l7.6 5.2v11.2Z"/><path d="M2.6 20.6h18.8"/><path d="M9.8 20.6v-5.4h4.4v5.4"/></symbol>
+    <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8.4" r="3.6"/><path d="M4.8 20.4a7.2 7.2 0 0 1 14.4 0"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2.6" y="7" width="18.8" height="13.4" rx="1.6"/><path d="M8.6 7V5.4a2 2 0 0 1 2-2h2.8a2 2 0 0 1 2 2V7"/><path d="M2.6 12.4h18.8"/></symbol>
+    <symbol id="i-handshake" viewBox="0 0 24 24"><path d="M2.6 10.4 6.2 7h4l2 1.8L14 7h3.8l3.6 3.4"/><path d="M12 8.8 8.6 12a1.8 1.8 0 0 0 2.6 2.6l1.4-1.4 3 3a1.8 1.8 0 0 0 2.6-2.6"/><path d="M2.6 10.4v4.2l3 3"/><path d="M21.4 10.4v4.2l-3 3"/></symbol>
+    <symbol id="i-device" viewBox="0 0 24 24"><rect x="6.4" y="2.6" width="11.2" height="18.8" rx="2"/><path d="M10.6 5.4h2.8"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2.6" y="5.4" width="18.8" height="13.2" rx="1.6"/><path d="m3.4 6.6 8.6 6 8.6-6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M7.2 3.4h3l1.6 4-2 1.4a11 11 0 0 0 5.4 5.4l1.4-2 4 1.6v3a2 2 0 0 1-2.2 2A16.6 16.6 0 0 1 5.2 5.6a2 2 0 0 1 2-2.2Z"/></symbol>
+  </defs>
+</svg>
 
 <header class="topbar">
   <div class="container topbar__inner">
@@ -218,19 +263,19 @@
           <span class="member-brands__label">Disciplines</span>
           <div class="member-brands__grid">
             <div class="brand-card">
-              <div class="brand-card__icon">🎬</div>
-              <div class="brand-card__info"><div class="brand-card__name">Creative Direction</div><div class="brand-card__role">Campaign & Brand World-Building</div></div>
+              <div class="brand-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-film"/></svg></div>
+              <div class="brand-card__info"><div class="brand-card__name">Creative Direction</div><div class="brand-card__role">Campaign &amp; Brand World-Building</div></div>
             </div>
             <div class="brand-card">
-              <div class="brand-card__icon">📷</div>
+              <div class="brand-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-camera"/></svg></div>
               <div class="brand-card__info"><div class="brand-card__name">Photography &amp; Film</div><div class="brand-card__role">Visual Storytelling Since Age Eight</div></div>
             </div>
             <div class="brand-card">
-              <div class="brand-card__icon">👗</div>
-              <div class="brand-card__info"><div class="brand-card__name">Fashion &amp; Styling</div><div class="brand-card__role">Editorial Concept & Art Direction</div></div>
+              <div class="brand-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-fashion"/></svg></div>
+              <div class="brand-card__info"><div class="brand-card__name">Fashion &amp; Styling</div><div class="brand-card__role">Editorial Concept &amp; Art Direction</div></div>
             </div>
             <a class="brand-card" href="roster.html">
-              <div class="brand-card__icon">✦</div>
+              <div class="brand-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-talent"/></svg></div>
               <div class="brand-card__info"><div class="brand-card__name">House Talent</div><div class="brand-card__role">Also Represented on the Roster</div></div>
               <div class="brand-card__loc">↗ View</div>
             </a>
@@ -266,7 +311,7 @@
 
         <span class="resp-label">In Her Own Words</span>
         <div class="statement-block">
-          <div class="statement-block__mark">"</div>
+          <div class="statement-block__mark">&ldquo;</div>
           <p class="statement-lead">I didn't grow up surrounded by fashion houses, luxury campaigns, or creative agencies. I grew up in the hills of West Virginia — where mornings began with fog rolling over the mountains, and <em>nature was the first masterpiece I ever studied.</em></p>
           <p>Before I knew the names of luxury brands, I knew how golden light looked through the trees, how silence could tell a story, and how beauty lived in the smallest details.</p>
           <p>I've always believed that everything is art. The way we as humans live is art — and art needs to be captured. The way sunlight hits a window. The sound of rain on a tin roof. A cup of coffee that is the perfect shade. A weathered pair of cowboy boots. A handwritten note. A luxury hotel lobby. A woman walking through a city at midnight. An empty yacht in a marina. Every color, texture, emotion, and movement has the power to become a story.</p>
@@ -295,9 +340,9 @@
         <div class="member-contact">
           <div class="member-contact__label">Creative &amp; Production Inquiries</div>
           <p class="member-contact__text">For creative direction, campaign collaboration, editorial production, and booking Leora as talent — route through the House of Elévara team.</p>
-          <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;">
-            <a href="mailto:admin@houseofelevara.com" style="font-size:13px;color:var(--muted2);text-decoration:none;letter-spacing:0.04em;transition:color 0.2s;" onmouseover="this.style.color='var(--gold2)'" onmouseout="this.style.color='var(--muted2)'">✉ admin@houseofelevara.com</a>
-            <a href="tel:+13072894953" style="font-size:13px;color:var(--muted2);text-decoration:none;letter-spacing:0.04em;transition:color 0.2s;" onmouseover="this.style.color='var(--gold2)'" onmouseout="this.style.color='var(--muted2)'">📞 +1 (307) 289-4953</a>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:16px;">
+            <a class="contact-line" href="mailto:admin@houseofelevara.com"><svg class="icon icon--sm icon--inline" aria-hidden="true"><use href="#i-mail"/></svg>admin@houseofelevara.com</a>
+            <a class="contact-line" href="tel:+13072894953"><svg class="icon icon--sm icon--inline" aria-hidden="true"><use href="#i-phone"/></svg>+1 (307) 289-4953</a>
           </div>
           <div class="btnRow" style="margin-top:0;flex-direction:row;flex-wrap:wrap;">
             <a class="btn btn--gold" href="mailto:admin@houseofelevara.com?subject=Creative%20Direction%20Inquiry%20%7C%20House%20of%20El%C3%A9vara" style="flex:0 1 auto;width:auto;">Contact the Team</a>
@@ -332,27 +377,27 @@
           <span class="member-brands__label">Career Background</span>
           <div class="member-brands__grid">
             <a class="brand-card" href="https://www.pg.com" target="_blank" rel="noopener noreferrer">
-              <div class="brand-card__icon">🏭</div>
+              <div class="brand-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-factory"/></svg></div>
               <div class="brand-card__info"><div class="brand-card__name">Procter &amp; Gamble</div><div class="brand-card__role">Project Management &amp; HR</div></div>
               <div class="brand-card__loc">↗ Fortune 100</div>
             </a>
             <a class="brand-card" href="https://ebuilders.us" target="_blank" rel="noopener noreferrer">
-              <div class="brand-card__icon">🏛️</div>
+              <div class="brand-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-columns"/></svg></div>
               <div class="brand-card__info"><div class="brand-card__name">Empire Builders LLC</div><div class="brand-card__role">President &amp; Executive Consultant</div></div>
               <div class="brand-card__loc">↗ Lexington, KY</div>
             </a>
             <a class="brand-card" href="https://www.linkedin.com/in/vinceedwards1/" target="_blank" rel="noopener noreferrer">
-              <div class="brand-card__icon">🏆</div>
+              <div class="brand-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-trophy"/></svg></div>
               <div class="brand-card__info"><div class="brand-card__name">Xooker LLC</div><div class="brand-card__role">CMO · $8M+ Raised · 2000% Growth</div></div>
               <div class="brand-card__loc">↗ Lexington, KY</div>
             </a>
             <a class="brand-card" href="https://reap.mit.edu" target="_blank" rel="noopener noreferrer">
-              <div class="brand-card__icon">🎓</div>
+              <div class="brand-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-grad"/></svg></div>
               <div class="brand-card__info"><div class="brand-card__name">MIT — REAP Program</div><div class="brand-card__role">Regional Entrepreneurship Accelerator · 2020</div></div>
               <div class="brand-card__loc">↗ Cambridge, MA</div>
             </a>
             <a class="brand-card" href="https://www.uky.edu" target="_blank" rel="noopener noreferrer">
-              <div class="brand-card__icon">🏫</div>
+              <div class="brand-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-school"/></svg></div>
               <div class="brand-card__info"><div class="brand-card__name">University of Kentucky</div><div class="brand-card__role">B.S. Mathematics</div></div>
               <div class="brand-card__loc">↗ Lexington, KY</div>
             </a>
@@ -377,34 +422,32 @@
           <li>Identify, cultivate, and close relationships with angel investors, venture capital firms, family offices, and institutional capital partners</li>
           <li>Lead all investor communications — pitch presentations, investor updates, and due diligence materials</li>
           <li>Represent the House's brand, vision, and financial narrative to the external investment community</li>
-          <li>Support fundraising campaigns including Wefunder and direct private placements</li>
+          <li>Support fundraising campaigns including Regulation CF offerings and direct private placements</li>
           <li>Coordinate with the Founder on capital strategy, valuation positioning, and deal structuring</li>
           <li>Leverage an extensive network of investors, accelerators, and capital partners built over 20+ years</li>
           <li>Provide regular reporting on investor pipeline, outreach activity, and capital secured</li>
         </ul>
         <span class="resp-label">What People Say</span>
         <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px;">
-          <div style="border:1px solid var(--gold-line);border-radius:var(--radiusLg);background:var(--surface);padding:22px 24px;position:relative;overflow:hidden;">
-            <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);opacity:0.5;"></div>
-            <div style="font-size:22px;color:var(--gold);opacity:0.4;line-height:1;margin-bottom:10px;">"</div>
-            <p style="font-size:13px;color:var(--muted2);line-height:1.85;margin-bottom:14px;font-style:italic;">Vince is an engaging entrepreneur with a passionate dedication to making the world better than it was before. It's amazing the breadth of his knowledge. Vince is a person who motivates all he meets and works with to do better, accomplish more, and do well while doing good.</p>
-            <div style="display:flex;align-items:center;gap:10px;">
-              <div style="width:36px;height:36px;border-radius:50%;border:1px solid var(--gold-line);background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">👩‍💼</div>
+          <div class="quote-card">
+            <div class="quote-card__mark">&ldquo;</div>
+            <p class="quote-card__text">Vince is an engaging entrepreneur with a passionate dedication to making the world better than it was before. It's amazing the breadth of his knowledge. Vince is a person who motivates all he meets and works with to do better, accomplish more, and do well while doing good.</p>
+            <div class="quote-card__by">
+              <div class="quote-card__avatar"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-person"/></svg></div>
               <div>
-                <div style="font-size:12px;font-weight:600;color:var(--white);letter-spacing:0.04em;">Dr. Esther R. Dyer</div>
-                <div style="font-size:10px;color:var(--gold);letter-spacing:0.08em;">Independent Director · CEO &amp; Board Coach · Mentor</div>
+                <div class="quote-card__name">Dr. Esther R. Dyer</div>
+                <div class="quote-card__title">Independent Director · CEO &amp; Board Coach · Mentor</div>
               </div>
             </div>
           </div>
-          <div style="border:1px solid var(--gold-line);border-radius:var(--radiusLg);background:var(--surface);padding:22px 24px;position:relative;overflow:hidden;">
-            <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);opacity:0.5;"></div>
-            <div style="font-size:22px;color:var(--gold);opacity:0.4;line-height:1;margin-bottom:10px;">"</div>
-            <p style="font-size:13px;color:var(--muted2);line-height:1.85;margin-bottom:14px;font-style:italic;">As a member of the Kentucky team that was the first U.S.-based team to complete our MIT REAP program, Vince showed great leadership and expertise, and has been an ambassador for entrepreneurship and MIT back in Kentucky. His energy and passion are contagious. He exemplifies our philosophies around improving entrepreneurship in all communities regionally, nationally, and on a global scale.</p>
-            <div style="display:flex;align-items:center;gap:10px;">
-              <div style="width:36px;height:36px;border-radius:50%;border:1px solid var(--gold-line);background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">🎓</div>
+          <div class="quote-card">
+            <div class="quote-card__mark">&ldquo;</div>
+            <p class="quote-card__text">As a member of the Kentucky team that was the first U.S.-based team to complete our MIT REAP program, Vince showed great leadership and expertise, and has been an ambassador for entrepreneurship and MIT back in Kentucky. His energy and passion are contagious. He exemplifies our philosophies around improving entrepreneurship in all communities regionally, nationally, and on a global scale.</p>
+            <div class="quote-card__by">
+              <div class="quote-card__avatar"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-grad"/></svg></div>
               <div>
-                <div style="font-size:12px;font-weight:600;color:var(--white);letter-spacing:0.04em;">Dr. Phil Budden</div>
-                <div style="font-size:10px;color:var(--gold);letter-spacing:0.08em;">Senior Lecturer · MIT Sloan School of Management</div>
+                <div class="quote-card__name">Dr. Phil Budden</div>
+                <div class="quote-card__title">Senior Lecturer · MIT Sloan School of Management</div>
               </div>
             </div>
           </div>
@@ -412,9 +455,9 @@
         <div class="member-contact">
           <div class="member-contact__label">Investor Relations Inquiries</div>
           <p class="member-contact__text">For investor inquiries, capital partnerships, and funding conversations — connect with Vince directly or route through the House of Elévara team.</p>
-          <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;">
-            <a href="tel:+18593967399" style="font-size:13px;color:var(--muted2);text-decoration:none;letter-spacing:0.04em;transition:color 0.2s;" onmouseover="this.style.color='var(--gold2)'" onmouseout="this.style.color='var(--muted2)'">📞 +1 (859) 396-7399</a>
-            <a href="mailto:admin@houseofelevara.com" style="font-size:13px;color:var(--muted2);text-decoration:none;letter-spacing:0.04em;transition:color 0.2s;" onmouseover="this.style.color='var(--gold2)'" onmouseout="this.style.color='var(--muted2)'">✉ admin@houseofelevara.com</a>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:16px;">
+            <a class="contact-line" href="tel:+1(307)289-4953"><svg class="icon icon--sm icon--inline" aria-hidden="true"><use href="#i-phone"/></svg>+1 (859) 396-7399</a>
+            <a class="contact-line" href="mailto:admin@houseofelevara.com"><svg class="icon icon--sm icon--inline" aria-hidden="true"><use href="#i-mail"/></svg>admin@houseofelevara.com</a>
           </div>
           <div class="btnRow" style="margin-top:0;flex-direction:row;flex-wrap:wrap;">
             <a class="btn btn--gold" href="mailto:admin@houseofelevara.com?subject=Investor%20Relations%20Inquiry%20%7C%20House%20of%20El%C3%A9vara" style="flex:0 1 auto;width:auto;">Contact the Team</a>
@@ -437,20 +480,20 @@
     <div class="coming-section">
       <div class="coming-eyebrow">The Team Is Expanding</div>
       <h3 class="coming-title">More Leadership Coming Soon</h3>
-      <p class="coming-text">House of Elévara is actively building a team of seasoned professionals across talent operations, brand partnerships, and platform operations. As the company grows, so does the people behind it.</p>
+      <p class="coming-text">House of Elévara is actively building a team of seasoned professionals across talent operations, brand partnerships, and platform operations. As the company grows, so do the people behind it.</p>
       <div class="slot-grid">
         <div class="slot-card">
-          <div class="slot-card__circle">🎤</div>
+          <div class="slot-card__circle"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-briefcase"/></svg></div>
           <div class="slot-card__label">Coming Soon</div>
           <div class="slot-card__role">Head of Talent Operations</div>
         </div>
         <div class="slot-card">
-          <div class="slot-card__circle">🤝</div>
+          <div class="slot-card__circle"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-handshake"/></svg></div>
           <div class="slot-card__label">Coming Soon</div>
           <div class="slot-card__role">Admissions Director</div>
         </div>
         <div class="slot-card">
-          <div class="slot-card__circle">📱</div>
+          <div class="slot-card__circle"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-device"/></svg></div>
           <div class="slot-card__label">Coming Soon</div>
           <div class="slot-card__role">Head of Business Development</div>
         </div>
@@ -468,13 +511,17 @@
   <div>© 2026 House of Elévara LLC</div>
   <div class="footer__muted">admin@houseofelevara.com &nbsp;·&nbsp; +1 (307) 289-4953</div>
   <div class="footer__muted" style="margin-top:6px;">30 N Gould St, Ste N · Sheridan, WY 82801</div>
-  <div class="footer__muted" style="margin-top:6px;">
-    <a href="privacy.html" style="color:var(--gold2);text-decoration:none;">Privacy Policy</a>
+  <div class="footer__muted" style="margin-top:8px;">
+    <a href="privacy.html" style="color:var(--gold2);text-decoration:none;margin:0 8px;">Privacy Policy</a>
     &nbsp;·&nbsp;
-    <a href="terms.html" style="color:var(--gold2);text-decoration:none;">Terms of Service</a>
+    <a href="terms.html" style="color:var(--gold2);text-decoration:none;margin:0 8px;">Terms of Service</a>
   </div>
 </footer>
 
 <script src="assets/app.js?v=101"></script>
+
+<!-- Tidio Chat Widget -->
+<script src="https://code.tidio.co/h8ks9rxfom7avd6huvahecatbr5xkfl7.js" async></script>
+
 </body>
 </html>
