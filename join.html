@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>Join Vorane — House of Elévara</title>
+<meta name="description" content="You've been invited to Vorane by House of Elévara — discover and book top-tier creative talent."/>
+
+<meta property="og:title" content="You've been invited to Vorane"/>
+<meta property="og:description" content="Discover and book top-tier creative talent. Where talent rises."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://houseofelevara.com/join.html"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="theme-color" content="#0A0A0A"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink: #0A0A0A;
+    --surface: #131211;
+    --gold: #C9A961;
+    --goldDim: rgba(201,169,97,.24);
+    --text: #F0ECE4;
+    --muted: rgba(240,236,228,.58);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--ink);
+    color: var(--text);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 20px;
+    background-image: radial-gradient(ellipse 70% 40% at 50% 0%, rgba(201,169,97,.08), transparent 60%);
+  }
+
+  .card {
+    width: 100%;
+    max-width: 440px;
+    text-align: center;
+  }
+
+  .kicker {
+    font-size: .6rem;
+    letter-spacing: .42em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 22px;
+  }
+
+  .brand {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+    font-size: clamp(2.8rem, 12vw, 4rem);
+    letter-spacing: .3em;
+    text-indent: .3em;
+    line-height: 1;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .sub {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 1rem;
+    letter-spacing: .1em;
+    color: var(--muted);
+    margin-bottom: 34px;
+  }
+
+  .lede {
+    font-size: .92rem;
+    line-height: 1.85;
+    color: var(--muted);
+    margin-bottom: 30px;
+  }
+
+  .fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 30px;
+  }
+
+  .fields span {
+    font-size: .58rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(240,236,228,.5);
+    border: 1px solid rgba(201,169,97,.16);
+    border-radius: 2px;
+    padding: 5px 9px;
+    background: rgba(201,169,97,.04);
+  }
+
+  .code-block {
+    border: 1px solid var(--goldDim);
+    border-top-color: rgba(201,169,97,.45);
+    border-radius: 3px;
+    background: var(--surface);
+    padding: 24px 20px;
+    margin-bottom: 14px;
+  }
+
+  .code-label {
+    font-size: .55rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .code {
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: clamp(1.3rem, 6vw, 1.75rem);
+    letter-spacing: .16em;
+    color: var(--gold);
+    word-break: break-all;
+  }
+
+  .copy-btn {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--goldDim);
+    border-radius: 2px;
+    background: rgba(201,169,97,.07);
+    color: var(--gold);
+    font-family: 'Jost', sans-serif;
+    font-size: .6rem;
+    font-weight: 500;
+    letter-spacing: .26em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .2s, border-color .2s;
+    margin-bottom: 26px;
+  }
+
+  .copy-btn:hover { background: rgba(201,169,97,.14); border-color: var(--gold); }
+  .copy-btn.done { color: #8CDCA0; border-color: rgba(140,220,160,.4); background: rgba(140,220,160,.08); }
+
+  .cta {
+    display: block;
+    width: 100%;
+    padding: 17px;
+    background: linear-gradient(135deg, #E2CC96, var(--gold));
+    color: #14100A;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: .62rem;
+    font-weight: 500;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .steps {
+    text-align: left;
+    border-top: 1px solid rgba(201,169,97,.14);
+    padding-top: 22px;
+    margin-top: 22px;
+  }
+
+  .steps li {
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    font-size: .82rem;
+    line-height: 1.7;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .steps li b {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--gold);
+    flex-shrink: 0;
+    min-width: 16px;
+  }
+
+  .foot {
+    margin-top: 30px;
+    font-size: .6rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(240,236,228,.3);
+  }
+
+  .foot a { color: rgba(201,169,97,.7); text-decoration: none; }
+
+  .no-code .code-block,
+  .no-code .copy-btn,
+  .no-code .steps { display: none; }
+</style>
+</head>
+<body>
+
+<div class="card" id="card">
+
+  <div class="kicker">You've Been Invited</div>
+  <div class="brand">VORANE</div>
+  <div class="sub">by House of Elévara</div>
+
+  <p class="lede">
+    A private house for creative professionals — every discipline, every level.
+    Set your own rates, get booked directly, and keep 70% of every booking,
+    paid the same day.
+  </p>
+
+  <div class="fields" aria-label="Disciplines">
+    <span>Fashion</span><span>Photography</span><span>Video</span>
+    <span>Music</span><span>Dance</span><span>Styling</span>
+    <span>Beauty</span><span>Tattoo</span><span>Art &amp; Design</span>
+    <span>Acting</span><span>Hosting</span><span>Podcasting</span>
+    <span>Comedy</span><span>Culinary</span><span>Fitness</span>
+    <span>Streaming</span><span>Writing</span><span>+ more</span>
+  </div>
+
+  <div class="code-block">
+    <div class="code-label">Your Invitation Code</div>
+    <div class="code" id="code">—</div>
+  </div>
+
+  <button class="copy-btn" id="copyBtn">Copy Code</button>
+
+  <a class="cta" id="storeLink"
+     href="https://apps.apple.com/app/id6768399257">
+    Download on the App Store
+  </a>
+
+  <ol class="steps">
+    <li><b>1</b><span>Download the app and open it.</span></li>
+    <li><b>2</b><span>Sign in and choose whether you're joining as talent or as a patron booking talent.</span></li>
+    <li><b>3</b><span>Paste your code into the "Referred by" field during setup.</span></li>
+  </ol>
+
+  <div class="foot">
+    <a href="https://houseofelevara.com">houseofelevara.com</a>
+    &nbsp;·&nbsp; Where talent rises
+  </div>
+
+</div>
+
+<script>
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var ref = (params.get('ref') || '').trim().toUpperCase();
+
+    /* Only accept plausible codes — letters and digits, 4 to 24 chars.
+       Anything else is treated as no code rather than rendered blindly. */
+    var valid = /^[A-Z0-9]{4,24}$/.test(ref);
+
+    var codeEl = document.getElementById('code');
+    var card   = document.getElementById('card');
+    var btn    = document.getElementById('copyBtn');
+
+    if (!valid) {
+      card.classList.add('no-code');
+      return;
+    }
+
+    codeEl.textContent = ref;
+
+    /* If the app is installed, the universal link opens it directly and this
+       page is never seen. This is the fallback path. */
+
+    btn.addEventListener('click', function () {
+      function done() {
+        btn.textContent = 'Copied';
+        btn.classList.add('done');
+        setTimeout(function () {
+          btn.textContent = 'Copy Code';
+          btn.classList.remove('done');
+        }, 2200);
+      }
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(ref).then(done).catch(fallback);
+      } else {
+        fallback();
+      }
+
+      function fallback() {
+        var t = document.createElement('textarea');
+        t.value = ref;
+        t.style.position = 'fixed';
+        t.style.opacity = '0';
+        document.body.appendChild(t);
+        t.select();
+        try { document.execCommand('copy'); done(); } catch (e) { /* silent */ }
+        document.body.removeChild(t);
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>
