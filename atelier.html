@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <title>The Atelier App | House of Elévara</title>
-  <meta name="description" content="The Atelier by House of Elévara — the professional booking platform for models, creators, athletes, and artists. Set your rate. Get booked. Keep 70%. Now live on the App Store."/>
+  <meta name="description" content="The Atelier by House of Elévara — the professional booking platform for models, creators, athletes, and artists. Set your rate. Get booked. Keep 70%. Free on the App Store."/>
   <link rel="stylesheet" href="assets/styles.css"/>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
@@ -15,7 +15,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="theme-color" content="#060605">
   <meta property="og:title" content="The Atelier App | House of Elévara"/>
-  <meta property="og:description" content="Free iOS app for creative professionals. Set your rate. Get booked. Keep 70%. Now live on the App Store."/>
+  <meta property="og:description" content="Free iOS app for creative professionals. Set your rate. Get booked. Keep 70%."/>
   <meta property="og:image" content="https://houseofelevara.com/ACF2E166-0E09-4D4F-AB86-194CA5CDC548.png?v=2"/>
   <meta property="og:url" content="https://houseofelevara.com/atelier.html"/>
   <meta property="og:type" content="website"/>
@@ -261,6 +261,52 @@
     .split-panel__list li { font-size: 12px; color: var(--muted2); padding-left: 18px; position: relative; line-height: 1.6; }
     .split-panel__list li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-size: 9px; }
 
+    /* ── CREDITS TABLE ── */
+    .credits-table {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--gold-line);
+      border: 1px solid var(--gold-line);
+      border-radius: var(--radiusLg);
+      overflow: hidden;
+      margin-top: 24px;
+    }
+    .credit-cell {
+      background: var(--black2);
+      padding: 26px 22px;
+      text-align: center;
+      transition: background 0.22s;
+    }
+    .credit-cell:hover { background: var(--black3); }
+    .credit-cell__amt {
+      font-family: var(--font-display);
+      font-size: 34px;
+      font-weight: 300;
+      color: var(--gold2);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .credit-cell__label {
+      font-size: 8.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .credit-cell__price {
+      font-size: 15px;
+      color: var(--white);
+      letter-spacing: 0.02em;
+    }
+    .credit-cell__note {
+      font-size: 10px;
+      color: var(--gold);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
     /* ── WAITLIST SECTION ── */
     .waitlist-section {
       position: relative;
@@ -282,24 +328,6 @@
     .waitlist-inner {
       padding: clamp(40px,6vw,72px) clamp(24px,5vw,64px);
       text-align: center;
-    }
-    .waitlist-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 8px;
-      letter-spacing: 0.34em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 20px;
-    }
-    .waitlist-eyebrow::before,
-    .waitlist-eyebrow::after {
-      content: '';
-      width: 24px;
-      height: 1px;
-      background: var(--gold);
-      opacity: 0.5;
     }
     .waitlist-title {
       font-family: var(--font-display);
@@ -397,10 +425,7 @@
       text-align: center;
       padding: 32px 24px;
     }
-    .waitlist-success__icon {
-      font-size: 32px;
-      margin-bottom: 14px;
-    }
+    .waitlist-success__icon { font-size: 32px; margin-bottom: 14px; }
     .waitlist-success__title {
       font-family: var(--font-display);
       font-size: 28px;
@@ -408,11 +433,7 @@
       color: var(--gold2);
       margin-bottom: 8px;
     }
-    .waitlist-success__sub {
-      font-size: 13px;
-      color: var(--muted2);
-      line-height: 1.8;
-    }
+    .waitlist-success__sub { font-size: 13px; color: var(--muted2); line-height: 1.8; }
     .waitlist-note {
       font-size: 10px;
       color: var(--muted);
@@ -451,6 +472,7 @@
       .split-section { grid-template-columns: 1fr; }
       .split-panel:first-child { border-right: none; border-bottom: 1px solid var(--gold-line); }
       .how-grid { grid-template-columns: 1fr; }
+      .credits-table { grid-template-columns: 1fr; }
       .waitlist-row { grid-template-columns: 1fr; }
     }
   </style>
@@ -470,6 +492,13 @@
       <a class="nav__link" href="apply.html">Apply</a>
       <a class="nav__link is-active" href="atelier.html">The Atelier</a>
       <a class="nav__link" href="roster.html">Talent</a>
+      <a class="nav__link" href="vorane.html">Vorane</a>
+      <a class="nav__link" href="collection.html">Collection</a>
+      <a class="nav__link" href="https://shop.houseofelevara.com" target="_blank" rel="noopener">Shop</a>
+      <a class="nav__link" href="payments.html">Membership</a>
+      <a class="nav__link" href="ambassador.html">Ambassador</a>
+      <a class="nav__link" href="team.html">Our Team</a>
+      <a class="nav__link" href="careers.html">Careers</a>
       <a class="nav__link" href="contact.html">Contact</a>
     </nav>
     <button class="menuBtn" id="openMenu" type="button" aria-label="Open menu" onclick="GS_openMenu()">☰</button>
@@ -491,6 +520,13 @@
       <a href="apply.html" class="mobileMenu__link" onclick="GS_closeMenu()">Apply</a>
       <a href="atelier.html" class="mobileMenu__link" onclick="GS_closeMenu()">The Atelier</a>
       <a href="roster.html" class="mobileMenu__link" onclick="GS_closeMenu()">Talent</a>
+      <a href="vorane.html" class="mobileMenu__link" onclick="GS_closeMenu()">Vorane</a>
+      <a href="collection.html" class="mobileMenu__link" onclick="GS_closeMenu()">Collection</a>
+      <a href="https://shop.houseofelevara.com" class="mobileMenu__link" target="_blank" rel="noopener" onclick="GS_closeMenu()">Shop</a>
+      <a href="payments.html" class="mobileMenu__link" onclick="GS_closeMenu()">Membership</a>
+      <a href="ambassador.html" class="mobileMenu__link" onclick="GS_closeMenu()">Ambassador</a>
+      <a href="team.html" class="mobileMenu__link" onclick="GS_closeMenu()">Our Team</a>
+      <a href="careers.html" class="mobileMenu__link" onclick="GS_closeMenu()">Careers</a>
       <a href="contact.html" class="mobileMenu__link" onclick="GS_closeMenu()">Contact</a>
     </div>
     <div class="mobileMenu__divider"></div>
@@ -505,7 +541,7 @@
   <section class="container">
     <div class="atelier-hero">
       <a href="index.html" style="display:inline-flex;align-items:center;gap:8px;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-bottom:20px;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">← Back to Home</a>
-      <div class="atelier-hero__eyebrow">Now Live on the App Store · iOS · Free</div>
+      <div class="atelier-hero__eyebrow">Live on the App Store · iOS · Free</div>
       <h1 class="atelier-hero__title">
         The <em>Atelier</em><br>
         by House of Elévara
@@ -523,12 +559,12 @@
           <span class="atelier-hero__stat-label">Manual invoices ever</span>
         </div>
         <div class="atelier-hero__stat">
-          <span class="atelier-hero__stat-num">∞</span>
-          <span class="atelier-hero__stat-label">Booking categories</span>
+          <span class="atelier-hero__stat-num">50</span>
+          <span class="atelier-hero__stat-label">Free AI credits monthly</span>
         </div>
         <div class="atelier-hero__stat">
-          <span class="atelier-hero__stat-num">5.0</span>
-          <span class="atelier-hero__stat-label">App Store rating</span>
+          <span class="atelier-hero__stat-num">249</span>
+          <span class="atelier-hero__stat-label">Countries on The Floor</span>
         </div>
       </div>
       <div class="btnRow">
@@ -542,9 +578,9 @@
   <!-- ── FREE APP NOTICE ── -->
   <section class="container">
     <div style="max-width:780px;margin:0 auto 32px;padding:20px 28px;border:1px solid var(--gold-line);border-radius:var(--radiusLg);background:var(--surface2);">
-      <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:600;">ℹ️ Free iOS App — Available Now</div>
+      <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:600;">Free iOS App — Available Now</div>
       <div style="font-size:12.5px;color:var(--muted2);line-height:1.85;">
-        The Atelier is a free iOS app available now on the App Store. All features — The Floor, The Salon, The Ledger, bookings, messaging, and payments — are available to every app user at no cost. Website membership services (houseofelevara.com/payments.html) operate separately and do not unlock app features or affect app functionality.
+        The Atelier is free to download and free to join. The Floor, The Salon, The Ledger, bookings, messaging, and payments are available to every member at no cost. Website membership services operate separately and do not unlock app features.
       </div>
     </div>
   </section>
@@ -552,23 +588,23 @@
   <!-- ── LIVE DOWNLOAD BANNER ── -->
   <section class="container">
     <div class="live-banner">
-      <div class="live-badge">Now Live on the App Store</div>
+      <div class="live-badge">Live on the App Store</div>
       <h2 class="live-banner__title">Where Every Creative Gets Booked</h2>
       <p class="live-banner__sub">
-        The Atelier is live on iOS. Download it now and be among the first members on The Floor — get discovered by brands before the platform scales.
+        Download it now and get on The Floor — be discovered by brands before the platform scales.
       </p>
       <div class="live-banner__badges">
         <div class="live-stat-badge">
           <span class="live-stat-badge__icon">📱</span>
           <div class="live-stat-badge__text">
             <strong>iOS App</strong>
-            Available Now — Free
+            Available now — free
           </div>
         </div>
         <div class="live-stat-badge">
-          <span class="live-stat-badge__icon">⚡</span>
+          <span class="live-stat-badge__icon">🏦</span>
           <div class="live-stat-badge__text">
-            <strong>Instant Payouts</strong>
+            <strong>Direct Deposit</strong>
             via Stripe Connect
           </div>
         </div>
@@ -594,7 +630,7 @@
           <span class="appstore-btn__label">App Store</span>
         </div>
       </a>
-      <p class="live-banner__note">Free · iOS 17.0+ · House of Elévara LLC</p>
+      <p class="live-banner__note">Free · iPhone · House of Elévara LLC</p>
     </div>
   </section>
 
@@ -624,13 +660,13 @@
     <div class="how-grid">
       <div class="how-step">
         <div class="how-step__num">01</div>
-        <div class="how-step__title">Download & Build Your Profile</div>
-        <p class="how-step__desc">Download The Atelier free from the App Store. Create your House Member profile in minutes — upload your portfolio to The Archive, set your services and rates on your Rate Card, and mark your availability.</p>
+        <div class="how-step__title">Download &amp; Build Your Profile</div>
+        <p class="how-step__desc">Download The Atelier free from the App Store. Create your House Member profile in minutes — set a profile photo, upload your portfolio to The Archive, set your services and rates on your Rate Card, and mark your availability.</p>
       </div>
       <div class="how-step">
         <div class="how-step__num">02</div>
         <div class="how-step__title">Get Discovered on The Floor</div>
-        <p class="how-step__desc">Your profile lives on The Floor — a curated discovery feed browsed by brands and clients. They filter by city, niche, and rate to find exactly the talent they need.</p>
+        <p class="how-step__desc">Your profile lives on The Floor — a curated discovery feed browsed by brands and clients. They filter by country, city, niche, tier, and rate to find exactly the talent they need.</p>
       </div>
       <div class="how-step">
         <div class="how-step__num">03</div>
@@ -639,8 +675,8 @@
       </div>
       <div class="how-step">
         <div class="how-step__num">04</div>
-        <div class="how-step__title">Deliver & Get Paid</div>
-        <p class="how-step__desc">Complete the work. 70% of your booking value is released directly to your connected bank account via Stripe. Cash out instantly from The Ledger anytime.</p>
+        <div class="how-step__title">Deliver &amp; Get Paid</div>
+        <p class="how-step__desc">Complete the work. 70% of your booking value is released to your connected bank account through Stripe. No invoice to chase. No follow-up email to write.</p>
       </div>
       <div class="how-step">
         <div class="how-step__num">05</div>
@@ -649,13 +685,13 @@
       </div>
       <div class="how-step">
         <div class="how-step__num">06</div>
-        <div class="how-step__title">Pitch Brands with AI Studio</div>
-        <p class="how-step__desc">The Studio is your AI creative director. Discover brands actively hiring talent in your niche, generate personalized pitch messages, and ask anything about strategy, rates, or industry trends. 50 free credits every month.</p>
+        <div class="how-step__title">Pitch Brands with The Studio</div>
+        <p class="how-step__desc">The Studio is your AI creative director. Discover brands actively hiring in your niche, generate personalized pitch messages, and ask anything about strategy, rates, or industry trends. 50 free credits every month.</p>
       </div>
       <div class="how-step">
         <div class="how-step__num">07</div>
-        <div class="how-step__title">Grow Your Tier & Earnings</div>
-        <p class="how-step__desc">Every booking builds your tier — Rising, Pro, Elite. Higher tiers unlock more visibility on The Floor and eventually The Vault wealth tools at Elite.</p>
+        <div class="how-step__title">Grow Your Tier &amp; Earnings</div>
+        <p class="how-step__desc">Every booking builds your tier — Rising, Pro, Elite, Inner Circle. Higher tiers mean more visibility on The Floor, and The Vault unlocks once you have earned $5,000.</p>
       </div>
     </div>
   </section>
@@ -682,12 +718,12 @@
           <li>Accept bookings through professional briefs</li>
           <li>Keep 70% of every booking — paid to your bank</li>
           <li>Track every dollar in The Ledger</li>
-          <li>Pitch any brand with AI Studio — 50 free credits/month</li>
-          <li>Build wealth through The Vault at $5K earned</li>
+          <li>Pitch any brand with The Studio — 50 free credits monthly</li>
+          <li>Unlock The Vault once you have earned $5,000</li>
           <li>Earn passive income through referrals</li>
         </ul>
         <div class="btnRow" style="margin-top:24px;">
-          <a class="btn btn--gold" href="https://apps.apple.com/app/id6768399257" target="_blank" rel="noopener noreferrer">Download & Join Now</a>
+          <a class="btn btn--gold" href="https://apps.apple.com/app/id6768399257" target="_blank" rel="noopener noreferrer">Download &amp; Join Now</a>
         </div>
       </div>
       <div class="split-panel">
@@ -695,13 +731,14 @@
         <h3 class="split-panel__title">Patrons</h3>
         <p class="split-panel__desc">Brands, agencies, businesses, photographers, and anyone who needs professional creative talent. Book with confidence and full documentation.</p>
         <ul class="split-panel__list">
-          <li>Browse The Floor filtered by city, niche, and rate</li>
+          <li>Browse The Floor filtered by country, city, niche, and rate</li>
           <li>Submit structured booking briefs with references</li>
           <li>Pay securely via Stripe — money held until delivery</li>
           <li>Manage all bookings in My Bookings calendar</li>
           <li>Message talent directly in The Salon</li>
           <li>Post open Opportunities to reach the full roster</li>
           <li>Save favorite talent to your personal roster</li>
+          <li>Manage your cards and receipts through Stripe</li>
           <li>Full booking history and 1099 documentation</li>
         </ul>
         <div class="btnRow" style="margin-top:24px;">
@@ -725,7 +762,7 @@
       <div class="feature-card">
         <div class="feature-card__name">Discovery</div>
         <div class="feature-card__title">The Floor</div>
-        <p class="feature-card__desc">A curated vertical feed of bookable talent. Brands filter by city, niche, and rate. Every profile is live and bookable in seconds.</p>
+        <p class="feature-card__desc">A curated vertical feed of bookable talent. Brands filter by country, city, niche, tier, and rate. Every profile is live and bookable in seconds.</p>
       </div>
       <div class="feature-card">
         <div class="feature-card__name">Messaging</div>
@@ -735,7 +772,7 @@
       <div class="feature-card">
         <div class="feature-card__name">Finance</div>
         <div class="feature-card__title">The Ledger</div>
-        <p class="feature-card__desc">Lifetime earnings, monthly comparison, available balance, and one-tap instant payout. Every dollar tracked and accessible.</p>
+        <p class="feature-card__desc">Lifetime earnings, monthly comparison, available balance, and payout history. Every dollar tracked and accounted for.</p>
       </div>
       <div class="feature-card">
         <div class="feature-card__name">Portfolio</div>
@@ -745,36 +782,82 @@
       <div class="feature-card">
         <div class="feature-card__name">Scheduling</div>
         <div class="feature-card__title">My Calendar</div>
-        <p class="feature-card__desc">Set your availability. Patrons see open dates before booking. Confirmed bookings auto-block. No double bookings ever.</p>
+        <p class="feature-card__desc">Set your availability and change it any time. Patrons see open dates before booking. Confirmed bookings block automatically — no double bookings ever.</p>
       </div>
       <div class="feature-card">
         <div class="feature-card__name">Casting</div>
         <div class="feature-card__title">Opportunities</div>
-        <p class="feature-card__desc">Open casting calls, brand ambassador roles, UGC campaigns, and retainer agreements. Members apply. Patrons choose. House takes 30%.</p>
+        <p class="feature-card__desc">Open casting calls, brand ambassador roles, UGC campaigns, and retainer agreements. Members apply. Patrons choose.</p>
       </div>
       <div class="feature-card">
         <div class="feature-card__name">AI · 50 Free Credits Monthly</div>
         <div class="feature-card__title">The Studio</div>
-        <p class="feature-card__desc">Your AI creative director. Discover brands actively hiring in your niche, generate personalized pitch messages, and ask anything about strategy, rates, or trends. Buy more credits anytime — they never expire.</p>
+        <p class="feature-card__desc">Your AI creative director. Discover brands actively hiring in your niche, generate personalized pitch messages, and ask anything about strategy, rates, or trends. Free credits refresh monthly.</p>
       </div>
       <div class="feature-card">
         <div class="feature-card__name">Growth</div>
         <div class="feature-card__title">Tier System</div>
-        <p class="feature-card__desc">Rising · Pro · Elite. Every booking builds your tier and unlocks new visibility and features as you grow within the House.</p>
+        <p class="feature-card__desc">Rising · Pro · Elite · Inner Circle. Every booking builds your tier and unlocks new visibility as you grow within the House.</p>
       </div>
       <div class="feature-card">
         <div class="feature-card__name">Wealth · Unlocks at $5K Earned</div>
         <div class="feature-card__title">The Vault</div>
         <p class="feature-card__desc">Tax Vault, Soft Life Fund, Bag Mode, and FU Money Tracker. Built for creators who are building something real.</p>
       </div>
+      <div class="feature-card">
+        <div class="feature-card__name">Passive Income</div>
+        <div class="feature-card__title">Referrals</div>
+        <p class="feature-card__desc">Refer talent and earn 5% of the House fee on their bookings for 12 months. Refer a brand and earn 10% on their first three. Paid automatically.</p>
+      </div>
     </div>
   </section>
 
-  <!-- ── WAITLIST ── -->
+  <!-- ── THE STUDIO / CREDITS ── -->
   <div class="container">
     <div class="sectionDivider">
       <div class="sectionDivider__line"></div>
-      <span class="sectionDivider__label">What's Coming Next</span>
+      <span class="sectionDivider__label">The Studio</span>
+      <div class="sectionDivider__line"></div>
+    </div>
+  </div>
+
+  <section class="container" style="margin-bottom:clamp(48px,8vw,88px);">
+    <div style="max-width:640px;margin:0 auto 8px;text-align:center;">
+      <h3 style="font-family:var(--font-display);font-size:clamp(26px,3.5vw,38px);font-weight:300;color:var(--white);margin-bottom:12px;letter-spacing:0.02em;">50 Free Credits. Every Month.</h3>
+      <p style="font-size:13.5px;color:var(--muted2);line-height:1.85;">
+        Every member — talent and brand — gets 50 Studio credits each month at no cost. One credit is one request. Need more? Add credits any time. Purchased credits never expire and are separate from your monthly allowance.
+      </p>
+    </div>
+    <div class="credits-table">
+      <div class="credit-cell">
+        <div class="credit-cell__amt">50</div>
+        <div class="credit-cell__label">Every Month</div>
+        <div class="credit-cell__price">Free</div>
+        <div class="credit-cell__note">Included</div>
+      </div>
+      <div class="credit-cell">
+        <div class="credit-cell__amt">100</div>
+        <div class="credit-cell__label">Credit Pack</div>
+        <div class="credit-cell__price">$19.99</div>
+        <div class="credit-cell__note">Never expires</div>
+      </div>
+      <div class="credit-cell">
+        <div class="credit-cell__amt">500</div>
+        <div class="credit-cell__label">Credit Pack</div>
+        <div class="credit-cell__price">$74.99</div>
+        <div class="credit-cell__note">Best value</div>
+      </div>
+    </div>
+    <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:18px;letter-spacing:0.04em;">
+      Credits are purchased in-app through the App Store. Studio responses are AI-generated — verify anything you plan to act on.
+    </p>
+  </section>
+
+  <!-- ── ANDROID WAITLIST ── -->
+  <div class="container">
+    <div class="sectionDivider">
+      <div class="sectionDivider__line"></div>
+      <span class="sectionDivider__label">Coming to Android</span>
       <div class="sectionDivider__line"></div>
     </div>
   </div>
@@ -784,13 +867,13 @@
       <div class="waitlist-inner">
         <div class="version-pill">
           <div class="version-pill__dot"></div>
-          The Atelier 2.0 — In Development
+          Android — In Development
         </div>
         <h2 class="waitlist-title">
-          A New Version<br>of <em>The Atelier</em> Is Coming
+          The Atelier<br>on <em>Android</em>
         </h2>
         <p class="waitlist-sub">
-          We are rebuilding The Atelier from the ground up — faster, more powerful, and available on both iOS and Android. The new version brings a completely rebuilt experience for talent and brands alike. Join the waitlist and be first through the door.
+          The Atelier is live on iOS today. An Android version is in development. Join the waitlist and we will let you know the moment it is ready — you will be first through the door.
         </p>
 
         <div class="waitlist-form" id="waitlistForm">
@@ -806,7 +889,7 @@
           </select>
           <input class="waitlist-input" type="text" id="wl-city" placeholder="City (optional)" autocomplete="address-level2" />
           <button class="waitlist-btn" id="wl-submit" type="button" onclick="submitWaitlist()">
-            Join the Waitlist
+            Join the Android Waitlist
           </button>
           <p class="waitlist-note">No spam. No obligation. First access when we launch.</p>
         </div>
@@ -814,9 +897,9 @@
         <div class="waitlist-success" id="waitlistSuccess">
           <div class="waitlist-success__icon">✦</div>
           <div class="waitlist-success__title">You're on the list.</div>
-          <p class="waitlist-success__sub">We'll reach out when The Atelier 2.0 is ready.<br>In the meantime, the current app is live — download it now.</p>
+          <p class="waitlist-success__sub">We'll reach out when The Atelier lands on Android.<br>In the meantime, the iOS app is live — download it now.</p>
           <div class="btnRow" style="justify-content:center;margin-top:20px;">
-            <a class="btn btn--gold" href="https://apps.apple.com/app/id6768399257" target="_blank" rel="noopener noreferrer">Download Current Version</a>
+            <a class="btn btn--gold" href="https://apps.apple.com/app/id6768399257" target="_blank" rel="noopener noreferrer">Download for iPhone</a>
           </div>
         </div>
       </div>
@@ -828,7 +911,7 @@
     <div class="readyBlock">
       <h3>The House Is Open.</h3>
       <p>
-        The current app is live and fully functional. Download it now, get on The Floor, and be an early member before 2.0 launches.
+        Free to download. Free to join. Set your rate, get on The Floor, and keep 70% of everything you book.
       </p>
       <div class="btnRow" style="flex-direction:row;flex-wrap:wrap;">
         <a class="btn btn--gold" href="https://apps.apple.com/app/id6768399257" target="_blank" rel="noopener noreferrer" style="flex:0 1 auto;width:auto;">Download on the App Store</a>
@@ -842,7 +925,7 @@
 </main>
 
 <footer class="footer">
-  <div>© 2026 House of Elévara LLC</div>
+  <div>© 2026 House of Elevara LLC</div>
   <div class="footer__muted">admin@houseofelevara.com &nbsp;·&nbsp; +1 (307) 289-4953</div>
   <div class="footer__muted" style="margin-top:6px;">30 N Gould St, Ste N · Sheridan, WY 82801</div>
   <div class="footer__muted" style="margin-top:6px;">
@@ -877,13 +960,13 @@ function submitWaitlist() {
   btn.disabled = true;
   btn.textContent = 'Submitting…';
 
-  const subject = encodeURIComponent('Atelier 2.0 Waitlist — ' + name);
+  const subject = encodeURIComponent('Atelier Android Waitlist — ' + name);
   const body = encodeURIComponent(
     'Name: ' + name + '\n' +
     'Email: ' + email + '\n' +
     'Role: ' + role + '\n' +
     'City: ' + (city || 'Not provided') + '\n\n' +
-    'Submitted via atelier.html waitlist form.'
+    'Submitted via atelier.html Android waitlist form.'
   );
 
   window.location.href = 'mailto:admin@houseofelevara.com?subject=' + subject + '&body=' + body;
