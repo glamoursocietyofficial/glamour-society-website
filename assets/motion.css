@@ -1,0 +1,134 @@
+/* ============================================================
+   House of Elévara — ATMOSPHERE LAYER v2.0
+   Companion to styles.css v4.0. ADDITIVE ONLY.
+   ------------------------------------------------------------
+   Deliberately does NOT redefine, because v4.0 already owns them:
+     body::after (grain) · .goldTitle · .btn::after · .tilt
+     .reveal · .sectionDivider · .pageHeader · .topbar z-index
+   Namespaced .atmo-* classes are used everywhere to guarantee
+   no selector in this file can ever outrank yours.
+   ------------------------------------------------------------
+   Load AFTER styles.css:
+   <link rel="stylesheet" href="assets/motion.css?v=2"/>
+   ============================================================ */
+
+/* ---------- 1. The 3D canvas ---------- */
+/* z-index 0 matches your body::before aurora band. The canvas is a
+   real element and paints above that pseudo, below .container (z:2),
+   .footer (z:2), .topbar (z:9999) and .mobileMenu (z:99999).
+   Your stacking order is left completely untouched. */
+.atmosphere{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  opacity:0;
+  animation:atmoFadeIn 2400ms var(--cinematic, ease-out) 300ms forwards;
+}
+@keyframes atmoFadeIn{ to{ opacity:1; } }
+
+/* Your aurora sits under the colonnade — pull it back so the two
+   don't compete. One ambience, not two. */
+body::before{ opacity:.55; }
+
+/* ---------- 2. Legibility over a live background ---------- */
+/* Cards need a floor of opacity now that something moves behind them.
+   background-color only — your gradient background-images survive. */
+.card,
+.cardGlow,
+.readyBlock,
+.infoCard{
+  background-color:rgba(8,8,7,.58);
+}
+@supports ((backdrop-filter:blur(4px)) or (-webkit-backdrop-filter:blur(4px))){
+  .card,
+  .cardGlow,
+  .readyBlock{
+    backdrop-filter:blur(12px) saturate(115%);
+    -webkit-backdrop-filter:blur(12px) saturate(115%);
+  }
+}
+@supports not ((backdrop-filter:blur(4px)) or (-webkit-backdrop-filter:blur(4px))){
+  .card,.cardGlow,.readyBlock,.infoCard{ background-color:rgba(8,8,7,.88); }
+}
+
+/* ---------- 3. Cursor light ---------- */
+/* Injected as a real child span, because your .card and .cardGlow
+   already use BOTH ::before and ::after. Nothing of yours is lost. */
+.atmo-sheen{
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  opacity:0;
+  z-index:0;
+  transition:opacity 500ms var(--ease, ease);
+  background:radial-gradient(320px circle at var(--mx,50%) var(--my,50%),
+    rgba(226,200,122,.11), transparent 62%);
+}
+.card:hover > .atmo-sheen,
+.cardGlow:hover > .atmo-sheen{ opacity:1; }
+
+/* ---------- 4. Scroll reveal ---------- */
+/* Namespaced so it cannot collide with your load-time .reveal. */
+.atmo-reveal{
+  opacity:0;
+  transform:translateY(24px) scale(.99);
+  transition:opacity 900ms var(--cinematic, ease),
+             transform 900ms var(--cinematic, ease);
+  will-change:opacity,transform;
+}
+.atmo-reveal.is-in{
+  opacity:1;
+  transform:none;
+}
+/* Once revealed, release the compositor hint */
+.atmo-reveal.is-done{ will-change:auto; }
+
+/* ---------- 5. Pointer tilt ---------- */
+/* Namespaced. Your .tilt utility keeps its fixed-angle hover intact. */
+.atmo-tilt{
+  transform-style:preserve-3d;
+  transition:transform 500ms var(--spring, ease),
+             box-shadow 500ms var(--ease, ease);
+}
+.atmo-tilt:hover{
+  box-shadow:var(--sh-lg, 0 28px 80px rgba(0,0,0,.7)),
+             0 0 46px rgba(200,169,90,.14);
+}
+
+/* ---------- 6. Rationing the ambient loops ---------- */
+/* v4.0 runs ~12 infinite animations at once. Stillness is the
+   luxury signal — these keep the effects but stop them competing.
+   Delete any block below to restore that effect fully. */
+
+/* goldTitle appears on nearly every card. Constant shimmer on ten
+   headings at once reads as busy; slow it and let it rest. */
+.goldTitle{ animation-duration:14s; }
+
+/* The traveling divider dot animates `left` (layout-thrashing).
+   Retimed so it feels deliberate rather than decorative. */
+.sectionDivider__line::after{ animation-duration:11s; }
+
+/* Brand mark had float + pulse + sheen simultaneously. Keep sheen. */
+.brand__logo{ animation:floaty 7s ease-in-out infinite; }
+
+@media (max-width:768px){
+  /* Stacked backdrop-filters are the single biggest mobile cost.
+     Topbar keeps its blur; cards go solid. */
+  .card,.cardGlow,.readyBlock{
+    backdrop-filter:none;
+    -webkit-backdrop-filter:none;
+    background-color:rgba(8,8,7,.86);
+  }
+  .atmo-tilt{ transform:none !important; }
+  body::before{ animation:none; opacity:.45; }
+}
+
+/* ---------- 7. Reduced motion ---------- */
+@media (prefers-reduced-motion:reduce){
+  .atmosphere{ animation:none; opacity:1; }
+  .atmo-reveal{ opacity:1; transform:none; transition:none; }
+  .atmo-tilt{ transition:none; transform:none !important; }
+  .atmo-sheen{ display:none; }
+}
